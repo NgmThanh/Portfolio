@@ -1,1 +1,1 @@
-# my-modern-cv
+# My-Modern-CV
