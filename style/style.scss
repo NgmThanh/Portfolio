@@ -21,13 +21,83 @@
     src: url('../docs/font/KoHo/KoHo-Italic.ttf') format('truetype'),
 }
 
+$dark-grey: #121212;
+
+$selection-grey: #DEE1E6;
+
+$light-white: #f5f5f5;
+
+$color-presentation: #909090;
+
 * {
     font-family: "KoHo", "Arial";
     padding: 0;
     margin: 0;
-    // text-align: center;
+    color: $dark-grey;
+    &::selection {
+        background-color: $selection-grey;
+    }
 }
 
 html {
     font-size: 62.5%;
 }
+
+header {
+    width: 100%;
+    position: fixed;
+    background-color: $dark-grey;
+    text-align: right;
+    opacity: 0.95;
+    .menu {
+        // background-color: $dark-grey;
+        list-style-type: none;
+        display: inline-flex;
+        margin-right: 5%;
+        &--text {
+            font-size: 1.85rem;
+            font-weight: 600;
+            color: whitesmoke;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 3px;
+            &:hover {
+                background-color: white;
+                color: $dark-grey;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.visible-page {
+    width: 100%;
+    padding-top: 64px;
+    .div-presentation {
+        padding-top: 7.5%;
+        padding-left: 10%;
+        padding-bottom: 7.5%;
+        background-color: lightgrey;
+        h1 {
+            font-size: 4.5rem;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-top: 10px;
+        }
+        img {
+            width: 50px;
+            margin-top: 20px;
+            margin-right: 1%;
+        }
+        // TODO
+        .profile-picture {
+            width: 22%;
+            position: absolute;
+            right: 15%;
+            top: 15%;
+        }
+    }
+}
+
+
