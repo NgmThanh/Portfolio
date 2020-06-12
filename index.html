@@ -10,15 +10,15 @@
     <body>
         <header>
             <nav class="menu">
-                <ul class="menu--text">Home</ul>
-                <ul class="menu--text">About</ul>
-                <ul class="menu--text">Works</ul>
-                <ul class="menu--text">Contact</ul>
+                <a href="#about"><ul class="menu--text">About</ul></a>
+                <a href="#works"><ul class="menu--text">Works</ul></a>
+                <a href="#contact"><ul class="menu--text">Contact</ul></a>
                 <ul class="menu--text">🌙</ul>
             </nav>
         </header>
 
-        <section class="about-page">
+        <!-- window "about" -->
+        <section class="about-page" id="about">
             <div class="presentation">
                 <h1>Hello ! 👋</h1>
                 <h2>I'm Thanh, nice to meet you !</h2>
@@ -46,9 +46,21 @@
             </article>
         </section>
 
+        <!-- window "contact" -->
+        <section class="contact-page" id="contact">
+            <h1>Let's contact ! 👋</h1>
+            <div class="contact__field">
+                <input class="contact__field--input" type="text" name="name" id="name" placeholder="Your Name">
+                <input class="contact__field--input" type="email" name="email" id="email" placeholder="Your Email">
+                <input class="contact__field--input" type="text" name="subject" id="subject" placeholder="Subject">
+                <textarea class="contact__field--textarea" placeholder="Message"></textarea>
+                <input type="submit" value="Envoyer">
+            </div>
+        </section>
+
         <footer>
             
-            <div class="icons-footer">
+            <div class="field-footer">
                 <p>If you are looking to Quam ob rem id primum videamus, si placet, quatenus amor in amicitia progredi debeat.</p>
                 <a href="https://github.com/NgmThanh"><img src="images/github.png" alt="github"></a>
                 <a href="https://www.linkedin.com/in/minh-thanh-nguyen-1875b6194/"><img src="images/linkedIn.png" alt="linkedIn"></a>
