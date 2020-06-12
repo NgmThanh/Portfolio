@@ -53,7 +53,9 @@ header .menu {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  margin-right: 10%;
+  margin-right: 8%;
+  padding: 8px;
+  padding-bottom: 6px;
 }
 
 header .menu--text {
@@ -61,7 +63,7 @@ header .menu--text {
   font-weight: 600;
   color: whitesmoke;
   margin: 10px;
-  padding: 10px;
+  padding: 15px;
   border-radius: 3px;
 }
 
@@ -74,37 +76,52 @@ header .menu--text:hover {
 .visible-page {
   width: 100%;
   padding-top: 64px;
+  background-color: #f5f5f5;
 }
 
-.visible-page .presentation {
-  background-color: lightgrey;
-  display: inline-block;
+.visible-page .presentation, .visible-page .description {
   padding: 10%;
   padding-top: 5%;
   padding-bottom: 5%;
 }
 
+.visible-page .presentation {
+  width: 100%;
+  display: inline-block;
+}
+
 .visible-page .presentation h1 {
-  font-size: 4.5rem;
+  font-size: 7.6rem;
 }
 
 .visible-page .presentation h2 {
-  font-size: 2.6rem;
+  font-size: 5.8rem;
+  font-weight: 600;
 }
 
 .visible-page .presentation img {
-  width: 50px;
+  width: 60px;
   margin-top: 20px;
+  margin-left: 0;
   margin-right: 1%;
 }
 
-.visible-page .presentation [alt="profile"] {
-  width: 25%;
-  min-width: 250px;
-  margin: 0;
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 50%;
-  margin-top: -7%;
+.visible-page .description {
+  padding-top: 0%;
+}
+
+.visible-page .description--text {
+  max-width: 60%;
+  font-size: 3rem;
+  margin-top: 2%;
+  margin-bottom: 4%;
+}
+
+.visible-page .description--text a {
+  color: darkred;
+}
+
+.visible-page .description img {
+  width: 20%;
 }
 /*# sourceMappingURL=style.css.map */
