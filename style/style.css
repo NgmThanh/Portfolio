@@ -40,6 +40,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background-color: #f5f5f5;
+}
+
 header {
   width: 100%;
   position: fixed;
@@ -73,55 +77,92 @@ header .menu--text:hover {
   cursor: pointer;
 }
 
-.visible-page {
+.about-page {
   width: 100%;
   padding-top: 64px;
-  background-color: #f5f5f5;
 }
 
-.visible-page .presentation, .visible-page .description {
+.about-page .presentation, .about-page .description {
   padding: 10%;
   padding-top: 5%;
   padding-bottom: 5%;
 }
 
-.visible-page .presentation {
-  width: 100%;
-  display: inline-block;
-}
-
-.visible-page .presentation h1 {
+.about-page .presentation h1 {
   font-size: 7.6rem;
 }
 
-.visible-page .presentation h2 {
+.about-page .presentation h2 {
   font-size: 5.8rem;
   font-weight: 600;
 }
 
-.visible-page .presentation img {
+.about-page .presentation img {
   width: 60px;
   margin-top: 20px;
   margin-left: 0;
   margin-right: 1%;
 }
 
-.visible-page .description {
+.about-page .description {
   padding-top: 0%;
 }
 
-.visible-page .description--text {
-  max-width: 60%;
-  font-size: 3rem;
-  margin-top: 2%;
-  margin-bottom: 4%;
+.about-page .description div {
+  max-width: 100%;
 }
 
-.visible-page .description--text a {
+.about-page .description--text {
+  font-size: 2.8rem;
+  line-height: 4.5rem;
+  margin-top: 2%;
+  margin-bottom: 4%;
+  text-align: justify;
+}
+
+.about-page .description--text a {
   color: darkred;
 }
 
-.visible-page .description img {
-  width: 20%;
+.about-page .description img {
+  width: 30%;
+  height: 30%;
+  max-width: 525px;
+  float: right;
+  margin-left: 10%;
+}
+
+footer {
+  margin-top: 5%;
+  background-color: #121212;
+  padding: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  text-align: center;
+}
+
+footer .icons-footer p {
+  display: inline-block;
+  font-size: 2.2rem;
+  color: #f5f5f5;
+  max-width: 40%;
+  margin-right: 40%;
+}
+
+footer .icons-footer img {
+  display: inline-block;
+  width: 60px;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  margin-right: 25px;
+}
+
+footer em {
+  font-size: 2.5rem;
+  font-style: normal;
+  color: #f5f5f5;
+  margin: auto;
+  margin-top: 5%;
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */
