@@ -53,11 +53,11 @@ header .menu {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  margin-right: 5%;
+  margin-right: 10%;
 }
 
 header .menu--text {
-  font-size: 1.85rem;
+  font-size: 2.2rem;
   font-weight: 600;
   color: whitesmoke;
   margin: 10px;
@@ -76,32 +76,35 @@ header .menu--text:hover {
   padding-top: 64px;
 }
 
-.visible-page .div-presentation {
-  padding-top: 7.5%;
-  padding-left: 10%;
-  padding-bottom: 7.5%;
+.visible-page .presentation {
   background-color: lightgrey;
+  display: inline-block;
+  padding: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
-.visible-page .div-presentation h1 {
+.visible-page .presentation h1 {
   font-size: 4.5rem;
 }
 
-.visible-page .div-presentation h2 {
-  font-size: 2.5rem;
-  margin-top: 10px;
+.visible-page .presentation h2 {
+  font-size: 2.6rem;
 }
 
-.visible-page .div-presentation img {
+.visible-page .presentation img {
   width: 50px;
   margin-top: 20px;
   margin-right: 1%;
 }
 
-.visible-page .div-presentation .profile-picture {
-  width: 22%;
-  position: absolute;
-  right: 15%;
-  top: 15%;
+.visible-page .presentation [alt="profile"] {
+  width: 25%;
+  min-width: 250px;
+  margin: 0;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 50%;
+  margin-top: -7%;
 }
 /*# sourceMappingURL=style.css.map */
