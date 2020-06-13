@@ -53,6 +53,8 @@ header {
     background-color: $dark-grey;
     text-align: right;
     opacity: 0.95;
+    // display: none;
+    
     .menu {
         // background-color: $dark-grey;
         list-style-type: none;
@@ -78,18 +80,13 @@ header {
     }
 }
 
-.about-page, .contact-page {
-    // width: 100%;
-    padding-top: 64px;
+.about-page, .contact-page, .works-page {
+    padding: 10%;
+    padding-top: 15vh;
+    padding-bottom: 5%;
 }
 
 .about-page {
-    // display: none;
-    .presentation, .description {
-        padding: 10%;
-        padding-top: 5%;
-        padding-bottom: 5%;
-    }
 
     // block presentation
     .presentation {
@@ -139,11 +136,16 @@ header {
     }
 }
 
+.works-page {
+    // page works cachée par defaut
+    display: none;
+
+}
+
 .contact-page {
+    // page contact cachée par defaut
+    display: none;
     text-align: center;
-    padding: 10%;
-    padding-top: 7.5%;
-    padding-bottom: 5%;
 
     h1 {
         font-size: 4.5rem;

@@ -81,13 +81,9 @@ header .menu--text:hover {
   transition: 0.3s;
 }
 
-.about-page, .contact-page {
-  padding-top: 64px;
-}
-
-.about-page .presentation, .about-page .description {
+.about-page, .contact-page, .works-page {
   padding: 10%;
-  padding-top: 5%;
+  padding-top: 15vh;
   padding-bottom: 5%;
 }
 
@@ -136,11 +132,13 @@ header .menu--text:hover {
   margin-left: 10%;
 }
 
+.works-page {
+  display: none;
+}
+
 .contact-page {
+  display: none;
   text-align: center;
-  padding: 10%;
-  padding-top: 7.5%;
-  padding-bottom: 5%;
 }
 
 .contact-page h1 {

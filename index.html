@@ -10,11 +10,36 @@
     <body>
         <header>
             <nav class="menu">
-                <a href="#about"><ul class="menu--text">About</ul></a>
-                <a href="#works"><ul class="menu--text">Works</ul></a>
-                <a href="#contact"><ul class="menu--text">Contact</ul></a>
+                <a href="#about" onclick="changeMenu('about')"><ul class="menu--text">About</ul></a>
+                <a href="#works" onclick="changeMenu('works')"><ul class="menu--text">Works</ul></a>
+                <a href="#contact" onclick="changeMenu('contact')"><ul class="menu--text">Contact</ul></a>
                 <ul class="menu--text">🌙</ul>
             </nav>
+            <script>
+                function changeMenu(menuSelected) {
+                    aboutPage = document.getElementById('about');
+                    worksPage = document.getElementById('works');
+                    contactPage = document.getElementById('contact');
+
+                    switch (menuSelected) {
+                        case ('about') :
+                            aboutPage.style.display = "block";
+                            worksPage.style.display = "none";
+                            contactPage.style.display = "none";
+                            break;
+                        case ('works') :
+                            aboutPage.style.display = "none";
+                            worksPage.style.display = "block";
+                            contactPage.style.display = "none";
+                            break;
+                        case ('contact') :
+                            aboutPage.style.display = "none";
+                            worksPage.style.display = "none";
+                            contactPage.style.display = "block";
+                            break;
+                    }
+                }
+            </script>
         </header>
 
         <!-- window "about" -->
@@ -24,7 +49,8 @@
                 <h2>I'm Thanh, nice to meet you !</h2>
                 <a href="https://github.com/NgmThanh"><img src="images/github.png" alt="github"></a>
                 <a href="https://www.linkedin.com/in/minh-thanh-nguyen-1875b6194/"><img src="images/linkedIn.png" alt="linkedIn"></a>
-                <a href="#"><img src="images/mail.png" alt="mail"></a>
+                <a href="mailto:nmthanh99@gmail.com?"><img src="images/mail.png" alt="mail"></a>
+                
                 
             </div>
 
@@ -46,6 +72,10 @@
             </article>
         </section>
 
+        <section class="works-page" id="works">
+            works
+        </section>
+        
         <!-- window "contact" -->
         <section class="contact-page" id="contact">
             <h1>Let's contact ! 👋</h1>
@@ -63,12 +93,11 @@
         </section>
 
         <footer>
-            
             <div class="field-footer">
                 <p>If you are looking to Quam ob rem id primum videamus, si placet, quatenus amor in amicitia progredi debeat.</p>
                 <a href="https://github.com/NgmThanh"><img src="images/github.png" alt="github"></a>
                 <a href="https://www.linkedin.com/in/minh-thanh-nguyen-1875b6194/"><img src="images/linkedIn.png" alt="linkedIn"></a>
-                <a href="#"><img src="images/mail.png" alt="mail"></a>
+                <a href="mailto:nmthanh99@gmail.com?"><img src="images/mail.png" alt="mail"></a>
             </div>
             <em>Made with ❤️ by Thanh Nguyen</em>
         </footer>
