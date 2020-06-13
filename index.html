@@ -49,13 +49,17 @@
         <!-- window "contact" -->
         <section class="contact-page" id="contact">
             <h1>Let's contact ! 👋</h1>
+            <form action="index.html" method="POST">
             <div class="contact__field">
-                <input class="contact__field--input" type="text" name="name" id="name" placeholder="Your Name">
-                <input class="contact__field--input" type="email" name="email" id="email" placeholder="Your Email">
-                <input class="contact__field--input" type="text" name="subject" id="subject" placeholder="Subject">
-                <textarea class="contact__field--textarea" placeholder="Message"></textarea>
+                <input class="contact__field--input" type="text" name="name" id="name" placeholder="Your Name" required>
+                <input class="contact__field--input" type="email" name="email" id="email" placeholder="Your Email" required>
+                <input class="contact__field--input" type="text" name="subject" id="subject" placeholder="Subject" required>
+                <textarea class="contact__field--textarea" placeholder="Message" required></textarea>
                 <input type="submit" value="Send Message">
+                <!-- javascript a rajouter -->
+                <p>Votre message a bien été envoyé ! 👍</p>
             </div>
+            </form>
         </section>
 
         <footer>

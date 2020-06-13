@@ -153,7 +153,7 @@ header {
         margin: auto;
         margin-top: 6.5%;
         padding: 3.5%;
-        width: 480px;
+        width: 450px;
         background-color: $light-grey;
 
         &--input, &--textarea {
@@ -163,7 +163,7 @@ header {
             border: 1px solid $color-presentation;
             
             margin-bottom: 4%;
-            width: 450px;
+            width: 425px;
         }
         &--textarea {
             height: 200px;
@@ -182,6 +182,12 @@ header {
                 color: $light-white;
                 transition: 0.5s;
             }
+        }
+        p {
+            font-size: 2.0rem;
+            color: green;
+            display: block;
+            margin-top: 5%;
         }
     }
 }
