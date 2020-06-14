@@ -21,43 +21,9 @@
   src: url("../docs/font/KoHo/KoHo-Italic.ttf") format("truetype");
 }
 
-@-webkit-keyframes apparition {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+@-webkit-keyframes apparition {}
 
-@keyframes apparition {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes disappear {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes disappear {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-* {
+@keyframes apparition {}* {
   font-family: "KoHo", "Arial";
   padding: 0;
   margin: 0;
@@ -86,6 +52,14 @@ header {
   background-color: #121212;
   text-align: right;
   opacity: 0.95;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
 }
 
 header .menu {
@@ -116,19 +90,9 @@ header .menu--text:hover {
   transition: 0.3s;
 }
 
-.sticky-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  -webkit-animation: apparition 1s linear forwards;
-          animation: apparition 1s linear forwards;
-}
-
 .about-page, .contact-page, .works-page {
   padding: 10%;
-  padding-top: 5%;
+  padding-top: 7.5%;
   padding-bottom: 5%;
 }
 
@@ -179,6 +143,11 @@ header .menu--text:hover {
 
 .works-page {
   display: none;
+  text-align: center;
+}
+
+.works-page h1 {
+  font-size: 4.5rem;
 }
 
 .contact-page {
@@ -196,6 +165,7 @@ header .menu--text:hover {
   padding: 3.5%;
   width: 450px;
   background-color: #DFDFDF;
+  border-radius: 5px;
 }
 
 .contact-page .contact__field--input, .contact-page .contact__field--textarea {

@@ -8,52 +8,15 @@
     </head>
 
     <body>
-        <header id="myHeader">
+        <header>
             <nav class="menu">
-                <a href="#about" onclick="changeMenu('about')"><ul class="menu--text">About</ul></a>
-                <a href="#works" onclick="changeMenu('works')"><ul class="menu--text">Works</ul></a>
-                <a href="#contact" onclick="changeMenu('contact')"><ul class="menu--text">Contact</ul></a>
+                <a href="#about"><ul class="menu--text" id="about-menu">About</ul></a>
+                <a href="#works"><ul class="menu--text" id="works-menu">Works</ul></a>
+                <a href="#contact"><ul class="menu--text" id="contact-menu">Contact</ul></a>
                 <ul class="menu--text">🌙</ul>
-                <script>
-                    window.onscroll = function() {stickyHeader()};
-                    
-                    var header = document.getElementById("myHeader");
-                    var sticky = header.offsetTop;
-                    
-                    function stickyHeader() {
-                        if (window.pageYOffset > 100) {
-                            header.classList.add("sticky-header");
-                        } else {
-                            header.classList.remove("sticky-header");
-                        }
-                    }
-                </script>
             </nav>
-            <script>
-                function changeMenu(menuSelected) {
-                    aboutPage = document.getElementById('about');
-                    worksPage = document.getElementById('works');
-                    contactPage = document.getElementById('contact');
+            <script type="text/javascript" src="js/menu.js" defer></script>
 
-                    switch (menuSelected) {
-                        case ('about') :
-                            aboutPage.style.display = "block";
-                            worksPage.style.display = "none";
-                            contactPage.style.visibility = "none";
-                            break;
-                        case ('works') :
-                            aboutPage.style.display = "none";
-                            worksPage.style.display = "block";
-                            contactPage.style.display = "none";
-                            break;
-                        case ('contact') :
-                            aboutPage.style.display = "none";
-                            worksPage.style.display = "none";
-                            contactPage.style.display = "block";
-                            break;
-                    }
-                }
-            </script>
         </header>
 
         <!-- window "about" -->
@@ -64,8 +27,6 @@
                 <a href="https://github.com/NgmThanh"><img src="images/github.png" alt="github"></a>
                 <a href="https://www.linkedin.com/in/minh-thanh-nguyen-1875b6194/"><img src="images/linkedIn.png" alt="linkedIn"></a>
                 <a href="mailto:nmthanh99@gmail.com?"><img src="images/mail.png" alt="mail"></a>
-                
-                
             </div>
 
             <article class="description">
@@ -87,7 +48,7 @@
         </section>
 
         <section class="works-page" id="works">
-            works
+            <h1>My works 💻</h1>
         </section>
         
         <!-- window "contact" -->
