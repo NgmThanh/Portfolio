@@ -21,6 +21,42 @@
   src: url("../docs/font/KoHo/KoHo-Italic.ttf") format("truetype");
 }
 
+@-webkit-keyframes apparition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes apparition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 * {
   font-family: "KoHo", "Arial";
   padding: 0;
@@ -47,7 +83,6 @@ body {
 
 header {
   width: 100%;
-  position: fixed;
   background-color: #121212;
   text-align: right;
   opacity: 0.95;
@@ -81,9 +116,19 @@ header .menu--text:hover {
   transition: 0.3s;
 }
 
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  -webkit-animation: apparition 1s linear forwards;
+          animation: apparition 1s linear forwards;
+}
+
 .about-page, .contact-page, .works-page {
   padding: 10%;
-  padding-top: 15vh;
+  padding-top: 5%;
   padding-bottom: 5%;
 }
 
@@ -147,7 +192,7 @@ header .menu--text:hover {
 
 .contact-page .contact__field {
   margin: auto;
-  margin-top: 6.5%;
+  margin-top: 5%;
   padding: 3.5%;
   width: 450px;
   background-color: #DFDFDF;

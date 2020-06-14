@@ -8,12 +8,26 @@
     </head>
 
     <body>
-        <header>
+        <header id="myHeader">
             <nav class="menu">
                 <a href="#about" onclick="changeMenu('about')"><ul class="menu--text">About</ul></a>
                 <a href="#works" onclick="changeMenu('works')"><ul class="menu--text">Works</ul></a>
                 <a href="#contact" onclick="changeMenu('contact')"><ul class="menu--text">Contact</ul></a>
                 <ul class="menu--text">🌙</ul>
+                <script>
+                    window.onscroll = function() {stickyHeader()};
+                    
+                    var header = document.getElementById("myHeader");
+                    var sticky = header.offsetTop;
+                    
+                    function stickyHeader() {
+                        if (window.pageYOffset > 100) {
+                            header.classList.add("sticky-header");
+                        } else {
+                            header.classList.remove("sticky-header");
+                        }
+                    }
+                </script>
             </nav>
             <script>
                 function changeMenu(menuSelected) {
@@ -25,7 +39,7 @@
                         case ('about') :
                             aboutPage.style.display = "block";
                             worksPage.style.display = "none";
-                            contactPage.style.display = "none";
+                            contactPage.style.visibility = "none";
                             break;
                         case ('works') :
                             aboutPage.style.display = "none";

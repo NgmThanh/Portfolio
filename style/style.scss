@@ -28,6 +28,28 @@ $light-grey: #DFDFDF;
 $color-marked-text: darkred;
 $color-presentation: #909090;
 
+// ===== ANIMATIONS =====
+
+@keyframes apparition {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+// ===== MAIN CODE =====
+
 * {
     font-family: "KoHo", "Arial";
     padding: 0;
@@ -49,14 +71,11 @@ body {
 
 header {
     width: 100%;
-    position: fixed;
     background-color: $dark-grey;
     text-align: right;
     opacity: 0.95;
-    // display: none;
     
     .menu {
-        // background-color: $dark-grey;
         list-style-type: none;
         display: inline-flex;
         margin-right: 12%;
@@ -80,9 +99,20 @@ header {
     }
 }
 
+.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+
+    opacity: 0;
+
+    animation: apparition 1s linear forwards;
+}
+
 .about-page, .contact-page, .works-page {
     padding: 10%;
-    padding-top: 15vh;
+    padding-top: 5%;
     padding-bottom: 5%;
 }
 
@@ -153,7 +183,7 @@ header {
     
     .contact__field {
         margin: auto;
-        margin-top: 6.5%;
+        margin-top: 5%;
         padding: 3.5%;
         width: 450px;
         background-color: $light-grey;
