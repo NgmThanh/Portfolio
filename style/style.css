@@ -68,17 +68,16 @@ header .menu {
   display: -ms-inline-flexbox;
   display: inline-flex;
   margin-right: 12%;
-  padding: 8px;
-  padding-bottom: 6px;
+  padding: 5px;
 }
 
 header .menu--text {
   text-decoration: none;
-  font-size: 2.2rem;
+  font-size: 1.9rem;
   font-weight: 600;
   color: whitesmoke;
   margin: 10px;
-  padding: 15px;
+  padding: 12px;
   border-radius: 3px;
 }
 
@@ -97,16 +96,16 @@ header .menu--text:hover {
 }
 
 .about-page .presentation h1 {
-  font-size: 7.6rem;
+  font-size: 6.5rem;
 }
 
 .about-page .presentation h2 {
-  font-size: 5.8rem;
+  font-size: 4.5rem;
   font-weight: 600;
 }
 
 .about-page .presentation img {
-  width: 60px;
+  width: 50px;
   margin-top: 20px;
   margin-left: 0;
   margin-right: 1%;
@@ -114,7 +113,7 @@ header .menu--text:hover {
 }
 
 .about-page .description {
-  padding-top: 0%;
+  padding-top: 5%;
 }
 
 .about-page .description div {
@@ -122,8 +121,8 @@ header .menu--text:hover {
 }
 
 .about-page .description--text {
-  font-size: 2.8rem;
-  line-height: 4.5rem;
+  font-size: 2.3rem;
+  line-height: 4.0rem;
   margin-top: 2%;
   margin-bottom: 4%;
   text-align: justify;
@@ -139,6 +138,7 @@ header .menu--text:hover {
   max-width: 525px;
   float: right;
   margin-left: 10%;
+  margin-bottom: 5%;
 }
 
 .works-page {
@@ -147,7 +147,7 @@ header .menu--text:hover {
 }
 
 .works-page h1 {
-  font-size: 4.5rem;
+  font-size: 4.0rem;
 }
 
 .contact-page {
@@ -156,25 +156,25 @@ header .menu--text:hover {
 }
 
 .contact-page h1 {
-  font-size: 4.5rem;
+  font-size: 4.0rem;
 }
 
 .contact-page .contact__field {
   margin: auto;
   margin-top: 5%;
   padding: 3.5%;
-  width: 450px;
+  width: 400px;
   background-color: #DFDFDF;
   border-radius: 5px;
 }
 
 .contact-page .contact__field--input, .contact-page .contact__field--textarea {
-  font-size: 2.20rem;
-  padding: 12.5px;
+  font-size: 2.0rem;
+  padding: 10px;
   border-radius: 5px;
   border: 1px solid #909090;
   margin-bottom: 4%;
-  width: 425px;
+  width: 375px;
 }
 
 .contact-page .contact__field--textarea {
@@ -200,7 +200,7 @@ header .menu--text:hover {
 }
 
 .contact-page .contact__field p {
-  font-size: 2.0rem;
+  font-size: 1.5rem;
   color: green;
   display: block;
   margin-top: 5%;
@@ -211,29 +211,29 @@ footer {
   background-color: #121212;
   padding: 10%;
   padding-top: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 2.5%;
   text-align: center;
 }
 
 footer .field-footer p {
   display: inline-block;
-  font-size: 2.2rem;
+  font-size: 2.0rem;
   text-align: left;
   color: #f5f5f5;
   max-width: 40%;
-  margin-right: 35%;
+  margin-right: 37.5%;
 }
 
 footer .field-footer img {
   display: inline-block;
-  width: 60px;
+  width: 50px;
   -webkit-filter: invert(100%);
           filter: invert(100%);
   margin-right: 2vh;
 }
 
 footer em {
-  font-size: 2.5rem;
+  font-size: 2.0rem;
   font-style: normal;
   color: #f5f5f5;
   margin: auto;
