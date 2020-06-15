@@ -382,6 +382,13 @@ header .menu--text:hover {
   border-radius: 3px;
 }
 
+.skills-page .skills-box .skill__progress-bar h3 {
+  position: absolute;
+  bottom: 170%;
+  left: 90%;
+  font-size: 1.8rem;
+}
+
 .skills-page .skills-box .skill__progress-bar .skill-bar {
   position: absolute;
   width: 0;

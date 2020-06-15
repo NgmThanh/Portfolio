@@ -1,15 +1,19 @@
 // ============ SCRIPT MENU ============ //
 
-var skills = ['c', 'html', 'java', 'php', 'js', 'sql', 'python', 'ocaml'];
-var score =  [80, 80, 70, 80, 50, 70, 60, 50];
+// html collection of class "skill-bar"
+var classSkills = document.getElementsByClassName('skill-bar');
+var skills = new Array();
 
-var i = 0;
+// array id of skills 
+for(var i = 0; i < classSkills.length; i++){
+    skills.push(classSkills[i].id);
+}
 
-// set percentage of skill in skill bar
-score.forEach(percent => {
-    var skill = document.getElementById(skills[i]);
-    skill.style.width = percent+'%';
-    i++;
-    // console.log(skill,  i);
+// console.log(skills);
+
+// set width in skill bars
+skills.forEach(language => {
+    var skill = document.getElementById(language);
+    skill.style.width = skill.childNodes[0].textContent;
+    // console.log(skill.style.width);
 });
-
