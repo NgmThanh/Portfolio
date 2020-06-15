@@ -186,20 +186,18 @@ header {
         list-style-type: none;
         display: inline-flex;
         margin-right: 10%;
-        padding: 2px;
-
+        padding: 17px;
+        // background-color: $pink-gradient;
         &--text {
             font-family: 'Poppins', 'Titillium', 'Raleway';
             text-decoration: none;
             font-size: 1.8rem;
             font-weight: medium;
             color: whitesmoke;
-            margin: 10px;
-            padding: 10px;
-            border-radius: 3px;
+            margin-right: 20px;
+            margin-left: 20px;
             &:hover {
-                background-color: $dark-grey;
-                // color: $dark-grey;
+                color: $pink-pure;
                 cursor: pointer;
                 transition: 0.3s;
             }
@@ -475,11 +473,11 @@ footer {
 
         &__contact, &__informations {
             text-align: left;
-            width: 45%;
+            width: 46%;
             min-width: 370px;
             font-size: 1.8rem;
             color: $light-white;
-            padding-left: 5%;
+            padding-left: 4%;
             // background-color: $color-placeholder;
         }
 
@@ -487,7 +485,7 @@ footer {
 
             img {
                 filter: invert(100%);
-                width: 45px;
+                width: 40px;
                 margin-top: 50px;
                 margin-right: 20px;
                 margin-bottom: 25px;
