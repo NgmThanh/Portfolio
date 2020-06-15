@@ -207,7 +207,7 @@ header {
 
 #progress{
 	background: linear-gradient(135deg, $orange-pure,#E52F6F);
-	height: 10px;
+	height: 8px;
 	width: 0;
 	position: fixed;
 	top: 61px;
@@ -226,7 +226,7 @@ header {
     // block presentation
     .presentation {
         h1, h2 {
-            font-family: 'Poppins', 'Titillium';
+            font-family: 'Teko', 'Poppins', 'Titillium';
             background: linear-gradient($orange-pure,#E52F6F);
             -webkit-background-clip: text;
             background-clip: text;
@@ -283,8 +283,6 @@ header {
 }
 
 .skills-page, .works-page, .contact-page {
-    // not displayed in the main page
-    // display: none;
     text-align: center;
     position: relative;
 
@@ -298,35 +296,26 @@ header {
         display: block;
         margin-top: 15px;
     }
-
-    // &::before {
-    //     content: "";
-    //     width: 100%;
-    //     height: 1px;
-    //     background: linear-gradient(135deg, $orange-pure,#E52F6F);
-    //     z-index: 10;
-    //     position: absolute;
-    //     left: 0;
-    //     margin-top: -5%;
-    // }
 }
 
 .skills-page {
 
     .skills-box {
         margin-top: 2.5%;
-        padding-left: 20%;
-        padding-right: 20%;
+        padding-left: 10%;
+        // padding-right: 1%;
         display: flex;
         flex-wrap: wrap;
+        text-align: center;
 
         .skill {
-            width: 376px;
+            width: 35%;
+            min-width: 300px;
             // background-color: $grey-input;
-            padding: 20px;
-            margin: 20px;
-            margin-bottom: 0px;
-            margin-top: 5px;
+            padding: 15px;
+            margin-top: 10px;
+            margin-right: 2%;
+            margin-left: 4%;
             text-align: left;
 
             h2 {
@@ -511,7 +500,7 @@ footer {
     }
 
     em {
-        font-size: 2.0rem;
+        font-size: 1.6rem;
         font-style: normal;;
         color: $light-white;
         margin: auto;
