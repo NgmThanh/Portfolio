@@ -2,65 +2,54 @@
     font-family: 'KoHo';
     src: url('../docs/font/KoHo/KoHo-Regular.ttf') format('truetype'),
 }
-
 @font-face {
     font-family: 'KoHo';
     font-weight: bold;
     src: url('../docs/font/KoHo/KoHo-Bold.ttf') format('truetype'),
 }
-
 @font-face {
     font-family: 'KoHo';
     font-weight: 600;
     src: url('../docs/font/KoHo/KoHo-SemiBold.ttf') format('truetype'),
 }
-
 @font-face {
     font-family: 'KoHo';
     font-style: italic;
     src: url('../docs/font/KoHo/KoHo-Italic.ttf') format('truetype'),
 }
-
 @font-face {
     font-family: 'Raleway';
     src: url('../docs/font/Raleway/Raleway-Regular.ttf') format('truetype'),
 }
-
 @font-face {
     font-family: 'Raleway';
     font-style: 600;
     src: url('../docs/font/Raleway/Raleway-SemiBold.ttf') format('truetype'),
 }
-
 @font-face {
     font-family: 'Teko';
     src: url('../docs/font/Teko/Teko-SemiBold.ttf') format('truetype'),
 }
-
 @font-face {
     font-family: 'Cairo';
     font-weight: normal;
     src: url('../docs/font/Cairo/Cairo-Regular.ttf') format('truetype'),
 }
-
 @font-face {
     font-family: 'Cairo';
     font-weight: 600;
     src: url('../docs/font/Cairo/Cairo-SemiBold.ttf') format('truetype'),
 }
-
 @font-face {
     font-family: 'Saira';
     font-weight: normal;
     src: url('../docs/font/Saira/SairaCondensed-Regular.ttf') format('truetype'),
 }
-
 @font-face {
     font-family: 'PTSans';
     font-weight: normal;
     src: url('../docs/font/PTSans/PTSans-Regular.ttf') format('truetype'),
 }
-
 @font-face {
     font-family: 'Titillium';
     font-weight: normal;
@@ -344,7 +333,7 @@ header {
 
             h2 {
                 font-weight: normal;
-                font-size: 2.0rem;
+                font-size: 2.25rem;
             }
 
             &__progress-bar {
@@ -355,11 +344,10 @@ header {
                 position: relative;
                 border-radius: 3px;
 
-                // progress bar inside the main bar
-                &::before {
-                    content: "";
+                .skill-bar {
                     position: absolute;
-                    width: 80%;
+                    // width defined in skill.js
+                    width: 0;
                     height: 20px;
                     background: linear-gradient(135deg, $orange-pure,#E52F6F);
                     border-radius: 3px;

@@ -370,7 +370,7 @@ header .menu--text:hover {
 
 .skills-page .skills-box .skill h2 {
   font-weight: normal;
-  font-size: 2.0rem;
+  font-size: 2.25rem;
 }
 
 .skills-page .skills-box .skill__progress-bar {
@@ -382,10 +382,9 @@ header .menu--text:hover {
   border-radius: 3px;
 }
 
-.skills-page .skills-box .skill__progress-bar::before {
-  content: "";
+.skills-page .skills-box .skill__progress-bar .skill-bar {
   position: absolute;
-  width: 80%;
+  width: 0;
   height: 20px;
   background: linear-gradient(135deg, #FF5711, #E52F6F);
   border-radius: 3px;
