@@ -158,8 +158,8 @@ header {
             padding: 10px;
             border-radius: 3px;
             &:hover {
-                background-color: white;
-                color: $dark-grey;
+                background-color: $dark-grey;
+                // color: $dark-grey;
                 cursor: pointer;
                 transition: 0.3s;
             }
@@ -179,10 +179,17 @@ header {
     .presentation {
         h1 {
             font-size: 6.0rem;
+            background: linear-gradient($orange-pure,#E52F6F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
+
         h2 {
             font-size: 4.2rem;
             font-weight: 600;
+            background: linear-gradient($orange-pure,#E52F6F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         // contact icons
         img {
@@ -209,7 +216,7 @@ header {
             margin-bottom: 4%;
             text-align: justify;
             a {
-                color: $color-marked-text;
+                color: $orange-pure;
             }
         }
 
@@ -232,13 +239,51 @@ header {
     h1 {
         font-size: 3.8rem;
     }
+    h2 {
+        font-size: 1.75rem;
+        font-weight: normal;
+        display: block;
+        margin-top: 15px;
+    }
 
     .skills-box {
-        margin-top: 5%;
-        background-color: $grey-border;
+        margin-top: 2.5%;
         padding-left: 20%;
         padding-right: 20%;
-        height: 500px;        
+        display: flex;
+        flex-wrap: wrap;
+
+        .skill {
+            width: 376px;
+            // background-color: $grey-input;
+            padding: 20px;
+            margin: 20px;
+            margin-bottom: 0px;
+            margin-top: 5px;
+            text-align: left;
+
+            h2 {
+                font-weight: normal;
+                font-size: 2.0rem;
+            }
+
+            &__progress-bar {
+                width: 100%;
+                height: 20px;
+                background-color: $grey-border;
+                margin-top: 10px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 80%;
+                    height: 20px;
+                    background: linear-gradient(135deg, $orange-pure,#E52F6F);
+                    z-index: 2;
+                }
+            }
+        }
     }
 }
 

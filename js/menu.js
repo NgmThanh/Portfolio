@@ -15,6 +15,11 @@ var contactPage = document.getElementById('contact');
 // events 
 about.addEventListener('click', () => {
 
+    about.style.color = "#FF5711";
+    skills.style.color = "whitesmoke";
+    works.style.color = "whitesmoke";
+    contact.style.color = "whitesmoke";
+
     aboutPage.style.display = "block";
     skillsPage.style.display = "none";
     worksPage.style.display = "none";
@@ -23,6 +28,11 @@ about.addEventListener('click', () => {
 });
 
 skills.addEventListener('click', () => {
+
+    about.style.color = "whitesmoke";
+    skills.style.color = "#FF5711";
+    works.style.color = "whitesmoke";
+    contact.style.color = "whitesmoke";
 
     aboutPage.style.display = "none";
     skillsPage.style.display = "block";
@@ -33,6 +43,11 @@ skills.addEventListener('click', () => {
 
 works.addEventListener('click', () => {
 
+    about.style.color = "whitesmoke";
+    skills.style.color = "whitesmoke";
+    works.style.color = "#FF5711";
+    contact.style.color = "whitesmoke";
+
     aboutPage.style.display = "none";
     skillsPage.style.display = "none";
     worksPage.style.display = "block";
@@ -40,6 +55,11 @@ works.addEventListener('click', () => {
 });
 
 contact.addEventListener('click', () => {
+
+    about.style.color = "whitesmoke";
+    skills.style.color = "whitesmoke";
+    works.style.color = "whitesmoke";
+    contact.style.color = "#FF5711";
 
     aboutPage.style.display = "none";
     skillsPage.style.display = "none";

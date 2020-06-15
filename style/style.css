@@ -195,8 +195,7 @@ header .menu--text {
 }
 
 header .menu--text:hover {
-  background-color: white;
-  color: #100E17;
+  background-color: #100E17;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -210,11 +209,19 @@ header .menu--text:hover {
 
 .about-page .presentation h1 {
   font-size: 6.0rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF5711), to(#E52F6F));
+  background: linear-gradient(#FF5711, #E52F6F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-page .presentation h2 {
   font-size: 4.2rem;
   font-weight: 600;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF5711), to(#E52F6F));
+  background: linear-gradient(#FF5711, #E52F6F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-page .presentation img {
@@ -242,7 +249,7 @@ header .menu--text:hover {
 }
 
 .about-page .description--text a {
-  color: #F24848;
+  color: #FF5711;
 }
 
 .about-page .description img {
@@ -264,12 +271,53 @@ header .menu--text:hover {
   font-size: 3.8rem;
 }
 
+.skills-page h2 {
+  font-size: 1.75rem;
+  font-weight: normal;
+  display: block;
+  margin-top: 15px;
+}
+
 .skills-page .skills-box {
-  margin-top: 5%;
-  background-color: #312D3C;
+  margin-top: 2.5%;
   padding-left: 20%;
   padding-right: 20%;
-  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.skills-page .skills-box .skill {
+  width: 376px;
+  padding: 20px;
+  margin: 20px;
+  margin-bottom: 0px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.skills-page .skills-box .skill h2 {
+  font-weight: normal;
+  font-size: 2.0rem;
+}
+
+.skills-page .skills-box .skill__progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #312D3C;
+  margin-top: 10px;
+  position: relative;
+}
+
+.skills-page .skills-box .skill__progress-bar::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 20px;
+  background: linear-gradient(135deg, #FF5711, #E52F6F);
+  z-index: 2;
 }
 
 .works-page {
