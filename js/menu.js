@@ -20,10 +20,10 @@ about.addEventListener('click', () => {
     works.style.color = "whitesmoke";
     contact.style.color = "whitesmoke";
 
-    aboutPage.style.display = "block";
-    skillsPage.style.display = "none";
-    worksPage.style.display = "none";
-    contactPage.style.display = "none";
+    // aboutPage.style.display = "block";
+    // skillsPage.style.display = "none";
+    // worksPage.style.display = "none";
+    // contactPage.style.display = "none";
 
 });
 
@@ -34,10 +34,10 @@ skills.addEventListener('click', () => {
     works.style.color = "whitesmoke";
     contact.style.color = "whitesmoke";
 
-    aboutPage.style.display = "none";
-    skillsPage.style.display = "block";
-    worksPage.style.display = "none";
-    contactPage.style.display = "none";
+    // aboutPage.style.display = "none";
+    // skillsPage.style.display = "block";
+    // worksPage.style.display = "none";
+    // contactPage.style.display = "none";
 
 });
 
@@ -48,10 +48,10 @@ works.addEventListener('click', () => {
     works.style.color = "#FF5711";
     contact.style.color = "whitesmoke";
 
-    aboutPage.style.display = "none";
-    skillsPage.style.display = "none";
-    worksPage.style.display = "block";
-    contactPage.style.display = "none";
+    // aboutPage.style.display = "none";
+    // skillsPage.style.display = "none";
+    // worksPage.style.display = "block";
+    // contactPage.style.display = "none";
 });
 
 contact.addEventListener('click', () => {
@@ -61,9 +61,9 @@ contact.addEventListener('click', () => {
     works.style.color = "whitesmoke";
     contact.style.color = "#FF5711";
 
-    aboutPage.style.display = "none";
-    skillsPage.style.display = "none";
-    worksPage.style.display = "none";
-    contactPage.style.display = "block";
+    // aboutPage.style.display = "none";
+    // skillsPage.style.display = "none";
+    // worksPage.style.display = "none";
+    // contactPage.style.display = "block";
 
 });

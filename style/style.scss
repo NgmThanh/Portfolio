@@ -130,7 +130,7 @@ $pink-gradient: #E6336A;
     to {
         font-size: 2.3rem; padding: 18px; width: 250px;
     }
-  }
+}
 
 // ===== MAIN CODE =====
 
@@ -285,7 +285,8 @@ header {
 }
 
 .skills-page, .works-page, .contact-page {
-    display: none;
+    // not displayed in the main page
+    // display: none;
     text-align: center;
 
     h1 {
@@ -444,24 +445,42 @@ footer {
     background-color: $dark-grey;
     padding: 10%;
     padding-top: 5%;
-    padding-bottom: 2.5%;
+    padding-bottom: 5%;
     text-align: center;
 
-    .field-footer {
+    h1 {
+        font-size: 3rem;
+    }
 
-        p {
-            display: inline-block;
-            font-size: 2.0rem;
+    .field-footer {
+        display: flex;
+        flex-wrap: wrap;
+
+        &__contact, &__informations {
+            width: 49%;
+            min-width: 370px;
+            font-size: 1.8rem;
             text-align: left;
             color: $light-white;
-            max-width: 40%;
-            margin-right: 37.5%;
+            padding-left: 1%;
+            // background-color: $color-placeholder;
         }
-        img {
-            display: inline-block;
-            width: 50px;
-            margin-right: 2vh;
+
+        &__contact {
+
+            img {
+                width: 45px;
+                margin-top: 50px;
+                margin-right: 20px;
+                margin-bottom: 25px;
+            }
         }
+
+        &__informations {
+
+        }
+
+
     }
 
     em {

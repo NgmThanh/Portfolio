@@ -316,7 +316,6 @@ header .menu--text:hover {
 }
 
 .skills-page, .works-page, .contact-page {
-  display: none;
   text-align: center;
 }
 
@@ -489,23 +488,36 @@ footer {
   background-color: #100E17;
   padding: 10%;
   padding-top: 5%;
-  padding-bottom: 2.5%;
+  padding-bottom: 5%;
   text-align: center;
 }
 
-footer .field-footer p {
-  display: inline-block;
-  font-size: 2.0rem;
-  text-align: left;
-  color: #f5f5f5;
-  max-width: 40%;
-  margin-right: 37.5%;
+footer h1 {
+  font-size: 3rem;
 }
 
-footer .field-footer img {
-  display: inline-block;
-  width: 50px;
-  margin-right: 2vh;
+footer .field-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+footer .field-footer__contact, footer .field-footer__informations {
+  width: 49%;
+  min-width: 370px;
+  font-size: 1.8rem;
+  text-align: left;
+  color: #f5f5f5;
+  padding-left: 1%;
+}
+
+footer .field-footer__contact img {
+  width: 45px;
+  margin-top: 50px;
+  margin-right: 20px;
+  margin-bottom: 25px;
 }
 
 footer em {
