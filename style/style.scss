@@ -360,30 +360,56 @@ header {
         padding-right: 20%;
         display: flex;
         flex-wrap: wrap;
+
         &__box {
-            // width: 30%;
-            width: 265px;
-            height: 265px;
-            background-color: $dark-grey;
-            border-radius: 5px;
-            display: block;
+            position: relative;
             margin: 2%;
-            &:hover {
-                animation: jumpHover 0.3s forwards;
-                cursor: pointer;
+                    
+            &--button {
+                // width: 30%;
+                width: 265px;
+                height: 265px;
+                background-color: $dark-grey;
+                border-radius: 5px;
+                display: block;
+                border: none;
+
+                &:focus + .timeline__box--window {
+                    opacity: 1;
+                    pointer-events: all;
+                    transform: translateY(0px);
+                }
+                
+                &:hover {
+                    animation: jumpHover 0.3s forwards;
+                    cursor: pointer;
+                }
+
+                img {
+                    filter: invert(100%);
+                    position: relative;
+                    width: 85px;
+                    margin: auto;
+                    top: 32.5%;
+                }
             }
 
-            img {
-                filter: invert(100%);
-                position: relative;
-                width: 85px;
-                margin: auto;
-                top: 32.5%;
+            &--window {
+                width: 300%;
+                height: 200%;
+                position: absolute;
+                left: -45%;
+                top: -25%;
+                background-color: $grey-input;
+                opacity: 0;
+                pointer-events: none;
+                transform: translateY(-10px);
+                transition: all 0.4s ease;
+                z-index: 10;
+                border-radius: 5px;
             }
         }
-        
     }
-
 }
 
 .contact-page {

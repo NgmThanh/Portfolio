@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style/style.css" />
-        
         <link rel="icon" type="image/png" href="images/favicon.png" />
         <title>Nguyen Thanh</title>
     </head>
@@ -90,20 +89,70 @@
             <h1>My works</h1>
             <h2>All my projects, sorted by decreasing date</h2>
             <div class="timeline">
-                <div class="timeline__box"><img src="images/python.png" alt="python"></div>
-                <div class="timeline__box"><img src="images/java.png" alt="java"></div>
-                <div class="timeline__box"><img src="images/php.png" alt="php"></div>
-                <div class="timeline__box"><img src="images/html.png" alt="html"></div>
-                <div class="timeline__box"><img src="images/css.png" alt="css"></div>
-                <div class="timeline__box"><img src="images/sql.png" alt="sql"></div>
+                <div class="timeline__box">
+                    <button class="timeline__box--button">
+                        <img src="images/python.png" alt="python">
+                    </button>
+                    <div class="timeline__box--window">
+                        <h1>Bureau d’études L3 : Application mobile et
+                            sites web pour la Gendarmerie Nationale</h1>
+                        <h2>“Réseau prévention 31”</h2>
+                        <p>Développement d'une application
+                            (côté utilisateur) et
+                            plusieurs interfaces web (côté administration)
+                            permettant de faciliter les communications entre les
+                            particuliers et les forces de l’ordre.</p>
+                    </div>
+                </div>
+                <div class="timeline__box">
+                    <button class="timeline__box--button">
+                        <img src="images/java.png" alt="java">
+                    </button>
+                    <div class="timeline__box--window">
+                        okok je test.
+                    </div>
+                </div>
+                <div class="timeline__box">
+                    <button class="timeline__box--button">
+                        <img src="images/php.png" alt="php">
+                    </button>
+                    <div class="timeline__box--window">
+                        okok je test.
+                    </div>
+                </div>
+                <div class="timeline__box">
+                    <button class="timeline__box--button">
+                        <img src="images/html.png" alt="html">
+                    </button>
+                    <div class="timeline__box--window">
+                        okok je test.
+                    </div>
+                </div>
+                <div class="timeline__box">
+                    <button class="timeline__box--button">
+                        <img src="images/css.png" alt="css">
+                    </button>
+                    <div class="timeline__box--window">
+                        okok je test.
+                    </div>
+                </div>
+                <div class="timeline__box">
+                    <button class="timeline__box--button">
+                        <img src="images/sql.png" a  lt="sql">
+                    </button>
+                    <div class="timeline__box--window">
+                        okok je test.
+                    </div>
+                </div>
             </div>
+            <script type="text/javascript" src="js/works.js"></script>
         </section>
         
         <!-- section "contact" -->
         <section class="contact-page" id="contact">
             <h1>Contact</h1>
             <h2>Feel free to contact me at your convenience</h2>
-            <form action="index.html" method="POST">
+            <form action="mailto:nmthanh99@gmail.com" method="POST" enctype="text/plain">
             <div class="contact__field">
                 <input class="contact__field--input" type="text" name="name" id="name" placeholder="Your Name" required>
                 <input class="contact__field--input" type="email" name="email" id="email" placeholder="Your Email" required>
@@ -111,7 +160,7 @@
                 <textarea class="contact__field--textarea" placeholder="Message" required></textarea>
                 <input type="submit" value="Send Message">
                 <!-- javascript a rajouter -->
-                <p>Votre message a bien été envoyé ! 👍</p>
+                <!-- <p>Votre message a bien été envoyé ! 👍</p> -->
             </div>
             </form>
         </section>

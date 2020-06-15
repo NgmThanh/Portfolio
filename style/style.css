@@ -410,27 +410,56 @@ header .menu--text:hover {
 }
 
 .works-page .timeline__box {
+  position: relative;
+  margin: 2%;
+}
+
+.works-page .timeline__box--button {
   width: 265px;
   height: 265px;
   background-color: #100E17;
   border-radius: 5px;
   display: block;
-  margin: 2%;
+  border: none;
 }
 
-.works-page .timeline__box:hover {
+.works-page .timeline__box--button:focus + .timeline__box--window {
+  opacity: 1;
+  pointer-events: all;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+.works-page .timeline__box--button:hover {
   -webkit-animation: jumpHover 0.3s forwards;
           animation: jumpHover 0.3s forwards;
   cursor: pointer;
 }
 
-.works-page .timeline__box img {
+.works-page .timeline__box--button img {
   -webkit-filter: invert(100%);
           filter: invert(100%);
   position: relative;
   width: 85px;
   margin: auto;
   top: 32.5%;
+}
+
+.works-page .timeline__box--window {
+  width: 300%;
+  height: 200%;
+  position: absolute;
+  left: -45%;
+  top: -25%;
+  background-color: #201C29;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  z-index: 10;
+  border-radius: 5px;
 }
 
 .contact-page .contact__field {
