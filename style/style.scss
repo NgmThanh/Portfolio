@@ -244,10 +244,11 @@ header {
         }
         // contact icons
         img {
+            filter: invert(100%);
             width: 45px;
             margin-top: 20px;
             margin-left: 0;
-            margin-right: 1%;
+            margin-right: 25px;
             border-radius: 3px;
         }           
     }
@@ -469,6 +470,7 @@ footer {
         &__contact {
 
             img {
+                filter: invert(100%);
                 width: 45px;
                 margin-top: 50px;
                 margin-right: 20px;
@@ -478,6 +480,16 @@ footer {
 
         &__informations {
 
+            img {
+                filter: invert(100%);
+                width: 25px;
+                float: left;
+                margin-right: 25px;
+            }
+
+            span {
+                display: block;
+            }
         }
 
 
