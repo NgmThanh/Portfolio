@@ -455,13 +455,14 @@ header {
 footer {
     margin-top: 5%;
     background-color: $dark-grey;
-    padding: 10%;
+    padding: 20%;
     padding-top: 5%;
     padding-bottom: 5%;
     text-align: center;
 
     h1 {
         font-size: 3rem;
+        // text-align: center;
     }
 
     .field-footer {
@@ -469,12 +470,12 @@ footer {
         flex-wrap: wrap;
 
         &__contact, &__informations {
-            width: 49%;
+            text-align: left;
+            width: 45%;
             min-width: 370px;
             font-size: 1.8rem;
-            text-align: left;
             color: $light-white;
-            padding-left: 1%;
+            padding-left: 5%;
             // background-color: $color-placeholder;
         }
 
@@ -496,6 +497,7 @@ footer {
                 width: 25px;
                 float: left;
                 margin-right: 25px;
+                display: block;
             }
 
             span {

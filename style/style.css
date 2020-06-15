@@ -490,7 +490,7 @@ header .menu--text:hover {
 footer {
   margin-top: 5%;
   background-color: #100E17;
-  padding: 10%;
+  padding: 20%;
   padding-top: 5%;
   padding-bottom: 5%;
   text-align: center;
@@ -509,12 +509,12 @@ footer .field-footer {
 }
 
 footer .field-footer__contact, footer .field-footer__informations {
-  width: 49%;
+  text-align: left;
+  width: 45%;
   min-width: 370px;
   font-size: 1.8rem;
-  text-align: left;
   color: #f5f5f5;
-  padding-left: 1%;
+  padding-left: 5%;
 }
 
 footer .field-footer__contact img {
@@ -532,6 +532,7 @@ footer .field-footer__informations img {
   width: 25px;
   float: left;
   margin-right: 25px;
+  display: block;
 }
 
 footer .field-footer__informations span {
