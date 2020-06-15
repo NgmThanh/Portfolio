@@ -39,6 +39,28 @@
   }
 }
 
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(1800deg);
+            transform: rotate(1800deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(1800deg);
+            transform: rotate(1800deg);
+  }
+}
+
 @-webkit-keyframes jumpHover {
   from {
     -webkit-transform: translate(0px, 0px);
@@ -58,6 +80,32 @@
   to {
     -webkit-transform: translate(0px, -7.5px);
             transform: translate(0px, -7.5px);
+  }
+}
+
+@-webkit-keyframes grow {
+  from {
+    font-size: 2.0rem;
+    padding: 15px;
+    width: 225px;
+  }
+  to {
+    font-size: 2.3rem;
+    padding: 18px;
+    width: 250px;
+  }
+}
+
+@keyframes grow {
+  from {
+    font-size: 2.0rem;
+    padding: 15px;
+    width: 225px;
+  }
+  to {
+    font-size: 2.3rem;
+    padding: 18px;
+    width: 250px;
   }
 }
 
@@ -100,6 +148,20 @@ header {
   transition: -webkit-transform 0.4s;
   transition: transform 0.4s;
   transition: transform 0.4s, -webkit-transform 0.4s;
+  z-index: 100;
+}
+
+header img {
+  position: absolute;
+  width: 50px;
+  margin-top: 10px;
+  left: 10%;
+}
+
+header img:hover {
+  cursor: pointer;
+  -webkit-animation: rotate 10s linear infinite;
+          animation: rotate 10s linear infinite;
 }
 
 header::after {
@@ -221,7 +283,6 @@ header .menu--text:hover {
 
 .works-page .timeline {
   margin-top: 5%;
-  background-color: #312D3C;
   padding-left: 20%;
   padding-right: 20%;
   display: -webkit-box;
@@ -234,7 +295,7 @@ header .menu--text:hover {
 .works-page .timeline__box {
   width: 265px;
   height: 265px;
-  background-color: #909090;
+  background-color: #100E17;
   border-radius: 5px;
   display: block;
   margin: 2%;
@@ -244,6 +305,13 @@ header .menu--text:hover {
   -webkit-animation: jumpHover 0.3s forwards;
           animation: jumpHover 0.3s forwards;
   cursor: pointer;
+}
+
+.works-page .timeline__box img {
+  position: relative;
+  width: 85px;
+  margin: auto;
+  top: 32.5%;
 }
 
 .contact-page {
@@ -316,11 +384,8 @@ header .menu--text:hover {
 
 .contact-page .contact__field [type="submit"]:hover {
   cursor: pointer;
-  -webkit-filter: brightness(150%);
-          filter: brightness(150%);
-  color: #f5f5f5;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-animation: grow 1s forwards;
+          animation: grow 1s forwards;
 }
 
 .contact-page .contact__field p {

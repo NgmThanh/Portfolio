@@ -59,6 +59,15 @@ $pink-gradient: #E6336A;
     }
 }
 
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(1800deg);
+    }
+}
+
 @keyframes jumpHover {
     from {
         transform: translate(0px, 0px);
@@ -67,6 +76,15 @@ $pink-gradient: #E6336A;
         transform: translate(0px, -7.5px);
     }
 }
+
+@keyframes grow {
+    from {
+        font-size: 2.0rem; padding: 15px; width: 225px;
+    }
+    to {
+        font-size: 2.3rem; padding: 18px; width: 250px;
+    }
+  }
 
 // ===== MAIN CODE =====
 
@@ -100,6 +118,19 @@ header {
     left: 0;
     width: 100%;
     transition: transform 0.4s;
+    z-index: 100;
+
+    img {
+        position: absolute;
+        width: 50px;
+        margin-top: 10px;
+        left: 10%;
+
+        &:hover {
+            cursor: pointer;
+            animation: rotate 10s linear infinite;
+        }
+    }
 
     &::after {
         content: "";
@@ -222,7 +253,7 @@ header {
 
     .timeline {
         margin-top: 5%;
-        background-color: $grey-border;
+        // background-color: $dark-grey;
         padding-left: 20%;
         padding-right: 20%;
         display: flex;
@@ -231,13 +262,20 @@ header {
             // width: 30%;
             width: 265px;
             height: 265px;
-            background-color: $color-placeholder;
+            background-color: $dark-grey;
             border-radius: 5px;
             display: block;
             margin: 2%;
             &:hover {
                 animation: jumpHover 0.3s forwards;
                 cursor: pointer;
+            }
+
+            img {
+                position: relative;
+                width: 85px;
+                margin: auto;
+                top: 32.5%;
             }
         }
         
@@ -294,12 +332,10 @@ header {
             color: $light-white;
             border-radius: 5px;
             border: none;
-
+            
             &:hover {
                 cursor: pointer;
-                filter: brightness(150%);
-                color: $light-white;
-                transition: 0.5s;
+                animation: grow 1s forwards;
             }
         }
         p {
