@@ -21,6 +21,52 @@
     src: url('../docs/font/KoHo/KoHo-Italic.ttf') format('truetype'),
 }
 
+@font-face {
+    font-family: 'Raleway';
+    src: url('../docs/font/Raleway/Raleway-Regular.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Raleway';
+    font-style: 600;
+    src: url('../docs/font/Raleway/Raleway-SemiBold.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Teko';
+    src: url('../docs/font/Teko/Teko-SemiBold.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Cairo';
+    font-weight: normal;
+    src: url('../docs/font/Cairo/Cairo-Regular.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Cairo';
+    font-weight: 600;
+    src: url('../docs/font/Cairo/Cairo-SemiBold.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Saira';
+    font-weight: normal;
+    src: url('../docs/font/Saira/SairaCondensed-Regular.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'PTSans';
+    font-weight: normal;
+    src: url('../docs/font/PTSans/PTSans-Regular.ttf') format('truetype'),
+}
+
+@font-face {
+    font-family: 'Titillium';
+    font-weight: normal;
+    src: url('../docs/font/Titillium/TitilliumWeb-Regular.ttf') format('truetype'),
+}
+
 // backgrounds
 $dark-grey: #100E17;
 $grey-bg: #17141D;
@@ -89,7 +135,7 @@ $pink-gradient: #E6336A;
 // ===== MAIN CODE =====
 
 * {
-    font-family: "KoHo", "Arial";
+    font-family: "Titillium", "Source", "Cairo", "PTSans", "Saira", "KoHo", "Arial";
     padding: 0;
     margin: 0;
     text-decoration: none;
@@ -106,6 +152,10 @@ body {
     background-color: $grey-bg;
     color: $light-white;
     animation: apparition 1s linear 0s forwards;
+}
+
+h1 {
+    font-family: 'Teko';
 }
 
 header {
@@ -148,8 +198,9 @@ header {
         display: inline-flex;
         margin-right: 10%;
         padding: 2px;
-        // padding-bottom: 6px;
+
         &--text {
+            font-family: 'Titillium', 'Raleway';
             text-decoration: none;
             font-size: 1.8rem;
             font-weight: 600;
@@ -177,19 +228,19 @@ header {
 
     // block presentation
     .presentation {
-        h1 {
-            font-size: 6.0rem;
+        h1, h2 {
+            font-family: 'Titillium';
             background: linear-gradient($orange-pure,#E52F6F);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
+        h1 {
+            font-size: 6.0rem;
+        }
         h2 {
             font-size: 4.2rem;
             font-weight: 600;
-            background: linear-gradient($orange-pure,#E52F6F);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
         // contact icons
         img {
@@ -210,6 +261,7 @@ header {
         }
         
         &--text {
+            font-weight: normal;
             font-size: 2.1rem;
             line-height: 4.0rem;
             margin-top: 2%;
@@ -232,19 +284,23 @@ header {
     }
 }
 
-.skills-page {
+.skills-page, .works-page, .contact-page {
     display: none;
     text-align: center;
 
     h1 {
-        font-size: 3.8rem;
+        font-size: 4rem;
     }
     h2 {
-        font-size: 1.75rem;
+        font-family: 'Saira';
+        font-size: 1.9rem;
         font-weight: normal;
         display: block;
         margin-top: 15px;
     }
+}
+
+.skills-page {
 
     .skills-box {
         margin-top: 2.5%;
@@ -273,13 +329,16 @@ header {
                 background-color: $grey-border;
                 margin-top: 10px;
                 position: relative;
+                border-radius: 3px;
 
+                // progress bar inside the main bar
                 &::before {
                     content: "";
                     position: absolute;
                     width: 80%;
                     height: 20px;
                     background: linear-gradient(135deg, $orange-pure,#E52F6F);
+                    border-radius: 3px;
                     z-index: 2;
                 }
             }
@@ -288,16 +347,9 @@ header {
 }
 
 .works-page {
-    // page works cachée par defaut
-    display: none;
-    text-align: center;
-
-    h1 {
-        font-size: 3.8rem;
-    }
 
     .timeline {
-        margin-top: 5%;
+        margin-top: 2.5%;
         // background-color: $dark-grey;
         padding-left: 20%;
         padding-right: 20%;
@@ -317,6 +369,7 @@ header {
             }
 
             img {
+                filter: invert(100%);
                 position: relative;
                 width: 85px;
                 margin: auto;
@@ -329,17 +382,10 @@ header {
 }
 
 .contact-page {
-    // page contact cachée par defaut
-    display: none;
-    text-align: center;
-
-    h1 {
-        font-size: 3.8rem;
-    }
     
     .contact__field {
         margin: auto;
-        margin-top: 5%;
+        margin-top: 2.5%;
         padding: 3.5%;
         width: 400px;
         background-color: $dark-grey;
@@ -369,6 +415,7 @@ header {
             height: 200px;
         }
         [type="submit"] {
+            font-family: "Raleway", "Cairo";
             font-size: 2.0rem;
             padding: 15px;
             width: 225px;

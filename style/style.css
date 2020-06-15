@@ -21,6 +21,52 @@
   src: url("../docs/font/KoHo/KoHo-Italic.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'Raleway';
+  src: url("../docs/font/Raleway/Raleway-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Raleway';
+  font-style: 600;
+  src: url("../docs/font/Raleway/Raleway-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Teko';
+  src: url("../docs/font/Teko/Teko-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Cairo';
+  font-weight: normal;
+  src: url("../docs/font/Cairo/Cairo-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Cairo';
+  font-weight: 600;
+  src: url("../docs/font/Cairo/Cairo-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Saira';
+  font-weight: normal;
+  src: url("../docs/font/Saira/SairaCondensed-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'PTSans';
+  font-weight: normal;
+  src: url("../docs/font/PTSans/PTSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Titillium';
+  font-weight: normal;
+  src: url("../docs/font/Titillium/TitilliumWeb-Regular.ttf") format("truetype");
+}
+
 @-webkit-keyframes apparition {
   from {
     opacity: 0;
@@ -110,7 +156,7 @@
 }
 
 * {
-  font-family: "KoHo", "Arial";
+  font-family: "Titillium", "Source", "Cairo", "PTSans", "Saira", "KoHo", "Arial";
   padding: 0;
   margin: 0;
   text-decoration: none;
@@ -133,6 +179,10 @@ body {
   color: #f5f5f5;
   -webkit-animation: apparition 1s linear 0s forwards;
           animation: apparition 1s linear 0s forwards;
+}
+
+h1 {
+  font-family: 'Teko';
 }
 
 header {
@@ -185,6 +235,7 @@ header .menu {
 }
 
 header .menu--text {
+  font-family: 'Titillium', 'Raleway';
   text-decoration: none;
   font-size: 1.8rem;
   font-weight: 600;
@@ -207,21 +258,22 @@ header .menu--text:hover {
   padding-bottom: 5%;
 }
 
-.about-page .presentation h1 {
-  font-size: 6.0rem;
+.about-page .presentation h1, .about-page .presentation h2 {
+  font-family: 'Titillium';
   background: -webkit-gradient(linear, left top, left bottom, from(#FF5711), to(#E52F6F));
   background: linear-gradient(#FF5711, #E52F6F);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.about-page .presentation h1 {
+  font-size: 6.0rem;
 }
 
 .about-page .presentation h2 {
   font-size: 4.2rem;
   font-weight: 600;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF5711), to(#E52F6F));
-  background: linear-gradient(#FF5711, #E52F6F);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .about-page .presentation img {
@@ -241,6 +293,7 @@ header .menu--text:hover {
 }
 
 .about-page .description--text {
+  font-weight: normal;
   font-size: 2.1rem;
   line-height: 4.0rem;
   margin-top: 2%;
@@ -262,17 +315,18 @@ header .menu--text:hover {
   margin-bottom: 5%;
 }
 
-.skills-page {
+.skills-page, .works-page, .contact-page {
   display: none;
   text-align: center;
 }
 
-.skills-page h1 {
-  font-size: 3.8rem;
+.skills-page h1, .works-page h1, .contact-page h1 {
+  font-size: 4rem;
 }
 
-.skills-page h2 {
-  font-size: 1.75rem;
+.skills-page h2, .works-page h2, .contact-page h2 {
+  font-family: 'Saira';
+  font-size: 1.9rem;
   font-weight: normal;
   display: block;
   margin-top: 15px;
@@ -309,6 +363,7 @@ header .menu--text:hover {
   background-color: #312D3C;
   margin-top: 10px;
   position: relative;
+  border-radius: 3px;
 }
 
 .skills-page .skills-box .skill__progress-bar::before {
@@ -317,20 +372,12 @@ header .menu--text:hover {
   width: 80%;
   height: 20px;
   background: linear-gradient(135deg, #FF5711, #E52F6F);
+  border-radius: 3px;
   z-index: 2;
 }
 
-.works-page {
-  display: none;
-  text-align: center;
-}
-
-.works-page h1 {
-  font-size: 3.8rem;
-}
-
 .works-page .timeline {
-  margin-top: 5%;
+  margin-top: 2.5%;
   padding-left: 20%;
   padding-right: 20%;
   display: -webkit-box;
@@ -356,24 +403,17 @@ header .menu--text:hover {
 }
 
 .works-page .timeline__box img {
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
   position: relative;
   width: 85px;
   margin: auto;
   top: 32.5%;
 }
 
-.contact-page {
-  display: none;
-  text-align: center;
-}
-
-.contact-page h1 {
-  font-size: 3.8rem;
-}
-
 .contact-page .contact__field {
   margin: auto;
-  margin-top: 5%;
+  margin-top: 2.5%;
   padding: 3.5%;
   width: 400px;
   background-color: #100E17;
@@ -420,6 +460,7 @@ header .menu--text:hover {
 }
 
 .contact-page .contact__field [type="submit"] {
+  font-family: "Raleway", "Cairo";
   font-size: 2.0rem;
   padding: 15px;
   width: 225px;
