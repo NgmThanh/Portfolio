@@ -66,6 +66,16 @@
     font-weight: normal;
     src: url('../docs/font/Titillium/TitilliumWeb-Regular.ttf') format('truetype'),
 }
+@font-face {
+    font-family: 'Poppins';
+    font-weight: 600;
+    src: url('../docs/font/Poppins/Poppins-SemiBold.ttf') format('truetype'),
+}
+@font-face {
+    font-family: 'Poppins';
+    font-weight: medium;
+    src: url('../docs/font/Poppins/Poppins-Medium.ttf') format('truetype'),
+}
 
 // backgrounds
 $dark-grey: #100E17;
@@ -138,6 +148,7 @@ $pink-gradient: #E6336A;
     font-family: "Titillium", "Source", "Cairo", "PTSans", "Saira", "KoHo", "Arial";
     padding: 0;
     margin: 0;
+    font-weight: normal;
     text-decoration: none;
     &::selection {
         background-color: $selection-grey;
@@ -189,10 +200,10 @@ header {
         padding: 2px;
 
         &--text {
-            font-family: 'Titillium', 'Raleway';
+            font-family: 'Poppins', 'Titillium', 'Raleway';
             text-decoration: none;
             font-size: 1.8rem;
-            font-weight: 600;
+            font-weight: medium;
             color: whitesmoke;
             margin: 10px;
             padding: 10px;
@@ -228,7 +239,7 @@ header {
     // block presentation
     .presentation {
         h1, h2 {
-            font-family: 'Titillium';
+            font-family: 'Poppins', 'Titillium';
             background: linear-gradient($orange-pure,#E52F6F);
             -webkit-background-clip: text;
             background-clip: text;
@@ -239,7 +250,7 @@ header {
         }
         h2 {
             font-size: 4.2rem;
-            font-weight: 600;
+            font-weight: medium, 600;
         }
         // contact icons
         img {
@@ -262,7 +273,7 @@ header {
         
         &--text {
             font-weight: normal;
-            font-size: 2.1rem;
+            font-size: 2.0rem;
             line-height: 4.0rem;
             margin-top: 2%;
             margin-bottom: 4%;
@@ -406,7 +417,7 @@ header {
         border-radius: 5px;
 
         &--input, &--textarea {
-            font-size: 2.0rem;
+            font-size: 1.8rem;
             padding: 10px;
             border-radius: 5px;
             background-color: $grey-input;
@@ -462,7 +473,6 @@ footer {
 
     h1 {
         font-size: 3rem;
-        // text-align: center;
     }
 
     .field-footer {

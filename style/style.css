@@ -68,6 +68,18 @@
   src: url("../docs/font/Titillium/TitilliumWeb-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 600;
+  src: url("../docs/font/Poppins/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: medium;
+  src: url("../docs/font/Poppins/Poppins-Medium.ttf") format("truetype");
+}
+
 @-webkit-keyframes apparition {
   from {
     opacity: 0;
@@ -160,6 +172,7 @@
   font-family: "Titillium", "Source", "Cairo", "PTSans", "Saira", "KoHo", "Arial";
   padding: 0;
   margin: 0;
+  font-weight: normal;
   text-decoration: none;
 }
 
@@ -225,10 +238,10 @@ header .menu {
 }
 
 header .menu--text {
-  font-family: 'Titillium', 'Raleway';
+  font-family: 'Poppins', 'Titillium', 'Raleway';
   text-decoration: none;
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: medium;
   color: whitesmoke;
   margin: 10px;
   padding: 10px;
@@ -260,7 +273,7 @@ header .menu--text:hover {
 }
 
 .about-page .presentation h1, .about-page .presentation h2 {
-  font-family: 'Titillium';
+  font-family: 'Poppins', 'Titillium';
   background: -webkit-gradient(linear, left top, left bottom, from(#FF5711), to(#E52F6F));
   background: linear-gradient(#FF5711, #E52F6F);
   -webkit-background-clip: text;
@@ -274,7 +287,7 @@ header .menu--text:hover {
 
 .about-page .presentation h2 {
   font-size: 4.2rem;
-  font-weight: 600;
+  font-weight: medium, 600;
 }
 
 .about-page .presentation img {
@@ -297,7 +310,7 @@ header .menu--text:hover {
 
 .about-page .description--text {
   font-weight: normal;
-  font-size: 2.1rem;
+  font-size: 2.0rem;
   line-height: 4.0rem;
   margin-top: 2%;
   margin-bottom: 4%;
@@ -425,7 +438,7 @@ header .menu--text:hover {
 }
 
 .contact-page .contact__field--input, .contact-page .contact__field--textarea {
-  font-size: 2.0rem;
+  font-size: 1.8rem;
   padding: 10px;
   border-radius: 5px;
   background-color: #201C29;
