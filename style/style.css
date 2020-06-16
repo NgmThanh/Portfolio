@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: 'KoHo';
   src: url("../docs/font/KoHo/KoHo-Regular.ttf") format("truetype");
@@ -120,28 +119,6 @@
   }
 }
 
-@-webkit-keyframes jumpHover {
-  from {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
-  }
-  to {
-    -webkit-transform: translate(0px, -7.5px);
-            transform: translate(0px, -7.5px);
-  }
-}
-
-@keyframes jumpHover {
-  from {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
-  }
-  to {
-    -webkit-transform: translate(0px, -7.5px);
-            transform: translate(0px, -7.5px);
-  }
-}
-
 @-webkit-keyframes grow {
   from {
     font-size: 2.0rem;
@@ -203,15 +180,9 @@ header {
   width: 100%;
   background-color: #100E17;
   text-align: right;
-  opacity: 1;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  -webkit-transition: -webkit-transform 0.4s;
-  transition: -webkit-transform 0.4s;
-  transition: transform 0.4s;
-  transition: transform 0.4s, -webkit-transform 0.4s;
   z-index: 100;
 }
 
@@ -257,24 +228,19 @@ header .menu--text:hover {
 #progress {
   background: linear-gradient(135deg, #FF5711, #E52F6F);
   height: 8px;
-  width: 0;
   position: fixed;
   top: 61px;
   left: 0;
-  z-index: 9999;
-  /* Peut être important si vous avez un menu en position fixe */
+  z-index: 100;
 }
 
 .about-page, .contact-page, .works-page, .skills-page {
-  padding: 10%;
-  padding-top: 7.5%;
-  padding-bottom: 5%;
+  padding: 7.5% 10% 5%;
 }
 
 .about-page .presentation h1, .about-page .presentation h2 {
   font-family: 'Teko', 'Poppins', 'Titillium';
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF5711), to(#E52F6F));
-  background: linear-gradient(#FF5711, #E52F6F);
+  background: linear-gradient(135deg, #FF5711, #E52F6F);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -292,11 +258,17 @@ header .menu--text:hover {
 .about-page .presentation img {
   -webkit-filter: invert(100%);
           filter: invert(100%);
-  width: 45px;
+  width: 40px;
   margin-top: 20px;
-  margin-left: 0;
   margin-right: 25px;
   border-radius: 3px;
+}
+
+.about-page .presentation img:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.4s all ease;
+  transition: 0.4s all ease;
 }
 
 .about-page .description {
@@ -311,21 +283,20 @@ header .menu--text:hover {
   font-weight: normal;
   font-size: 2.0rem;
   line-height: 4.0rem;
-  margin-top: 2%;
   margin-bottom: 4%;
   text-align: justify;
 }
 
 .about-page .description--text a {
   color: #FF5711;
+  font-weight: 600;
 }
 
 .about-page .description img {
   width: 25%;
   height: 25%;
-  max-width: 525px;
+  max-width: 375px;
   float: right;
-  margin-top: 2%;
   margin-left: 10%;
   margin-bottom: 5%;
 }
@@ -391,7 +362,6 @@ header .menu--text:hover {
 
 .skills-page .skills-box .skill__progress-bar .skill-bar {
   position: absolute;
-  width: 0;
   height: 20px;
   background: linear-gradient(135deg, #FF5711, #E52F6F);
   border-radius: 3px;
@@ -419,8 +389,9 @@ header .menu--text:hover {
   height: 265px;
   background-color: #100E17;
   border-radius: 5px;
-  display: block;
   border: none;
+  -webkit-transition: 0.5s all ease-out;
+  transition: 0.5s all ease-out;
 }
 
 .works-page .timeline__box--button:focus + .work-window {
@@ -431,8 +402,11 @@ header .menu--text:hover {
 }
 
 .works-page .timeline__box--button:hover {
-  -webkit-animation: jumpHover 0.3s forwards;
-          animation: jumpHover 0.3s forwards;
+  background: linear-gradient(135deg, #FF5711, #E52F6F);
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.4s all ease;
+  transition: 0.4s all ease;
   cursor: pointer;
 }
 
@@ -442,48 +416,51 @@ header .menu--text:hover {
   position: relative;
   width: 85px;
   margin: auto;
-  top: 32.5%;
+}
+
+.works-page .timeline__box--button h1 {
+  font-size: 2.25rem;
+  display: block;
+  margin-top: 5px;
+  color: #f5f5f5;
 }
 
 .works-page .timeline__box .work-window {
   width: 200%;
   padding: 45px;
-  padding-bottom: 55px;
   position: absolute;
-  left: -80%;
+  left: -65%;
   top: -25%;
   background-color: #201C29;
   opacity: 0;
   pointer-events: none;
   -webkit-transform: translateY(-10px);
           transform: translateY(-10px);
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: 0.4s all ease;
+  transition: 0.4s all ease;
   z-index: 10;
   border-radius: 5px;
   text-align: left;
   word-break: break-all;
+  border: 1px solid #312D3C;
+}
+
+.works-page .timeline__box .work-window--title, .works-page .timeline__box .work-window--subtitle {
+  background: linear-gradient(135deg, #FF5711, #E52F6F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .works-page .timeline__box .work-window--title {
   font-size: 2.75rem;
   font-family: 'Teko', 'Poppins', 'Titillium';
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF5711), to(#E52F6F));
-  background: linear-gradient(#FF5711, #E52F6F);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .works-page .timeline__box .work-window--subtitle {
   font-family: 'Saira';
   font-size: 2.2rem;
   font-weight: 600;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FF5711), to(#E52F6F));
-  background: linear-gradient(#FF5711, #E52F6F);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
   -webkit-filter: invert(100%);
           filter: invert(100%);
   display: block;
@@ -502,12 +479,19 @@ header .menu--text:hover {
   text-align: justify;
   display: block;
   margin-top: 25px;
-  margin-bottom: 10px;
+}
+
+.works-page .timeline__box .work-window--date {
+  font-family: 'Saira';
+  font-size: 2.0rem;
+  position: absolute;
+  right: 45px;
+  top: 45px;
 }
 
 .works-page .timeline__box .work-window img {
   width: 100%;
-  margin-bottom: 10px;
+  margin-top: 15px;
 }
 
 .contact-page .contact__field {
@@ -564,7 +548,7 @@ header .menu--text:hover {
   padding: 15px;
   width: 225px;
   font-weight: 600;
-  background: linear-gradient(135deg, #E6336A, #FF5711);
+  background: linear-gradient(135deg, #FF5711, #E52F6F);
   color: #f5f5f5;
   border-radius: 5px;
   border: none;
@@ -586,9 +570,7 @@ header .menu--text:hover {
 footer {
   margin-top: 5%;
   background-color: #100E17;
-  padding: 20%;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding: 5% 20% 5%;
   text-align: center;
 }
 
@@ -617,9 +599,7 @@ footer .field-footer__contact img {
   -webkit-filter: invert(100%);
           filter: invert(100%);
   width: 40px;
-  margin-top: 50px;
-  margin-right: 20px;
-  margin-bottom: 25px;
+  margin: 50px 20px 25px 0;
 }
 
 footer .field-footer__informations img {
