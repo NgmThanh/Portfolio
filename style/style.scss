@@ -376,6 +376,7 @@ header {
                 border: none;
                 transition: 0.5s all ease-out;
                 border: 1px solid $grey-border;
+                filter: brightness(89%);
 
                 &:focus + .work-window {
                     opacity: 1;

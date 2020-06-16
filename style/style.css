@@ -411,6 +411,8 @@ header .menu--text:hover {
   -webkit-transition: 0.5s all ease-out;
   transition: 0.5s all ease-out;
   border: 1px solid #312D3C;
+  -webkit-filter: brightness(89%);
+          filter: brightness(89%);
 }
 
 .works-page .timeline__box--button:focus + .work-window {
