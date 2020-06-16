@@ -253,10 +253,14 @@ header {
 
     // block description
     .description {
-        padding-top: 5%;
-
+        margin-top: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    
         div {
-            max-width: 100%;
+            max-width: 740px;
         }
         
         &--text {
@@ -271,14 +275,13 @@ header {
                 font-weight: 600;
             }
         }
-
+        // profile pic
         img {
             width: 25%;
             height: 25%;
             max-width: 375px;
-            float: right;
-            margin-left: 10%;
-            margin-bottom: 5%;
+            min-width: 250px;
+            margin: auto;
         }
     }
 }
@@ -455,8 +458,9 @@ header {
                     top: 45px;
                 }
                 img {
-                   width: 100%;
-                   margin-top: 15px;
+                    max-width: 100%;
+                    margin-top: 15px;
+                    
                 }
             }
         }

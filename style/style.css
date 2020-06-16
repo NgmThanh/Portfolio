@@ -272,11 +272,22 @@ header .menu--text:hover {
 }
 
 .about-page .description {
-  padding-top: 5%;
+  margin-top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .about-page .description div {
-  max-width: 100%;
+  max-width: 740px;
 }
 
 .about-page .description--text {
@@ -296,9 +307,8 @@ header .menu--text:hover {
   width: 25%;
   height: 25%;
   max-width: 375px;
-  float: right;
-  margin-left: 10%;
-  margin-bottom: 5%;
+  min-width: 250px;
+  margin: auto;
 }
 
 .skills-page, .works-page, .contact-page {
@@ -499,7 +509,7 @@ header .menu--text:hover {
 }
 
 .works-page .timeline__box .work-window img {
-  width: 100%;
+  max-width: 100%;
   margin-top: 15px;
 }
 
