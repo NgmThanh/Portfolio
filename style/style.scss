@@ -375,6 +375,7 @@ header {
                 border-radius: 5px;
                 border: none;
                 transition: 0.5s all ease-out;
+                border: 1px solid $grey-border;
 
                 &:focus + .work-window {
                     opacity: 1;
@@ -555,6 +556,9 @@ footer {
                 filter: invert(100%);
                 width: 40px;
                 margin: 50px 20px 25px 0;
+                &:hover {
+                    @include jumpAnimation(-5px);
+                }
             }
         }
 
@@ -566,6 +570,9 @@ footer {
                 float: left;
                 margin-right: 25px;
                 display: block;
+                &:hover {
+                    @include jumpAnimation(-5px);
+                }
             }
 
             span {

@@ -410,6 +410,7 @@ header .menu--text:hover {
   border: none;
   -webkit-transition: 0.5s all ease-out;
   transition: 0.5s all ease-out;
+  border: 1px solid #312D3C;
 }
 
 .works-page .timeline__box--button:focus + .work-window {
@@ -625,6 +626,13 @@ footer .field-footer__contact img {
   margin: 50px 20px 25px 0;
 }
 
+footer .field-footer__contact img:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.4s all ease;
+  transition: 0.4s all ease;
+}
+
 footer .field-footer__informations img {
   -webkit-filter: invert(100%);
           filter: invert(100%);
@@ -632,6 +640,13 @@ footer .field-footer__informations img {
   float: left;
   margin-right: 25px;
   display: block;
+}
+
+footer .field-footer__informations img:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.4s all ease;
+  transition: 0.4s all ease;
 }
 
 footer .field-footer__informations span {
