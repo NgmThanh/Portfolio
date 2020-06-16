@@ -374,7 +374,7 @@ header {
                 display: block;
                 border: none;
 
-                &:focus + .timeline__box--window {
+                &:focus + .work-window {
                     opacity: 1;
                     pointer-events: all;
                     transform: translateY(0px);
@@ -394,11 +394,14 @@ header {
                 }
             }
 
-            &--window {
-                width: 300%;
-                height: 200%;
+            .work-window {
+                width: 200%;
+                // height: 200%;
+                padding: 45px;
+                // padding-top: 60px;
+                padding-bottom: 55px;
                 position: absolute;
-                left: -45%;
+                left: -80%;
                 top: -25%;
                 background-color: $grey-input;
                 opacity: 0;
@@ -407,6 +410,47 @@ header {
                 transition: all 0.4s ease;
                 z-index: 10;
                 border-radius: 5px;
+                text-align: left;
+                word-break: break-all;
+
+                &--title {
+                    font-size: 2.75rem;
+                    font-family: 'Teko', 'Poppins', 'Titillium';
+                    background: linear-gradient($orange-pure,#E52F6F);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                &--subtitle {
+
+                    font-family: 'Saira';
+                    font-size: 2.2rem;
+                    font-weight: 600;
+                    background: linear-gradient($orange-pure,#E52F6F);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    filter: invert(100%);
+                    display: block;
+                    margin-top: -5px;
+                    margin-bottom: 15px;
+                }
+                &--language {
+                    font-size: 1.5rem;
+                    color: $pink-pure;
+                    font-weight: 600;
+                }
+                &--description {
+                    font-size: 1.4rem;
+                    text-align: justify;
+                    display: block;
+                    margin-top: 25px;
+                    margin-bottom: 10px;
+                }
+                img {
+                   width: 100%;
+                   margin-bottom: 10px;
+                }
             }
         }
     }

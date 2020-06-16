@@ -423,7 +423,7 @@ header .menu--text:hover {
   border: none;
 }
 
-.works-page .timeline__box--button:focus + .timeline__box--window {
+.works-page .timeline__box--button:focus + .work-window {
   opacity: 1;
   pointer-events: all;
   -webkit-transform: translateY(0px);
@@ -445,11 +445,12 @@ header .menu--text:hover {
   top: 32.5%;
 }
 
-.works-page .timeline__box--window {
-  width: 300%;
-  height: 200%;
+.works-page .timeline__box .work-window {
+  width: 200%;
+  padding: 45px;
+  padding-bottom: 55px;
   position: absolute;
-  left: -45%;
+  left: -80%;
   top: -25%;
   background-color: #201C29;
   opacity: 0;
@@ -460,6 +461,53 @@ header .menu--text:hover {
   transition: all 0.4s ease;
   z-index: 10;
   border-radius: 5px;
+  text-align: left;
+  word-break: break-all;
+}
+
+.works-page .timeline__box .work-window--title {
+  font-size: 2.75rem;
+  font-family: 'Teko', 'Poppins', 'Titillium';
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF5711), to(#E52F6F));
+  background: linear-gradient(#FF5711, #E52F6F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.works-page .timeline__box .work-window--subtitle {
+  font-family: 'Saira';
+  font-size: 2.2rem;
+  font-weight: 600;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF5711), to(#E52F6F));
+  background: linear-gradient(#FF5711, #E52F6F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+  display: block;
+  margin-top: -5px;
+  margin-bottom: 15px;
+}
+
+.works-page .timeline__box .work-window--language {
+  font-size: 1.5rem;
+  color: #E52F6F;
+  font-weight: 600;
+}
+
+.works-page .timeline__box .work-window--description {
+  font-size: 1.4rem;
+  text-align: justify;
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.works-page .timeline__box .work-window img {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .contact-page .contact__field {
