@@ -303,10 +303,12 @@ header {
 
     .skills-box {
         margin-top: 2.5%;
-        padding-left: 10%;
+        padding-left: 15%;
+        padding-right: 15%;
         display: flex;
         flex-wrap: wrap;
-        text-align: center;
+        align-items: center;
+        justify-content: space-around;
 
         .skill {
             width: 35%;
@@ -314,8 +316,6 @@ header {
             // background-color: $grey-input;
             padding: 15px;
             margin-top: 10px;
-            margin-right: 2%;
-            margin-left: 4%;
             text-align: left;
 
             h2 {
@@ -354,19 +354,20 @@ header {
 
     .timeline {
         margin-top: 2.5%;
-        padding-left: 20%;
-        padding-right: 20%;
+        padding-left: 15%;
+        padding-right: 15%;
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
 
         &__box {
             position: relative;
-            margin: 2%;
+            margin: 2.5%;
                     
             &--button {
-                // width: 30%;
-                width: 265px;
-                height: 265px;
+                width: 300px;
+                height: 300px;
                 background-color: $dark-grey;
                 border-radius: 5px;
                 border: none;
@@ -381,6 +382,7 @@ header {
                 &:hover {
                     @include gradient-background;
                     @include jumpAnimation(-5px);
+                    transition: 0.4s all ease;
                     cursor: pointer;
                 }
 
@@ -523,7 +525,6 @@ footer {
     margin-top: 5%;
     background-color: $dark-grey;
     padding: 5% 20% 5%;
-    text-align: center;
 
     h1 {
         font-size: 3rem;
@@ -532,6 +533,8 @@ footer {
     .field-footer {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
 
         &__contact, &__informations {
             text-align: left;
@@ -571,7 +574,7 @@ footer {
         font-size: 1.6rem;
         font-style: normal;
         color: $light-white;
-        margin: auto;
+        text-align: center;
         margin-top: 5%;
         display: block;
     }
