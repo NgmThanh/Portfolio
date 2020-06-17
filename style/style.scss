@@ -616,17 +616,24 @@ footer {
         &--text {
             font-size: 1.4rem;
             line-height: 2.0rem;
-            margin-bottom: 45px;
+        }
+
+        img {
+            margin-top: 25px;
         }
     }
 
     .about-page, .contact-page, .works-page, .skills-page {
-        padding: 75px 5% 25px;
+        padding: 25px 5% 25px;
 
         h2 {
             display: block;
             margin-bottom: 25px;
         }
+    }
+
+    .about-page {
+        padding-top: 75px;
     }
 
     .skills-box {
@@ -664,7 +671,7 @@ footer {
     }
 
     footer {
-        padding: 5%;
+        padding: 10% 5% 10%;
 
         &__contact, &__informations {
             width: 100%;
