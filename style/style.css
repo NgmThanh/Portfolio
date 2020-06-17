@@ -651,10 +651,10 @@ footer em {
 
 @media all and (max-device-width: 500px) {
   .presentation h1 {
-    font-size: 4.0rem;
+    font-size: 3.0rem;
   }
   .presentation h2 {
-    font-size: 2.5rem;
+    font-size: 2.0rem;
   }
   .presentation img {
     margin-top: 10px;
@@ -663,8 +663,8 @@ footer em {
     margin-top: 5%;
   }
   .description--text {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
+    font-size: 1.4rem;
+    line-height: 2.0rem;
     margin-bottom: 45px;
   }
   .about-page, .contact-page, .works-page, .skills-page {
@@ -675,16 +675,22 @@ footer em {
     margin-bottom: 25px;
   }
   .skills-box {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 0%;
+    padding-right: 0%;
+    margin: 0%;
+    margin-bottom: 5%;
   }
   .timeline {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  .timeline__box {
+    width: 100%;
+    height: 80%;
   }
   .timeline__box--button {
     width: 100%;
-    height: 100%;
+    height: 80%;
   }
   .contact__field {
     display: none;
