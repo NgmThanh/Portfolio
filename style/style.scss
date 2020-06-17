@@ -138,8 +138,12 @@ $pink-pure: #E52F6F;
     margin: 0;
     font-weight: normal;
     text-decoration: none;
+    max-width:100%;
     &::selection {
         background-color: $selection-grey;
+    }
+    img {
+        max-width: 100%;
     }
 }
 
@@ -181,10 +185,11 @@ header {
     
     .menu {
         list-style-type: none;
-        display: inline-flex;
+        display: flex;
+        justify-content: flex-end;
         margin-right: 10%;
         padding: 17px;
-        // background-color: $pink-gradient;
+
         &--text {
             font-family: 'Poppins', 'Titillium', 'Raleway';
             text-decoration: none;
@@ -401,6 +406,7 @@ header {
 
             // window description of project
             .work-window {
+                
                 width: 200%;
                 padding: 45px;
                 position: absolute;
@@ -589,6 +595,34 @@ footer {
 // ===== media =====
 
 // mobile
-@media all and (max-device-width: 480px) {
-    
+@media all and (max-device-width: 500px) {
+
+    .about-page, .contact-page, .works-page, .skills-page {
+        padding: 75px 5% 25px;
+    }
+
+    .work-window {
+        max-width:100%;
+    }
+
+    .contact__field {
+        margin: auto;
+        margin-top: 200px;
+        padding: 10px;
+        width: auto;
+        border-radius: 5px;
+
+        &--input, &--textarea {
+            width: 100%;
+        }
+    }
+
+    footer {
+        padding: 5%;
+
+        &__contact, &__informations {
+            width: 100%;
+            min-width: none;
+        }
+    }
 }

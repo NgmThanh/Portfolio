@@ -125,6 +125,7 @@
   margin: 0;
   font-weight: normal;
   text-decoration: none;
+  max-width: 100%;
 }
 
 *::-moz-selection {
@@ -133,6 +134,10 @@
 
 *::selection {
   background-color: #DEE1E6;
+}
+
+* img {
+  max-width: 100%;
 }
 
 html {
@@ -176,9 +181,12 @@ header img:hover {
 
 header .menu {
   list-style-type: none;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-right: 10%;
   padding: 17px;
 }
@@ -639,5 +647,31 @@ footer em {
   text-align: center;
   margin-top: 5%;
   display: block;
+}
+
+@media all and (max-device-width: 500px) {
+  .about-page, .contact-page, .works-page, .skills-page {
+    padding: 75px 5% 25px;
+  }
+  .work-window {
+    max-width: 100%;
+  }
+  .contact__field {
+    margin: auto;
+    margin-top: 200px;
+    padding: 10px;
+    width: auto;
+    border-radius: 5px;
+  }
+  .contact__field--input, .contact__field--textarea {
+    width: 100%;
+  }
+  footer {
+    padding: 5%;
+  }
+  footer__contact, footer__informations {
+    width: 100%;
+    min-width: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
