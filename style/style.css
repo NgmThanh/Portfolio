@@ -650,24 +650,24 @@ footer em {
 }
 
 @media all and (max-device-width: 500px) {
-  .presentation h1 {
+  .about-page .presentation h1 {
     font-size: 3.0rem;
   }
-  .presentation h2 {
+  .about-page .presentation h2 {
     font-size: 2.0rem;
   }
-  .presentation img {
+  .about-page .presentation img {
     margin-top: 10px;
   }
-  .description {
+  .about-page .description {
     margin-top: 5%;
   }
-  .description--text {
+  .about-page .description--text {
     font-size: 1.4rem;
     line-height: 2.0rem;
   }
-  .description img {
-    margin-top: 25px;
+  .about-page .description img {
+    margin-top: 35px;
   }
   .about-page, .contact-page, .works-page, .skills-page {
     padding: 25px 5% 25px;

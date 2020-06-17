@@ -597,29 +597,33 @@ footer {
 // mobile
 @media all and (max-device-width: 500px) {
 
-    .presentation {
-        h1 {
-            font-size: 3.0rem;
-        }
-        h2 {
-            font-size: 2.0rem;
-        }
-        // contact icons
-        img {
-            margin-top: 10px;
-        }  
-    }
-    
-    .description {
-        margin-top: 5%;
-        
-        &--text {
-            font-size: 1.4rem;
-            line-height: 2.0rem;
-        }
+    .about-page {
 
-        img {
-            margin-top: 25px;
+        .presentation {
+            h1 {
+                font-size: 3.0rem;
+            }
+            h2 {
+                font-size: 2.0rem;
+            }
+            // contact icons
+            img {
+                margin-top: 10px;
+            }  
+        }
+    
+        // block description
+        .description {
+            margin-top: 5%;
+            
+            &--text {
+                font-size: 1.4rem;
+                line-height: 2.0rem;
+            }
+    
+            img {
+                margin-top: 35px;
+            }
         }
     }
 
