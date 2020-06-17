@@ -594,9 +594,6 @@ footer .field-footer {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
@@ -604,7 +601,7 @@ footer .field-footer {
 footer .field-footer__contact, footer .field-footer__informations {
   text-align: left;
   width: 46%;
-  min-width: 370px;
+  min-width: 300px;
   font-size: 1.8rem;
   color: #f5f5f5;
   padding-left: 4%;
@@ -710,70 +707,67 @@ footer em {
     left: 90%;
     font-size: 2.2rem;
   }
-  .timeline {
+  .works-page .timeline {
     padding-left: 0%;
     padding-right: 0%;
   }
-  .timeline__box {
-    margin: 45px 0 25px;
-  }
-  .timeline__box--button {
+  .works-page .timeline__box {
+    position: relative;
+    margin: 2.5%;
     width: 100%;
-    height: 80%;
   }
-  .timeline .work-window {
-    max-width: 100%;
+  .works-page .timeline__box--button {
     width: 100%;
-    padding: 0px;
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: -25%;
+    max-width: 325px;
   }
-  .timeline .work-window--title, .timeline .work-window--subtitle {
-    background: linear-gradient(135deg, #FF5711, #E52F6F);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .timeline .work-window--title {
-    font-size: 2.75rem;
-    font-family: 'Teko', 'Poppins', 'Titillium';
-  }
-  .timeline .work-window--subtitle {
-    font-family: 'Saira';
-    font-size: 2.2rem;
-    font-weight: 600;
+  .works-page .timeline__box--button img {
     -webkit-filter: invert(100%);
             filter: invert(100%);
+    position: relative;
+    width: 85px;
+    margin: auto;
+  }
+  .works-page .timeline__box--button h1 {
+    font-size: 2.25rem;
     display: block;
-    margin-top: -5px;
-    margin-bottom: 15px;
+    margin-top: 5px;
+    color: #f5f5f5;
   }
-  .timeline .work-window--language {
-    font-size: 1.5rem;
-    color: #E52F6F;
-    font-weight: 600;
-  }
-  .timeline .work-window--description {
-    font-size: 1.4rem;
-    text-align: justify;
-    display: block;
-    margin-top: 25px;
-  }
-  .timeline .work-window--date {
-    font-family: 'Saira';
-    font-size: 2.0rem;
+  .works-page .timeline__box .work-window {
+    width: 100%;
+    padding: 20px;
     position: absolute;
-    right: 45px;
-    top: 45px;
+    left: -6.5%;
+    right: 0;
+    top: -25%;
   }
-  .timeline .work-window img {
-    max-width: 100%;
-    margin-top: 15px;
+  .works-page .timeline__box .work-window--title {
+    font-size: 2.5rem;
+  }
+  .works-page .timeline__box .work-window--subtitle {
+    font-size: 1.7rem;
+    margin-top: -5px;
+    margin-bottom: 0px;
+    text-align: justify;
+  }
+  .works-page .timeline__box .work-window--language {
+    font-size: 1.4rem;
+  }
+  .works-page .timeline__box .work-window--description {
+    margin-top: 10px;
+    text-align: justify;
+  }
+  .works-page .timeline__box .work-window--date {
+    font-size: 1.5rem;
+    position: absolute;
+    right: 25px;
+    top: 27.5px;
+  }
+  .works-page .timeline__box .work-window img {
+    margin-top: 10px;
   }
   .contact-page .contact__field {
-    padding: 15px;
+    padding: 20px 15px 20px;
     margin-top: 25px;
     width: auto;
   }
@@ -798,6 +792,7 @@ footer em {
   }
   footer .field-footer__contact, footer .field-footer__informations {
     font-size: 1.5rem;
+    min-width: 100%;
   }
   footer .field-footer__contact img {
     width: 35px;
