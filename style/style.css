@@ -650,7 +650,7 @@ footer em {
 
 @media all and (max-device-width: 500px) {
   header .menu {
-    height: 26px;
+    height: 27px;
   }
   header .menu--text {
     display: none;
