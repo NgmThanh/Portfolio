@@ -156,7 +156,7 @@ h1 {
 }
 
 .about-page, .skills-page, .works-page, .contact-page {
-  padding: 7.5% 10% 5%;
+  padding: 8% 10% 5%;
 }
 
 .skills-page, .works-page, .contact-page {
@@ -477,13 +477,13 @@ header .menu--text:hover {
 }
 
 .works-page .timeline__box .work-window--language {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #E52F6F;
   font-weight: 600;
 }
 
 .works-page .timeline__box .work-window--description {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   text-align: justify;
   display: block;
   margin-top: 25px;
@@ -650,7 +650,7 @@ footer em {
   display: block;
 }
 
-@media screen and (max-device-width: 700px) {
+@media screen and (max-device-width: 767px) {
   .about-page, .skills-page, .works-page, .contact-page {
     padding: 50px 5% 45px;
   }
@@ -659,6 +659,16 @@ footer em {
   }
   .works-page h2 {
     margin-bottom: 35px;
+  }
+  .about-page .description {
+    margin-top: 25px;
+  }
+  .about-page .description--text {
+    font-size: 1.9rem;
+    line-height: 3rem;
+  }
+  .about-page .description img {
+    margin-top: 25px;
   }
   .works-page .timeline {
     padding-left: 0%;
@@ -674,11 +684,10 @@ footer em {
     max-width: 300px;
   }
   .works-page .timeline__box .work-window {
-    width: 110%;
+    width: 99%;
     padding: 35px;
     position: absolute;
-    left: -13.5%;
-    right: 0;
+    left: -7.5%;
     top: -25%;
   }
   .works-page .timeline__box .work-window--subtitle {
@@ -687,6 +696,7 @@ footer em {
   }
   .works-page .timeline__box .work-window--description {
     margin-top: 15px;
+    font-size: 1.5rem;
   }
   .works-page .timeline__box .work-window--date {
     right: 35px;
@@ -696,21 +706,39 @@ footer em {
     padding: 20px 15px 20px;
     margin-top: 25px;
     width: auto;
-    max-width: 375px;
+    max-width: 360px;
   }
   .contact-page .contact__field--input, .contact-page .contact__field--textarea {
     width: 92%;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     padding: 7.5px;
     border-radius: 3px;
   }
   .contact-page .contact__field--textarea {
-    height: 150px;
+    height: 175px;
   }
   .contact-page .contact__field [type="submit"] {
+    font-size: 1.8rem;
+    padding: 15px;
+    width: 200px;
+  }
+  footer {
+    padding: 10% 5% 10%;
+  }
+  footer h1 {
+    font-size: 2.85rem;
+  }
+  footer .field-footer__contact, footer .field-footer__informations {
     font-size: 1.7rem;
-    padding: 10px;
-    width: 175px;
+    min-width: 100%;
+  }
+  footer .field-footer__contact img {
+    width: 35px;
+    margin: 25px 20px 25px 0;
+  }
+  footer .field-footer__informations img {
+    width: 17.5px;
+    margin-top: 5px;
   }
 }
 
