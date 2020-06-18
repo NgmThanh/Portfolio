@@ -649,15 +649,15 @@ footer {
             }
         }
         .change .bar1 {
-            -webkit-transform: rotate(-45deg) translate(-7px, 7px);
-            transform: rotate(-45deg) translate(-7px, 7px);
+            -webkit-transform: rotate(45deg) translate(7px, 7px);
+            transform: rotate(45deg) translate(7px, 7px);
         }
         
         .change .bar2 {opacity: 0;}
         
         .change .bar3 {
-            -webkit-transform: rotate(45deg) translate(-7px, -7px);
-            transform: rotate(45deg) translate(-7px, -7px);
+            -webkit-transform: rotate(-45deg) translate(7px, -7px);
+            transform: rotate(-45deg) translate(7px, -7px);
         }
 
         // ----- List menu ----- //
