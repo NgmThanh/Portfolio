@@ -239,10 +239,7 @@ header .menu--text:hover {
 
 .about-page .presentation h1, .about-page .presentation h2 {
   font-family: 'Teko', 'Poppins', 'Titillium';
-  background: linear-gradient(135deg, #FF5711, #E52F6F);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #FF5711;
 }
 
 .about-page .presentation h1 {
@@ -454,10 +451,7 @@ header .menu--text:hover {
 }
 
 .works-page .timeline__box .work-window--title, .works-page .timeline__box .work-window--subtitle {
-  background: linear-gradient(135deg, #FF5711, #E52F6F);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #FF5711;
 }
 
 .works-page .timeline__box .work-window--title {
