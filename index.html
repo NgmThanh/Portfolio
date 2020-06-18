@@ -12,24 +12,28 @@
         <script type="text/javascript" src="js/scroll.js"></script>
         <header>
             <a href="#"><img src="images/favicon.png" alt="logo"></a>
-            <nav class="menu">
-                <a href="#about"><ul class="menu--text" id="about-menu">About</ul></a>
-                <a href="#skills"><ul class="menu--text" id="skills-menu">Skills</ul></a>
-                <a href="#works"><ul class="menu--text" id="works-menu">Works</ul></a>
-                <a href="#contact"><ul class="menu--text" id="contact-menu">Contact</ul></a>
-                <ul class="menu--text" id="dark-menu">🌙</ul>
-                <div class="hamburger-menu" onclick="changeMobile(this)">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div>
+            <ul class="menu">
+                <a href="#about"><li class="menu--text" id="about-menu">About</li></a>
+                <a href="#skills"><li class="menu--text" id="skills-menu">Skills</li></a>
+                <a href="#works"><li class="menu--text" id="works-menu">Works</li></a>
+                <a href="#contact"><li class="menu--text" id="contact-menu">Contact</li></a>
+                <li class="menu--text" id="dark-menu">🌙</li>
+            </ul>
+            <div class="hamburger-icon" onclick="changeMobile(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <nav class="mobile-menu">
+                <ul class="menu-display">
+                    <a href="#about"><li class="menu-display--text" id="about-menu">About</li></a>
+                    <a href="#skills"><li class="menu-display--text" id="skills-menu">Skills</li></a>
+                    <a href="#works"><li class="menu-display--text" id="works-menu">Works</li></a>
+                    <a href="#contact"><li class="menu-display--text" id="contact-menu">Contact</li></a>
+                    <li class="menu-display--text" id="dark-menu">🌙</li>
+                </ul>
             </nav>
-            <script type="text/javascript">// mobile version
-                function changeMobile(x) {
-                    console.log(x.classList);
-                    x.classList.toggle("change");
-                }
-            </script>
+
             <!-- script selected menu and progress bar + mobile version -->
             <script type="text/javascript" src="js/menu.js" defer></script>
         </header>
@@ -72,7 +76,7 @@
                     <div class="skill__progress-bar"><div class="skill-bar" id="c"><h3>80%</h3></div></div>
                 </div>
                 <div class="skill"><h2>HTML/CSS</h2>
-                    <div class="skill__progress-bar"><div class="skill-bar" id="html"><h3>80%</h3></div></div>
+                    <div class="skill__progress-bar"><div class="skill-bar" id="html"><h3>90%</h3></div></div>
                 </div>
                 <div class="skill"><h2>Java</h2>
                     <div class="skill__progress-bar"><div class="skill-bar" id="java"><h3>70%</h3></div></div>

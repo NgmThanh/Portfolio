@@ -228,6 +228,14 @@ header .menu--text:hover {
   transition: 0.3s;
 }
 
+header .hamburger-icon {
+  display: none;
+}
+
+header .mobile-menu {
+  display: none;
+}
+
 #progress {
   background: linear-gradient(135deg, #FF5711, #E52F6F);
   height: 8px;
@@ -646,45 +654,69 @@ footer em {
 
 @media screen and (max-device-width: 767px) {
   header img {
-    left: 25px;
-    width: 35px;
     position: relative;
+    width: 35px;
     float: left;
+    margin-bottom: 10px;
   }
-  header img:hover {
+  header .hamburger-icon {
     cursor: pointer;
-    -webkit-animation: rotate 10s linear infinite;
-            animation: rotate 10s linear infinite;
+    float: right;
+    margin-top: 5px;
+    margin-right: 15px;
+    display: block;
   }
-  header .menu {
-    margin-right: 25px;
-    padding: 7.5px;
-    height: 35px;
-  }
-  header .menu--text {
-    display: none;
-  }
-  header .menu .hamburger-menu {
-    cursor: pointer;
-  }
-  header .menu .hamburger-menu .bar1, header .menu .hamburger-menu .bar2, header .menu .hamburger-menu .bar3 {
+  header .hamburger-icon .bar1, header .hamburger-icon .bar2, header .hamburger-icon .bar3 {
     width: 30px;
     height: 3px;
     background: linear-gradient(135deg, #FF5711, #E52F6F);
-    margin: 7px 0;
+    margin-top: 7px;
+    border-radius: 2px;
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
-  header .menu .change .bar1 {
+  header .change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-7px, 7px);
     transform: rotate(-45deg) translate(-7px, 7px);
   }
-  header .menu .change .bar2 {
+  header .change .bar2 {
     opacity: 0;
   }
-  header .menu .change .bar3 {
+  header .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-7px, -7px);
     transform: rotate(45deg) translate(-7px, -7px);
+  }
+  header .menu {
+    display: none;
+  }
+  header .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    text-align: left;
+    -webkit-animation: apparition 0.3s linear 0s forwards;
+            animation: apparition 0.3s linear 0s forwards;
+  }
+  header .mobile-menu .menu-display {
+    background: #100E17;
+    list-style-type: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  header .mobile-menu .menu-display--text {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: #f5f5f5;
+    margin-left: 10px;
   }
   #progress {
     height: 5px;

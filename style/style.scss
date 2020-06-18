@@ -224,6 +224,13 @@ header {
             }
         }
     }
+
+    .hamburger-icon {
+        display: none;
+    }
+    .mobile-menu {
+        display: none;
+    }
 }
 
 // ----------- PROGRESS BAR ----------- //
@@ -618,77 +625,72 @@ footer {
 @media screen and (max-device-width: 767px) {
 
     header {
-        // width: 100%;
-        // background-color: $dark-grey;
-        // text-align: right;
-        // position: fixed;
-        // top: 0;
-        // left: 0;
-        // z-index: 100;
-    
         img {
-            // position: absolute;
-            // width: 10%;
-            // margin-top: 10px;
-            // left: 10%;
-            left: 25px;
-            width: 35px;
             position: relative;
+            width: 35px;
             float: left;
-    
-            &:hover {
-                cursor: pointer;
-                animation: rotate 10s linear infinite;
+            margin-bottom: 10px;
+        }
+
+        // hamburger icon (change on click)
+        .hamburger-icon {
+            cursor: pointer;
+            float: right;
+            margin-top: 5px;
+            margin-right: 15px;
+            display: block;
+
+            .bar1, .bar2, .bar3 {
+                width: 30px;
+                height: 3px;
+                @include gradient-background;
+                margin-top: 7px;
+                border-radius: 2px;
+                transition: 0.4s;
             }
         }
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-7px, 7px);
+            transform: rotate(-45deg) translate(-7px, 7px);
+        }
+        
+        .change .bar2 {opacity: 0;}
+        
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-7px, -7px);
+            transform: rotate(45deg) translate(-7px, -7px);
+        }
+
         // ----- List menu ----- //
         .menu {
-            // list-style-type: none;
-            // display: flex;
-            // justify-content: flex-end;
-            // margin-right: 10%;
-            margin-right: 25px;
-            // padding: 17px;
-            padding: 7.5px;
-            height: 35px;
-    
-            &--text {
-                display: none;
-                // font-size: 1.8rem;
-                // font-weight: medium;
-                // color: $light-white;
-                // margin-right: 20px;
-                // margin-left: 20px;
-                // &:hover {
-                //     color: $pink-pure;
-                //     cursor: pointer;
-                //     transition: 0.3s;
-                // }
-            }
-            // ----- hamburger menu (mobile) ----- //
-            .hamburger-menu {
-                cursor: pointer;
+            display: none;
+        }
+        // ----- mobile menu ----- //
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 50px;
+            left: 0;
+            right: 0;
+            text-align: left;
+            animation: apparition 0.3s linear 0s forwards;
 
-                .bar1, .bar2, .bar3 {
-                    width: 30px;
-                    height: 3px;
-                    @include gradient-background;
-                    margin: 7px 0;
-                    transition: 0.4s;
+            .menu-display {
+                background: $dark-grey;
+                list-style-type: none;
+                display: flex;
+                flex-direction: column;
+
+                &--text {
+                    // display: none;
+                    width: 100%;
+                    padding: 12px;
+                    font-size: 1.7rem;
+                    text-decoration: none;
+                    color: $light-white;
+                    margin-left: 10px;
                 }
             }
-            .change .bar1 {
-                -webkit-transform: rotate(-45deg) translate(-7px, 7px);
-                transform: rotate(-45deg) translate(-7px, 7px);
-            }
-            
-            .change .bar2 {opacity: 0;}
-            
-            .change .bar3 {
-                -webkit-transform: rotate(45deg) translate(-7px, -7px);
-                transform: rotate(45deg) translate(-7px, -7px);
-            }
-
         }
     }
 
@@ -815,15 +817,6 @@ footer {
 
 // mobile
 @media all and (max-device-width: 500px) {
-
-    // header {
-    //     .menu {
-    //         height: 27px;
-    //         &--text {
-    //             display: none;
-    //         }
-    //     }
-    // }
 
     .about-page, .skills-page, .works-page, .contact-page {
         padding: 50px 5% 25px;

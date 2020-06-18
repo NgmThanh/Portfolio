@@ -20,6 +20,23 @@ document.querySelectorAll('.menu--text').forEach(itemMenu => {
     });
 });
 
+
+// mobile menu
+function changeMobile(menu) {
+    var opened = document.getElementsByClassName("change");
+    var menuMobile = document.getElementsByClassName("mobile-menu");
+    // if menu opened
+    if (opened.length === 0) {
+        menuMobile[0].style.display = "block";
+    }
+    // if menu closed
+    else {
+        menuMobile[0].style.display = "none";
+    }
+    menu.classList.toggle("change");    
+}
+
+
 // progress bar in scrolling
 window.onload = () => {
     // Ecouteur d'évènement sur scroll
