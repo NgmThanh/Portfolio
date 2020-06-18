@@ -240,7 +240,7 @@ header {
 	position: fixed;
 	top: 61px;
 	left: 0;
-	z-index: 100;
+	z-index: 50;
 }
 
 // ----------- ABOUT PAGE ----------- //
@@ -623,21 +623,20 @@ footer {
 
 // tablet
 @media screen and (max-device-width: 767px) {
-
+    
     header {
+        height: 50px;
+
         img {
-            position: relative;
-            width: 35px;
-            float: left;
-            margin-bottom: 10px;
+            display: none;
         }
 
         // hamburger icon (change on click)
         .hamburger-icon {
             cursor: pointer;
-            float: right;
-            margin-top: 5px;
-            margin-right: 15px;
+            position: absolute;
+            top: 7.5px;
+            left: 5%;
             display: block;
 
             .bar1, .bar2, .bar3 {
@@ -684,8 +683,8 @@ footer {
                 &--text {
                     // display: none;
                     width: 100%;
-                    padding: 12px;
-                    font-size: 1.7rem;
+                    padding: 16px;
+                    font-size: 2rem;
                     text-decoration: none;
                     color: $light-white;
                     margin-left: 10px;
@@ -823,7 +822,7 @@ footer {
     }
 
     .about-page {
-        padding-top: 65px;
+        padding-top: 75px;
     }
 
     .works-page, .skills-page {
@@ -866,60 +865,29 @@ footer {
         }
     }
 
-    .skills-box {
-        margin-top: 15px;
-        .skill {
-            width: 100%;
-            min-width: none;
-            &__progress-bar {
-                h3 {
-                    position: absolute;
-                    bottom: 25px;
-                    left: 90%;
-                    font-size: 2.2rem;
-                }
-            }
-        }
-    }
-
     .works-page {
         .timeline {
-            padding-left: 0%;
-            padding-right: 0%;
             &__box {
-                position: relative;
-                margin: 2.5%;
-                width: 100%;
-                &--button {
-                    width: 100%;
-                    max-width: 300px;
-                }
                 // window description of project
                 .work-window {
                     width: 97.5%;
                     padding: 25px;                    
                     left: -7.5%;
-                    right: 0;
                     top: -10%;
                     &--title {
                         font-size: 2.5rem;
                     }
                     &--subtitle {
                         font-size: 1.85rem;
-                        margin-top: 0px;
-                        margin-bottom: 0px;
-                        text-align: justify;
                     }
                     &--language {
                         font-size: 1.6rem;
                     }
                     &--description {
                         margin-top: 10px;
-                        text-align: justify;
                     }
                     &--date {
                         font-size: 1.6rem;
-                        position: absolute;
                         right: 25px;
                         top: 30px;
                     }
@@ -942,26 +910,12 @@ footer {
     }
 
     footer {
-        padding: 10% 5% 10%;
         h1 {
             font-size: 2.5rem;
         }
         .field-footer {
             &__contact, &__informations {
                 font-size: 1.5rem;
-                min-width: 100%;
-            }
-            &__contact {
-                img {
-                    width: 35px;
-                    margin: 25px 20px 25px 0;
-                }
-            }
-            &__informations {
-                img {
-                    width: 17.5px;
-                    margin-top: 5px;
-                }
             }
         }
     }
