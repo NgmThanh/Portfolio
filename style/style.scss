@@ -96,6 +96,14 @@ $color-placeholder: #909090;
 $orange-pure: #FF5711;
 $pink-pure: #E52F6F;
 
+$color-bg-light: #f5f5f5;
+$color-border-light: #455A64;
+
+.light-mode {
+    background-color: $color-bg-light;
+    color: $grey-bg;
+}
+
 // =============== ANIMATIONS =============== //
 
 @keyframes apparition {

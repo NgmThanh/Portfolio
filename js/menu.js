@@ -59,7 +59,41 @@ window.onload = () => {
 };
 
 // light mode
-function darkMode() {
+function lightMode() {
+    // toggle class light mode to body
     var element = document.body;
     element.classList.toggle("light-mode");
+
+    // to test if light is enabled or not
+    var lightEnabled = document.getElementsByClassName("light-mode");
+
+    // change icons
+    var iconParent = document.getElementsByClassName("presentation")[0];
+    var icon = iconParent.getElementsByTagName("img");
+
+    // change icon of button light mode
+    var iconLightMode = document.getElementsByClassName("dark-menu");
+
+    // if light is enabled
+    if (lightEnabled.length === 0) {
+        // change button of dark mode menu
+        for (var i = 0; i < iconLightMode.length; i++) {
+            iconLightMode[i].textContent = "☀️";
+        }
+        // change filter of icons contact
+        for (var i = 0; i < icon.length; i++) {
+            icon[i].style.filter = "";
+        }
+    }
+    // if dark is enabled
+    else {
+        for (var i = 0; i < iconLightMode.length; i++) {
+            iconLightMode[i].textContent = "🌙";
+        }
+        for (var i = 0; i < icon.length; i++) {
+            icon[i].style.filter = "none";
+        }
+    }
+
+    console.log(icon)    
 }

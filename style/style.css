@@ -79,6 +79,11 @@
   src: url("../docs/font/Poppins/Poppins-Medium.ttf") format("truetype");
 }
 
+.light-mode {
+  background-color: #f5f5f5;
+  color: #17141D;
+}
+
 @-webkit-keyframes apparition {
   from {
     opacity: 0;
