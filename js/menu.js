@@ -58,3 +58,8 @@ window.onload = () => {
     });
 };
 
+// light mode
+function darkMode() {
+    var element = document.body;
+    element.classList.toggle("light-mode");
+}

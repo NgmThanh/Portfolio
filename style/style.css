@@ -654,7 +654,7 @@ footer em {
 
 @media screen and (max-device-width: 767px) {
   header {
-    height: 50px;
+    height: 55px;
   }
   header img {
     display: none;
@@ -662,7 +662,7 @@ footer em {
   header .hamburger-icon {
     cursor: pointer;
     position: absolute;
-    top: 7.5px;
+    top: 10px;
     left: 5%;
     display: block;
   }
@@ -692,7 +692,7 @@ footer em {
   header .mobile-menu {
     display: none;
     position: fixed;
-    top: 50px;
+    top: 55px;
     left: 0;
     right: 0;
     text-align: left;
@@ -720,7 +720,7 @@ footer em {
   }
   #progress {
     height: 5px;
-    top: 50px;
+    top: 55px;
   }
   .about-page, .skills-page, .works-page, .contact-page {
     padding: 50px 5% 45px;

@@ -625,7 +625,7 @@ footer {
 @media screen and (max-device-width: 767px) {
     
     header {
-        height: 50px;
+        height: 55px;
 
         img {
             display: none;
@@ -635,7 +635,7 @@ footer {
         .hamburger-icon {
             cursor: pointer;
             position: absolute;
-            top: 7.5px;
+            top: 10px;
             left: 5%;
             display: block;
 
@@ -668,7 +668,7 @@ footer {
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 50px;
+            top: 55px;
             left: 0;
             right: 0;
             text-align: left;
@@ -695,7 +695,7 @@ footer {
 
     #progress {
         height: 5px;
-        top: 50px;
+        top: 55px;
     }
 
 
