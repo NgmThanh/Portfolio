@@ -1,3 +1,5 @@
+// =============== FONTS =============== //
+
 @font-face {
     font-family: 'KoHo';
     src: url('../docs/font/KoHo/KoHo-Regular.ttf') format('truetype'),
@@ -66,6 +68,8 @@
     src: url('../docs/font/Poppins/Poppins-Medium.ttf') format('truetype'),
 }
 
+// =============== COLORS =============== //
+
 // backgrounds
 $dark-grey: #100E17;
 $grey-bg: #17141D;
@@ -92,7 +96,7 @@ $color-placeholder: #909090;
 $orange-pure: #FF5711;
 $pink-pure: #E52F6F;
 
-// ===== ANIMATIONS =====
+// =============== ANIMATIONS =============== //
 
 @keyframes apparition {
     from {
@@ -112,7 +116,7 @@ $pink-pure: #E52F6F;
     }
 }
 
-// ===== MIXIN =====
+// =============== MIXINS =============== //
 
 @mixin gradient-background {
     background: linear-gradient(135deg, $orange-pure,$pink-pure);
@@ -130,7 +134,7 @@ $pink-pure: #E52F6F;
     transition: 0.4s all ease;
 }
 
-// ===== MAIN CODE =====
+// =============== MAIN CODE =============== //
 
 * {
     font-family: "Titillium", "Source", "Cairo", "PTSans", "Saira", "KoHo", "Arial";
@@ -161,6 +165,29 @@ h1 {
     font-family: 'Teko';
 }
 
+.about-page, .skills-page, .works-page, .contact-page {
+    padding: 7.5% 10% 5%;
+}
+
+.skills-page, .works-page, .contact-page {
+    text-align: center;
+    position: relative;
+    // title pages
+    h1 {
+        font-size: 4rem;
+    }
+    // sentence subtitle
+    h2 {
+        font-family: 'Saira';
+        font-size: 1.9rem;
+        font-weight: normal;
+        display: block;
+        margin-top: 15px;
+    }
+}
+
+
+// ----------- FIXED HEADER ----------- //
 header {
     width: 100%;
     background-color: $dark-grey;
@@ -181,7 +208,7 @@ header {
             animation: rotate 10s linear infinite;
         }
     }
-    
+    // ----- List menu ----- //
     .menu {
         list-style-type: none;
         display: flex;
@@ -194,7 +221,7 @@ header {
             text-decoration: none;
             font-size: 1.8rem;
             font-weight: medium;
-            color: whitesmoke;
+            color: $light-white;
             margin-right: 20px;
             margin-left: 20px;
             &:hover {
@@ -206,6 +233,7 @@ header {
     }
 }
 
+// ----------- PROGRESS BAR ----------- //
 #progress{
 	@include gradient-background;
 	height: 8px;
@@ -215,13 +243,10 @@ header {
 	z-index: 100;
 }
 
-.about-page, .contact-page, .works-page, .skills-page {
-    padding: 7.5% 10% 5%;
-}
-
+// ----------- ABOUT PAGE ----------- //
 .about-page {
 
-    // block presentation
+    // ----- presentation area ----- //
     .presentation {
         h1, h2 {
             font-family: 'Teko', 'Poppins', 'Titillium';
@@ -247,7 +272,7 @@ header {
         }           
     }
 
-    // block description
+    // ----- description area ----- //
     .description {
         margin-top: 5%;
         display: flex;
@@ -287,24 +312,10 @@ header {
     }
 }
 
-.skills-page, .works-page, .contact-page {
-    text-align: center;
-    position: relative;
-
-    h1 {
-        font-size: 4rem;
-    }
-    h2 {
-        font-family: 'Saira';
-        font-size: 1.9rem;
-        font-weight: normal;
-        display: block;
-        margin-top: 15px;
-    }
-}
-
+// ----------- SKILLS PAGE ----------- //
 .skills-page {
 
+    // ----- skills area ----- //
     .skills-box {
         margin-top: 2.5%;
         display: flex;
@@ -312,14 +323,14 @@ header {
         align-items: center;
         justify-content: center;
 
+        // box skill with progress bar
         .skill {
             width: 35%;
             min-width: 300px;
-            // background-color: $grey-input;
             padding: 0px;
             margin: 20px 25px 20px;
             text-align: left;
-
+            // language
             h2 {
                 font-weight: normal;
                 font-size: 2.25rem;
@@ -332,13 +343,14 @@ header {
                 margin-top: 10px;
                 position: relative;
                 border-radius: 3px;
-
+                // percent
                 h3 {
                     position: absolute;
                     bottom: 170%;
                     left: 92.5%;
                     font-size: 1.8rem;
                 }
+                // progress bar inside
                 .skill-bar {
                     position: absolute;
                     // width defined in skill.js
@@ -352,8 +364,10 @@ header {
     }
 }
 
+// ----------- WORKS PAGE ----------- //
 .works-page {
 
+    // ----- timeline area ----- //
     .timeline {
         margin-top: 2.5%;
         padding-left: 15%;
@@ -363,10 +377,11 @@ header {
         align-items: center;
         justify-content: space-around;
 
+        // ----- work box ----- //
         &__box {
             position: relative;
             margin: 2.5%;
-                    
+
             &--button {
                 width: 300px;
                 height: 300px;
@@ -377,6 +392,7 @@ header {
                 border: 1px solid $grey-border;
                 filter: brightness(89%);
 
+                // open work-window onfocus
                 &:focus + .work-window {
                     opacity: 1;
                     pointer-events: all;
@@ -406,7 +422,7 @@ header {
                 }
             }
 
-            // window description of project
+            // ----- work window displayed on box focus ----- //
             .work-window {
                 width: 200%;
                 padding: 45px;
@@ -468,8 +484,10 @@ header {
     }
 }
 
+// ----------- CONTACT PAGE ----------- //
 .contact-page {
 
+    // ----- contact box ----- //
     .contact__field {
         margin: auto;
         margin-top: 2.5%;
@@ -499,9 +517,12 @@ header {
                 border: 2px solid $pink-pure;
             }
         }
+
         &--textarea {
             height: 200px;
         }
+
+        // button send
         [type="submit"] {
             font-family: "Raleway", "Cairo";
             font-size: 2.0rem;
@@ -529,6 +550,7 @@ header {
     }
 }
 
+// ----------- FOOTER ----------- //
 footer {
     margin-top: 5%;
     background-color: $dark-grey;
@@ -538,6 +560,7 @@ footer {
         font-size: 3rem;
     }
 
+    // ----- footer area ----- //
     .field-footer {
         display: flex;
         flex-wrap: wrap;
@@ -552,8 +575,9 @@ footer {
             padding-left: 4%;
         }
 
+        // ----- contact area ----- //
         &__contact {
-
+            // icon contact
             img {
                 filter: invert(100%);
                 width: 40px;
@@ -564,8 +588,9 @@ footer {
             }
         }
 
+        // ----- informations area ----- //
         &__informations {
-
+            // icon contact
             img {
                 filter: invert(100%);
                 width: 25px;
@@ -576,13 +601,14 @@ footer {
                     @include jumpAnimation(-5px);
                 }
             }
-
+            // line of information
             span {
                 display: block;
             }
         }
     }
 
+    // made by ...
     em {
         font-size: 1.6rem;
         font-style: normal;
@@ -593,7 +619,86 @@ footer {
     }
 }
 
-// ===== media =====
+// =============== MEDIA QUERIES =============== //
+
+// tablet
+@media screen and (max-device-width: 700px) {
+
+    .about-page, .skills-page, .works-page, .contact-page {
+        padding: 50px 5% 45px;
+    }
+
+    .about-page {
+        padding-top: 100px;
+    }
+
+    .works-page {
+        h2 {
+            // display: block;
+            margin-bottom: 35px;
+        }
+    }
+
+    .works-page {
+        .timeline {
+            padding-left: 0%;
+            padding-right: 0%;
+            &__box {
+                position: relative;
+                margin: 2.5%;
+                width: 100%;
+                &--button {
+                    width: 100%;
+                    max-width: 300px;
+                }
+                // window description of project
+                .work-window {
+                    width: 110%;
+                    padding: 35px;
+                    position: absolute;
+                    left: -13.5%;
+                    right: 0;
+                    top: -25%;
+                    &--subtitle {
+                        margin-top: 0px;
+                        margin-bottom: 10px;
+                    }
+                    &--description {
+                        margin-top: 15px;
+                    }
+                    &--date {
+                        right: 35px;
+                        top: 35px;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-page {
+        .contact__field {
+            padding: 20px 15px 20px;
+            margin-top: 25px;
+            width: auto;
+            max-width: 375px;
+            &--input, &--textarea {
+                width: 92%;
+                font-size: 1.7rem;
+                padding: 7.5px;
+                border-radius: 3px;
+            }
+            &--textarea {
+                height: 150px;
+            }
+            [type="submit"] {
+                font-size: 1.7rem;
+                padding: 10px;
+                width: 175px;
+            }
+        }
+    }
+}
+
 
 // mobile
 @media all and (max-device-width: 500px) {
@@ -614,14 +719,13 @@ footer {
     .about-page, .skills-page, .works-page, .contact-page {
         padding: 50px 5% 25px;
     }
-    
+
     .about-page {
         padding-top: 75px;
     }
 
     .works-page, .skills-page {
         h2 {
-            display: block;
             margin-bottom: 35px;
         }
     }
@@ -676,7 +780,6 @@ footer {
         }
     }
 
-
     .works-page {
         .timeline {
             padding-left: 0%;
@@ -687,55 +790,39 @@ footer {
                 width: 100%;
                 &--button {
                     width: 100%;
-                    max-width: 325px;
-                    // icon work box
-                    img {
-                        filter: invert(100%);
-                        position: relative;
-                        width: 85px;
-                        margin: auto;
-                    }
-                    // title work box
-                    h1 {
-                        font-size: 2.25rem;
-                        display: block;
-                        margin-top: 5px;
-                        color: $light-white;
-                    }
+                    max-width: 300px;
                 }
-    
                 // window description of project
                 .work-window {
-                    width: 100%;
-                    padding: 20px;
-                    position: absolute;
-                    left: -6.5%;
+                    width: 97.5%;
+                    padding: 25px;                    
+                    left: -7.5%;
                     right: 0;
                     top: -25%;
                     &--title {
                         font-size: 2.5rem;
                     }
                     &--subtitle {
-                        font-size: 1.7rem;
-                        margin-top: -5px;
+                        font-size: 1.85rem;
+                        margin-top: 0px;
                         margin-bottom: 0px;
                         text-align: justify;
                     }
                     &--language {
-                        font-size: 1.4rem;
+                        font-size: 1.6rem;
                     }
                     &--description {
                         margin-top: 10px;
                         text-align: justify;
                     }
                     &--date {
-                        font-size: 1.5rem;
+                        font-size: 1.6rem;
                         position: absolute;
                         right: 25px;
-                        top: 27.5px;
+                        top: 30px;
                     }
                     img {
-                        margin-top: 10px;
+                        margin-top: 15px;
                     }
                 }
             }
@@ -744,21 +831,10 @@ footer {
 
     .contact-page {
         .contact__field {
-            padding: 20px 15px 20px;
-            margin-top: 25px;
             width: auto;
+            max-width: 300px;
             &--input, &--textarea {
-                width: 92%;
                 font-size: 1.5rem;
-                padding: 7.5px;
-            }
-            &--textarea {
-                height: 150px;
-            }
-            [type="submit"] {
-                font-size: 1.5rem;
-                padding: 10px;
-                width: 175px;
             }
         }
     }
