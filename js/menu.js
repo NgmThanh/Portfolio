@@ -40,3 +40,4 @@ window.onload = () => {
         document.getElementById("progress").style.width = barre+"px"
     });
 };
+

@@ -18,8 +18,19 @@
                 <a href="#works"><ul class="menu--text" id="works-menu">Works</ul></a>
                 <a href="#contact"><ul class="menu--text" id="contact-menu">Contact</ul></a>
                 <ul class="menu--text" id="dark-menu">🌙</ul>
+                <div class="hamburger-menu" onclick="changeMobile(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
             </nav>
-            <!-- script selected menu and progress bar -->
+            <script type="text/javascript">// mobile version
+                function changeMobile(x) {
+                    console.log(x.classList);
+                    x.classList.toggle("change");
+                }
+            </script>
+            <!-- script selected menu and progress bar + mobile version -->
             <script type="text/javascript" src="js/menu.js" defer></script>
         </header>
         <div id="progress"></div>
@@ -172,6 +183,8 @@
                             Mattis vulputate enim nulla aliquet porttitor lacus. 
                             Leo vel orci porta non pulvinar neque. 
                         </p>
+                        <img src="images/Works/connexion-neo.png" alt="connexion">
+                        <img src="images/Works/server.png" alt="server">
                     </div>
                 </div>
                 <div class="timeline__box">
