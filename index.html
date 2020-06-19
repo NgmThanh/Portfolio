@@ -103,178 +103,237 @@
             <script type="text/javascript" src="js/skills.js"></script>
         </section>
 
+        
         </div>
         <!-- section "works" -->
         <section class="works-page" id="works">
             <h1>My works</h1>
             <h2>All my projects, sorted by decreasing date</h2>
             <div class="timeline">
-                <div class="timeline__box">
-                    <button class="timeline__box--button">
-                        <img src="images/fox.png" alt="fox">
-                        <h1>"My PortFolio”</h1>
-                    </button>
-                    <div class="work-window">
-                        <h1 class="work-window--title">
-                            “My PortFolio” 😎
-                        </h1>
-                        <h2 class="work-window--subtitle">
-                            This website. My last project realised until now !
-                        </h2>
-                        <h3 class="work-window--language">
-                            Language : Html, CSS, Javascript
-                        </h3>
-                        <h4 class="work-window--date">
-                            June 2020
-                        </h4>
-                        <p class="work-window--description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Mattis vulputate enim nulla aliquet porttitor lacus. 
-                            Leo vel orci porta non pulvinar neque. 
-                        </p>
+                <!-- trigger / open modal window -->
+                <button class="timeline__box" id="btnWork1">
+                    <img src="images/fox.png" alt="fox">
+                    <h1>"My PortFolio”</h1>
+                </button>
+                <!-- modal window -->
+                <div id="myModal1" class="modal-window">
+                    <div class="work-window work1">
+                        <!-- header -->
+                        <div class="work-window__header">
+                            <h1 class="work-window__header--title">
+                                “My PortFolio” 😎
+                            </h1>
+                            <h2 class="work-window__header--subtitle">
+                                This website. My last project realised until now !
+                            </h2>
+                            <h3 class="work-window__header--language">
+                                Language : Html, CSS, Javascript
+                            </h3>
+                            <h4 class="work-window__header--date">
+                                June 2020
+                            </h4>
+                        </div>
+                        <!-- body -->
+                        <div class="work-window__body">
+                            <p class="work-window__body--description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Mattis vulputate enim nulla aliquet porttitor lacus. 
+                                Leo vel orci porta non pulvinar neque. 
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="timeline__box">
-                    <button class="timeline__box--button">
-                        <img src="images/police.png" alt="police">
-                        <h1>“Prevent Network 31”</h1>
-                    </button>
-                    <div class="work-window">
-                        <h1 class="work-window--title">
-                            “Prevent Network 31” 👮
-                        </h1>
-                        <h2 class="work-window--subtitle">
-                            Mobile application and online website for the police.
-                        </h2>
-                        <h3 class="work-window--language">
-                            Language : Html, CSS, PHP, SQL, Android
-                        </h3>
-                        <h4 class="work-window--date">
-                            April 2020
-                        </h4>
-                        <p class="work-window--description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Mattis vulputate enim nulla aliquet porttitor lacus. 
-                            Leo vel orci porta non pulvinar neque. 
-                        </p>
-                        <img src="images/Works/connexion.png" alt="connexion">
-                        <img src="images/Works/demand.png" alt="demand">
-                        <img src="images/Works/advise.png" alt="advise">
-                        <img src="images/Works/tchat.png" alt="chat">
+
+                <!-- trigger / open modal window -->
+                <button class="timeline__box" id="btnWork2">
+                    <img src="images/police.png" alt="police">
+                    <h1>“Prevent Network 31”</h1>
+                </button>
+                <!-- modal window -->
+                <div id="myModal2" class="modal-window">
+                    <div class="work-window work2">
+                        <!-- header -->
+                        <div class="work-window__header">
+                            <h1 class="work-window__header--title">
+                                “Prevent Network 31” 👮
+                            </h1>
+                            <h2 class="work-window__header--subtitle">
+                                Mobile application and online website for the police.
+                            </h2>
+                            <h3 class="work-window__header--language">
+                                Language : Html, CSS, PHP, SQL, Android
+                            </h3>
+                            <h4 class="work-window__header--date">
+                                April 2020
+                            </h4>
+                        </div>
+                        <!-- body -->
+                        <div class="work-window__body">
+                            <p class="work-window__body--description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Mattis vulputate enim nulla aliquet porttitor lacus. 
+                                Leo vel orci porta non pulvinar neque. 
+                            </p>
+                            <!-- slideshow -->
+                            <img src="images/Works/connexion.png" alt="connexion">
+                            <img src="images/Works/demand.png" alt="demand">
+                            <img src="images/Works/advise.png" alt="advise">
+                            <img src="images/Works/tchat.png" alt="chat">
+                        </div>
                     </div>
                 </div>
-                <div class="timeline__box">
-                    <button class="timeline__box--button">
-                        <img src="images/java.png" alt="java">
-                        <h1>“NeoCampus”</h1>
-                    </button>
-                    <div class="work-window">
-                        <h1 class="work-window--title">
-                            “NeoCampus” 🧑‍🎓
-                        </h1>
-                        <h2 class="work-window--subtitle">
-                            Message interface between students and teachers.
-                        </h2>
-                        <h3 class="work-window--language">
-                            Language : Java, SQL
-                        </h3>
-                        <h4 class="work-window--date">
-                            December 2019
-                        </h4>
-                        <p class="work-window--description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Mattis vulputate enim nulla aliquet porttitor lacus. 
-                            Leo vel orci porta non pulvinar neque. 
-                        </p>
-                        <img src="images/Works/connexion-neo.png" alt="connexion">
-                        <img src="images/Works/server.png" alt="server">
+
+                <!-- trigger / open modal window -->
+                <button class="timeline__box" id="btnWork3">
+                    <img src="images/java.png" alt="java">
+                    <h1>“NeoCampus”</h1>
+                </button>
+                <!-- modal window -->
+                <div id="myModal3" class="modal-window">
+                    <div class="work-window work3">
+                        <!-- header -->
+                        <div class="work-window__header">
+                            <h1 class="work-window__header--title">
+                                “NeoCampus” 🧑‍🎓
+                            </h1>
+                            <h2 class="work-window__header--subtitle">
+                                Message interface between students and teachers.
+                            </h2>
+                            <h3 class="work-window__header--language">
+                                Language : Java, SQL
+                            </h3>
+                            <h4 class="work-window__header--date">
+                                December 2019
+                            </h4>
+                        </div>
+                        <!-- body -->
+                        <div class="work-window__body">
+                            <p class="work-window__body--description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Mattis vulputate enim nulla aliquet porttitor lacus. 
+                                Leo vel orci porta non pulvinar neque. 
+                            </p>
+                            <!-- slideshow -->
+                            <img src="images/Works/connexion-neo.png" alt="connexion">
+                            <img src="images/Works/server.png" alt="server">
+                        </div>
                     </div>
                 </div>
-                <div class="timeline__box">
-                    <button class="timeline__box--button">
-                        <img src="images/vietfood.png" alt="vietfood">
-                        <h1>“Vietfoodtlse”</h1>
-                    </button>
-                    <div class="work-window">
-                        <h1 class="work-window--title">
-                            “Vietfoodtlse” 🍚
-                        </h1>
-                        <h2 class="work-window--subtitle">
-                            Website for Vietnamese food in Toulouse.
-                        </h2>
-                        <h3 class="work-window--language">
-                            Language : Wix Online
-                        </h3>
-                        <h4 class="work-window--date">
-                            April 2019
-                        </h4>
-                        <p class="work-window--description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Mattis vulputate enim nulla aliquet porttitor lacus. 
-                            Leo vel orci porta non pulvinar neque. 
-                        </p>
-                        <img src="images/Works/vietFood1.jpg" alt="vietfood">
-                        <img src="images/Works/vietFood2.jpg" alt="vietfood">
-                        <img src="images/Works/vietFood3.jpg" alt="vietfood">
+
+                <!-- trigger / open modal window -->
+                <button class="timeline__box" id="btnWork4">
+                    <img src="images/vietfood.png" alt="vietfood">
+                    <h1>“Vietfoodtlse”</h1>
+                </button>
+                <!-- modal window -->
+                <div id="myModal4" class="modal-window">
+                    <div class="work-window work4">
+                        <!-- header -->
+                        <div class="work-window__header">
+                            <h1 class="work-window__header--title">
+                                “Vietfoodtlse” 🍚
+                            </h1>
+                            <h2 class="work-window__header--subtitle">
+                                Website for Vietnamese food in Toulouse.
+                            </h2>
+                            <h3 class="work-window__header--language">
+                                Language : Wix Online
+                            </h3>
+                            <h4 class="work-window__header--date">
+                                April 2019
+                            </h4>
+                        </div>
+                        <!-- body -->
+                        <div class="work-window__body">
+                            <p class="work-window__body--description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Mattis vulputate enim nulla aliquet porttitor lacus. 
+                                Leo vel orci porta non pulvinar neque. 
+                            </p>
+                            <!-- slideshow -->
+                            <img src="images/Works/vietFood1.jpg" alt="vietfood">
+                            <img src="images/Works/vietFood2.jpg" alt="vietfood">
+                            <img src="images/Works/vietFood3.jpg" alt="vietfood">
+                        </div>
                     </div>
                 </div>
-                <div class="timeline__box">
-                    <button class="timeline__box--button">
-                        <img src="images/python.png" alt="python">
-                        <h1>"GOBS Game"</h1>
-                    </button>
-                    <div class="work-window">
-                        <h1 class="work-window--title">
-                            "GOBS Game" ♟️
-                        </h1>
-                        <h2 class="work-window--subtitle">
-                            GOBS Game in terminal, 1 (versus IA) or 2 players.
-                        </h2>
-                        <h3 class="work-window--language">
-                            Language : Python
-                        </h3>
-                        <h4 class="work-window--date">
-                            March - May 2018
-                        </h4>
-                        <p class="work-window--description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Mattis vulputate enim nulla aliquet porttitor lacus. 
-                            Leo vel orci porta non pulvinar neque. 
-                        </p>
-                        <img src="images/Works/gobs.png" alt="gobs">
+
+                <!-- trigger / open modal window -->
+                <button class="timeline__box" id="btnWork5">
+                    <img src="images/python.png" alt="python">
+                    <h1>"GOBS Game"</h1>
+                </button>
+                <!-- modal window -->
+                <div id="myModal5" class="modal-window">
+                    <div class="work-window work5">
+                        <!-- header -->
+                        <div class="work-window__header">
+                            <h1 class="work-window__header--title">
+                                "GOBS Game" ♟️
+                            </h1>
+                            <h2 class="work-window__header--subtitle">
+                                GOBS Game in terminal, 1 (versus IA) or 2 players.
+                            </h2>
+                            <h3 class="work-window__header--language">
+                                Language : Python
+                            </h3>
+                            <h4 class="work-window__header--date">
+                                March - May 2018
+                            </h4>
+                        </div>
+                        <!-- body -->
+                        <div class="work-window__body">
+                            <p class="work-window__body--description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Mattis vulputate enim nulla aliquet porttitor lacus. 
+                                Leo vel orci porta non pulvinar neque. 
+                            </p>
+                            <!-- slideshow -->
+                            <img src="images/Works/gobs.png" alt="gobs">
+                        </div>
                     </div>
                 </div>
-                <div class="timeline__box">
-                    <button class="timeline__box--button">
-                        <img src="images/java.png" alt="java">
-                        <h1>“Guitar Hero”</h1>
-                    </button>
-                    <div class="work-window">
-                        <h1 class="work-window--title">
-                            “Guitar Hero” 🎸
-                        </h1>
-                        <h2 class="work-window--subtitle">
-                            The rythm game "Guitar Hero" with game interface
-                        </h2>
-                        <h3 class="work-window--language">
-                            Language : Java
-                        </h3>
-                        <h4 class="work-window--date">
-                            April - May 2017
-                        </h4>
-                        <p class="work-window--description">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Mattis vulputate enim nulla aliquet porttitor lacus. 
-                            Leo vel orci porta non pulvinar neque. 
-                        </p>
+
+                <!-- trigger / open modal window -->
+                <button class="timeline__box" id="btnWork6">
+                    <img src="images/java.png" alt="java">
+                    <h1>“Guitar Hero”</h1>
+                </button>
+                <!-- modal window -->
+                <div id="myModal6" class="modal-window">
+                    <div class="work-window work6">
+                        <!-- header -->
+                        <div class="work-window__header">
+                            <h1 class="work-window__header--title">
+                                “Guitar Hero” 🎸
+                            </h1>
+                            <h2 class="work-window__header--subtitle">
+                                The rythm game "Guitar Hero" with game interface
+                            </h2>
+                            <h3 class="work-window__header--language">
+                                Language : Java
+                            </h3>
+                            <h4 class="work-window__header--date">
+                                April - May 2017
+                            </h4>
+                        </div>
+                        <!-- body -->
+                        <div class="work-window__body">
+                            <p class="work-window__body--description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                Mattis vulputate enim nulla aliquet porttitor lacus. 
+                                Leo vel orci porta non pulvinar neque. 
+                            </p>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
         
@@ -294,6 +353,8 @@
             </div>
             </form>
         </section>
+
+        <script type="text/javascript" src="js/works.js"></script>
 
         <footer>
             <div class="field-footer">

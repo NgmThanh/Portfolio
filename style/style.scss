@@ -135,6 +135,11 @@ $color-border-light: #455A64;
     transition: 0.4s all ease;
 }
 
+@keyframes animatetop {
+    from {top: -50px; opacity:0}
+    to {top:0; opacity:1}
+  }
+
 // =============== MAIN CODE =============== //
 
 * {
@@ -387,105 +392,227 @@ header {
 
         // ----- work box ----- //
         &__box {
-            position: relative;
             margin: 2.5%;
+            width: 300px;
+            height: 300px;
+            background-color: $dark-grey;
+            border-radius: 5px;
+            border: none;
+            transition: 0.5s all ease-out;
+            border: 1px solid $grey-border;
+            filter: brightness(95%);
 
-            &--button {
-                width: 300px;
-                height: 300px;
-                background-color: $dark-grey;
-                border-radius: 5px;
-                border: none;
-                transition: 0.5s all ease-out;
-                border: 1px solid $grey-border;
-                filter: brightness(95%);
-
-                // open work-window onfocus
-                &:focus + .work-window {
-                    opacity: 1;
-                    pointer-events: all;
-                    transform: translateY(0px);
-                }
-                
-                &:hover {
-                    @include gradient-background;
-                    @include jumpAnimation(-5px);
-                    transition: 0.4s all ease;
-                    cursor: pointer;
-                }
-
-                // icon work box
-                img {
-                    filter: invert(100%);
-                    position: relative;
-                    width: 85px;
-                    margin: auto;
-                }
-                // title work box
-                h1 {
-                    font-size: 2.25rem;
-                    display: block;
-                    margin-top: 5px;
-                    color: $light-white;
-                }
+            &:hover {
+                @include gradient-background;
+                @include jumpAnimation(-5px);
+                transition: 0.4s all ease;
+                cursor: pointer;
             }
 
-            // ----- work window displayed on box focus ----- //
+            // icon work box
+            img {
+                filter: invert(100%);
+                position: relative;
+                width: 85px;
+                margin: auto;
+            }
+            // title work box
+            h1 {
+                font-size: 2.25rem;
+                display: block;
+                margin-top: 5px;
+                color: $light-white;
+            }
+        }
+        // modal work window displayed when click button
+        .modal-window {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            padding-top: 50px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: hidden; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.75); /* Black w/ opacity */
+
+            
+            /* Modal Content */
             .work-window {
-                width: 200%;
-                padding: 45px;
-                position: absolute;
-                left: -65%;
-                top: -25%;
+                position: relative;
                 background-color: $grey-input;
-                opacity: 0;
-                pointer-events: none;
-                @include jumpAnimation(-10px);
-                z-index: 10;
+                margin: auto;
+                width: 60%;
                 border-radius: 5px;
-                text-align: left;
-                word-break: break-all;
                 border: 1px solid $grey-border;
+                text-align: left;
+                animation: animatetop 0.6s;
+                overflow: hidden;
 
-                &--title, &--subtitle {
-                    color: $orange-pure;
-                }
+                &__header {
+                    padding: 30px 40px 10px;
 
-                &--title {
-                    font-size: 2.75rem;
-                    font-family: 'Teko', 'Poppins', 'Titillium';
-                }
-                &--subtitle {
-                    font-family: 'Saira';
-                    font-size: 2.2rem;
-                    font-weight: 600;
-                    filter: invert(100%);
-                    display: block;
-                    margin-top: -5px;
-                    margin-bottom: 15px;
-                }
-                &--language {
-                    font-size: 1.6rem;
-                    color: $pink-pure;
-                    font-weight: 600;
-                }
-                &--description {
-                    font-size: 1.5rem;
-                    text-align: justify;
-                    display: block;
-                    margin-top: 25px;
-                }
-                &--date {
-                    font-family: 'Saira';
-                    font-size: 2.0rem;
-                    position: absolute;
-                    right: 45px;
-                    top: 45px;
-                }
-                img {
-                    max-width: 100%;
-                    margin-top: 15px;
+                    &--title, &--subtitle {
+                        color: $orange-pure;
+
+                    }
                     
+                    &--title {
+                        font-size: 4.0rem;
+                        font-family: 'Teko', 'Poppins', 'Titillium';
+                    }
+                    &--subtitle {
+                        font-family: 'Saira';
+                        font-size: 3rem;
+                        font-weight: 600;
+                        filter: invert(100%);
+                        display: block;
+                        margin-top: 0px;
+                        margin-bottom: 10px;
+                    }
+                    &--language {
+                        font-size: 1.6rem;
+                        color: $pink-pure;
+                        font-weight: 600;
+                    }
+                    &--date {
+                        font-family: 'Saira';
+                        font-size: 2.0rem;
+                        position: absolute;
+                        right: 40px;
+                        top: 50px;
+                    }
+                }
+
+                &__body {
+                    margin: 0 40px 40px;
+
+                    &--description {
+                        font-size: 1.5rem;
+                        text-align: justify;
+                        display: block;
+                        margin-top: 25px;
+                    }
+                    img {
+                        max-width: 450px;
+                        margin-top: 15px;
+                        
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (min-width: 768px) and (max-width: 1281px) {
+        .timeline {
+            
+            .modal-window {
+                /* Modal Content */
+                .work-window {
+                    width: 80%;
+                }
+            }
+        }
+    }
+
+    @media all and (min-width: 480px) and (max-width: 767px) {
+        .timeline {
+            padding-left: 5%;
+            padding-right: 5%;
+            // modal work window displayed when click button
+            .modal-window {
+                padding-top: 25px;
+
+                /* Modal Content */
+                .work-window {
+                    width: 90%;
+
+                    &__header {
+                        padding: 30px 30px 10px;
+                        
+                        &--title {
+                            font-size: 3.2rem;
+                        }
+                        &--subtitle {
+                            font-size: 2.3rem;  
+                        }
+                        &--language {
+                            font-size: 1.6rem;
+                            color: $pink-pure;
+                            font-weight: 600;
+                        }
+                        &--date {
+                            font-size: 2rem;
+                            position: absolute;
+                            top: 45px;
+                            right: 30px;
+                        }
+                    }
+
+                    &__body {
+                        margin: 0 30px 40px;
+                        &--description {
+                            font-size: 1.5rem;
+                            margin-top: 15px;
+                        }
+                        img {
+                            max-width: 100%;
+                            margin-top: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media all and (max-width: 479px) {
+        .timeline {
+            padding-left: 0;
+            padding-right: 0;
+            
+            // modal work window displayed when click button
+            .modal-window {
+                padding-top: 5px;
+
+                /* Modal Content */
+                .work-window {
+                    width: 98%;
+
+                    &__header {
+                        padding: 15px 15px 10px;
+                        
+                        &--title {
+                            font-size: 2.4rem;
+                        }
+                        &--subtitle {
+                            font-size: 1.8rem;  
+                        }
+                        &--language {
+                            font-size: 1.5rem;
+                            color: $pink-pure;
+                            font-weight: 600;
+                        }
+                        &--date {
+                            font-size: 1.5rem;
+                            position: absolute;
+                            top: 25px;
+                            right: 15px;
+                        }
+                    }
+
+                    &__body {
+                        margin: 0 15px 15px;
+                        &--description {
+                            font-size: 1.3rem;
+                            margin-top: 0px;
+                        }
+                        img {
+                            max-width: 100%;
+                            margin-top: 10px;
+                        }
+                    }
                 }
             }
         }
@@ -736,41 +863,6 @@ footer {
         }
     }
 
-    .works-page {
-        .timeline {
-            padding-left: 0%;
-            padding-right: 0%;
-            &__box {
-                position: relative;
-                margin: 2.5%;
-                width: 100%;
-                &--button {
-                    width: 100%;
-                    max-width: 300px;
-                }
-                // window description of project
-                .work-window {
-                    width: 99%;
-                    padding: 35px;
-                    position: absolute;
-                    left: -7.5%;
-                    top: -25%;
-                    &--subtitle {
-                        margin-top: 0px;
-                        margin-bottom: 10px;
-                    }
-                    &--description {
-                        margin-top: 15px;
-                        font-size: 1.5rem;
-                    }
-                    &--date {
-                        right: 35px;
-                        top: 35px;
-                    }
-                }
-            }
-        }
-    }
 
     .contact-page {
         .contact__field {
@@ -870,40 +962,6 @@ footer {
         h2 {
             display: block;
             margin-bottom: 0px;
-        }
-    }
-
-    .works-page {
-        .timeline {
-            &__box {
-                // window description of project
-                .work-window {
-                    width: 97.5%;
-                    padding: 25px;                    
-                    left: -7.5%;
-                    top: -10%;
-                    &--title {
-                        font-size: 2.5rem;
-                    }
-                    &--subtitle {
-                        font-size: 1.85rem;
-                    }
-                    &--language {
-                        font-size: 1.6rem;
-                    }
-                    &--description {
-                        margin-top: 10px;
-                    }
-                    &--date {
-                        font-size: 1.6rem;
-                        right: 25px;
-                        top: 30px;
-                    }
-                    img {
-                        margin-top: 15px;
-                    }
-                }
-            }
         }
     }
 
