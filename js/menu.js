@@ -1,5 +1,7 @@
 // ============ SCRIPT MENU ============ //
 
+// ----- DESKTOP MENU ----- //
+
 // html collection of class "menu--text"
 var classMenu = document.getElementsByClassName('menu--text');
 var arrayMenu = new Array();
@@ -20,15 +22,17 @@ document.querySelectorAll('.menu--text').forEach(itemMenu => {
     });
 });
 
-// mobile menu
+// ----- MOBILE MENU ----- //
+
+// change menu onclick hamburger icon
 function changeMobile(menu) {
     var opened = document.getElementsByClassName("change");
     var menuMobile = document.getElementsByClassName("mobile-menu");
-    // if menu opened
+    // if menu closed
     if (opened.length === 0) {
         menuMobile[0].style.display = "block";
     }
-    // if menu closed
+    // if menu opened
     else {
         menuMobile[0].style.display = "none";
     }
@@ -55,7 +59,7 @@ document.querySelectorAll('.menu-display--text').forEach(itemMenu => {
     });
 });
 
-
+// ----- DARK / LIGHT MODE ----- //
 
 // light mode
 function lightMode() {
@@ -92,10 +96,10 @@ function lightMode() {
         for (var i = 0; i < icon.length; i++) {
             icon[i].style.filter = "none";
         }
-    }
-
-    console.log(icon)    
+    }  
 }
+
+// ----- PROGRESS BAR ----- //
 
 // progress bar in scrolling
 window.onload = () => {
@@ -103,13 +107,10 @@ window.onload = () => {
     window.addEventListener("scroll", () => {
         // Calcul de la hauteur "utile" du document
         let hauteur = document.documentElement.scrollHeight - window.innerHeight
-
         // Récupération de la position verticale
         let position = window.scrollY
-
         // Récupération de la largeur de la fenêtre
         let largeur = document.documentElement.clientWidth
-
         // Calcul de la largeur de la barre
         let barre = position / hauteur * largeur
 
