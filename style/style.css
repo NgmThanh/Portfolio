@@ -632,6 +632,7 @@ header .mobile-menu {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  opacity: 0.5;
 }
 
 .works-page .timeline .modal-window .work-window__body .slideshow-container .next {
