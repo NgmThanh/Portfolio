@@ -141,7 +141,7 @@
 
 @-webkit-keyframes animatetop {
   from {
-    top: -50px;
+    top: -50%;
     opacity: 0;
   }
   to {
@@ -152,7 +152,7 @@
 
 @keyframes animatetop {
   from {
-    top: -50px;
+    top: -50%;
     opacity: 0;
   }
   to {
@@ -498,8 +498,6 @@ header .mobile-menu {
   display: none;
   position: fixed;
   z-index: 10000;
-  padding-top: 8vh;
-  /* Location of the box */
   left: 0;
   top: 0;
   width: 100%;
@@ -517,6 +515,9 @@ header .mobile-menu {
 
 .works-page .timeline .modal-window .work-window {
   position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   background-color: #100E17;
   margin: auto auto;
   width: 60%;
@@ -524,8 +525,8 @@ header .mobile-menu {
   border-radius: 5px;
   border: 1px solid #312D3C;
   text-align: left;
-  -webkit-animation: animatetop 0.6s;
-          animation: animatetop 0.6s;
+  -webkit-animation: apparition 1.25s ease;
+          animation: apparition 1.25s ease;
   overflow-y: auto;
 }
 
@@ -691,7 +692,6 @@ header .mobile-menu {
 
 @media all and (min-width: 768px) and (max-width: 1280px) {
   .works-page .timeline .modal-window {
-    padding-top: 12vh;
     /* Modal Content */
   }
   .works-page .timeline .modal-window .work-window {
@@ -706,7 +706,6 @@ header .mobile-menu {
     padding-right: 5%;
   }
   .works-page .timeline .modal-window {
-    padding-top: 15vh;
     /* Modal Content */
   }
   .works-page .timeline .modal-window .work-window {
@@ -767,11 +766,11 @@ header .mobile-menu {
     padding-right: 0;
   }
   .works-page .timeline .modal-window {
-    padding-top: 25%;
     /* Modal Content */
   }
   .works-page .timeline .modal-window .work-window {
     width: 98%;
+    max-height: 80%;
   }
   .works-page .timeline .modal-window .work-window__header {
     padding: 15px 15px 10px;

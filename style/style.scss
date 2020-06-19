@@ -138,6 +138,11 @@ $color-border-light: #455A64;
     }
 }
 
+@keyframes animatetop {
+    from {top: -50%; opacity:0}
+    to {top:0; opacity:1}
+}
+
 // =============== MIXINS =============== //
 
 @mixin gradient-background {
@@ -147,11 +152,6 @@ $color-border-light: #455A64;
 @mixin jumpAnimation($distance) {
     transform: translateY($distance);
     transition: 0.4s all ease;
-}
-
-@keyframes animatetop {
-    from {top: -50px; opacity:0}
-    to {top:0; opacity:1}
 }
 
 @mixin text-gradient {
@@ -472,7 +472,7 @@ header {
             display: none;
             position: fixed;
             z-index: 10000;
-            padding-top: 8vh; /* Location of the box */
+            // padding-top: 8vh; /* Location of the box */
             left: 0;
             top: 0;
             width: 100%; /* Full width */
@@ -485,6 +485,8 @@ header {
             /* Modal Content */
             .work-window {
                 position: relative;
+                top: 50%;
+                transform: translateY(-50%);
                 background-color: $dark-grey;
                 margin: auto auto;
                 width: 60%;
@@ -492,7 +494,7 @@ header {
                 border-radius: 5px;
                 border: 1px solid $grey-border;
                 text-align: left;
-                animation: animatetop 0.6s;
+                animation: apparition 1.25s ease;
                 overflow-y: auto;
 
                 &__header {
@@ -640,7 +642,7 @@ header {
         .timeline {
             
             .modal-window {
-                padding-top: 12vh;
+                // padding-top: 12vh;
 
                 /* Modal Content */
                 .work-window {
@@ -657,7 +659,7 @@ header {
             padding-right: 5%;
             // modal work window displayed when click button
             .modal-window {
-                padding-top: 15vh;
+                // padding-top: 15vh;
 
                 /* Modal Content */
                 .work-window {
@@ -728,11 +730,12 @@ header {
             
             // modal work window displayed when click button
             .modal-window {
-                padding-top: 25%;
+                // padding-top: 25%;
 
                 /* Modal Content */
                 .work-window {
                     width: 98%;
+                    max-height: 80%;
 
                     &__header {
                         padding: 15px 15px 10px;
