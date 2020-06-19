@@ -429,7 +429,7 @@ header {
             display: none;
             position: fixed;
             z-index: 10000;
-            padding-top: 50px; /* Location of the box */
+            padding-top: 2.5%; /* Location of the box */
             left: 0;
             top: 0;
             width: 100%; /* Full width */
@@ -443,13 +443,14 @@ header {
             .work-window {
                 position: relative;
                 background-color: $grey-input;
-                margin: auto;
+                margin: auto auto;
                 width: 60%;
+                max-height: 90%;
                 border-radius: 5px;
                 border: 1px solid $grey-border;
                 text-align: left;
                 animation: animatetop 0.6s;
-                overflow: hidden;
+                overflow-y: auto;
 
                 &__header {
                     padding: 30px 40px 10px;
@@ -509,6 +510,8 @@ header {
         .timeline {
             
             .modal-window {
+                padding-top: 5%;
+
                 /* Modal Content */
                 .work-window {
                     width: 80%;
@@ -523,11 +526,12 @@ header {
             padding-right: 5%;
             // modal work window displayed when click button
             .modal-window {
-                padding-top: 25px;
+                padding-top: 5%;
 
                 /* Modal Content */
                 .work-window {
                     width: 90%;
+                    max-height: 92.5%;
 
                     &__header {
                         padding: 30px 30px 10px;
@@ -574,11 +578,12 @@ header {
             
             // modal work window displayed when click button
             .modal-window {
-                padding-top: 5px;
+                padding-top: 2.5%;
 
                 /* Modal Content */
                 .work-window {
                     width: 98%;
+                    max-height: 95%;
 
                     &__header {
                         padding: 15px 15px 10px;

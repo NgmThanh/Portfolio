@@ -458,7 +458,7 @@ header .mobile-menu {
   display: none;
   position: fixed;
   z-index: 10000;
-  padding-top: 50px;
+  padding-top: 2.5%;
   /* Location of the box */
   left: 0;
   top: 0;
@@ -478,14 +478,15 @@ header .mobile-menu {
 .works-page .timeline .modal-window .work-window {
   position: relative;
   background-color: #201C29;
-  margin: auto;
+  margin: auto auto;
   width: 60%;
+  max-height: 90%;
   border-radius: 5px;
   border: 1px solid #312D3C;
   text-align: left;
   -webkit-animation: animatetop 0.6s;
           animation: animatetop 0.6s;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 .works-page .timeline .modal-window .work-window__header {
@@ -544,6 +545,7 @@ header .mobile-menu {
 
 @media all and (min-width: 768px) and (max-width: 1281px) {
   .works-page .timeline .modal-window {
+    padding-top: 5%;
     /* Modal Content */
   }
   .works-page .timeline .modal-window .work-window {
@@ -557,11 +559,12 @@ header .mobile-menu {
     padding-right: 5%;
   }
   .works-page .timeline .modal-window {
-    padding-top: 25px;
+    padding-top: 5%;
     /* Modal Content */
   }
   .works-page .timeline .modal-window .work-window {
     width: 90%;
+    max-height: 92.5%;
   }
   .works-page .timeline .modal-window .work-window__header {
     padding: 30px 30px 10px;
@@ -602,11 +605,12 @@ header .mobile-menu {
     padding-right: 0;
   }
   .works-page .timeline .modal-window {
-    padding-top: 5px;
+    padding-top: 2.5%;
     /* Modal Content */
   }
   .works-page .timeline .modal-window .work-window {
     width: 98%;
+    max-height: 95%;
   }
   .works-page .timeline .modal-window .work-window__header {
     padding: 15px 15px 10px;
