@@ -30,7 +30,7 @@ document.querySelectorAll('.timeline__box').forEach(btnWork => {
                 number = 6
                 break;
         }
-
+        disableScroll(); 
         // get modal
         var modal = document.getElementById("myModal" + number);
         // get workpage
@@ -48,6 +48,7 @@ document.querySelectorAll('.timeline__box').forEach(btnWork => {
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+                disableScroll();
             }
         }
         console.log(number)
@@ -88,9 +89,12 @@ function showSlides(n, no) {
     dots[slideIndex-1].className += " active";
 }
 
-
 // When the user clicks on <span> (x), close the modal
 // span.onclick = function() {
 //   modal.style.display = "none";
 // }
 
+// disable scroll when modal window is opened
+function disableScroll() {
+    document.body.classList.toggle("disable-scroll");
+}

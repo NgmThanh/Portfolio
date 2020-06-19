@@ -113,6 +113,11 @@ $color-border-light: #455A64;
     animation-duration: 1.25s;
 }
 
+.disable-scroll {
+    height: 100%;
+    overflow: hidden;
+}
+
 // =============== ANIMATIONS =============== //
 
 @keyframes apparition {
