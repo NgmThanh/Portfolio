@@ -161,6 +161,27 @@ $color-border-light: #455A64;
     -webkit-text-fill-color: transparent;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    @include gradient-background;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $pink-pure; 
+}
+
 // =============== MAIN CODE =============== //
 
 * {
@@ -464,7 +485,7 @@ header {
             /* Modal Content */
             .work-window {
                 position: relative;
-                background-color: $grey-input;
+                background-color: $dark-grey;
                 margin: auto auto;
                 width: 60%;
                 max-height: 85%;
@@ -554,6 +575,7 @@ header {
                                 @include text-gradient;
                             }
                             img {
+                                max-width: 90%;
                                 margin: auto;
                             }
                         }
@@ -565,20 +587,19 @@ header {
                             top: 50%;
                             width: auto;
                             margin-top: -22px;
-                            padding: 16px;
+                            padding: 15px;
                             color: $light-white;                         
                             font-weight: bold;
                             font-size: 18px;
                             transition: 0.5s ease;
-                            border-radius: 0 3px 3px 0;
+                            border-radius: 3px;
                             user-select: none;
-                            opacity: 0.5;
+                            opacity: 0.7;
                         }
 
                         /* Position the "next button" to the right */
                         .next {
                             right: 0;
-                            border-radius: 3px 0 0 3px;
                         }
 
                         .prev {
@@ -926,6 +947,7 @@ footer {
             top: 10px;
             left: 5%;
             display: block;
+            
 
             .bar1, .bar2, .bar3 {
                 width: 30px;
