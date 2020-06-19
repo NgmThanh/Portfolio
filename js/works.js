@@ -1,6 +1,7 @@
 // ============ WORKS SECTION ============ //
 
 var number = 0;
+var slideIndex = 1;
 
 // ----- WORKS BUTTONS ----- //
 
@@ -46,21 +47,27 @@ document.querySelectorAll('.timeline__box').forEach(btnWork => {
             }
         }
 
+        slideIndex = 1;
+
         // display slideshow (if exists)
         var slides = document.getElementsByClassName("slide"+ number);
 
         if (slides.length > 0) {
-            showSlides(1, number-1);
+            showSlides(slideIndex, number-1);
         }
     }); 
 });
 
 // ----- SLIDESHOW GESTION ----- //
 
-var slideIndex = 1;
 // switch slides
 function plusSlides(n) {
     showSlides(slideIndex += n, number)
+}
+
+// switch slide onclick on dots
+function currentSlide(n) {
+    showSlides(slideIndex = n, number)
 }
 
 // show slides 
@@ -77,7 +84,7 @@ function showSlides(n, no) {
     for (var i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
     }
-    for (i = 0; i < dots.length; i++) {
+    for (var i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     slides[slideIndex-1].style.display = "block";  
