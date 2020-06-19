@@ -2,15 +2,14 @@
 // Get the modal
 // var modal = document.getElementById("myModal");
 
-
+var number = 0;
 // set event listener in all menu buttons
 document.querySelectorAll('.timeline__box').forEach(btnWork => {
     
     btnWork.addEventListener('click', () => {
         console.log(btnWork.id)
         var btnClicked = btnWork.id;
-        var number = 0;
-
+        
         switch (btnClicked) {
             case "btnWork1" : 
                 number = 1
@@ -32,11 +31,12 @@ document.querySelectorAll('.timeline__box').forEach(btnWork => {
                 break;
         }
 
+        // get modal
         var modal = document.getElementById("myModal" + number);
+        // get workpage
         var workPage = document.getElementsByClassName("work-window")[number-1];
-        var btn = document.getElementById("btnWork" + number);
-
         // Get the button that opens the modal
+        var btn = document.getElementById("btnWork" + number);
 
         // Get the <span> element that closes the modal
         // var span = document.getElementsByClassName("close")[0];
@@ -44,49 +44,42 @@ document.querySelectorAll('.timeline__box').forEach(btnWork => {
         // When the user clicks the button, open the modal 
         modal.style.display = "block";
 
-        // workPage.onclick = function() {
-        //     modal.style.display = "none";
-        // }
-        
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
+        console.log(number)
 
-
+        var slides = document.getElementsByClassName("slide"+ number);
+        
+        if (slides.length > 0) {
+            showSlides(1, number-1);
+        }
     }); 
 });
 
-
+// slides gestion
 var slideIndex = 1;
-showSlides(slideIndex);
 
-// Next/previous controls
+// switch slides
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+    showSlides(slideIndex += n, number)
 }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("slide");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+function showSlides(n, no, slides) {
+    var slides = document.getElementsByClassName("slide"+ number);
+    if (n > slides.length) {
+        slideIndex = 1
+    }    
+    if (n < 1) {
+        slideIndex = slides.length
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
+    slides[slideIndex-1].style.display = "block";  
 }
 
 

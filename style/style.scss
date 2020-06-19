@@ -446,7 +446,7 @@ header {
             display: none;
             position: fixed;
             z-index: 10000;
-            padding-top: 10vh; /* Location of the box */
+            padding-top: 8vh; /* Location of the box */
             left: 0;
             top: 0;
             width: 100%; /* Full width */
@@ -462,7 +462,7 @@ header {
                 background-color: $grey-input;
                 margin: auto auto;
                 width: 60%;
-                max-height: 80%;
+                max-height: 85%;
                 border-radius: 5px;
                 border: 1px solid $grey-border;
                 text-align: left;
@@ -518,16 +518,17 @@ header {
                         max-width: 100%;
                         position: relative;
                         margin: 35px auto 20px;
+                        text-align: center;
 
                         /* Hide the images by default */
-                        .slide {
+                        .slide, .slide1, .slide2, .slide3, .slide4, .slide5  {
                             display: none;
 
                             /* Number text (1/3 etc) */
                             &--number {
                                 font-family: "Saira", "Teko";
                                 font-weight: 600;
-                                font-size: 17px;
+                                font-size: 1.7rem;
                                 padding: 8px 0px;
                                 position: absolute;
                                 top: 101%;
@@ -539,13 +540,16 @@ header {
                             &--text {
                                 font-family: "Saira", "Teko";
                                 font-weight: 600;
-                                font-size: 18px;
+                                font-size: 1.8rem;
                                 padding: 8px 0px;
                                 position: absolute;
                                 top: 101%;
                                 right: 0;
                                 text-align: center;
                                 @include text-gradient;
+                            }
+                            img {
+                                margin: auto;
                             }
                         }
 
@@ -569,6 +573,10 @@ header {
                         .next {
                             right: 0;
                             border-radius: 3px 0 0 3px;
+                        }
+
+                        .prev {
+                            left: 0;
                         }
 
                         /* On hover, add a black background color with a little bit see-through */
@@ -595,7 +603,6 @@ header {
 
                     .active, .dot:hover {
                         @include gradient-background();
-                        
                     }
                 }
             }
@@ -666,12 +673,12 @@ header {
     
                                 /* Number text (1/3 etc) */
                                 &--number {
-                                    font-size: 16px;
+                                    font-size: 1.6rem;
                                 }
 
                                 /* Caption text */
                                 &--text {
-                                    font-size: 16px;
+                                    font-size: 1.6rem;
                                 }
                             }
                         }
@@ -737,12 +744,12 @@ header {
     
                                 /* Number text (1/3 etc) */
                                 &--number {
-                                    font-size: 14px;
+                                    font-size: 1.4rem;
                                 }
 
                                 /* Caption text */
                                 &--text {
-                                    font-size: 14px;
+                                    font-size: 1.4rem;
                                 }
                             }
                         }
