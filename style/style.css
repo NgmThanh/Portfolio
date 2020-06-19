@@ -525,8 +525,8 @@ header .mobile-menu {
   border-radius: 5px;
   border: 1px solid #312D3C;
   text-align: left;
-  -webkit-animation: apparition 1.25s ease;
-          animation: apparition 1.25s ease;
+  -webkit-animation: apparition 1s ease;
+          animation: apparition 1s ease;
   overflow-y: auto;
 }
 
@@ -969,11 +969,14 @@ footer em {
   display: block;
 }
 
-@media screen and (max-device-width: 767px) {
+@media screen and (max-width: 767px) {
   header {
     height: 55px;
   }
   header img {
+    display: none;
+  }
+  header .menu {
     display: none;
   }
   header .hamburger-icon {
@@ -1002,9 +1005,6 @@ footer em {
   header .change .bar3 {
     -webkit-transform: rotate(-45deg) translate(7px, -7px);
     transform: rotate(-45deg) translate(7px, -7px);
-  }
-  header .menu {
-    display: none;
   }
   header .mobile-menu {
     display: none;
@@ -1098,7 +1098,7 @@ footer em {
   }
 }
 
-@media all and (max-device-width: 500px) {
+@media all and (max-width: 500px) {
   .about-page, .skills-page, .works-page, .contact-page {
     padding: 50px 5% 25px;
   }

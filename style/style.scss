@@ -494,7 +494,7 @@ header {
                 border-radius: 5px;
                 border: 1px solid $grey-border;
                 text-align: left;
-                animation: apparition 1.25s ease;
+                animation: apparition 1s ease;
                 overflow-y: auto;
 
                 &__header {
@@ -934,12 +934,17 @@ footer {
 // =============== MEDIA QUERIES =============== //
 
 // tablet
-@media screen and (max-device-width: 767px) {
+@media screen and (max-width: 767px) {
     
     header {
         height: 55px;
 
         img {
+            display: none;
+        }
+
+        // ----- List menu ----- //
+        .menu {
             display: none;
         }
 
@@ -973,10 +978,6 @@ footer {
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
-        // ----- List menu ----- //
-        .menu {
-            display: none;
-        }
         // ----- mobile menu ----- //
         .mobile-menu {
             display: none;
@@ -1093,7 +1094,7 @@ footer {
 
 
 // mobile
-@media all and (max-device-width: 500px) {
+@media all and (max-width: 500px) {
 
     .about-page, .skills-page, .works-page, .contact-page {
         padding: 50px 5% 25px;
