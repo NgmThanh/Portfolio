@@ -20,7 +20,6 @@ document.querySelectorAll('.menu--text').forEach(itemMenu => {
     });
 });
 
-
 // mobile menu
 function changeMobile(menu) {
     var opened = document.getElementsByClassName("change");
@@ -33,30 +32,30 @@ function changeMobile(menu) {
     else {
         menuMobile[0].style.display = "none";
     }
-    menu.classList.toggle("change");    
+    menu.classList.toggle("change");
 }
 
+// html collection of class "menu-display--text"
+var classMenuMobile = document.getElementsByClassName('menu-display--text');
+var arrayMenuMobile = new Array();
 
-// progress bar in scrolling
-window.onload = () => {
-    // Ecouteur d'évènement sur scroll
-    window.addEventListener("scroll", () => {
-        // Calcul de la hauteur "utile" du document
-        let hauteur = document.documentElement.scrollHeight - window.innerHeight
+// array menu items (except dark mode button)
+for(var i = 0; i < classMenuMobile.length-1; i++){
+    arrayMenuMobile.push(classMenuMobile[i]);
+}
 
-        // Récupération de la position verticale
-        let position = window.scrollY
-
-        // Récupération de la largeur de la fenêtre
-        let largeur = document.documentElement.clientWidth
-
-        // Calcul de la largeur de la barre
-        let barre = position / hauteur * largeur
-
-        // Modification du CSS de la barre
-        document.getElementById("progress").style.width = barre+"px"
+// set event listener in all menu buttons
+document.querySelectorAll('.menu-display--text').forEach(itemMenu => {
+    
+    itemMenu.addEventListener('click', () => {
+        arrayMenuMobile.forEach(element => {
+            element.style.color = "";
+        });
+        itemMenu.style.color = "#FF5711";
     });
-};
+});
+
+
 
 // light mode
 function lightMode() {
@@ -97,3 +96,24 @@ function lightMode() {
 
     console.log(icon)    
 }
+
+// progress bar in scrolling
+window.onload = () => {
+    // Ecouteur d'évènement sur scroll
+    window.addEventListener("scroll", () => {
+        // Calcul de la hauteur "utile" du document
+        let hauteur = document.documentElement.scrollHeight - window.innerHeight
+
+        // Récupération de la position verticale
+        let position = window.scrollY
+
+        // Récupération de la largeur de la fenêtre
+        let largeur = document.documentElement.clientWidth
+
+        // Calcul de la largeur de la barre
+        let barre = position / hauteur * largeur
+
+        // Modification du CSS de la barre
+        document.getElementById("progress").style.width = barre+"px"
+    });
+};

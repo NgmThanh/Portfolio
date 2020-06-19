@@ -82,11 +82,21 @@
 .light-mode {
   background-color: #f5f5f5;
   color: #17141D;
+  -webkit-transition: 0.6s all ease;
+  transition: 0.6s all ease;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: apparition;
+  -webkit-animation-duration: 1.25s;
+  animation-name: apparition;
+  animation-duration: 1.25s;
 }
 
 @-webkit-keyframes apparition {
   from {
-    opacity: 0;
+    opacity: 0.25;
   }
   to {
     opacity: 1;
@@ -95,7 +105,7 @@
 
 @keyframes apparition {
   from {
-    opacity: 0;
+    opacity: 0.25;
   }
   to {
     opacity: 1;
@@ -284,6 +294,10 @@ header .mobile-menu {
 .about-page .presentation h2 {
   font-size: 4.2rem;
   font-weight: medium, 600;
+  background: linear-gradient(135deg, #FF5711, #E52F6F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-page .presentation img {
@@ -458,7 +472,7 @@ header .mobile-menu {
   display: none;
   position: fixed;
   z-index: 10000;
-  padding-top: 2.5%;
+  padding-top: 10vh;
   /* Location of the box */
   left: 0;
   top: 0;
@@ -480,7 +494,7 @@ header .mobile-menu {
   background-color: #201C29;
   margin: auto auto;
   width: 60%;
-  max-height: 90%;
+  max-height: 80%;
   border-radius: 5px;
   border: 1px solid #312D3C;
   text-align: left;
@@ -493,13 +507,10 @@ header .mobile-menu {
   padding: 30px 40px 10px;
 }
 
-.works-page .timeline .modal-window .work-window__header--title, .works-page .timeline .modal-window .work-window__header--subtitle {
-  color: #FF5711;
-}
-
 .works-page .timeline .modal-window .work-window__header--title {
   font-size: 4.0rem;
   font-family: 'Teko', 'Poppins', 'Titillium';
+  color: #FF5711;
 }
 
 .works-page .timeline .modal-window .work-window__header--subtitle {
@@ -511,6 +522,10 @@ header .mobile-menu {
   display: block;
   margin-top: 0px;
   margin-bottom: 10px;
+  background: linear-gradient(135deg, #FF5711, #E52F6F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .works-page .timeline .modal-window .work-window__header--language {
@@ -529,6 +544,8 @@ header .mobile-menu {
 
 .works-page .timeline .modal-window .work-window__body {
   margin: 0 40px 40px;
+  /* Slideshow container */
+  /* The dots/bullets/indicators */
 }
 
 .works-page .timeline .modal-window .work-window__body--description {
@@ -538,18 +555,112 @@ header .mobile-menu {
   margin-top: 25px;
 }
 
-.works-page .timeline .modal-window .work-window__body img {
-  max-width: 450px;
-  margin-top: 15px;
+.works-page .timeline .modal-window .work-window__body * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-@media all and (min-width: 768px) and (max-width: 1281px) {
+.works-page .timeline .modal-window .work-window__body .slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: 35px auto 20px;
+  /* Hide the images by default */
+  /* Next & previous buttons */
+  /* Position the "next button" to the right */
+  /* On hover, add a black background color with a little bit see-through */
+}
+
+.works-page .timeline .modal-window .work-window__body .slideshow-container .slide {
+  display: none;
+  /* Number text (1/3 etc) */
+  /* Caption text */
+}
+
+.works-page .timeline .modal-window .work-window__body .slideshow-container .slide--number {
+  font-family: "Saira", "Teko";
+  font-weight: 600;
+  font-size: 17px;
+  padding: 8px 0px;
+  position: absolute;
+  top: 101%;
+  left: 0;
+  background: linear-gradient(135deg, #FF5711, #E52F6F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.works-page .timeline .modal-window .work-window__body .slideshow-container .slide--text {
+  font-family: "Saira", "Teko";
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px 0px;
+  position: absolute;
+  top: 101%;
+  right: 0;
+  text-align: center;
+  background: linear-gradient(135deg, #FF5711, #E52F6F);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.works-page .timeline .modal-window .work-window__body .slideshow-container .prev, .works-page .timeline .modal-window .work-window__body .slideshow-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: #f5f5f5;
+  font-weight: bold;
+  font-size: 18px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.works-page .timeline .modal-window .work-window__body .slideshow-container .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.works-page .timeline .modal-window .work-window__body .slideshow-container .prev:hover {
+  background: #FF5711;
+}
+
+.works-page .timeline .modal-window .work-window__body .slideshow-container .next:hover {
+  background: #E52F6F;
+}
+
+.works-page .timeline .modal-window .work-window__body .dot {
+  cursor: pointer;
+  height: 12.5px;
+  width: 12.5px;
+  margin: 0 2.5px;
+  background: #f5f5f5;
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.works-page .timeline .modal-window .work-window__body .active, .works-page .timeline .modal-window .work-window__body .dot:hover {
+  background: linear-gradient(135deg, #FF5711, #E52F6F);
+}
+
+@media all and (min-width: 768px) and (max-width: 1280px) {
   .works-page .timeline .modal-window {
-    padding-top: 5%;
+    padding-top: 12vh;
     /* Modal Content */
   }
   .works-page .timeline .modal-window .work-window {
     width: 80%;
+    max-height: 80%;
   }
 }
 
@@ -559,12 +670,11 @@ header .mobile-menu {
     padding-right: 5%;
   }
   .works-page .timeline .modal-window {
-    padding-top: 5%;
+    padding-top: 15vh;
     /* Modal Content */
   }
   .works-page .timeline .modal-window .work-window {
     width: 90%;
-    max-height: 92.5%;
   }
   .works-page .timeline .modal-window .work-window__header {
     padding: 30px 30px 10px;
@@ -588,14 +698,30 @@ header .mobile-menu {
   }
   .works-page .timeline .modal-window .work-window__body {
     margin: 0 30px 40px;
+    /* Slideshow container */
+    /* The dots/bullets/indicators */
   }
   .works-page .timeline .modal-window .work-window__body--description {
     font-size: 1.5rem;
     margin-top: 15px;
   }
-  .works-page .timeline .modal-window .work-window__body img {
-    max-width: 100%;
-    margin-top: 15px;
+  .works-page .timeline .modal-window .work-window__body .slideshow-container {
+    margin: 30px auto 20px;
+    /* Hide the images by default */
+  }
+  .works-page .timeline .modal-window .work-window__body .slideshow-container .slide {
+    /* Number text (1/3 etc) */
+    /* Caption text */
+  }
+  .works-page .timeline .modal-window .work-window__body .slideshow-container .slide--number {
+    font-size: 16px;
+  }
+  .works-page .timeline .modal-window .work-window__body .slideshow-container .slide--text {
+    font-size: 16px;
+  }
+  .works-page .timeline .modal-window .work-window__body .dot {
+    height: 10px;
+    width: 10px;
   }
 }
 
@@ -605,12 +731,11 @@ header .mobile-menu {
     padding-right: 0;
   }
   .works-page .timeline .modal-window {
-    padding-top: 2.5%;
+    padding-top: 25%;
     /* Modal Content */
   }
   .works-page .timeline .modal-window .work-window {
     width: 98%;
-    max-height: 95%;
   }
   .works-page .timeline .modal-window .work-window__header {
     padding: 15px 15px 10px;
@@ -634,14 +759,30 @@ header .mobile-menu {
   }
   .works-page .timeline .modal-window .work-window__body {
     margin: 0 15px 15px;
+    /* Slideshow container */
+    /* The dots/bullets/indicators */
   }
   .works-page .timeline .modal-window .work-window__body--description {
     font-size: 1.3rem;
     margin-top: 0px;
   }
-  .works-page .timeline .modal-window .work-window__body img {
-    max-width: 100%;
-    margin-top: 10px;
+  .works-page .timeline .modal-window .work-window__body .slideshow-container {
+    margin: 25px auto 20px;
+    /* Hide the images by default */
+  }
+  .works-page .timeline .modal-window .work-window__body .slideshow-container .slide {
+    /* Number text (1/3 etc) */
+    /* Caption text */
+  }
+  .works-page .timeline .modal-window .work-window__body .slideshow-container .slide--number {
+    font-size: 14px;
+  }
+  .works-page .timeline .modal-window .work-window__body .slideshow-container .slide--text {
+    font-size: 14px;
+  }
+  .works-page .timeline .modal-window .work-window__body .dot {
+    height: 7.5px;
+    width: 7.5px;
   }
 }
 
