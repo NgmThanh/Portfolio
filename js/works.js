@@ -1,9 +1,9 @@
-// ============ WORKS SECTION ============ //
+/* ============ WORKS SECTION ============ */
 
 var number = 0;
 var slideIndex = 1;
 
-// ----- WORKS BUTTONS ----- //
+/* ----- WORKS BUTTONS ----- */
 
 // set event listener in all menu buttons
 document.querySelectorAll('.timeline__box').forEach(btnWork => {
@@ -58,7 +58,7 @@ document.querySelectorAll('.timeline__box').forEach(btnWork => {
     }); 
 });
 
-// ----- SLIDESHOW GESTION ----- //
+/* ----- SLIDESHOW GESTION ----- */
 
 // switch slides
 function plusSlides(n) {
@@ -77,7 +77,7 @@ function showSlides(n, no) {
 
     if (n > slides.length) {
         slideIndex = 1
-    }    
+    }
     if (n < 1) {
         slideIndex = slides.length
     }

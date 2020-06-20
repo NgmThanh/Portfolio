@@ -1,4 +1,4 @@
-// ============ SCRIPT MENU ============ //
+/* ============ SCRIPT MENU ============ */
 
 // html collection of class "skill-bar"
 var classSkills = document.getElementsByClassName('skill-bar');
@@ -15,5 +15,4 @@ for(var i = 0; i < classSkills.length; i++){
 skills.forEach(language => {
     var skill = document.getElementById(language);
     skill.style.width = skill.childNodes[0].textContent;
-    // console.log(skill.style.width);
 });

@@ -1,6 +1,6 @@
-// ============ SCRIPT MENU ============ //
+/* ============ SCRIPT MENU ============ */
 
-// ----- DESKTOP MENU ----- //
+/* ----- DESKTOP MENU ----- */
 
 // html collection of class "menu--text"
 var classMenu = document.getElementsByClassName('menu--text');
@@ -22,7 +22,7 @@ document.querySelectorAll('.menu--text').forEach(itemMenu => {
     });
 });
 
-// ----- MOBILE MENU ----- //
+/* ----- MOBILE MENU ----- */
 
 // change menu onclick hamburger icon
 function changeMobile(menu) {
@@ -59,7 +59,7 @@ document.querySelectorAll('.menu-display--text').forEach(itemMenu => {
     });
 });
 
-// ----- DARK / LIGHT MODE ----- //
+/* ----- DARK / LIGHT MODE ----- */
 
 // light mode
 function lightMode() {
@@ -99,7 +99,7 @@ function lightMode() {
     }  
 }
 
-// ----- PROGRESS BAR ----- //
+/* ----- PROGRESS BAR ----- */
 
 // progress bar in scrolling
 window.onload = () => {
@@ -113,7 +113,6 @@ window.onload = () => {
         let largeur = document.documentElement.clientWidth
         // Calcul de la largeur de la barre
         let barre = position / hauteur * largeur
-
         // Modification du CSS de la barre
         document.getElementById("progress").style.width = barre+"px"
     });

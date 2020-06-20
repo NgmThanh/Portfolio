@@ -1,4 +1,4 @@
-// =============== FONTS =============== //
+/* =============== FONTS =============== */
 
 @font-face {
     font-family: 'KoHo';
@@ -68,7 +68,7 @@
     src: url('../docs/font/Poppins/Poppins-Medium.ttf') format('truetype'),
 }
 
-// =============== COLORS =============== //
+/* =============== COLORS =============== */
 
 // backgrounds
 $dark-grey: #100E17;
@@ -118,7 +118,7 @@ $color-border-light: #455A64;
     overflow: hidden;
 }
 
-// =============== ANIMATIONS =============== //
+/* =============== ANIMATIONS =============== */
 
 @keyframes apparition {
     from {
@@ -138,12 +138,7 @@ $color-border-light: #455A64;
     }
 }
 
-@keyframes animatetop {
-    from {top: -50%; opacity:0}
-    to {top:0; opacity:1}
-}
-
-// =============== MIXINS =============== //
+/* =============== MIXINS =============== */
 
 @mixin gradient-background {
     background: linear-gradient(135deg, $orange-pure,$pink-pure);
@@ -166,7 +161,7 @@ $color-border-light: #455A64;
     width: 5px;
 }
   
-  /* Track */
+/* Track */
 ::-webkit-scrollbar-track {
     background: transparent; 
 }
@@ -182,7 +177,7 @@ $color-border-light: #455A64;
     background: $pink-pure; 
 }
 
-// =============== MAIN CODE =============== //
+/* =============== MAIN CODE =============== */
 
 * {
     font-family: "Titillium", "Source", "Cairo", "PTSans", "Saira", "KoHo", "Arial";
@@ -199,8 +194,8 @@ $color-border-light: #455A64;
 }
 
 html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+    font-size: 62.5%;   /* 1 rem = 10px */
+    scroll-behavior: smooth;    /* scrollbar smooth */
 }
 
 body {
@@ -235,7 +230,7 @@ h1 {
 }
 
 
-// ----------- FIXED HEADER ----------- //
+/* ----------- FIXED HEADER ----------- */
 header {
     width: 100%;
     background-color: $dark-grey;
@@ -245,6 +240,7 @@ header {
     left: 0;
     z-index: 100;
 
+    // logo
     img {
         position: absolute;
         width: 50px;
@@ -256,7 +252,7 @@ header {
             animation: rotate 10s linear infinite;
         }
     }
-    // ----- List menu ----- //
+    /* ----- List menu ----- */
     .menu {
         list-style-type: none;
         display: flex;
@@ -270,8 +266,7 @@ header {
             font-size: 1.8rem;
             font-weight: medium;
             color: $light-white;
-            margin-right: 20px;
-            margin-left: 20px;
+            margin: 0 20px;
             &:hover {
                 color: $pink-pure;
                 cursor: pointer;
@@ -280,6 +275,7 @@ header {
         }
     }
 
+    /* hamburger icon and mobile menu not displayed */
     .hamburger-icon {
         display: none;
     }
@@ -288,20 +284,20 @@ header {
     }
 }
 
-// ----------- PROGRESS BAR ----------- //
+/* ----------- PROGRESS BAR ----------- */
 #progress{
 	@include gradient-background;
-	height: 8px;
+	height: 6px;
 	position: fixed;
 	top: 61px;
 	left: 0;
 	z-index: 50;
 }
 
-// ----------- ABOUT PAGE ----------- //
+/* ----------- ABOUT PAGE ----------- */
 .about-page {
 
-    // ----- presentation area ----- //
+    /* ----- presentation area ----- */
     .presentation {
         h1, h2 {
             font-family: 'Teko', 'Poppins', 'Titillium';
@@ -328,7 +324,7 @@ header {
         }           
     }
 
-    // ----- description area ----- //
+    /* ----- description area ----- */
     .description {
         margin-top: 5%;
         display: flex;
@@ -368,10 +364,10 @@ header {
     }
 }
 
-// ----------- SKILLS PAGE ----------- //
+/* ----------- SKILLS PAGE ----------- */
 .skills-page {
 
-    // ----- skills area ----- //
+    /* ----- skills area ----- */
     .skills-box {
         margin-top: 2.5%;
         display: flex;
@@ -420,20 +416,19 @@ header {
     }
 }
 
-// ----------- WORKS PAGE ----------- //
+/* ----------- WORKS PAGE ----------- */
 .works-page {
 
-    // ----- timeline area ----- //
+    /* ----- timeline area ----- */
     .timeline {
         margin-top: 2.5%;
-        padding-left: 15%;
-        padding-right: 15%;
+        padding: 0 15%;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
 
-        // ----- work box ----- //
+        /* ----- work box ----- */
         &__box {
             margin: 2.5%;
             width: 300px;
@@ -472,7 +467,6 @@ header {
             display: none;
             position: fixed;
             z-index: 10000;
-            // padding-top: 8vh; /* Location of the box */
             left: 0;
             top: 0;
             width: 100%; /* Full width */
@@ -481,12 +475,11 @@ header {
             background-color: rgb(0,0,0); /* Fallback color */
             background-color: rgba(0,0,0,0.75); /* Black w/ opacity */
 
-            
             /* Modal Content */
             .work-window {
                 position: relative;
                 top: 50%;
-                transform: translateY(-50%);
+                transform: translateY(-50%);    /* center box */
                 background-color: $dark-grey;
                 margin: auto auto;
                 width: 60%;
@@ -494,7 +487,7 @@ header {
                 border-radius: 5px;
                 border: 1px solid $grey-border;
                 text-align: left;
-                animation: apparition 1s ease;
+                animation: apparition 0.8s ease;
                 overflow-y: auto;
 
                 &__header {
@@ -552,30 +545,27 @@ header {
                         .slide, .slide1, .slide2, .slide3, .slide4, .slide5  {
                             display: none;
 
-                            /* Number text (1/3 etc) */
                             &--number {
                                 font-family: "Saira", "Teko";
                                 font-weight: 600;
-                                font-size: 1.7rem;
                                 padding: 8px 0px;
                                 position: absolute;
                                 top: 101%;
-                                left: 0;
                                 @include text-gradient;
+                            }
+                            /* Number text (1/3 etc) */
+                            &--number {
+                                font-size: 1.7rem;
+                                left: 0;
                             }
 
                             /* Caption text */
                             &--text {
-                                font-family: "Saira", "Teko";
-                                font-weight: 600;
                                 font-size: 1.8rem;
-                                padding: 8px 0px;
-                                position: absolute;
-                                top: 101%;
                                 right: 0;
                                 text-align: center;
-                                @include text-gradient;
                             }
+                            /* image displayed */
                             img {
                                 max-width: 90%;
                                 margin: auto;
@@ -602,19 +592,16 @@ header {
                         /* Position the "next button" to the right */
                         .next {
                             right: 0;
+                            &:hover {
+                                background: $orange-pure;
+                            }
                         }
 
                         .prev {
                             left: 0;
-                        }
-
-                        /* On hover, add a black background color with a little bit see-through */
-                        .prev:hover {
-                            background: $orange-pure;
-                        }
-
-                        .next:hover {
-                            background: $pink-pure;
+                            &:hover {
+                                background: $pink-pure;
+                            }
                         }
                     }
 
@@ -642,7 +629,6 @@ header {
         .timeline {
             
             .modal-window {
-                // padding-top: 12vh;
 
                 /* Modal Content */
                 .work-window {
@@ -659,7 +645,6 @@ header {
             padding-right: 5%;
             // modal work window displayed when click button
             .modal-window {
-                // padding-top: 15vh;
 
                 /* Modal Content */
                 .work-window {
@@ -676,8 +661,6 @@ header {
                         }
                         &--language {
                             font-size: 1.6rem;
-                            color: $pink-pure;
-                            font-weight: 600;
                         }
                         &--date {
                             font-size: 2rem;
@@ -699,12 +682,10 @@ header {
 
                             /* Hide the images by default */
                             .slide {
-    
                                 /* Number text (1/3 etc) */
                                 &--number {
                                     font-size: 1.6rem;
                                 }
-
                                 /* Caption text */
                                 &--text {
                                     font-size: 1.6rem;
@@ -730,7 +711,6 @@ header {
             
             // modal work window displayed when click button
             .modal-window {
-                // padding-top: 25%;
 
                 /* Modal Content */
                 .work-window {
@@ -748,8 +728,6 @@ header {
                         }
                         &--language {
                             font-size: 1.5rem;
-                            color: $pink-pure;
-                            font-weight: 600;
                         }
                         &--date {
                             font-size: 1.5rem;
@@ -771,12 +749,10 @@ header {
 
                             /* Hide the images by default */
                             .slide {
-    
                                 /* Number text (1/3 etc) */
                                 &--number {
                                     font-size: 1.4rem;
                                 }
-
                                 /* Caption text */
                                 &--text {
                                     font-size: 1.4rem;
@@ -796,10 +772,10 @@ header {
     }
 }
 
-// ----------- CONTACT PAGE ----------- //
+/* ----------- CONTACT PAGE ----------- */
 .contact-page {
 
-    // ----- contact box ----- //
+    /* ----- contact box ----- */
     .contact__field {
         margin: auto;
         margin-top: 2.5%;
@@ -853,16 +829,10 @@ header {
                 transition: 0.4s all ease;
             }
         }
-        p {
-            font-size: 1.5rem;
-            color: #4CFF4C;
-            display: block;
-            margin-top: 5%;
-        }
     }
 }
 
-// ----------- FOOTER ----------- //
+/* ----------- FOOTER ----------- */
 footer {
     margin-top: 5%;
     background-color: $dark-grey;
@@ -872,7 +842,7 @@ footer {
         font-size: 3rem;
     }
 
-    // ----- footer area ----- //
+    /* ----- footer area ----- */
     .field-footer {
         display: flex;
         flex-wrap: wrap;
@@ -887,7 +857,7 @@ footer {
             padding-left: 4%;
         }
 
-        // ----- contact area ----- //
+        /* ----- contact area ----- */
         &__contact {
             // icon contact
             img {
@@ -900,7 +870,7 @@ footer {
             }
         }
 
-        // ----- informations area ----- //
+        /* ----- informations area ----- */
         &__informations {
             // icon contact
             img {
@@ -931,7 +901,7 @@ footer {
     }
 }
 
-// =============== MEDIA QUERIES =============== //
+/* =============== MEDIA QUERIES =============== */
 
 // tablet
 @media screen and (max-width: 767px) {
@@ -943,7 +913,7 @@ footer {
             display: none;
         }
 
-        // ----- List menu ----- //
+        /* ----- List menu ----- */
         .menu {
             display: none;
         }
@@ -966,6 +936,7 @@ footer {
                 transition: 0.4s;
             }
         }
+        /* animation hamburger icon on click */
         .change .bar1 {
             -webkit-transform: rotate(45deg) translate(7px, 7px);
             transform: rotate(45deg) translate(7px, 7px);
@@ -978,7 +949,7 @@ footer {
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
-        // ----- mobile menu ----- //
+        /* ----- mobile menu ----- */
         .mobile-menu {
             display: none;
             position: fixed;
@@ -995,7 +966,6 @@ footer {
                 flex-direction: column;
 
                 &--text {
-                    // display: none;
                     width: 100%;
                     padding: 16px;
                     font-size: 2rem;
@@ -1011,7 +981,6 @@ footer {
         height: 5px;
         top: 55px;
     }
-
 
     .about-page, .skills-page, .works-page, .contact-page {
         padding: 50px 5% 45px;
@@ -1041,7 +1010,6 @@ footer {
             }
         }
     }
-
 
     .contact-page {
         .contact__field {
