@@ -295,6 +295,29 @@ header .mobile-menu {
   z-index: 50;
 }
 
+/* ----------- ARROW MOVE TO TOP ----------- */
+#arrow-up {
+  position: fixed;
+  bottom: 2.5%;
+  right: 5%;
+  z-index: 50;
+}
+
+#arrow-up img {
+  width: 3rem;
+  height: 3rem;
+  padding: 2px;
+  background: linear-gradient(135deg, #FF5711, #E52F6F);
+  border-radius: 3px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+#arrow-up img:hover {
+  -webkit-filter: brightness(150%);
+          filter: brightness(150%);
+}
+
 /* ----------- ABOUT PAGE ----------- */
 .about-page {
   /* ----- presentation area ----- */
