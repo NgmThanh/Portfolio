@@ -141,7 +141,6 @@ h1 {
 
 .about-page, .skills-page, .works-page, .contact-page {
     padding: 8% 5% 5%;
-    background-color: $grey-border;
     max-width: 1500px;
     margin: auto;
 }
@@ -379,17 +378,18 @@ header {
     /* ----- timeline area ----- */
     .timeline {
         margin-top: 2.5%;
-        padding: 0 15%;
+        padding: 0 7.5%;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
 
         /* ----- work box ----- */
         &__box {
-            margin: 2.5%;
+            margin: 2%;
             width: 300px;
             height: 300px;
+            padding-top: 5%;
             background-color: $dark-grey;
             border-radius: 5px;
             border: none;
