@@ -179,7 +179,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 40;
+    z-index: 100;
     box-shadow: 0px 0px 5px 2.5px $shadow-color;
 
     /* ----- List menu ----- */
@@ -235,7 +235,7 @@ header {
 	@include gradient-background;
 	height: 6px;
 	position: fixed;
-	top: 61px;
+	top: 63px;
 	left: 0;
     z-index: 50;
     box-shadow: 0px 0px 5px 2.5px $shadow-color;
@@ -969,7 +969,7 @@ footer {
 
     #progress {
         height: 5px;
-        top: 55px;
+        top: 56.5px;
     }
 
     .about-page, .skills-page, .works-page, .contact-page {
