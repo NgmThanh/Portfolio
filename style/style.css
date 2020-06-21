@@ -88,6 +88,8 @@
   margin: 0;
   font-weight: normal;
   text-decoration: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *::-moz-selection {
@@ -121,7 +123,10 @@ h1 {
 }
 
 .about-page, .skills-page, .works-page, .contact-page {
-  padding: 8% 10% 5%;
+  padding: 8% 5% 5%;
+  background-color: #312D3C;
+  max-width: 1500px;
+  margin: auto;
 }
 
 .skills-page, .works-page, .contact-page {
@@ -154,19 +159,6 @@ header {
   /* hamburger icon and mobile menu not displayed */
 }
 
-header img {
-  position: absolute;
-  width: 50px;
-  margin-top: 10px;
-  left: 10%;
-}
-
-header img:hover {
-  cursor: pointer;
-  -webkit-animation: rotate 10s linear infinite;
-          animation: rotate 10s linear infinite;
-}
-
 header .menu {
   list-style-type: none;
   display: -webkit-box;
@@ -175,8 +167,24 @@ header .menu {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin-right: 10%;
   padding: 17px;
+  max-width: 1500px;
+  margin: auto;
+  position: relative;
+}
+
+header .menu img {
+  position: absolute;
+  width: 45px;
+  margin-top: 10px;
+  left: 5%;
+  top: 0;
+}
+
+header .menu img:hover {
+  cursor: pointer;
+  -webkit-animation: rotate 10s linear infinite;
+          animation: rotate 10s linear infinite;
 }
 
 header .menu--text {
@@ -297,7 +305,7 @@ header .mobile-menu {
   margin: auto;
 }
 
-@media screen and (min-width: 1267px) {
+@media screen and (min-width: 1117px) {
   .about-page .description div {
     max-width: 55%;
   }
@@ -513,11 +521,6 @@ header .mobile-menu {
   text-align: justify;
   display: block;
   margin-top: 25px;
-}
-
-.works-page .timeline .modal-window .work-window__body * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
 .works-page .timeline .modal-window .work-window__body .slideshow-container {
@@ -770,7 +773,7 @@ header .mobile-menu {
   -webkit-box-shadow: none;
           box-shadow: none;
   margin-bottom: 4%;
-  width: 94%;
+  width: 100%;
 }
 
 .contact-page .contact__field--input::-webkit-input-placeholder, .contact-page .contact__field--textarea::-webkit-input-placeholder {
@@ -821,7 +824,7 @@ header .mobile-menu {
 footer {
   margin-top: 5%;
   background-color: #100E17;
-  padding: 5% 20% 5%;
+  padding: 5% 10% 5%;
   /* ----- footer area ----- */
 }
 
@@ -830,24 +833,29 @@ footer h1 {
 }
 
 footer .field-footer {
+  margin: auto;
+  max-width: 1400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   /* ----- contact area ----- */
   /* ----- informations area ----- */
 }
 
 footer .field-footer__contact, footer .field-footer__informations {
   text-align: left;
-  width: 46%;
+  width: 42%;
   min-width: 300px;
   font-size: 1.8rem;
   color: #f5f5f5;
-  padding-left: 4%;
+  margin: auto;
 }
 
 footer .field-footer__contact img {
@@ -1008,6 +1016,9 @@ footer em {
     font-size: 1.9rem;
     line-height: 3rem;
   }
+  .about-page .description img {
+    margin-top: 25px;
+  }
   .contact-page .contact__field {
     padding: 20px 15px 20px;
     margin-top: 25px;
@@ -1015,7 +1026,7 @@ footer em {
     max-width: 360px;
   }
   .contact-page .contact__field--input, .contact-page .contact__field--textarea {
-    width: 92%;
+    width: 100%;
     font-size: 1.8rem;
     padding: 7.5px;
     border-radius: 3px;
@@ -1084,6 +1095,11 @@ footer em {
   }
   .contact-page .contact__field--input, .contact-page .contact__field--textarea {
     font-size: 1.5rem;
+  }
+  .contact-page .contact__field [type="submit"] {
+    font-size: 1.6rem;
+    padding: 10px;
+    width: 180px;
   }
   footer h1 {
     font-size: 2.5rem;

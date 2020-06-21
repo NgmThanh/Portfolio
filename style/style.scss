@@ -115,6 +115,7 @@ $color-border-light: #455A64;
     margin: 0;
     font-weight: normal;
     text-decoration: none;
+    box-sizing: border-box;
     &::selection {
         background-color: $selection-grey;
     }
@@ -139,7 +140,10 @@ h1 {
 }
 
 .about-page, .skills-page, .works-page, .contact-page {
-    padding: 8% 10% 5%;
+    padding: 8% 5% 5%;
+    background-color: $grey-border;
+    max-width: 1500px;
+    margin: auto;
 }
 
 .skills-page, .works-page, .contact-page {
@@ -170,25 +174,29 @@ header {
     left: 0;
     z-index: 100;
 
-    // logo
-    img {
-        position: absolute;
-        width: 50px;
-        margin-top: 10px;
-        left: 10%;
-
-        &:hover {
-            cursor: pointer;
-            animation: rotate 10s linear infinite;
-        }
-    }
     /* ----- List menu ----- */
     .menu {
         list-style-type: none;
         display: flex;
         justify-content: flex-end;
-        margin-right: 10%;
         padding: 17px;
+        max-width: 1500px;
+        margin: auto;
+        position: relative;
+
+        // logo
+        img {
+            position: absolute;
+            width: 45px;
+            margin-top: 10px;
+            left: 5%;
+            top: 0;
+
+            &:hover {
+                cursor: pointer;
+                animation: rotate 10s linear infinite;
+            }
+        }
 
         &--text {
             font-weight: 600;
@@ -292,7 +300,16 @@ header {
         }
 
         // limit of scaling image
-        @media screen and (min-width: 1267px) {
+        // @media screen and (min-width: 1267px) {
+        //     div {
+        //         max-width: 55%;
+        //     }
+        //     img {
+        //         max-width: 375px;
+        //         margin: 0 0 5% 15%;
+        //     }
+        // }
+        @media screen and (min-width: 1117px) {
             div {
                 max-width: 55%;
             }
@@ -473,8 +490,6 @@ header {
                         display: block;
                         margin-top: 25px;
                     }
-                    
-                    * {box-sizing:border-box}
 
                     /* Slideshow container */
                     .slideshow-container {
@@ -737,7 +752,7 @@ header {
             border: 2px solid $grey-border;
             box-shadow: none;
             margin-bottom: 4%;
-            width: 94%;
+            width: 100%;
 
             &::placeholder {
                 color: $color-placeholder;
@@ -777,7 +792,7 @@ header {
 footer {
     margin-top: 5%;
     background-color: $dark-grey;
-    padding: 5% 20% 5%;
+    padding: 5% 10% 5%;
 
     h1 {
         font-size: 3rem;
@@ -785,17 +800,19 @@ footer {
 
     /* ----- footer area ----- */
     .field-footer {
+        margin: auto;
+        max-width: 1400px;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        flex-flow: row wrap;
+        justify-content: space-between;    
 
         &__contact, &__informations {
             text-align: left;
-            width: 46%;
+            width: 42%;
             min-width: 300px;
             font-size: 1.8rem;
             color: $light-white;
-            padding-left: 4%;
+            margin: auto;
         }
 
         /* ----- contact area ----- */
@@ -977,6 +994,9 @@ footer {
                 font-size: 1.9rem;
                 line-height: 3rem;
             }
+            img {
+                margin-top: 25px;
+            }
         }
     }
 
@@ -987,7 +1007,7 @@ footer {
             width: auto;
             max-width: 360px;
             &--input, &--textarea {
-                width: 92%;
+                width: 100%;
                 font-size: 1.8rem;
                 padding: 7.5px;
                 border-radius: 3px;
@@ -1082,6 +1102,11 @@ footer {
             max-width: 300px;
             &--input, &--textarea {
                 font-size: 1.5rem;
+            }
+            [type="submit"] {
+                font-size: 1.6rem;
+                padding: 10px;
+                width: 180px;
             }
         }
     }
