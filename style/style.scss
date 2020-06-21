@@ -321,26 +321,16 @@ header {
         h1, h2 {
             font-family: 'Teko', 'Poppins', 'Titillium';
             color: $orange-pure;
+            display: block;
         }
         h1 {
-            font-size: 6.0rem;
+            font-size: 8rem;
         }
         h2 {
-            font-size: 4.2rem;
+            font-size: 6.5rem;
             font-weight: medium, 600;
             @include text-gradient;
-        }
-        // contact icons
-        img {
-            filter: invert(100%);
-            width: 40px;
-            margin-top: 20px;
-            margin-right: 25px;
-            border-radius: 3px;
-            &:hover {
-                @include jumpAnimation(-5px);
-            }
-        }           
+        }         
     }
 
     /* ----- description area ----- */
@@ -564,7 +554,7 @@ header {
                         .slide, .slide1, .slide2, .slide3, .slide4, .slide5  {
                             display: none;
 
-                            &--number {
+                            &--number, &--text {
                                 font-family: "Saira", "Teko";
                                 font-weight: 600;
                                 padding: 8px 0px;
@@ -922,8 +912,32 @@ footer {
 
 /* =============== MEDIA QUERIES =============== */
 
+@media all and (min-width: 768px) and (max-width: 1280px) {
+
+    .about-page {
+        padding-top: 100px;
+
+        .presentation {
+            h1 {
+                font-size: 6.8rem;
+            }
+            h2 {
+                font-size: 4.8rem;
+            } 
+        }
+        // block description
+        .description {
+            margin-top: 25px;
+            &--text {
+                font-size: 2rem;
+                line-height: 3rem;
+            }
+        }
+    }
+}
+
 // tablet
-@media screen and (max-width: 767px) {
+@media all and (max-width: 767px) {
     
     header {
         height: 55px;
@@ -1011,21 +1025,25 @@ footer {
 
     .works-page {
         h2 {
-            // display: block;
             margin-bottom: 35px;
         }
     }
 
     .about-page {
+        .presentation {
+            h1 {
+                font-size: 6.5rem;
+            }
+            h2 {
+                font-size: 4.5rem;
+            } 
+        }
         // block description
         .description {
             margin-top: 25px;
             &--text {
                 font-size: 1.9rem;
                 line-height: 3rem;
-            }
-            img {
-                margin-top: 25px;
             }
         }
     }
@@ -1104,12 +1122,7 @@ footer {
             }
             h2 {
                 font-size: 3.5rem;
-            }
-            // contact icons
-            img {
-                margin-top: 15px;
-                width: 30px;
-            }  
+            } 
         }
         // block description
         .description {

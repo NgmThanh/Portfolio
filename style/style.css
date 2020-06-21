@@ -327,35 +327,20 @@ header .mobile-menu {
 .about-page .presentation h1, .about-page .presentation h2 {
   font-family: 'Teko', 'Poppins', 'Titillium';
   color: #FF5711;
+  display: block;
 }
 
 .about-page .presentation h1 {
-  font-size: 6.0rem;
+  font-size: 8rem;
 }
 
 .about-page .presentation h2 {
-  font-size: 4.2rem;
+  font-size: 6.5rem;
   font-weight: medium, 600;
   background: linear-gradient(135deg, #FF5711, #E52F6F);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.about-page .presentation img {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
-  width: 40px;
-  margin-top: 20px;
-  margin-right: 25px;
-  border-radius: 3px;
-}
-
-.about-page .presentation img:hover {
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
-  -webkit-transition: 0.4s all ease;
-  transition: 0.4s all ease;
 }
 
 .about-page .description {
@@ -631,7 +616,7 @@ header .mobile-menu {
   /* image displayed */
 }
 
-.works-page .timeline .modal-window .work-window__body .slideshow-container .slide--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide1--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide2--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide3--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide4--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide5--number {
+.works-page .timeline .modal-window .work-window__body .slideshow-container .slide--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide1--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide1--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide2--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide2--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide3--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide3--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide4--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide4--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide5--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide5--text {
   font-family: "Saira", "Teko";
   font-weight: 600;
   padding: 8px 0px;
@@ -989,7 +974,26 @@ footer em {
 }
 
 /* =============== MEDIA QUERIES =============== */
-@media screen and (max-width: 767px) {
+@media all and (min-width: 768px) and (max-width: 1280px) {
+  .about-page {
+    padding-top: 100px;
+  }
+  .about-page .presentation h1 {
+    font-size: 6.8rem;
+  }
+  .about-page .presentation h2 {
+    font-size: 4.8rem;
+  }
+  .about-page .description {
+    margin-top: 25px;
+  }
+  .about-page .description--text {
+    font-size: 2rem;
+    line-height: 3rem;
+  }
+}
+
+@media all and (max-width: 767px) {
   header {
     height: 55px;
     /* ----- List menu ----- */
@@ -1071,15 +1075,18 @@ footer em {
   .works-page h2 {
     margin-bottom: 35px;
   }
+  .about-page .presentation h1 {
+    font-size: 6.5rem;
+  }
+  .about-page .presentation h2 {
+    font-size: 4.5rem;
+  }
   .about-page .description {
     margin-top: 25px;
   }
   .about-page .description--text {
     font-size: 1.9rem;
     line-height: 3rem;
-  }
-  .about-page .description img {
-    margin-top: 25px;
   }
   .contact-page .contact__field {
     padding: 20px 15px 20px;
@@ -1136,10 +1143,6 @@ footer em {
   }
   .about-page .presentation h2 {
     font-size: 3.5rem;
-  }
-  .about-page .presentation img {
-    margin-top: 15px;
-    width: 30px;
   }
   .about-page .description {
     margin-top: 25px;
