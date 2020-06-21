@@ -285,7 +285,7 @@ header .mobile-menu {
   font-size: 2.0rem;
   line-height: 4.0rem;
   margin-bottom: 5%;
-  text-align: justify;
+  text-align: left;
 }
 
 .about-page .description--text a {
@@ -830,7 +830,7 @@ header .mobile-menu {
 footer {
   margin-top: 5%;
   background-color: #17141D;
-  padding: 5% 10% 5%;
+  padding: 5%;
   -webkit-box-shadow: 0px 0px 5px 2.5px #000000;
           box-shadow: 0px 0px 5px 2.5px #000000;
   /* ----- footer area ----- */
@@ -842,7 +842,7 @@ footer h1 {
 
 footer .field-footer {
   margin: auto;
-  max-width: 1400px;
+  max-width: 1500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -850,9 +850,12 @@ footer .field-footer {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   /* ----- contact area ----- */
   /* ----- informations area ----- */
 }
@@ -861,9 +864,10 @@ footer .field-footer__contact, footer .field-footer__informations {
   text-align: left;
   width: 42%;
   min-width: 300px;
+  max-width: 500px;
   font-size: 1.8rem;
   color: #f5f5f5;
-  margin: auto;
+  margin: 2%;
 }
 
 footer .field-footer__contact img {
@@ -1029,7 +1033,7 @@ footer em {
     line-height: 3rem;
   }
   .about-page .description img {
-    margin-top: 25px;
+    margin-top: 50px;
   }
   .contact-page .contact__field {
     padding: 20px;
