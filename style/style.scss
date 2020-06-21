@@ -206,7 +206,7 @@ header {
             }
         }
 
-        &--text {
+        &--text > a, &--text {
             font-weight: 600;
             text-decoration: none;
             font-size: 1.8rem;
@@ -302,17 +302,6 @@ header {
             border-radius: 50%;
             box-shadow: 0px 0px 5px 2.5px $shadow-color;
         }
-
-        // limit of scaling image
-        // @media screen and (min-width: 1267px) {
-        //     div {
-        //         max-width: 55%;
-        //     }
-        //     img {
-        //         max-width: 375px;
-        //         margin: 0 0 5% 15%;
-        //     }
-        // }
         @media screen and (min-width: 1117px) {
             div {
                 max-width: 55%;
@@ -957,11 +946,11 @@ footer {
 
                 &--text {
                     width: 100%;
-                    padding: 16px;
+                    padding: 16px 0;
                     font-size: 2rem;
                     text-decoration: none;
                     color: $light-white;
-                    margin-left: 10px;
+                    margin-left: 25px;
                 }
             }
         }

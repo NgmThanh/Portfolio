@@ -194,7 +194,7 @@ header .menu img:hover {
           animation: rotate 10s linear infinite;
 }
 
-header .menu--text {
+header .menu--text > a, header .menu--text {
   font-weight: 600;
   text-decoration: none;
   font-size: 1.8rem;
@@ -203,7 +203,7 @@ header .menu--text {
   margin: 0 20px;
 }
 
-header .menu--text:hover {
+header .menu--text > a:hover, header .menu--text:hover {
   color: #E52F6F;
   cursor: pointer;
   -webkit-transition: 0.3s;
@@ -996,11 +996,11 @@ footer em {
   }
   header .mobile-menu .menu-display--text {
     width: 100%;
-    padding: 16px;
+    padding: 16px 0;
     font-size: 2rem;
     text-decoration: none;
     color: #f5f5f5;
-    margin-left: 10px;
+    margin-left: 25px;
   }
   #progress {
     height: 5px;
