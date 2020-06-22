@@ -105,6 +105,10 @@
   max-width: 100%;
 }
 
+* a {
+  color: #f5f5f5;
+}
+
 html {
   font-size: 62.5%;
   /* 1 rem = 10px */
@@ -121,11 +125,11 @@ body {
 
 h1 {
   font-family: 'Teko';
-  text-shadow: 2.5px 2.5px #000000;
+  text-shadow: 2px 2px #000000;
 }
 
 h2 {
-  text-shadow: 2.5px 2.5px #000000;
+  text-shadow: 2px 2px #000000;
 }
 
 .about-page, .skills-page, .works-page, .contact-page {
@@ -361,7 +365,7 @@ header .mobile-menu {
 .skills-page .skills-box .skill__progress-bar h3 {
   position: absolute;
   bottom: 170%;
-  left: 92.5%;
+  right: 0%;
   font-size: 1.8rem;
 }
 
@@ -777,8 +781,6 @@ header .mobile-menu {
           box-shadow: none;
   margin-bottom: 4%;
   width: 100%;
-  -webkit-box-shadow: 0px 0px 5px -2.5px #000000;
-          box-shadow: 0px 0px 5px -2.5px #000000;
 }
 
 .contact-page .contact__field--input::-webkit-input-placeholder, .contact-page .contact__field--textarea::-webkit-input-placeholder {

@@ -1,4 +1,4 @@
-/* ============ SCRIPT MENU ============ */
+/* ============ SCRIPT SKILLS ============ */
 
 // html collection of class "skill-bar"
 var classSkills = document.getElementsByClassName('skill-bar');
