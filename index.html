@@ -20,9 +20,8 @@
                 <li id="skills-menu"><a href="#skills" class="menu--text">Skills</a></li>
                 <li id="works-menu"><a href="#works" class="menu--text">Works</a></li>
                 <li id="contact-menu"><a href="#contact" class="menu--text">Contact</a></li>
-                <!-- <li class="menu--text dark-menu" id="dark-menu" onclick="lightMode()">☀️</li> -->
+                <li class="menu--text switch-mode">🌓</li>
             </ul>
-            <!-- 🌙 -->
             <div class="hamburger-icon" onclick="changeMobile(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
@@ -34,7 +33,7 @@
                     <a href="#skills"><li class="menu-display--text" id="skills-menu">Skills</li></a>
                     <a href="#works"><li class="menu-display--text" id="works-menu">Works</li></a>
                     <a href="#contact"><li class="menu-display--text" id="contact-menu">Contact</li></a>
-                    <!-- <li class="menu-display--text dark-menu" id="dark-menu" onclick="lightMode()">☀️</li> -->
+                    <li class="menu-display--text switch-mode">🌓</li>
                 </ul>
             </nav>
 
@@ -111,7 +110,7 @@
             <div class="timeline">
                 <!-- trigger / open modal window -->
                 <button class="timeline__box" id="btnWork1">
-                    <img src="images/fox.png" alt="fox">
+                    <img src="images/fox.png" alt="fox" class="image-works">
                     <h1>"My PortFolio”</h1>
                 </button>
                 <!-- modal window -->
@@ -164,7 +163,7 @@
 
                 <!-- trigger / open modal window -->
                 <button class="timeline__box" id="btnWork2">
-                    <img src="images/police.png" alt="police">
+                    <img src="images/police.png" alt="police" class="image-works">
                     <h1>“Prevent Network 31”</h1>
                 </button>
                 <!-- modal window -->
@@ -233,7 +232,7 @@
 
                 <!-- trigger / open modal window -->
                 <button class="timeline__box" id="btnWork3">
-                    <img src="images/neocampus.png" alt="NeoCampus">
+                    <img src="images/neocampus.png" alt="NeoCampus" class="image-works">
                     <h1>“NeoCampus”</h1>
                 </button>
                 <!-- modal window -->
@@ -290,7 +289,7 @@
 
                 <!-- trigger / open modal window -->
                 <button class="timeline__box" id="btnWork4">
-                    <img src="images/vietfood.png" alt="vietfood">
+                    <img src="images/vietfood.png" alt="vietfood" class="image-works">
                     <h1>“Vietfoodtlse”</h1>
                 </button>
                 <!-- modal window -->
@@ -353,7 +352,7 @@
 
                 <!-- trigger / open modal window -->
                 <button class="timeline__box" id="btnWork5">
-                    <img src="images/python.png" alt="python">
+                    <img src="images/python.png" alt="python" class="image-works">
                     <h1>"GOBS Game"</h1>
                 </button>
                 <!-- modal window -->
@@ -404,7 +403,7 @@
 
                 <!-- trigger / open modal window -->
                 <button class="timeline__box" id="btnWork6">
-                    <img src="images/java.png" alt="java">
+                    <img src="images/java.png" alt="java" class="image-works">
                     <h1>“Guitar Hero”</h1>
                 </button>
                 <!-- modal window -->
@@ -450,8 +449,6 @@
                 <input class="contact__field--input" type="text" name="subject" id="subject" placeholder="Subject" required>
                 <textarea class="contact__field--textarea" placeholder="Message" required></textarea>
                 <input type="submit" value="Send Message">
-                <!-- javascript a rajouter -->
-                <!-- <p>Votre message a bien été envoyé ! 👍</p> -->
             </div>
             </form>
         </section>
@@ -463,18 +460,18 @@
                 <div class="field-footer__contact">
                     <h1>Reach out to me here 👇</h1><br>
                     <p>Feel free to ping me for volunteering, discussing your ideas or grabbing a cup of coffee.</p>
-                    <a href="https://github.com/NgmThanh" target="_blank"><img src="images/github.png" alt="github"></a>
-                    <a href="https://www.linkedin.com/in/minh-thanh-nguyen-1875b6194/" target="_blank"><img src="images/linkedIn.png" alt="linkedIn"></a>
-                    <a href="mailto:nmthanh99@gmail.com?"><img src="images/mail.png" alt="mail"></a>
+                    <a href="https://github.com/NgmThanh" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/minh-thanh-nguyen-1875b6194/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:nmthanh99@gmail.com?"><i class="fas fa-envelope"></i></a>
                 </div>
                 <div class="field-footer__informations">
                     <h1>Have a question ?</h1><br>
-                    <img src="images/localisation.png" alt="localisation">
+                    <i class="fas fa-map-marker-alt"></i>
                     <span>Toulouse, Haute-Garonne (31) - FRANCE</span><br>
-                    <a href="tel:+33621617481"><img src="images/phone.png" alt="phone">
+                    <a href="tel:+33621617481"><i class="fas fa-phone-alt"></i>
                     <span>+33 6 21 61 74 81</a></span><br>
-                    <a href="mailto:nmthanh99@gmail.com?"><img src="images/mail.png" alt="mail"></a>
-                    <span>nmthanh99@gmail.com</span><br>
+                    <a href="mailto:nmthanh99@gmail.com?"><i class="fas fa-envelope"></i></a>
+                    <span>nmthanh99@gmail.com</span>
                 </div>
             </div>
             <em>Made with ❤️ by <b>Thanh Nguyen</b></em>

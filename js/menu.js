@@ -61,32 +61,45 @@ document.querySelectorAll('.menu-display--text').forEach(itemMenu => {
 
 /* ----- DARK / LIGHT MODE ----- */
 
-// light mode
-function lightMode() {
-    // toggle class light mode to body
-    var element = document.body;
-    element.classList.toggle("light-mode");
+var switchMode = document.querySelector(".switch-mode");
+var lightMode = document.getElementsByClassName("light");
 
-    // to test if light is enabled or not
-    var lightEnabled = document.getElementsByClassName("light-mode");
+// images works
+var imageWorks = document.getElementsByClassName("image-works");
 
-    // change icon of button light mode
-    var iconLightMode = document.getElementsByClassName("dark-menu");
+switchMode.addEventListener('click', () => {
 
-    // if light is enabled
-    if (lightEnabled.length === 0) {
-        // change button of dark mode menu
-        for (var i = 0; i < iconLightMode.length; i++) {
-            iconLightMode[i].textContent = "☀️";
+    var style = document.documentElement.style;
+
+    if (lightMode.length == 0) {
+        switchMode.classList.add('light');
+        style.setProperty('--material-color', '#dddddd');
+        style.setProperty('--background-color', '#f5f5f5');
+        style.setProperty('--border-color', '#dadada');
+        style.setProperty('--font-color', '#121212');
+        style.setProperty('--shadow-color', '#8f8f8f');
+        style.setProperty('--input-color', '#f5f5f5');
+
+        for (var i = 0; i < imageWorks.length; i++) {
+            imageWorks[i].style.webkitFilter = "none";
         }
     }
-    // if dark is enabled
     else {
-        for (var i = 0; i < iconLightMode.length; i++) {
-            iconLightMode[i].textContent = "🌙";
+        switchMode.classList.remove('light');
+        style.setProperty('--material-color', '');
+        style.setProperty('--background-color', '');
+        style.setProperty('--border-color', '');
+        style.setProperty('--font-color', '');
+        style.setProperty('--shadow-color', '');
+        style.setProperty('--input-color', '');
+
+        for (var i = 0; i < imageWorks.length; i++) {
+            imageWorks[i].style.webkitFilter = "";
         }
-    }  
-}
+    }
+    
+});
+
 
 /* ----- PROGRESS BAR ----- */
 

@@ -1,41 +1,32 @@
 /* =============== COLORS =============== */
 
-// grey -> dark to light
-// backgrounds
-$material-dark: #17141D;
-$grey-bg: #100E17;
-
-// selection text
-$selection-grey: #DEE1E6;
-
-// font color
-$light-white: #f5f5f5;
-
-// border inputs
-$grey-border: #312D3C;
-
-// background inputs
-$grey-input: #201C29;
-
-// placeholder color
-$color-placeholder: #909090;
-
-// others
-$orange-pure: #FF5711;
-$pink-pure: #E52F6F;
-
-$color-bg-light: #f5f5f5;
-$color-border-light: #455A64;
-
-$shadow-color: #000000;
-$shadow-light: #d3d3d3;
-
-.light-mode {
-    background-color: $color-bg-light;
-    color: $grey-bg;
-    // box-shadow: 0px 0px 5px 2.5px $shadow-light;
-    transition: 0.6s all ease;
+:root {
+    --material-color: #17141D;
+    --background-color: #100E17;
+    --selection-color: #DEE1E6;
+    --font-color: #f5f5f5;
+    --border-color: #312D3C;
+    --input-color: #201C29;
+    --placeholder-color: #909090;
+    --orange-pure: #FF5711;
+    --pink-pure: #E52F6F;
+    --shadow-color: #000000;
 }
+
+// @media (prefers-color-scheme: light) {
+//     :root {
+//         --material-color: #dddddd;
+//         --background-color: #f5f5f5;
+//         --selection-color: #DEE1E6;
+//         --font-color: #151515;
+//         --border-color: #dadada;
+//         --input-color: #f5f5f5;
+//         --placeholder-color: #909090;
+//         --orange-pure: #FF5711;
+//         --pink-pure: #E52F6F;
+//         --shadow-color: #8f8f8f;
+//     }
+// }
 
 /* Fading animation */
 .fade {
@@ -73,7 +64,7 @@ $shadow-light: #d3d3d3;
 /* =============== MIXINS =============== */
 
 @mixin gradient-background {
-    background: linear-gradient(135deg, $orange-pure,$pink-pure);
+    background: linear-gradient(135deg, var(--orange-pure),var(--pink-pure));
 }
 
 @mixin jumpAnimation($distance) {
@@ -82,7 +73,7 @@ $shadow-light: #d3d3d3;
 }
 
 @mixin text-gradient {
-    background: linear-gradient(135deg, $orange-pure,$pink-pure);
+    background: linear-gradient(135deg, var(--orange-pure),var(--pink-pure));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -100,14 +91,12 @@ $shadow-light: #d3d3d3;
    
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    // border-radius: 5px;
     @include gradient-background;
-    box-shadow: 0px 0px 5px 2.5px $shadow-color;
 }
   
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: $pink-pure; 
+    background: var(--pink-pure); 
 }
 
 /* =============== MAIN CODE =============== */
@@ -120,13 +109,13 @@ $shadow-light: #d3d3d3;
     text-decoration: none;
     box-sizing: border-box;
     &::selection {
-        background-color: $selection-grey;
+        background-color: var(--selection-color);
     }
     img {
         max-width: 100%;
     }
     a {
-        color: $light-white;
+        color: var(--font-color);
     }
 }
 
@@ -136,18 +125,19 @@ html {
 }
 
 body {
-    background-color: $grey-bg;
-    color: $light-white;
+    background-color: var(--background-color);
+    color: var(--font-color);
     animation: apparition 1s linear 0s forwards;
+    transition: 0.5s all ease;
 }
 
 h1 {
     font-family: 'Teko';
-    text-shadow: 2px 2px $shadow-color;
+    text-shadow: 1px 1px var(--shadow-color);
 }
 
 h2 {
-    text-shadow: 2px 2px $shadow-color;;
+    text-shadow: 0.5px 0.5px var(--shadow-color);;
 }
 
 .about-page, .skills-page, .works-page, .contact-page {
@@ -177,13 +167,14 @@ h2 {
 /* ----------- FIXED HEADER ----------- */
 header {
     width: 100%;
-    background-color: $material-dark;
+    background-color: var(--material-color);
     text-align: right;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
-    box-shadow: 0px 0px 5px 2.5px $shadow-color;
+    box-shadow: 0px 0px 5px 1px var(--shadow-color);
+    transition: 0.5s all ease;
 
     /* ----- List menu ----- */
     .menu {
@@ -214,10 +205,10 @@ header {
             text-decoration: none;
             font-size: 1.8rem;
             font-weight: medium;
-            color: $light-white;
+            color: var(--font-color);
             margin: 0 20px;
             &:hover {
-                color: $pink-pure;
+                color: var(--pink-pure);
                 cursor: pointer;
                 transition: 0.3s;
             }
@@ -238,10 +229,10 @@ header {
 	@include gradient-background;
 	height: 6px;
 	position: fixed;
-	top: 63px;
+	top: 61.5px;
 	left: 0;
     z-index: 50;
-    box-shadow: 0px 0px 5px 2.5px $shadow-color;
+    box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
 }
 
 /* ----------- ARROW MOVE TO TOP ----------- */
@@ -252,8 +243,8 @@ header {
     z-index: 50;
     i {
         font-size: 3.5rem;
-        color: $orange-pure;
-        text-shadow: 1px 1px $shadow-color;
+        color: var(--orange-pure);
+        text-shadow: 1px 1px var(--shadow-color);
     }
 }
 
@@ -265,7 +256,7 @@ header {
         h1, h2 {
             font-family: 'Teko';
             font-weight: 500;
-            color: $orange-pure;
+            color: var(--orange-pure);
             display: block;
         }
         h1 {
@@ -291,7 +282,7 @@ header {
             margin-bottom: 5%;
             text-align: left;
             a {
-                color: $orange-pure;
+                color: var(--orange-pure);
                 font-weight: 600;
             }
         }
@@ -303,7 +294,7 @@ header {
             min-width: 300px;
             margin: auto;
             border-radius: 50%;
-            box-shadow: 0px 0px 5px 2.5px $shadow-color;
+            box-shadow: 0px 0px 5px 2px var(--shadow-color);
         }
         @media screen and (min-width: 1117px) {
             div {
@@ -344,11 +335,11 @@ header {
             &__progress-bar {
                 width: 100%;
                 height: 20px;
-                background-color: $grey-border;
+                background-color: var(--border-color);
                 margin-top: 10px;
                 position: relative;
                 border-radius: 3px;
-                box-shadow: 0px 0px 5px 2px $shadow-color;
+                box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
                 // percent
                 h3 {
                     position: absolute;
@@ -364,7 +355,7 @@ header {
                     @include gradient-background;
                     border-radius: 3px;
                     z-index: 2;
-                    box-shadow: 0px 0px 5px 2.5px $shadow-color;
+                    box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
                 }
             }
         }
@@ -388,10 +379,10 @@ header {
             margin: 2%;
             width: 300px;
             height: 300px;
-            background-color: $material-dark;
+            background-color: var(--material-color);
             border: none;
             transition: 0.5s all ease-out;
-            box-shadow: 0px 0px 5px 2.5px $shadow-color;
+            box-shadow: 0px 0px 5px 1px var(--shadow-color);
             filter: brightness(95%);
 
             &:hover {
@@ -414,7 +405,7 @@ header {
                 display: block;
                 margin-top: 5px;
                 font-weight: 500;
-                color: $light-white;
+                color: var(--font-color);
             }
         }
         // modal work window displayed when click button
@@ -435,11 +426,10 @@ header {
                 position: relative;
                 top: 50%;
                 transform: translateY(-50%);    /* center box */
-                background-color: $material-dark;
+                background-color: var(--material-color);
                 margin: auto auto;
                 width: 60%;
                 max-height: 85%;
-                box-shadow: 0px 0px 5px 2.5px $shadow-color;
                 text-align: left;
                 animation: apparition 0.8s ease;
                 overflow-y: auto;
@@ -451,13 +441,13 @@ header {
                         font-size: 4.0rem;
                         font-family: 'Teko';
                         font-weight: 500;
-                        color: $orange-pure;
+                        color: var(--orange-pure);
                     }
                     &--subtitle {
                         font-family: 'Saira Condensed';
                         font-size: 3rem;
                         font-weight: 600;
-                        color: $orange-pure;
+                        color: var(--orange-pure);
                         text-shadow: none;
                         filter: invert(100%);
                         display: block;
@@ -466,7 +456,7 @@ header {
                     }
                     &--language {
                         font-size: 1.6rem;
-                        color: $pink-pure;
+                        color: var(--pink-pure);
                         font-weight: 600;
                     }
                     &--date {
@@ -523,7 +513,7 @@ header {
                             img {
                                 max-width: 90%;
                                 margin: auto;
-                                box-shadow: 0px 0px 5px 2.5px $shadow-color;
+                                box-shadow: 0px 0px 5px 1px var(--shadow-color);
                             }
                         }
 
@@ -535,7 +525,7 @@ header {
                             width: auto;
                             margin-top: -22px;
                             padding: 15px;
-                            color: $light-white;                         
+                            color: var(--font-color);                         
                             font-weight: bold;
                             font-size: 18px;
                             transition: 0.5s ease;
@@ -548,14 +538,14 @@ header {
                         .next {
                             right: 0;
                             &:hover {
-                                background: $orange-pure;
+                                background: var(--orange-pure);
                             }
                         }
 
                         .prev {
                             left: 0;
                             &:hover {
-                                background: $pink-pure;
+                                background: var(--pink-pure);
                             }
                         }
                     }
@@ -566,7 +556,7 @@ header {
                         height: 12.5px;
                         width: 12.5px;
                         margin: 0 2.5px;
-                        background: $light-white;
+                        background: var(--font-color);
                         border-radius: 50%;
                         display: inline-block;
                         transition: 0.5s ease;
@@ -736,26 +726,27 @@ header {
         margin-top: 2.5%;
         padding: 25px;
         width: 385px;
-        background-color: $material-dark;
-        color: $light-white;
-        box-shadow: 0px 0px 5px 2.5px $shadow-color;
+        background-color: var(--material-color);
+        color: var(--font-color);
+        box-shadow: 0px 0px 5px 1px var(--shadow-color);
+        transition: 0.5s all ease;
 
         &--input, &--textarea {
             font-size: 1.8rem;
             padding: 10px;
-            background-color: $grey-input;
-            color: $light-white;
-            border: 2px solid $grey-border;
+            background-color: var(--input-color);
+            color: var(--font-color);
+            border: 2px solid var(--border-color);
             box-shadow: none;
             margin-bottom: 4%;
             width: 100%;
 
             &::placeholder {
-                color: $color-placeholder;
+                color: var(--placeholder-color);
             }
             &:focus {
                 outline: none !important;
-                border: 2px solid $pink-pure;
+                border: 2px solid var(--pink-pure);
             }
         }
 
@@ -769,14 +760,14 @@ header {
             padding: 10px;
             width: 200px;
             font-weight: 600;
-            background-color: $selection-grey;
-            color: $grey-bg;
+            background-color: var(--font-color);
+            color: var(--background-color);
             border: none;
-            box-shadow: 0px 0px 5px 2.5px $shadow-color;   
+            box-shadow: 0px 0px 5px 1px var(--shadow-color);   
             &:hover {
                 cursor: pointer;
                 @include gradient-background;
-                color: $light-white;
+                color: var(--font-color);
                 transition: 0.4s all ease;
             }
         }
@@ -786,9 +777,10 @@ header {
 /* ----------- FOOTER ----------- */
 footer {
     margin-top: 5%;
-    background-color: $material-dark;
+    background-color: var(--material-color);
     padding: 5%;
-    box-shadow: 0px 0px 5px 2.5px $shadow-color;
+    box-shadow: 0px 0px 5px 1px var(--shadow-color);
+    transition: 0.5s all ease;
 
     h1 {
         font-size: 3rem;
@@ -809,17 +801,17 @@ footer {
             min-width: 300px;
             max-width: 500px;
             font-size: 1.8rem;
-            color: $light-white;
+            color: var(--font-color);
             margin: 2%;
         }
 
         /* ----- contact area ----- */
         &__contact {
             // icon contact
-            img {
-                filter: invert(100%);
-                width: 40px;
-                margin: 50px 20px 25px 0;
+            i {
+                // filter: invert(100%);
+                font-size: 4.0rem;
+                margin: 35px 20px 25px 0;
                 &:hover {
                     @include jumpAnimation(-5px);
                 }
@@ -829,9 +821,9 @@ footer {
         /* ----- informations area ----- */
         &__informations {
             // icon contact
-            img {
-                filter: invert(100%);
-                width: 25px;
+            i {
+                // filter: invert(100%);
+                font-size: 2.5rem;
                 float: left;
                 margin-right: 25px;
                 display: block;
@@ -850,7 +842,7 @@ footer {
     em {
         font-size: 1.6rem;
         font-style: normal;
-        color: $light-white;
+        color: var(--font-color);
         text-align: center;
         margin-top: 5%;
         display: block;
@@ -914,7 +906,7 @@ footer {
                 margin-top: 7px;
                 border-radius: 2px;
                 transition: 0.4s;
-                box-shadow: 0px 0px 5px 2.5px $shadow-color;
+                box-shadow: 0px 0px 5px 1px var(--shadow-color);
             }
         }
         /* animation hamburger icon on click */
@@ -939,10 +931,10 @@ footer {
             right: 0;
             text-align: left;
             animation: apparition 0.3s linear 0s forwards;
-            box-shadow: 0px 0px 5px 2.5px $shadow-color;
+            box-shadow: 0px 0px 5px 1px var(--shadow-color);
 
             .menu-display {
-                background: $material-dark;
+                background: var(--material-color);
                 list-style-type: none;
                 display: flex;
                 flex-direction: column;
@@ -952,7 +944,7 @@ footer {
                     padding: 16px 0;
                     font-size: 2rem;
                     text-decoration: none;
-                    color: $light-white;
+                    color: var(--font-color);
                     margin-left: 25px;
                 }
             }
