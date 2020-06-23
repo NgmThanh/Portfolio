@@ -238,8 +238,8 @@ header {
 /* ----------- ARROW MOVE TO TOP ----------- */
 #arrow-up {
     position: fixed;
-    bottom: 2.5%;
-    right: 5%;
+    bottom: 3.5%;
+    right: 3.5%;
     z-index: 50;
     i {
         font-size: 3.5rem;
@@ -1091,6 +1091,7 @@ footer {
             max-width: 300px;
             &--input, &--textarea {
                 font-size: 1.5rem;
+                border: 1px solid var(--border-color);
             }
             [type="submit"] {
                 font-size: 1.6rem;
