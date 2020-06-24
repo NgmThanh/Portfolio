@@ -246,7 +246,7 @@ header .mobile-menu {
 #arrow-up {
   position: fixed;
   bottom: 3.5%;
-  right: 3.5%;
+  right: 5%;
   z-index: 50;
 }
 
@@ -1117,6 +1117,10 @@ footer em {
   .contact-page .contact__field--input, .contact-page .contact__field--textarea {
     font-size: 1.5rem;
     border: 1px solid var(--border-color);
+  }
+  .contact-page .contact__field--input:focus, .contact-page .contact__field--textarea:focus {
+    outline: none !important;
+    border: 1px solid var(--pink-pure);
   }
   .contact-page .contact__field [type="submit"] {
     font-size: 1.6rem;
