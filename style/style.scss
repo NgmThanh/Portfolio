@@ -812,6 +812,7 @@ footer {
                 // filter: invert(100%);
                 font-size: 4.0rem;
                 margin: 35px 20px 25px 0;
+                transition: 0.5s all ease;
                 &:hover {
                     @include jumpAnimation(-5px);
                 }
@@ -827,6 +828,7 @@ footer {
                 float: left;
                 margin-right: 25px;
                 display: block;
+                transition: 0.5s all ease;
                 &:hover {
                     @include jumpAnimation(-5px);
                 }

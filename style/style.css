@@ -885,6 +885,8 @@ footer .field-footer__contact, footer .field-footer__informations {
 footer .field-footer__contact i {
   font-size: 4.0rem;
   margin: 35px 20px 25px 0;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
 }
 
 footer .field-footer__contact i:hover {
@@ -899,6 +901,8 @@ footer .field-footer__informations i {
   float: left;
   margin-right: 25px;
   display: block;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
 }
 
 footer .field-footer__informations i:hover {
