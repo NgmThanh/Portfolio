@@ -207,16 +207,14 @@ header .menu {
 
 header .menu img {
   position: absolute;
-  width: 45px;
-  margin-top: 10px;
+  width: 75px;
+  margin-top: 16px;
   left: 5%;
   top: 0;
 }
 
 header .menu img:hover {
   cursor: pointer;
-  -webkit-animation: rotate 10s linear infinite;
-          animation: rotate 10s linear infinite;
 }
 
 header .menu--text > a, header .menu--text {
@@ -235,11 +233,7 @@ header .menu--text > a:hover, header .menu--text:hover {
   transition: 0.3s;
 }
 
-header .hamburger-icon {
-  display: none;
-}
-
-header .mobile-menu {
+header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   display: none;
 }
 
@@ -450,7 +444,8 @@ header .mobile-menu {
   -webkit-filter: invert(100%);
           filter: invert(100%);
   position: relative;
-  width: 85px;
+  height: 85px;
+  max-width: 150px;
   margin: auto;
 }
 
@@ -963,10 +958,8 @@ footer em {
     height: 55px;
     /* ----- List menu ----- */
     /* animation hamburger icon on click */
+    /* ----- mobile logo ----- */
     /* ----- mobile menu ----- */
-  }
-  header img {
-    display: none;
   }
   header .menu {
     display: none;
@@ -999,6 +992,13 @@ footer em {
   header .change .bar3 {
     -webkit-transform: rotate(-45deg) translate(7px, -7px);
     transform: rotate(-45deg) translate(7px, -7px);
+  }
+  header .logo-mobile {
+    position: absolute;
+    top: 15px;
+    right: 5%;
+    width: 70px;
+    display: block;
   }
   header .mobile-menu {
     display: none;

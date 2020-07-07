@@ -202,14 +202,14 @@ header {
         // logo
         img {
             position: absolute;
-            width: 45px;
-            margin-top: 10px;
+            width: 75px;
+            margin-top: 16px;
             left: 5%;
             top: 0;
 
             &:hover {
                 cursor: pointer;
-                animation: rotate 10s linear infinite;
+                // animation: rotate 10s linear infinite;
             }
         }
 
@@ -229,10 +229,7 @@ header {
     }
 
     /* hamburger icon and mobile menu not displayed */
-    .hamburger-icon {
-        display: none;
-    }
-    .mobile-menu {
+    .hamburger-icon, .mobile-menu, .logo-mobile {
         display: none;
     }
 }
@@ -409,7 +406,8 @@ header {
             img {
                 filter: invert(100%);
                 position: relative;
-                width: 85px;
+                height: 85px;
+                max-width: 150px;
                 margin: auto;
             }
             // title work box
@@ -896,10 +894,6 @@ footer {
     header {
         height: 55px;
 
-        img {
-            display: none;
-        }
-
         /* ----- List menu ----- */
         .menu {
             display: none;
@@ -935,6 +929,15 @@ footer {
         .change .bar3 {
             -webkit-transform: rotate(-45deg) translate(7px, -7px);
             transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* ----- mobile logo ----- */
+        .logo-mobile {
+            position: absolute;
+            top: 15px;
+            right: 5%;
+            width: 70px;
+            display: block;
         }
 
         /* ----- mobile menu ----- */
