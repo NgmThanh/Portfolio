@@ -61,48 +61,42 @@ document.querySelectorAll('.menu-display--text').forEach(itemMenu => {
 
 /* ----- DARK / LIGHT MODE ----- */
 
-var arraySwich = new Array();
 var lightMode = document.getElementsByClassName("light");
 
-// images works
-var imageWorks = document.getElementsByClassName("image-works");
+// icons works
+var iconWorks = document.getElementsByClassName("icon-works");
 
 // change all switchs (desktop + mobile)
 document.querySelectorAll('.switch-mode').forEach(switchMode => {
     
     switchMode.addEventListener('click', () => {
-        var style = document.documentElement.style;
-    
-        // if light theme activated
-        if (lightMode.length == 0) {
-            switchMode.classList.add('light');
-            style.setProperty('--material-color', '#dddddd');
-            style.setProperty('--background-color', '#f5f5f5');
-            style.setProperty('--border-color', '#dadada');
-            style.setProperty('--font-color', '#121212');
-            style.setProperty('--shadow-color', '#8f8f8f');
-            style.setProperty('--input-color', '#f5f5f5');
-    
-            for (var i = 0; i < imageWorks.length; i++) {
-                imageWorks[i].style.webkitFilter = "none";
+
+        document.body.classList.toggle('light');
+        localStorage.setItem('theme',
+            document.body.classList.contains('light') ? 'light' : 'dark');
+
+        // work icons color
+        if (lightMode.length === 0) {
+            for (var i = 0; i < iconWorks.length; i++) {
+                iconWorks[i].style.webkitFilter = "";
             }
         }
-        // return to normal
         else {
-            switchMode.classList.remove('light');
-            style.setProperty('--material-color', '');
-            style.setProperty('--background-color', '');
-            style.setProperty('--border-color', '');
-            style.setProperty('--font-color', '');
-            style.setProperty('--shadow-color', '');
-            style.setProperty('--input-color', '');
-    
-            for (var i = 0; i < imageWorks.length; i++) {
-                imageWorks[i].style.webkitFilter = "";
+            for (var i = 0; i < iconWorks.length; i++) {
+                iconWorks[i].style.webkitFilter = "none";
             }
-        } 
+        }
+
     });
 });
+
+if (localStorage.getItem('theme') === 'light') {
+    document.body.classList.add('light');
+
+    for (var i = 0; i < iconWorks.length; i++) {
+        iconWorks[i].style.webkitFilter = "none";
+    }
+}
 
 /* ----- PROGRESS BAR ----- */
 

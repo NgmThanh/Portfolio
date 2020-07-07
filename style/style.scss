@@ -28,6 +28,19 @@
 //     }
 // }
 
+.light {
+    --material-color: #dddddd;
+    --background-color: #f5f5f5;
+    --selection-color: #DEE1E6;
+    --font-color: #121212;
+    --border-color: #dadada;
+    --input-color: #f5f5f5;
+    --placeholder-color: #909090;
+    --orange-pure: #FF5711;
+    --pink-pure: #E52F6F;
+    --shadow-color: #8f8f8f;
+}
+
 /* Fading animation */
 .fade {
     -webkit-animation-name: apparition;
