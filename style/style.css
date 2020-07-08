@@ -1,9 +1,3 @@
-/* =============== LOGO FONT =============== */
-@font-face {
-  font-family: "Ananda Black";
-  src: url("../font/Ananda Black Personal Use.ttf") format("truetype");
-}
-
 /* =============== COLORS =============== */
 :root {
   --material-color: #17141D;
@@ -450,7 +444,7 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   -webkit-filter: invert(100%);
           filter: invert(100%);
   position: relative;
-  height: 85px;
+  max-height: 85px;
   max-width: 150px;
   margin: auto;
 }
