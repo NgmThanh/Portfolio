@@ -1,3 +1,9 @@
+/* =============== LOGO FONT =============== */
+@font-face {
+  font-family: "Ananda Black";
+  src: url("../font/Ananda Black Personal Use.ttf") format("truetype");
+}
+
 /* =============== COLORS =============== */
 :root {
   --material-color: #17141D;
