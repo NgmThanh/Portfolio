@@ -56,25 +56,85 @@
   }
 }
 
-@-webkit-keyframes rotate {
+@-webkit-keyframes left-appear {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(1800deg);
-            transform: rotate(1800deg);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
 }
 
-@keyframes rotate {
+@keyframes left-appear {
   from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
   }
-  to {
-    -webkit-transform: rotate(1800deg);
-            transform: rotate(1800deg);
+}
+
+@-webkit-keyframes right-appear {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@keyframes right-appear {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+@-webkit-keyframes top-appear {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes top-appear {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@-webkit-keyframes progress-bar-load {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes progress-bar-load {
+  from {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes logo-load {
+  from {
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+  }
+}
+
+@keyframes logo-load {
+  from {
+    -webkit-transform: translateX(-500px);
+            transform: translateX(-500px);
+  }
+}
+
+@-webkit-keyframes logo-mobile-load {
+  from {
+    -webkit-transform: translateX(200px);
+            transform: translateX(200px);
+  }
+}
+
+@keyframes logo-mobile-load {
+  from {
+    -webkit-transform: translateX(200px);
+            transform: translateX(200px);
   }
 }
 
@@ -211,6 +271,8 @@ header .menu img {
   margin-top: 16px;
   left: 5%;
   top: 0;
+  -webkit-animation: logo-load 1s ease-out 0s forwards;
+          animation: logo-load 1s ease-out 0s forwards;
 }
 
 header .menu img:hover {
@@ -245,6 +307,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   top: 61.5px;
   left: 0;
   z-index: 50;
+  -webkit-animation: progress-bar-load 2s ease 0s forwards;
+          animation: progress-bar-load 2s ease 0s forwards;
   -webkit-box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
           box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
 }
@@ -278,11 +342,15 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 
 .about-page .presentation h1 {
   font-size: 8rem;
+  -webkit-animation: left-appear 1s ease-out 0.4s forwards;
+          animation: left-appear 1s ease-out 0.4s forwards;
 }
 
 .about-page .presentation h2 {
   font-size: 6.5rem;
   font-weight: medium, 600;
+  -webkit-animation: right-appear 1s ease-out 0.7s forwards;
+          animation: right-appear 1s ease-out 0.7s forwards;
 }
 
 .about-page .description {
@@ -390,6 +458,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
   border-radius: 3px;
   z-index: 2;
+  -webkit-animation: progress-bar-load 1.5s ease 0s forwards;
+          animation: progress-bar-load 1.5s ease 0s forwards;
   -webkit-box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
           box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
 }
@@ -487,8 +557,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   width: 60%;
   max-height: 85%;
   text-align: left;
-  -webkit-animation: apparition 0.8s ease;
-          animation: apparition 0.8s ease;
+  -webkit-animation: top-appear 0.5s ease-out 0s forwards;
+          animation: top-appear 0.5s ease-out 0s forwards;
   overflow-y: auto;
 }
 
@@ -999,6 +1069,8 @@ footer em {
     right: 5%;
     width: 70px;
     display: block;
+    -webkit-animation: logo-mobile-load 1s ease-out 0s forwards;
+            animation: logo-mobile-load 1s ease-out 0s forwards;
   }
   header .mobile-menu {
     display: none;
@@ -1007,10 +1079,10 @@ footer em {
     left: 0;
     right: 0;
     text-align: left;
-    -webkit-animation: apparition 0.3s linear 0s forwards;
-            animation: apparition 0.3s linear 0s forwards;
-    -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-color);
-            box-shadow: 0px 0px 5px 1px var(--shadow-color);
+    -webkit-animation: left-appear 0.3s linear 0s forwards;
+            animation: left-appear 0.3s linear 0s forwards;
+    -webkit-box-shadow: 0px 2.5px 2.5px 0.5px var(--shadow-color);
+            box-shadow: 0px 2.5px 2.5px 0.5px var(--shadow-color);
   }
   header .mobile-menu .menu-display {
     background: var(--material-color);

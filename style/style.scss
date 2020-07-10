@@ -41,6 +41,7 @@
 
 /* =============== ANIMATIONS =============== */
 
+// animation for page apparition
 @keyframes apparition {
     from {
         opacity: 0.25;
@@ -50,12 +51,41 @@
     }
 }
 
-@keyframes rotate {
+// animations apparition
+@keyframes left-appear {
     from {
-        transform: rotate(0deg);
+        transform: translateX(-100%);
     }
-    to {
-        transform: rotate(1800deg);
+}
+
+@keyframes right-appear {
+    from {
+        transform: translateX(100%);
+    }
+}
+
+// animations for work windows boxes
+@keyframes top-appear {
+    from {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes progress-bar-load {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes logo-load {
+    from {
+        transform: translateX(-500px);
+    }
+}
+
+@keyframes logo-mobile-load {
+    from {
+        transform: translateX(200px);
     }
 }
 
@@ -191,6 +221,7 @@ header {
             margin-top: 16px;
             left: 5%;
             top: 0;
+            animation: logo-load 1s ease-out 0s forwards;
 
             &:hover {
                 cursor: pointer;
@@ -227,6 +258,7 @@ header {
 	top: 61.5px;
 	left: 0;
     z-index: 50;
+    animation: progress-bar-load 2s ease 0s forwards;
     box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
 }
 
@@ -256,10 +288,12 @@ header {
         }
         h1 {
             font-size: 8rem;
+            animation: left-appear 1s ease-out 0.4s forwards;
         }
         h2 {
             font-size: 6.5rem;
             font-weight: medium, 600;
+            animation: right-appear 1s ease-out 0.7s forwards;
         }         
     }
 
@@ -350,6 +384,7 @@ header {
                     @include gradient-background;
                     border-radius: 3px;
                     z-index: 2;
+                    animation: progress-bar-load 1.5s ease 0s forwards;
                     box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
                 }
             }
@@ -427,7 +462,7 @@ header {
                 width: 60%;
                 max-height: 85%;
                 text-align: left;
-                animation: apparition 0.8s ease;
+                animation: top-appear 0.5s ease-out 0s forwards;
                 overflow-y: auto;
 
                 &__header {
@@ -923,6 +958,7 @@ footer {
             right: 5%;
             width: 70px;
             display: block;
+            animation: logo-mobile-load 1s ease-out 0s forwards;
         }
 
         /* ----- mobile menu ----- */
@@ -933,8 +969,8 @@ footer {
             left: 0;
             right: 0;
             text-align: left;
-            animation: apparition 0.3s linear 0s forwards;
-            box-shadow: 0px 0px 5px 1px var(--shadow-color);
+            animation: left-appear 0.3s linear 0s forwards;
+            box-shadow: 0px 2.5px 2.5px 0.5px var(--shadow-color);            
 
             .menu-display {
                 background: var(--material-color);
