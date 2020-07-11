@@ -64,6 +64,12 @@
     }
 }
 
+@keyframes slide-left-in {
+    from {
+        transform: translateX(-100%);
+    }
+}
+
 // animations for work windows boxes
 @keyframes top-appear {
     from {
@@ -506,6 +512,7 @@ header {
                         font-family: 'Teko';
                         font-weight: 500;
                         color: var(--orange-pure);
+                        animation: none;
                     }
                     &--subtitle {
                         font-family: 'Saira Condensed';
@@ -517,6 +524,7 @@ header {
                         display: block;
                         margin-top: 0px;
                         margin-bottom: 10px;
+                        animation: none;
                     }
                     &--language {
                         font-size: 1.6rem;
@@ -1009,7 +1017,7 @@ footer {
             left: 0;
             right: 0;
             text-align: left;
-            animation: left-appear 0.3s linear 0s forwards;
+            animation: slide-left-in 0.3s linear 0s forwards;
             box-shadow: 0px 2.5px 2.5px 0.5px var(--shadow-color);            
 
             .menu-display {

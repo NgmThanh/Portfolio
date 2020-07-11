@@ -82,6 +82,20 @@
   }
 }
 
+@-webkit-keyframes slide-left-in {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-left-in {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
 @-webkit-keyframes top-appear {
   from {
     -webkit-transform: translateY(-100%);
@@ -636,6 +650,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   font-family: 'Teko';
   font-weight: 500;
   color: var(--orange-pure);
+  -webkit-animation: none;
+          animation: none;
 }
 
 .works-page .timeline .modal-window .work-window__header--subtitle {
@@ -649,6 +665,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   display: block;
   margin-top: 0px;
   margin-bottom: 10px;
+  -webkit-animation: none;
+          animation: none;
 }
 
 .works-page .timeline .modal-window .work-window__header--language {
@@ -1154,8 +1172,8 @@ footer em {
     left: 0;
     right: 0;
     text-align: left;
-    -webkit-animation: left-appear 0.3s linear 0s forwards;
-            animation: left-appear 0.3s linear 0s forwards;
+    -webkit-animation: slide-left-in 0.3s linear 0s forwards;
+            animation: slide-left-in 0.3s linear 0s forwards;
     -webkit-box-shadow: 0px 2.5px 2.5px 0.5px var(--shadow-color);
             box-shadow: 0px 2.5px 2.5px 0.5px var(--shadow-color);
   }
