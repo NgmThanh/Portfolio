@@ -151,6 +151,7 @@
 html {
     font-size: 62.5%;   /* 1 rem = 10px */
     scroll-behavior: smooth;    /* scrollbar smooth */
+    overflow-x :hidden;
 }
 
 body {
@@ -295,7 +296,7 @@ header {
             font-size: 6.5rem;
             font-weight: medium, 600;
             animation: right-appear 1s ease-out 0.7s forwards;
-        }         
+        }
     }
 
     /* ----- description area ----- */
