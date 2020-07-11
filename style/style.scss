@@ -119,6 +119,7 @@
    
 /* Handle */
 ::-webkit-scrollbar-thumb {
+    border-radius: 5px;
     @include gradient-background;
 }
   
@@ -259,7 +260,7 @@ header {
 	left: 0;
     z-index: 50;
     animation: progress-bar-load 2s ease 0s forwards;
-    box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
+    box-shadow: 0.5px 0.5px 2.5px 1px var(--shadow-color);
 }
 
 /* ----------- ARROW MOVE TO TOP ----------- */
@@ -991,8 +992,8 @@ footer {
     }
 
     #progress {
-        height: 5px;
-        top: 56.5px;
+        height: 5.5px;
+        top: 55px;
     }
 
     .about-page, .skills-page, .works-page, .contact-page {
