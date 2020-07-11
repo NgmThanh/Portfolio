@@ -52,15 +52,15 @@
 }
 
 // animations apparition
-@keyframes left-appear {
+@keyframes slideDownIn {
     from {
-        transform: translateX(-100%);
+        visibility: hidden;
+        opacity: 0.2;
+        transform: translateY(50px);
     }
-}
-
-@keyframes right-appear {
-    from {
-        transform: translateX(100%);
+    to {
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -86,6 +86,24 @@
 @keyframes logo-mobile-load {
     from {
         transform: translateX(200px);
+    }
+}
+
+@keyframes hello {
+    0% {
+        transform: translate(0px,0px);
+    }
+    25% {
+        transform: translate(5px,-5px);
+    }
+    50% {
+        transform: translate(10px,0px);
+    }
+    75% {
+        transform: translate(5px,-5px);
+    }
+    100% {
+        transform: translate(0px,0px);
     }
 }
 
@@ -163,11 +181,6 @@ body {
 
 h1 {
     font-family: 'Teko';
-    text-shadow: 1px 1px var(--shadow-color);
-}
-
-h2 {
-    text-shadow: 0.5px 0.5px var(--shadow-color);;
 }
 
 .about-page, .skills-page, .works-page, .contact-page {
@@ -227,7 +240,6 @@ header {
 
             &:hover {
                 cursor: pointer;
-                // animation: rotate 10s linear infinite;
             }
         }
 
@@ -290,12 +302,17 @@ header {
         }
         h1 {
             font-size: 8rem;
-            animation: left-appear 1s ease-out 0.4s forwards;
+            animation: slideDownIn 0.5s ease-out 0s forwards;
+
+            span {
+                display: inline-block;
+                animation: hello 1.5s linear 0s infinite;
+            }
         }
         h2 {
             font-size: 6.5rem;
             font-weight: medium, 600;
-            animation: right-appear 1s ease-out 0.7s forwards;
+            animation: slideDownIn 0.5s ease-out 0.05s forwards;
         }
     }
 
@@ -312,6 +329,7 @@ header {
             line-height: 4.0rem;
             margin-bottom: 5%;
             text-align: left;
+            animation: slideDownIn 0.5s ease-out 0.1s forwards;
             a {
                 color: var(--orange-pure);
                 font-weight: 600;
@@ -325,7 +343,8 @@ header {
             min-width: 300px;
             margin: auto;
             border-radius: 50%;
-            box-shadow: 0px 0px 5px 2px var(--shadow-color);
+            box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
+            animation: slideDownIn 0.5s ease-out 0.2s forwards;
         }
         @media screen and (min-width: 1117px) {
             div {
@@ -336,6 +355,16 @@ header {
                 margin: 0 0 5% 15%;
             }
         }
+    }
+}
+
+.skills-page, .works-page, .contact-page {
+
+    h1 {
+        animation: slideDownIn 0.5s ease-out 0s forwards;
+    }
+    h2 {
+        animation: slideDownIn 0.5s ease-out 0.05s forwards;
     }
 }
 
@@ -415,6 +444,7 @@ header {
             border: none;
             transition: 0.5s all ease-out;
             box-shadow: 0px 0px 5px 1px var(--shadow-color);
+            animation: slideDownIn 0.5s ease-out 0.1s forwards;
             filter: brightness(95%);
 
             &:hover {
@@ -439,6 +469,7 @@ header {
                 margin-top: 5px;
                 font-weight: 500;
                 color: var(--font-color);
+                animation: none;
             }
         }
         // modal work window displayed when click button
@@ -464,7 +495,7 @@ header {
                 width: 60%;
                 max-height: 85%;
                 text-align: left;
-                animation: top-appear 0.5s ease-out 0s forwards;
+                animation: top-appear 0.4s ease-out 0s forwards;
                 overflow-y: auto;
 
                 &__header {
@@ -763,6 +794,8 @@ header {
         color: var(--font-color);
         box-shadow: 0px 0px 5px 1px var(--shadow-color);
         transition: 0.5s all ease;
+        animation: slideDownIn 0.5s ease-out 0.1s forwards;
+
 
         &--input, &--textarea {
             font-size: 1.8rem;
@@ -796,12 +829,12 @@ header {
             background-color: var(--font-color);
             color: var(--background-color);
             border: none;
-            box-shadow: 0px 0px 5px 1px var(--shadow-color);   
+            box-shadow: 0px 0px 5px 1px var(--shadow-color);
+
             &:hover {
                 cursor: pointer;
                 @include gradient-background;
                 color: var(--font-color);
-                transition: 0.4s all ease;
             }
         }
     }
@@ -817,6 +850,7 @@ footer {
 
     h1 {
         font-size: 3rem;
+        animation: slideDownIn 0.5s ease-out 0s forwards;
     }
 
     /* ----- footer area ----- */
@@ -836,6 +870,11 @@ footer {
             font-size: 1.8rem;
             color: var(--font-color);
             margin: 2%;
+
+            span {
+                animation: slideDownIn 0.5s ease-out 0.05s forwards;
+                display: block;
+            }
         }
 
         /* ----- contact area ----- */
@@ -846,6 +885,7 @@ footer {
                 font-size: 4.0rem;
                 margin: 35px 20px 25px 0;
                 transition: 0.5s all ease;
+                animation: slideDownIn 0.5s ease-out 0.1s forwards;
                 &:hover {
                     @include jumpAnimation(-5px);
                 }
@@ -862,13 +902,10 @@ footer {
                 margin-right: 25px;
                 display: block;
                 transition: 0.5s all ease;
+                animation: slideDownIn 0.5s ease-out 0.05s forwards;
                 &:hover {
                     @include jumpAnimation(-5px);
                 }
-            }
-            // line of information
-            span {
-                display: block;
             }
         }
     }
@@ -881,6 +918,7 @@ footer {
         text-align: center;
         margin-top: 5%;
         display: block;
+        animation: slideDownIn 0.5s ease-out 0.15s forwards;
     }
 }
 

@@ -56,31 +56,29 @@
   }
 }
 
-@-webkit-keyframes left-appear {
+@-webkit-keyframes slideDownIn {
   from {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    visibility: hidden;
+    opacity: 0.2;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
-@keyframes left-appear {
+@keyframes slideDownIn {
   from {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    visibility: hidden;
+    opacity: 0.2;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
   }
-}
-
-@-webkit-keyframes right-appear {
-  from {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-}
-
-@keyframes right-appear {
-  from {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+  to {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
@@ -135,6 +133,52 @@
   from {
     -webkit-transform: translateX(200px);
             transform: translateX(200px);
+  }
+}
+
+@-webkit-keyframes hello {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  25% {
+    -webkit-transform: translate(5px, -5px);
+            transform: translate(5px, -5px);
+  }
+  50% {
+    -webkit-transform: translate(10px, 0px);
+            transform: translate(10px, 0px);
+  }
+  75% {
+    -webkit-transform: translate(5px, -5px);
+            transform: translate(5px, -5px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes hello {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  25% {
+    -webkit-transform: translate(5px, -5px);
+            transform: translate(5px, -5px);
+  }
+  50% {
+    -webkit-transform: translate(10px, 0px);
+            transform: translate(10px, 0px);
+  }
+  75% {
+    -webkit-transform: translate(5px, -5px);
+            transform: translate(5px, -5px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
   }
 }
 
@@ -206,11 +250,6 @@ body {
 
 h1 {
   font-family: 'Teko';
-  text-shadow: 1px 1px var(--shadow-color);
-}
-
-h2 {
-  text-shadow: 0.5px 0.5px var(--shadow-color);
 }
 
 .about-page, .skills-page, .works-page, .contact-page {
@@ -344,15 +383,21 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 
 .about-page .presentation h1 {
   font-size: 8rem;
-  -webkit-animation: left-appear 1s ease-out 0.4s forwards;
-          animation: left-appear 1s ease-out 0.4s forwards;
+  -webkit-animation: slideDownIn 0.5s ease-out 0s forwards;
+          animation: slideDownIn 0.5s ease-out 0s forwards;
+}
+
+.about-page .presentation h1 span {
+  display: inline-block;
+  -webkit-animation: hello 1.5s linear 0s infinite;
+          animation: hello 1.5s linear 0s infinite;
 }
 
 .about-page .presentation h2 {
   font-size: 6.5rem;
   font-weight: medium, 600;
-  -webkit-animation: right-appear 1s ease-out 0.7s forwards;
-          animation: right-appear 1s ease-out 0.7s forwards;
+  -webkit-animation: slideDownIn 0.5s ease-out 0.05s forwards;
+          animation: slideDownIn 0.5s ease-out 0.05s forwards;
 }
 
 .about-page .description {
@@ -375,6 +420,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   line-height: 4.0rem;
   margin-bottom: 5%;
   text-align: left;
+  -webkit-animation: slideDownIn 0.5s ease-out 0.1s forwards;
+          animation: slideDownIn 0.5s ease-out 0.1s forwards;
 }
 
 .about-page .description--text a {
@@ -389,8 +436,10 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   min-width: 300px;
   margin: auto;
   border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 5px 2px var(--shadow-color);
-          box-shadow: 0px 0px 5px 2px var(--shadow-color);
+  -webkit-box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
+          box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
+  -webkit-animation: slideDownIn 0.5s ease-out 0.2s forwards;
+          animation: slideDownIn 0.5s ease-out 0.2s forwards;
 }
 
 @media screen and (min-width: 1117px) {
@@ -401,6 +450,16 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
     max-width: 375px;
     margin: 0 0 5% 15%;
   }
+}
+
+.skills-page h1, .works-page h1, .contact-page h1 {
+  -webkit-animation: slideDownIn 0.5s ease-out 0s forwards;
+          animation: slideDownIn 0.5s ease-out 0s forwards;
+}
+
+.skills-page h2, .works-page h2, .contact-page h2 {
+  -webkit-animation: slideDownIn 0.5s ease-out 0.05s forwards;
+          animation: slideDownIn 0.5s ease-out 0.05s forwards;
 }
 
 /* ----------- SKILLS PAGE ----------- */
@@ -498,6 +557,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   transition: 0.5s all ease-out;
   -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-color);
           box-shadow: 0px 0px 5px 1px var(--shadow-color);
+  -webkit-animation: slideDownIn 0.5s ease-out 0.1s forwards;
+          animation: slideDownIn 0.5s ease-out 0.1s forwards;
   -webkit-filter: brightness(95%);
           filter: brightness(95%);
 }
@@ -527,6 +588,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   margin-top: 5px;
   font-weight: 500;
   color: var(--font-color);
+  -webkit-animation: none;
+          animation: none;
 }
 
 .works-page .timeline .modal-window {
@@ -559,8 +622,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   width: 60%;
   max-height: 85%;
   text-align: left;
-  -webkit-animation: top-appear 0.5s ease-out 0s forwards;
-          animation: top-appear 0.5s ease-out 0s forwards;
+  -webkit-animation: top-appear 0.4s ease-out 0s forwards;
+          animation: top-appear 0.4s ease-out 0s forwards;
   overflow-y: auto;
 }
 
@@ -857,6 +920,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
           box-shadow: 0px 0px 5px 1px var(--shadow-color);
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
+  -webkit-animation: slideDownIn 0.5s ease-out 0.1s forwards;
+          animation: slideDownIn 0.5s ease-out 0.1s forwards;
 }
 
 .contact-page .contact__field--input, .contact-page .contact__field--textarea {
@@ -912,8 +977,6 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   cursor: pointer;
   background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
   color: var(--font-color);
-  -webkit-transition: 0.4s all ease;
-  transition: 0.4s all ease;
 }
 
 /* ----------- FOOTER ----------- */
@@ -930,6 +993,8 @@ footer {
 
 footer h1 {
   font-size: 3rem;
+  -webkit-animation: slideDownIn 0.5s ease-out 0s forwards;
+          animation: slideDownIn 0.5s ease-out 0s forwards;
 }
 
 footer .field-footer {
@@ -962,11 +1027,19 @@ footer .field-footer__contact, footer .field-footer__informations {
   margin: 2%;
 }
 
+footer .field-footer__contact span, footer .field-footer__informations span {
+  -webkit-animation: slideDownIn 0.5s ease-out 0.05s forwards;
+          animation: slideDownIn 0.5s ease-out 0.05s forwards;
+  display: block;
+}
+
 footer .field-footer__contact i {
   font-size: 4.0rem;
   margin: 35px 20px 25px 0;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
+  -webkit-animation: slideDownIn 0.5s ease-out 0.1s forwards;
+          animation: slideDownIn 0.5s ease-out 0.1s forwards;
 }
 
 footer .field-footer__contact i:hover {
@@ -983,6 +1056,8 @@ footer .field-footer__informations i {
   display: block;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
+  -webkit-animation: slideDownIn 0.5s ease-out 0.05s forwards;
+          animation: slideDownIn 0.5s ease-out 0.05s forwards;
 }
 
 footer .field-footer__informations i:hover {
@@ -992,10 +1067,6 @@ footer .field-footer__informations i:hover {
   transition: 0.4s all ease;
 }
 
-footer .field-footer__informations span {
-  display: block;
-}
-
 footer em {
   font-size: 1.6rem;
   font-style: normal;
@@ -1003,6 +1074,8 @@ footer em {
   text-align: center;
   margin-top: 5%;
   display: block;
+  -webkit-animation: slideDownIn 0.5s ease-out 0.15s forwards;
+          animation: slideDownIn 0.5s ease-out 0.15s forwards;
 }
 
 /* =============== MEDIA QUERIES =============== */
