@@ -61,6 +61,7 @@
     to {
         opacity: 1;
         visibility: visible;
+        transform: translateY(0);
     }
 }
 
@@ -82,6 +83,15 @@
         width: 0;
     }
 }
+
+@keyframes progress-bar-slide {
+    from{
+      margin-left: -100%;
+    }
+    to{
+      margin-left: 100%;
+    }
+  }
 
 @keyframes logo-load {
     from {
@@ -418,11 +428,22 @@ header {
                     position: absolute;
                     // width defined in skill.js
                     height: 20px;
-                    @include gradient-background;
+                    // @include gradient-background;
+                    background: var(--orange-pure);
                     border-radius: 3px;
                     z-index: 2;
                     animation: progress-bar-load 1.5s ease 0s forwards;
                     box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
+                    overflow: hidden;
+
+                    &::after {
+                        display: block;
+                        content: "";
+                        height: 100%;
+                        width: 65%;
+                        background: linear-gradient(to right,  var(--orange-pure), var(--pink-pure), var(--orange-pure));
+                        animation: progress-bar-slide 3s linear 0s infinite;
+                    }
                 }
             }
         }
@@ -501,7 +522,7 @@ header {
                 width: 60%;
                 max-height: 85%;
                 text-align: left;
-                animation: top-appear 0.4s ease-out 0s forwards;
+                animation: top-appear 0.4s ease-out 0s alternate;
                 overflow-y: auto;
 
                 &__header {
@@ -889,7 +910,6 @@ footer {
         &__contact {
             // icon contact
             i {
-                // filter: invert(100%);
                 font-size: 4.0rem;
                 margin: 35px 20px 25px 0;
                 transition: 0.5s all ease;
@@ -904,7 +924,6 @@ footer {
         &__informations {
             // icon contact
             i {
-                // filter: invert(100%);
                 font-size: 2.5rem;
                 float: left;
                 margin-right: 25px;
@@ -912,6 +931,7 @@ footer {
                 transition: 0.5s all ease;
                 animation: slideDownIn 0.5s ease-out 0.05s forwards;
                 &:hover {
+                    animation: 0;
                     @include jumpAnimation(-5px);
                 }
             }

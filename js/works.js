@@ -31,7 +31,6 @@ document.querySelectorAll('.timeline__box').forEach(btnWork => {
                 break;
         }
 
-        disableScroll(); 
         // get modal page
         var modal = document.getElementById("myModal" + number);
 
@@ -42,8 +41,6 @@ document.querySelectorAll('.timeline__box').forEach(btnWork => {
         window.onclick = function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
-                // enable scroll again
-                disableScroll();
             }
         }
 
@@ -89,9 +86,4 @@ function showSlides(n, no) {
     }
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " active";
-}
-
-// disable scroll when modal window is opened
-function disableScroll() {
-    document.body.classList.toggle("disable-scroll");
 }

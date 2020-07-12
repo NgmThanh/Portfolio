@@ -66,6 +66,8 @@
   to {
     opacity: 1;
     visibility: visible;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -79,6 +81,8 @@
   to {
     opacity: 1;
     visibility: visible;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -119,6 +123,24 @@
 @keyframes progress-bar-load {
   from {
     width: 0;
+  }
+}
+
+@-webkit-keyframes progress-bar-slide {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 100%;
+  }
+}
+
+@keyframes progress-bar-slide {
+  from {
+    margin-left: -100%;
+  }
+  to {
+    margin-left: 100%;
   }
 }
 
@@ -530,13 +552,25 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 .skills-page .skills-box .skill__progress-bar .skill-bar {
   position: absolute;
   height: 20px;
-  background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
+  background: var(--orange-pure);
   border-radius: 3px;
   z-index: 2;
   -webkit-animation: progress-bar-load 1.5s ease 0s forwards;
           animation: progress-bar-load 1.5s ease 0s forwards;
   -webkit-box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
           box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
+  overflow: hidden;
+}
+
+.skills-page .skills-box .skill__progress-bar .skill-bar::after {
+  display: block;
+  content: "";
+  height: 100%;
+  width: 65%;
+  background: -webkit-gradient(linear, left top, right top, from(var(--orange-pure)), color-stop(var(--pink-pure)), to(var(--orange-pure)));
+  background: linear-gradient(to right, var(--orange-pure), var(--pink-pure), var(--orange-pure));
+  -webkit-animation: progress-bar-slide 3s linear 0s infinite;
+          animation: progress-bar-slide 3s linear 0s infinite;
 }
 
 /* ----------- WORKS PAGE ----------- */
@@ -636,8 +670,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   width: 60%;
   max-height: 85%;
   text-align: left;
-  -webkit-animation: top-appear 0.4s ease-out 0s forwards;
-          animation: top-appear 0.4s ease-out 0s forwards;
+  -webkit-animation: top-appear 0.4s ease-out 0s alternate;
+          animation: top-appear 0.4s ease-out 0s alternate;
   overflow-y: auto;
 }
 
@@ -1079,6 +1113,8 @@ footer .field-footer__informations i {
 }
 
 footer .field-footer__informations i:hover {
+  -webkit-animation: 0;
+          animation: 0;
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
   -webkit-transition: 0.4s all ease;
