@@ -227,11 +227,6 @@
   }
 }
 
-.slide-down-in {
-  -webkit-animation: slideDownIn 0.5s ease-out 0s forwards;
-          animation: slideDownIn 0.5s ease-out 0s forwards;
-}
-
 /* =============== MIXINS =============== */
 /* width */
 ::-webkit-scrollbar {
@@ -619,8 +614,6 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   transition: 0.5s all ease-out;
   -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-color);
           box-shadow: 0px 0px 5px 1px var(--shadow-color);
-  -webkit-animation: 0;
-          animation: 0;
   -webkit-filter: brightness(95%);
           filter: brightness(95%);
 }
