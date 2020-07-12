@@ -34,11 +34,6 @@
     animation-duration: 1.25s;
 }
 
-.disable-scroll {
-    height: 100%;
-    overflow: hidden;
-}
-
 /* =============== ANIMATIONS =============== */
 
 // animation for page apparition
@@ -123,6 +118,16 @@
     }
 }
 
+@keyframes jumpHover {
+    from {
+        transform: translateY(-5px);
+    }
+}
+
+.slide-down-in {
+    animation: slideDownIn 0.5s ease-out 0s forwards;
+}
+
 /* =============== MIXINS =============== */
 
 @mixin gradient-background {
@@ -161,6 +166,8 @@
 ::-webkit-scrollbar-thumb:hover {
     background: var(--pink-pure); 
 }
+
+
 
 /* =============== MAIN CODE =============== */
 
@@ -428,7 +435,6 @@ header {
                     position: absolute;
                     // width defined in skill.js
                     height: 20px;
-                    // @include gradient-background;
                     background: var(--orange-pure);
                     border-radius: 3px;
                     z-index: 2;
@@ -440,9 +446,9 @@ header {
                         display: block;
                         content: "";
                         height: 100%;
-                        width: 65%;
+                        width: 100%;
                         background: linear-gradient(to right,  var(--orange-pure), var(--pink-pure), var(--orange-pure));
-                        animation: progress-bar-slide 3s linear 0s infinite;
+                        animation: progress-bar-slide 2.5s linear 0s infinite;
                     }
                 }
             }
@@ -471,13 +477,14 @@ header {
             border: none;
             transition: 0.5s all ease-out;
             box-shadow: 0px 0px 5px 1px var(--shadow-color);
-            animation: slideDownIn 0.5s ease-out 0.1s forwards;
+            // animation: slideDownIn 0.5s ease-out 0.1s forwards;
+            animation: 0;
             filter: brightness(95%);
 
             &:hover {
                 @include gradient-background;
+                // animation: jumpHover 0.4s ease 0s alternate;
                 @include jumpAnimation(-5px);
-                transition: 0.4s all ease;
                 cursor: pointer;
             }
 
@@ -901,7 +908,7 @@ footer {
             margin: 2%;
 
             span {
-                animation: slideDownIn 0.5s ease-out 0.05s forwards;
+                // animation: slideDownIn 0.5s ease-out 0.05s forwards;
                 display: block;
             }
         }
@@ -913,7 +920,6 @@ footer {
                 font-size: 4.0rem;
                 margin: 35px 20px 25px 0;
                 transition: 0.5s all ease;
-                animation: slideDownIn 0.5s ease-out 0.1s forwards;
                 &:hover {
                     @include jumpAnimation(-5px);
                 }
@@ -929,9 +935,7 @@ footer {
                 margin-right: 25px;
                 display: block;
                 transition: 0.5s all ease;
-                animation: slideDownIn 0.5s ease-out 0.05s forwards;
                 &:hover {
-                    animation: 0;
                     @include jumpAnimation(-5px);
                 }
             }

@@ -33,11 +33,6 @@
   animation-duration: 1.25s;
 }
 
-.disable-scroll {
-  height: 100%;
-  overflow: hidden;
-}
-
 /* =============== ANIMATIONS =============== */
 @-webkit-keyframes apparition {
   from {
@@ -216,6 +211,25 @@
     -webkit-transform: translate(0px, 0px);
             transform: translate(0px, 0px);
   }
+}
+
+@-webkit-keyframes jumpHover {
+  from {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+@keyframes jumpHover {
+  from {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+.slide-down-in {
+  -webkit-animation: slideDownIn 0.5s ease-out 0s forwards;
+          animation: slideDownIn 0.5s ease-out 0s forwards;
 }
 
 /* =============== MIXINS =============== */
@@ -566,11 +580,11 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   display: block;
   content: "";
   height: 100%;
-  width: 65%;
+  width: 100%;
   background: -webkit-gradient(linear, left top, right top, from(var(--orange-pure)), color-stop(var(--pink-pure)), to(var(--orange-pure)));
   background: linear-gradient(to right, var(--orange-pure), var(--pink-pure), var(--orange-pure));
-  -webkit-animation: progress-bar-slide 3s linear 0s infinite;
-          animation: progress-bar-slide 3s linear 0s infinite;
+  -webkit-animation: progress-bar-slide 2.5s linear 0s infinite;
+          animation: progress-bar-slide 2.5s linear 0s infinite;
 }
 
 /* ----------- WORKS PAGE ----------- */
@@ -605,8 +619,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   transition: 0.5s all ease-out;
   -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-color);
           box-shadow: 0px 0px 5px 1px var(--shadow-color);
-  -webkit-animation: slideDownIn 0.5s ease-out 0.1s forwards;
-          animation: slideDownIn 0.5s ease-out 0.1s forwards;
+  -webkit-animation: 0;
+          animation: 0;
   -webkit-filter: brightness(95%);
           filter: brightness(95%);
 }
@@ -616,7 +630,6 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
   -webkit-transition: 0.4s all ease;
-  transition: 0.4s all ease;
   transition: 0.4s all ease;
   cursor: pointer;
 }
@@ -1080,8 +1093,6 @@ footer .field-footer__contact, footer .field-footer__informations {
 }
 
 footer .field-footer__contact span, footer .field-footer__informations span {
-  -webkit-animation: slideDownIn 0.5s ease-out 0.05s forwards;
-          animation: slideDownIn 0.5s ease-out 0.05s forwards;
   display: block;
 }
 
@@ -1090,8 +1101,6 @@ footer .field-footer__contact i {
   margin: 35px 20px 25px 0;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
-  -webkit-animation: slideDownIn 0.5s ease-out 0.1s forwards;
-          animation: slideDownIn 0.5s ease-out 0.1s forwards;
 }
 
 footer .field-footer__contact i:hover {
@@ -1108,13 +1117,9 @@ footer .field-footer__informations i {
   display: block;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
-  -webkit-animation: slideDownIn 0.5s ease-out 0.05s forwards;
-          animation: slideDownIn 0.5s ease-out 0.05s forwards;
 }
 
 footer .field-footer__informations i:hover {
-  -webkit-animation: 0;
-          animation: 0;
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
   -webkit-transition: 0.4s all ease;
