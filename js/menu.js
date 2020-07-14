@@ -61,42 +61,42 @@ document.querySelectorAll('.menu-display--text').forEach(itemMenu => {
 
 /* ----- DARK / LIGHT MODE ----- */
 
-var lightMode = document.getElementsByClassName("light");
+// var lightMode = document.getElementsByClassName("light");
 
-// icons works
-var iconWorks = document.getElementsByClassName("icon-works");
+// // icons works
+// var iconWorks = document.getElementsByClassName("icon-works");
 
-// change all switchs (desktop + mobile)
-document.querySelectorAll('.switch-mode').forEach(switchMode => {
+// // change all switchs (desktop + mobile)
+// document.querySelectorAll('.switch-mode').forEach(switchMode => {
     
-    switchMode.addEventListener('click', () => {
+//     switchMode.addEventListener('click', () => {
 
-        document.body.classList.toggle('light');
-        localStorage.setItem('theme',
-            document.body.classList.contains('light') ? 'light' : 'dark');
+//         document.body.classList.toggle('light');
+//         localStorage.setItem('theme',
+//             document.body.classList.contains('light') ? 'light' : 'dark');
 
-        // work icons color
-        if (lightMode.length === 0) {
-            for (var i = 0; i < iconWorks.length; i++) {
-                iconWorks[i].style.webkitFilter = "";
-            }
-        }
-        else {
-            for (var i = 0; i < iconWorks.length; i++) {
-                iconWorks[i].style.webkitFilter = "none";
-            }
-        }
+//         // work icons color
+//         if (lightMode.length === 0) {
+//             for (var i = 0; i < iconWorks.length; i++) {
+//                 iconWorks[i].style.webkitFilter = "";
+//             }
+//         }
+//         else {
+//             for (var i = 0; i < iconWorks.length; i++) {
+//                 iconWorks[i].style.webkitFilter = "none";
+//             }
+//         }
 
-    });
-});
+//     });
+// });
 
-if (localStorage.getItem('theme') === 'light') {
-    document.body.classList.add('light');
+// if (localStorage.getItem('theme') === 'light') {
+//     document.body.classList.add('light');
 
-    for (var i = 0; i < iconWorks.length; i++) {
-        iconWorks[i].style.webkitFilter = "none";
-    }
-}
+//     for (var i = 0; i < iconWorks.length; i++) {
+//         iconWorks[i].style.webkitFilter = "none";
+//     }
+// }
 
 /* ----- PROGRESS BAR ----- */
 

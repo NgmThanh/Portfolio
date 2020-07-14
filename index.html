@@ -7,7 +7,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@300;400;500&family=Saira+Condensed:wght@400;500;600&family=Saira+Semi+Condensed:wght@400;500;600&family=Teko:wght@400;500;600&family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/161f845565.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="style/style.css" />
-        <link rel="icon" type="image/png" href="images/favicon.png" />
         <title>Nguyen Thanh - PortFolio</title>
     </head>
 
@@ -21,7 +20,6 @@
                 <li id="skills-menu"><a href="#skills" class="menu--text">Compétences</a></li>
                 <li id="works-menu"><a href="#works" class="menu--text">Projets</a></li>
                 <li id="contact-menu"><a href="#contact" class="menu--text">Contact</a></li>
-                <li class="menu--text switch-mode">🌓</li>
             </ul>
             <div class="hamburger-icon" onclick="changeMobile(this)">
                 <div class="bar1"></div>
@@ -46,59 +44,61 @@
         <div id="progress"></div>
         <a href="#" id="arrow-up"><i class="fas fa-chevron-up"></i></a>
 
-        <!-- section "about" -->
-        <section class="about-page" id="about">
-            <div class="presentation">
-                <h1>Bonjour ! <span>👋</span></h1>
-                <h2>Je suis Thanh, bienvenue sur mon portfolio !</h2>
-            </div>
-
-            <article class="description">
-                <div>
-                    <p class="description--text">
-                        Je suis un étudiant en Master IHM (Interaction Hommes Machines) à l'Université <a href="https://www.univ-tlse3.fr/" target="_blank">Paul Sabatier</a> et 
-                        je suis passionné par le design et le développement web.
-                        <br>J'ai réalisé de nombreux projets personnels (dont celui-ci) me permettant d'approfondir les connaissances que j'avais acquises durant mes études.
-                    <br><br>
-                        J'ai également réalisé en parallèle un site web contenant mon CV, avec toutes les informations détaillées, 
-                        que vous pourrez voir à l'adresse suivante &#x2192 <a href="https://ngmthanh.github.io/WebsiteCV/" target="_blank" title="Cliquez-ici pour voir mon WebCV">cliquez ici</a>
+        <!-- about page -->
+        <div class="about-page dark-page" id="about">
+            <!-- section "about" -->
+            <section class="about-section">
+                <div class="title-name">Je suis Thanh</div>
+                <!-- title -->
+                <div class="presentation">
+                    <h1>Bienvenue,<br>
+                    Voici mon portfolio.</h1>
+                </div>
+                <!-- description -->
+                <div class="description">
+                    <p>
+                        <!-- que vous pourrez voir à l'adresse suivante &#x2192 <a href="https://ngmthanh.github.io/WebsiteCV/" target="_blank" title="Cliquez-ici pour voir mon WebCV">cliquez ici</a> -->
+                        Passionné depuis toujours par le design, je me donne à coeur joie pour réaliser des interfaces modernes et innovantes à mes sites web...
                     </p>
+                    <a href="https://ngmthanh.github.io/WebsiteCV/" target="_blank" title="Cliquez-ici pour voir mon WebCV">Découvrir mon web CV</a>
                 </div>
-                <img src="images/profile.png" alt="profile">
-            </article>
-        </section>
+            </section>
+        </div>
 
-        <!-- section "skills" -->
-        <section class="skills-page" id="skills">
-            <h1>Compétences Techniques</h1>
-            <!-- <h2>Always ready to try hands-on new and emerging technologies</h2> -->
-            <h2>Toujours prêt à découvrir de nouvelles technologies</h2>
-            <div class="skills-box">
-                <div class="skill"><h2>C</h2>
-                    <div class="skill__progress-bar"><div class="skill-bar" id="c"><h3>80%</h3></div></div>
+        <!-- skills page -->
+        <section class="skills-page light-page" id="skills">
+            <!-- section "skills" -->
+            <section class="skills-section">
+                <h1>Compétences Techniques</h1>
+                <!-- <h2>Always ready to try hands-on new and emerging technologies</h2> -->
+                <h2>Toujours prêt à découvrir de nouvelles technologies</h2>
+                <div class="skills-box">
+                    <div class="skill"><h2>C</h2>
+                        <div class="skill__progress-bar"><div class="skill-bar" id="c"><h3>80%</h3></div></div>
+                    </div>
+                    <div class="skill"><h2>HTML/CSS</h2>
+                        <div class="skill__progress-bar"><div class="skill-bar" id="html"><h3>90%</h3></div></div>
+                    </div>
+                    <div class="skill"><h2>Java</h2>
+                        <div class="skill__progress-bar"><div class="skill-bar" id="java"><h3>70%</h3></div></div>
+                    </div>
+                    <div class="skill"><h2>Javascript</h2>
+                        <div class="skill__progress-bar"><div class="skill-bar" id="js"><h3>65%</h3></div></div>
+                    </div>
+                    <div class="skill"><h2>PHP</h2>
+                        <div class="skill__progress-bar"><div class="skill-bar" id="php"><h3>80%</h3></div></div>
+                    </div>
+                    <div class="skill"><h2>SQL</h2>
+                        <div class="skill__progress-bar"><div class="skill-bar" id="sql"><h3>70%</h3></div></div>
+                    </div>
+                    <div class="skill"><h2>Python</h2>
+                        <div class="skill__progress-bar"><div class="skill-bar" id="python"><h3>60%</h3></div></div>
+                    </div>
+                    <div class="skill"><h2>Ocaml</h2>
+                        <div class="skill__progress-bar"><div class="skill-bar" id="ocaml"><h3>50%</h3></div></div>
+                    </div>
                 </div>
-                <div class="skill"><h2>HTML/CSS</h2>
-                    <div class="skill__progress-bar"><div class="skill-bar" id="html"><h3>90%</h3></div></div>
-                </div>
-                <div class="skill"><h2>Java</h2>
-                    <div class="skill__progress-bar"><div class="skill-bar" id="java"><h3>70%</h3></div></div>
-                </div>
-                <div class="skill"><h2>Javascript</h2>
-                    <div class="skill__progress-bar"><div class="skill-bar" id="js"><h3>65%</h3></div></div>
-                </div>
-                <div class="skill"><h2>PHP</h2>
-                    <div class="skill__progress-bar"><div class="skill-bar" id="php"><h3>80%</h3></div></div>
-                </div>
-                <div class="skill"><h2>SQL</h2>
-                    <div class="skill__progress-bar"><div class="skill-bar" id="sql"><h3>70%</h3></div></div>
-                </div>
-                <div class="skill"><h2>Python</h2>
-                    <div class="skill__progress-bar"><div class="skill-bar" id="python"><h3>60%</h3></div></div>
-                </div>
-                <div class="skill"><h2>Ocaml</h2>
-                    <div class="skill__progress-bar"><div class="skill-bar" id="ocaml"><h3>50%</h3></div></div>
-                </div>
-            </div>
+            </section>
             <!-- adjust the width of the skill bar in function of percentage -->
             <script type="text/javascript" src="js/skills.js"></script>
         </section>
@@ -106,7 +106,7 @@
         
         </div>
         <!-- section "works" -->
-        <section class="works-page" id="works">
+        <section class="works-page dark-page" id="works">
             <h1>Mes Projets</h1>
             <!-- <h2>All my projects, sorted by decreasing date</h2> -->
             <h2>Tous mes travaux, triés par date décroissante</h2>
@@ -481,7 +481,7 @@
         </section>
         
         <!-- section "contact" -->
-        <section class="contact-page" id="contact">
+        <section class="contact-page light-page" id="contact">
             <h1>Contact</h1>
             <h2>N'hésitez pas à me contacter en cas de besoin</h2>
             <form action="mailto:nmthanh99@gmail.com" method="POST" enctype="text/plain">

@@ -1,29 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&family=Prata&family=Roboto:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url("../font/Segoe UI/segoeuisl.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url("../font/Segoe UI/segoeui.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url("../font/Segoe UI/seguisb.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url("../font/Segoe UI/segoeuib.ttf") format("truetype");
+    font-weight: 700;
+}
+
+
 /* =============== COLORS =============== */
 
 :root {
-    --material-color: #17141D;
-    --background-color: #100E17;
+    --material-color: #272628;
+    --background-color: #1F1E1D;
     --selection-color: #DEE1E6;
-    --font-color: #f5f5f5;
+    --font-color: #ffffff;
     --border-color: #312D3C;
     --input-color: #201C29;
     --placeholder-color: #909090;
-    --orange-pure: #FF5711;
+    --orange-pure: #F84525;
     --pink-pure: #E52F6F;
     --shadow-color: #000000;
 }
 
-.light {
-    --material-color: #dddddd;
-    --background-color: #f5f5f5;
-    --selection-color: #DEE1E6;
-    --font-color: #121212;
-    --border-color: #dadada;
-    --input-color: #f5f5f5;
-    --placeholder-color: #909090;
-    --orange-pure: #FF5711;
-    --pink-pure: #E52F6F;
-    --shadow-color: #8f8f8f;
+:root {
+    --background-dark: #1F1E1D;
+    --background-light: #fff;
+    --font-dark: #111111;
+    --font-light: #fff;
+    --material-color: #272628;
+    --material-lighter: #323135;
+    --orange-pure: #F84525;
 }
 
 /* Fading animation */
@@ -100,24 +128,6 @@
     }
 }
 
-@keyframes hello {
-    0% {
-        transform: translate(0px,0px);
-    }
-    25% {
-        transform: translate(5px,-5px);
-    }
-    50% {
-        transform: translate(10px,0px);
-    }
-    75% {
-        transform: translate(5px,-5px);
-    }
-    100% {
-        transform: translate(0px,0px);
-    }
-}
-
 @keyframes jumpHover {
     from {
         transform: translateY(-5px);
@@ -145,33 +155,35 @@
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
+    display: none;
 }
   
 /* Track */
 ::-webkit-scrollbar-track {
     background: transparent;
+    display: none;
 }
    
 /* Handle */
 ::-webkit-scrollbar-thumb {
     border-radius: 5px;
     @include gradient-background;
+    display: none;
 }
   
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: var(--pink-pure); 
+    display: none;
 }
-
 
 
 /* =============== MAIN CODE =============== */
 
 * {
-    font-family: "Titillium Web";
+    font-family: "Segoe UI";
     padding: 0;
     margin: 0;
-    font-weight: normal;
     text-decoration: none;
     box-sizing: border-box;
     &::selection {
@@ -181,7 +193,7 @@
         max-width: 100%;
     }
     a {
-        color: var(--font-color);
+        color: var(--font-light);
     }
 }
 
@@ -192,50 +204,30 @@ html {
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--font-color);
     animation: apparition 1s linear 0s forwards;
     transition: 0.5s all ease;
 }
 
-h1 {
-    font-family: 'Teko';
+.dark-page {
+    background-color: var(--background-dark);
+    color: var(--font-light);
 }
 
-.about-page, .skills-page, .works-page, .contact-page {
-    padding: 8% 5% 5%;
-    max-width: 1500px;
-    margin: auto;
+.light-page {
+    background-color: var(--background-light);
+    color: var(--font-dark);
 }
-
-.skills-page, .works-page, .contact-page {
-    text-align: center;
-    position: relative;
-    // title pages
-    h1 {
-        font-size: 4rem;
-    }
-    // sentence subtitle
-    h2 {
-        font-family: 'Saira Condensed';
-        font-size: 1.9rem;
-        font-weight: normal;
-        display: block;
-        margin-top: 15px;
-    }
-}
-
 
 /* ----------- FIXED HEADER ----------- */
 header {
     width: 100%;
-    background-color: var(--material-color);
+    // background-color: var(--background-color);
     text-align: right;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
-    box-shadow: 0px 0px 5px 1px var(--shadow-color);
+    // box-shadow: 0px 0px 5px 1px var(--shadow-color);
     transition: 0.5s all ease;
 
     /* ----- List menu ----- */
@@ -250,6 +242,7 @@ header {
 
         // logo
         img {
+            display: none;
             position: absolute;
             width: 75px;
             margin-top: 16px;
@@ -263,11 +256,13 @@ header {
         }
 
         &--text > a, &--text {
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: medium;
+            letter-spacing: 2px;
             color: var(--font-color);
+            text-transform: uppercase;
             margin: 0 20px;
             &:hover {
                 color: var(--pink-pure);
@@ -284,16 +279,16 @@ header {
 }
 
 /* ----------- PROGRESS BAR ----------- */
-#progress{
-	@include gradient-background;
-	height: 6px;
-	position: fixed;
-	top: 61.5px;
-	left: 0;
-    z-index: 50;
-    animation: progress-bar-load 2s ease 0s forwards;
-    box-shadow: 0.5px 0.5px 2.5px 1px var(--shadow-color);
-}
+// #progress{
+// 	@include gradient-background;
+// 	height: 6px;
+// 	position: fixed;
+// 	top: 61.5px;
+// 	left: 0;
+//     z-index: 50;
+//     animation: progress-bar-load 2s ease 0s forwards;
+//     box-shadow: 0.5px 0.5px 2.5px 1px var(--shadow-color);
+// }
 
 /* ----------- ARROW MOVE TO TOP ----------- */
 #arrow-up {
@@ -308,144 +303,206 @@ header {
     }
 }
 
-/* ----------- ABOUT PAGE ----------- */
-.about-page {
+.about-page, .skills-page, .works-page, .contact-page {
+    padding: 7.5%;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    overflow: hidden;
 
-    /* ----- presentation area ----- */
-    .presentation {
-        h1, h2 {
-            font-family: 'Teko';
-            font-weight: 500;
-            color: var(--orange-pure);
-            display: block;
-        }
-        h1 {
-            font-size: 8rem;
-            animation: slideDownIn 0.5s ease-out 0s forwards;
-
-            span {
-                display: inline-block;
-                animation: hello 1.5s linear 0s infinite;
-            }
-        }
-        h2 {
-            font-size: 6.5rem;
-            font-weight: medium, 600;
-            animation: slideDownIn 0.5s ease-out 0.05s forwards;
-        }
-    }
-
-    /* ----- description area ----- */
-    .description {
-        margin-top: 5%;
+    .about-section, .skills-section, .works-section, .contact-section {
+        margin: auto;
+        padding: 5%;
+        width: 1300px;
         display: flex;
-        flex-flow: row wrap;
-        justify-content: flex-start;
-
-        &--text {
-            font-weight: normal;
-            font-size: 2.0rem;
-            line-height: 4.0rem;
-            margin-bottom: 5%;
-            text-align: left;
-            animation: slideDownIn 0.5s ease-out 0.1s forwards;
-            a {
-                color: var(--orange-pure);
-                font-weight: 600;
-            }
-        }
-        // profile pic
-        img {
-            width: 25%;
-            height: 25%;
-            max-width: 370px;
-            min-width: 300px;
-            margin: auto;
-            border-radius: 50%;
-            box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
-            animation: slideDownIn 0.5s ease-out 0.2s forwards;
-        }
-        @media screen and (min-width: 1117px) {
-            div {
-                max-width: 55%;
-            }
-            img {
-                max-width: 375px;
-                margin: 0 0 5% 15%;
-            }
-        }
+        flex-direction: column;
+        justify-content: center;
     }
-}
 
-.skills-page, .works-page, .contact-page {
+    .skills-section, .works-section, .contact-section {
+        padding: 0 5%;
+    }
 
     h1 {
+        font-size: 4.75rem;
         animation: slideDownIn 0.5s ease-out 0s forwards;
     }
     h2 {
+        font-size: 2rem;
+        font-weight: 400;
+        display: block;
+        margin-top: 15px;
         animation: slideDownIn 0.5s ease-out 0.05s forwards;
     }
 }
 
-/* ----------- SKILLS PAGE ----------- */
-.skills-page {
+/* ----------- ABOUT PAGE ----------- */
+.about-page {
 
-    /* ----- skills area ----- */
-    .skills-box {
-        margin-top: 2.5%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
+    &::before, &::after {
+        position: absolute;
+        left: 55%;
+        top: 50%;
+        display: block;
+        font-family: 'Roboto';
+        font-weight: 900;
+        font-size: 50rem;
+        color: var(--material-color);
+    }
 
-        // box skill with progress bar
-        .skill {
-            width: 35%;
-            min-width: 300px;
-            padding: 0px;
-            margin: 20px 25px 20px;
-            text-align: left;
-            // language
-            h2 {
-                font-weight: normal;
-                font-size: 2.25rem;
+    // M word background
+    &::before {
+        content: "M";
+        transform: translate(0, -90%);
+    }
+
+    // T word background
+    &::after {
+        content: "T";
+        transform: translate(20%, -10%);
+    }
+
+    .about-section {
+        z-index: 1;
+
+        // big circle decoration in background
+        &::before {
+            content: "";
+            position: absolute;
+            left: 41%;
+            top: -20%;
+            width: 1000px;
+            height: 1000px;
+            border-radius: 50%;
+            display: block;
+            border: 2px solid var(--material-color);
+            z-index: 0;
+        }
+
+        /* ----- name area ----- */
+        .title-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            color: var(--orange-pure);
+            text-transform: uppercase;
+            margin-bottom: 50px;
+        }
+
+        /* ----- presentation area ----- */
+        .presentation {
+            h1 {
+                font-size: 7.2rem;
+                line-height: 9rem;
+                animation: slideDownIn 0.5s ease-out 0s forwards;
             }
+        }
 
-            &__progress-bar {
-                width: 100%;
-                height: 20px;
-                background-color: var(--border-color);
-                margin-top: 10px;
-                position: relative;
-                border-radius: 3px;
-                box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
-                // percent
-                h3 {
+        /* ----- description area ----- */
+        .description {
+            margin-top: 50px;
+            max-width: 50%;
+            position: relative;
+            p {
+                font-size: 2rem;
+                line-height: 3.2rem;
+                animation: slideDownIn 0.5s ease-out 0.2s forwards;
+            }
+            // button redirect web CV
+            a {
+                width: 230px;
+                text-transform: uppercase;
+                font-size: 1.4rem;
+                font-weight: 700;
+                letter-spacing: 2px;
+                line-height: 3.2rem;
+                display: block;
+                margin-top: 45px;
+                margin-left: 10px;
+                animation: slideDownIn 0.5s ease-out 0.4s forwards;
+
+                // circle derocation button animation
+                &::before {
+                    content: "";
                     position: absolute;
-                    bottom: 170%;
-                    right: 0%;
-                    font-size: 1.8rem;
+                    top: -37.5%;
+                    left: -20px;
+                    width: 55px;
+                    height: 55px;
+                    border-radius: 55px;
+                    background-color: var(--material-lighter);
+                    z-index: -1;
+                    transition: 0.4s;
                 }
-                // progress bar inside
-                .skill-bar {
-                    position: absolute;
-                    // width defined in skill.js
-                    height: 20px;
-                    background: var(--orange-pure);
-                    border-radius: 3px;
-                    z-index: 2;
-                    animation: progress-bar-load 1.5s ease 0s forwards;
-                    box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
-                    overflow: hidden;
 
-                    &::after {
-                        display: block;
-                        content: "";
-                        height: 100%;
-                        width: 100%;
-                        background: linear-gradient(to right,  var(--orange-pure), var(--pink-pure), var(--orange-pure));
-                        animation: progress-bar-slide 2.5s linear 0s infinite;
-                    }
+                &:hover::before {
+                    width: 250px;
+                    transition: 0.4s;
+                }
+            }
+        }
+    }
+}
+
+/* ----------- SKILLS PAGE ----------- */
+
+.skills-box {
+    margin-top: 2.5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    // box skill with progress bar
+    .skill {
+        width: 45%;
+        min-width: 300px;
+        margin-bottom: 45px;
+        padding: 0px;
+
+        // language
+        h2 {
+            font-weight: normal;
+            font-size: 2.0rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        &__progress-bar {
+            width: 100%;
+            height: 25px;
+            background-color: var(--font-light);
+            margin-top: 10px;
+            position: relative;
+            border-radius: 3px;
+            box-shadow: 0px 0px 1px 1px var(--shadow-color);
+            // percent
+            h3 {
+                position: absolute;
+                bottom: 170%;
+                right: 0%;
+                font-size: 1.8rem;
+            }
+            // progress bar inside
+            .skill-bar {
+                position: absolute;
+                // width defined in skill.js
+                height: 25px;
+                background: var(--material-color);
+                border-radius: 3px;
+                z-index: 2;
+                animation: progress-bar-load 1.5s ease 0s forwards;
+                box-shadow: 0px 0px 1px 1px var(--shadow-color);
+                overflow: hidden;
+
+                &::after {
+                    display: block;
+                    content: "";
+                    height: 100%;
+                    width: 100%;
+                    background: linear-gradient(to right,  var(--material-color), var(--orange-pure));
+                    animation: progress-bar-slide 3s linear 0s infinite;
                 }
             }
         }
@@ -530,13 +587,13 @@ header {
                     
                     &--title {
                         font-size: 4.0rem;
-                        font-family: 'Teko';
+                        // font-family: 'Teko';
                         font-weight: 500;
                         color: var(--orange-pure);
                         animation: none;
                     }
                     &--subtitle {
-                        font-family: 'Saira Condensed';
+                        // font-family: 'Saira Condensed';
                         font-size: 3rem;
                         font-weight: 600;
                         color: var(--orange-pure);
@@ -553,7 +610,7 @@ header {
                         font-weight: 600;
                     }
                     &--date {
-                        font-family: 'Saira Condensed';
+                        // font-family: 'Saira Condensed';
                         font-size: 2.0rem;
                         position: absolute;
                         right: 40px;
@@ -583,7 +640,7 @@ header {
                             display: none;
 
                             &--number, &--text {
-                                font-family: "Saira", "Teko";
+                                // font-family: "Saira", "Teko";
                                 font-weight: 600;
                                 padding: 8px 0px;
                                 position: absolute;

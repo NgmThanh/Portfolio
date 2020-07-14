@@ -1,28 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&family=Prata&family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../font/Segoe UI/segoeuisl.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../font/Segoe UI/segoeui.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../font/Segoe UI/seguisb.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("../font/Segoe UI/segoeuib.ttf") format("truetype");
+  font-weight: 700;
+}
+
 /* =============== COLORS =============== */
 :root {
-  --material-color: #17141D;
-  --background-color: #100E17;
+  --material-color: #272628;
+  --background-color: #1F1E1D;
   --selection-color: #DEE1E6;
-  --font-color: #f5f5f5;
+  --font-color: #ffffff;
   --border-color: #312D3C;
   --input-color: #201C29;
   --placeholder-color: #909090;
-  --orange-pure: #FF5711;
+  --orange-pure: #F84525;
   --pink-pure: #E52F6F;
   --shadow-color: #000000;
 }
 
-.light {
-  --material-color: #dddddd;
-  --background-color: #f5f5f5;
-  --selection-color: #DEE1E6;
-  --font-color: #121212;
-  --border-color: #dadada;
-  --input-color: #f5f5f5;
-  --placeholder-color: #909090;
-  --orange-pure: #FF5711;
-  --pink-pure: #E52F6F;
-  --shadow-color: #8f8f8f;
+:root {
+  --background-dark: #1F1E1D;
+  --background-light: #fff;
+  --font-dark: #111111;
+  --font-light: #fff;
+  --material-color: #272628;
+  --material-lighter: #323135;
+  --orange-pure: #F84525;
 }
 
 /* Fading animation */
@@ -167,52 +191,6 @@
   }
 }
 
-@-webkit-keyframes hello {
-  0% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
-  }
-  25% {
-    -webkit-transform: translate(5px, -5px);
-            transform: translate(5px, -5px);
-  }
-  50% {
-    -webkit-transform: translate(10px, 0px);
-            transform: translate(10px, 0px);
-  }
-  75% {
-    -webkit-transform: translate(5px, -5px);
-            transform: translate(5px, -5px);
-  }
-  100% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
-  }
-}
-
-@keyframes hello {
-  0% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
-  }
-  25% {
-    -webkit-transform: translate(5px, -5px);
-            transform: translate(5px, -5px);
-  }
-  50% {
-    -webkit-transform: translate(10px, 0px);
-            transform: translate(10px, 0px);
-  }
-  75% {
-    -webkit-transform: translate(5px, -5px);
-            transform: translate(5px, -5px);
-  }
-  100% {
-    -webkit-transform: translate(0px, 0px);
-            transform: translate(0px, 0px);
-  }
-}
-
 @-webkit-keyframes jumpHover {
   from {
     -webkit-transform: translateY(-5px);
@@ -231,30 +209,33 @@
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
+  display: none;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: transparent;
+  display: none;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
+  display: none;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--pink-pure);
+  display: none;
 }
 
 /* =============== MAIN CODE =============== */
 * {
-  font-family: "Titillium Web";
+  font-family: "Segoe UI";
   padding: 0;
   margin: 0;
-  font-weight: normal;
   text-decoration: none;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -273,7 +254,7 @@
 }
 
 * a {
-  color: var(--font-color);
+  color: var(--font-light);
 }
 
 html {
@@ -285,52 +266,30 @@ html {
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--font-color);
   -webkit-animation: apparition 1s linear 0s forwards;
           animation: apparition 1s linear 0s forwards;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
 }
 
-h1 {
-  font-family: 'Teko';
+.dark-page {
+  background-color: var(--background-dark);
+  color: var(--font-light);
 }
 
-.about-page, .skills-page, .works-page, .contact-page {
-  padding: 8% 5% 5%;
-  max-width: 1500px;
-  margin: auto;
-}
-
-.skills-page, .works-page, .contact-page {
-  text-align: center;
-  position: relative;
-}
-
-.skills-page h1, .works-page h1, .contact-page h1 {
-  font-size: 4rem;
-}
-
-.skills-page h2, .works-page h2, .contact-page h2 {
-  font-family: 'Saira Condensed';
-  font-size: 1.9rem;
-  font-weight: normal;
-  display: block;
-  margin-top: 15px;
+.light-page {
+  background-color: var(--background-light);
+  color: var(--font-dark);
 }
 
 /* ----------- FIXED HEADER ----------- */
 header {
   width: 100%;
-  background-color: var(--material-color);
   text-align: right;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-color);
-          box-shadow: 0px 0px 5px 1px var(--shadow-color);
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
   /* ----- List menu ----- */
@@ -352,6 +311,7 @@ header .menu {
 }
 
 header .menu img {
+  display: none;
   position: absolute;
   width: 75px;
   margin-top: 16px;
@@ -366,11 +326,13 @@ header .menu img:hover {
 }
 
 header .menu--text > a, header .menu--text {
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: medium;
+  letter-spacing: 2px;
   color: var(--font-color);
+  text-transform: uppercase;
   margin: 0 20px;
 }
 
@@ -386,19 +348,6 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 }
 
 /* ----------- PROGRESS BAR ----------- */
-#progress {
-  background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
-  height: 6px;
-  position: fixed;
-  top: 61.5px;
-  left: 0;
-  z-index: 50;
-  -webkit-animation: progress-bar-load 2s ease 0s forwards;
-          animation: progress-bar-load 2s ease 0s forwards;
-  -webkit-box-shadow: 0.5px 0.5px 2.5px 1px var(--shadow-color);
-          box-shadow: 0.5px 0.5px 2.5px 1px var(--shadow-color);
-}
-
 /* ----------- ARROW MOVE TO TOP ----------- */
 #arrow-up {
   position: fixed;
@@ -413,106 +362,160 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   text-shadow: 1px 1px var(--shadow-color);
 }
 
+.about-page, .skills-page, .works-page, .contact-page {
+  padding: 7.5%;
+  margin: auto;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+.about-page .about-section, .about-page .skills-section, .about-page .works-section, .about-page .contact-section, .skills-page .about-section, .skills-page .skills-section, .skills-page .works-section, .skills-page .contact-section, .works-page .about-section, .works-page .skills-section, .works-page .works-section, .works-page .contact-section, .contact-page .about-section, .contact-page .skills-section, .contact-page .works-section, .contact-page .contact-section {
+  margin: auto;
+  padding: 5%;
+  width: 1300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about-page .skills-section, .about-page .works-section, .about-page .contact-section, .skills-page .skills-section, .skills-page .works-section, .skills-page .contact-section, .works-page .skills-section, .works-page .works-section, .works-page .contact-section, .contact-page .skills-section, .contact-page .works-section, .contact-page .contact-section {
+  padding: 0 5%;
+}
+
+.about-page h1, .skills-page h1, .works-page h1, .contact-page h1 {
+  font-size: 4.75rem;
+  -webkit-animation: slideDownIn 0.5s ease-out 0s forwards;
+          animation: slideDownIn 0.5s ease-out 0s forwards;
+}
+
+.about-page h2, .skills-page h2, .works-page h2, .contact-page h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  display: block;
+  margin-top: 15px;
+  -webkit-animation: slideDownIn 0.5s ease-out 0.05s forwards;
+          animation: slideDownIn 0.5s ease-out 0.05s forwards;
+}
+
 /* ----------- ABOUT PAGE ----------- */
-.about-page {
+.about-page::before, .about-page::after {
+  position: absolute;
+  left: 55%;
+  top: 50%;
+  display: block;
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 50rem;
+  color: var(--material-color);
+}
+
+.about-page::before {
+  content: "M";
+  -webkit-transform: translate(0, -90%);
+          transform: translate(0, -90%);
+}
+
+.about-page::after {
+  content: "T";
+  -webkit-transform: translate(20%, -10%);
+          transform: translate(20%, -10%);
+}
+
+.about-page .about-section {
+  z-index: 1;
+  /* ----- name area ----- */
   /* ----- presentation area ----- */
   /* ----- description area ----- */
 }
 
-.about-page .presentation h1, .about-page .presentation h2 {
-  font-family: 'Teko';
-  font-weight: 500;
-  color: var(--orange-pure);
+.about-page .about-section::before {
+  content: "";
+  position: absolute;
+  left: 41%;
+  top: -20%;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
   display: block;
+  border: 2px solid var(--material-color);
+  z-index: 0;
 }
 
-.about-page .presentation h1 {
-  font-size: 8rem;
+.about-page .about-section .title-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  color: var(--orange-pure);
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.about-page .about-section .presentation h1 {
+  font-size: 7.2rem;
+  line-height: 9rem;
   -webkit-animation: slideDownIn 0.5s ease-out 0s forwards;
           animation: slideDownIn 0.5s ease-out 0s forwards;
 }
 
-.about-page .presentation h1 span {
-  display: inline-block;
-  -webkit-animation: hello 1.5s linear 0s infinite;
-          animation: hello 1.5s linear 0s infinite;
+.about-page .about-section .description {
+  margin-top: 50px;
+  max-width: 50%;
+  position: relative;
 }
 
-.about-page .presentation h2 {
-  font-size: 6.5rem;
-  font-weight: medium, 600;
-  -webkit-animation: slideDownIn 0.5s ease-out 0.05s forwards;
-          animation: slideDownIn 0.5s ease-out 0.05s forwards;
-}
-
-.about-page .description {
-  margin-top: 5%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-}
-
-.about-page .description--text {
-  font-weight: normal;
-  font-size: 2.0rem;
-  line-height: 4.0rem;
-  margin-bottom: 5%;
-  text-align: left;
-  -webkit-animation: slideDownIn 0.5s ease-out 0.1s forwards;
-          animation: slideDownIn 0.5s ease-out 0.1s forwards;
-}
-
-.about-page .description--text a {
-  color: var(--orange-pure);
-  font-weight: 600;
-}
-
-.about-page .description img {
-  width: 25%;
-  height: 25%;
-  max-width: 370px;
-  min-width: 300px;
-  margin: auto;
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
-          box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
+.about-page .about-section .description p {
+  font-size: 2rem;
+  line-height: 3.2rem;
   -webkit-animation: slideDownIn 0.5s ease-out 0.2s forwards;
           animation: slideDownIn 0.5s ease-out 0.2s forwards;
 }
 
-@media screen and (min-width: 1117px) {
-  .about-page .description div {
-    max-width: 55%;
-  }
-  .about-page .description img {
-    max-width: 375px;
-    margin: 0 0 5% 15%;
-  }
+.about-page .about-section .description a {
+  width: 230px;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 3.2rem;
+  display: block;
+  margin-top: 45px;
+  margin-left: 10px;
+  -webkit-animation: slideDownIn 0.5s ease-out 0.4s forwards;
+          animation: slideDownIn 0.5s ease-out 0.4s forwards;
 }
 
-.skills-page h1, .works-page h1, .contact-page h1 {
-  -webkit-animation: slideDownIn 0.5s ease-out 0s forwards;
-          animation: slideDownIn 0.5s ease-out 0s forwards;
+.about-page .about-section .description a::before {
+  content: "";
+  position: absolute;
+  top: -37.5%;
+  left: -20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 55px;
+  background-color: var(--material-lighter);
+  z-index: -1;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.skills-page h2, .works-page h2, .contact-page h2 {
-  -webkit-animation: slideDownIn 0.5s ease-out 0.05s forwards;
-          animation: slideDownIn 0.5s ease-out 0.05s forwards;
+.about-page .about-section .description a:hover::before {
+  width: 250px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 /* ----------- SKILLS PAGE ----------- */
-.skills-page {
-  /* ----- skills area ----- */
-}
-
-.skills-page .skills-box {
+.skills-box {
   margin-top: 2.5%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -522,64 +525,66 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.skills-page .skills-box .skill {
-  width: 35%;
+.skills-box .skill {
+  width: 45%;
   min-width: 300px;
+  margin-bottom: 45px;
   padding: 0px;
-  margin: 20px 25px 20px;
-  text-align: left;
 }
 
-.skills-page .skills-box .skill h2 {
+.skills-box .skill h2 {
   font-weight: normal;
-  font-size: 2.25rem;
+  font-size: 2.0rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
-.skills-page .skills-box .skill__progress-bar {
+.skills-box .skill__progress-bar {
   width: 100%;
-  height: 20px;
-  background-color: var(--border-color);
+  height: 25px;
+  background-color: var(--font-light);
   margin-top: 10px;
   position: relative;
   border-radius: 3px;
-  -webkit-box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
-          box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
+  -webkit-box-shadow: 0px 0px 1px 1px var(--shadow-color);
+          box-shadow: 0px 0px 1px 1px var(--shadow-color);
 }
 
-.skills-page .skills-box .skill__progress-bar h3 {
+.skills-box .skill__progress-bar h3 {
   position: absolute;
   bottom: 170%;
   right: 0%;
   font-size: 1.8rem;
 }
 
-.skills-page .skills-box .skill__progress-bar .skill-bar {
+.skills-box .skill__progress-bar .skill-bar {
   position: absolute;
-  height: 20px;
-  background: var(--orange-pure);
+  height: 25px;
+  background: var(--material-color);
   border-radius: 3px;
   z-index: 2;
   -webkit-animation: progress-bar-load 1.5s ease 0s forwards;
           animation: progress-bar-load 1.5s ease 0s forwards;
-  -webkit-box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
-          box-shadow: 0px 0px 2.5px 1px var(--shadow-color);
+  -webkit-box-shadow: 0px 0px 1px 1px var(--shadow-color);
+          box-shadow: 0px 0px 1px 1px var(--shadow-color);
   overflow: hidden;
 }
 
-.skills-page .skills-box .skill__progress-bar .skill-bar::after {
+.skills-box .skill__progress-bar .skill-bar::after {
   display: block;
   content: "";
   height: 100%;
   width: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(var(--orange-pure)), color-stop(var(--pink-pure)), to(var(--orange-pure)));
-  background: linear-gradient(to right, var(--orange-pure), var(--pink-pure), var(--orange-pure));
-  -webkit-animation: progress-bar-slide 2.5s linear 0s infinite;
-          animation: progress-bar-slide 2.5s linear 0s infinite;
+  background: -webkit-gradient(linear, left top, right top, from(var(--material-color)), to(var(--orange-pure)));
+  background: linear-gradient(to right, var(--material-color), var(--orange-pure));
+  -webkit-animation: progress-bar-slide 3s linear 0s infinite;
+          animation: progress-bar-slide 3s linear 0s infinite;
 }
 
 /* ----------- WORKS PAGE ----------- */
@@ -687,7 +692,6 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 
 .works-page .timeline .modal-window .work-window__header--title {
   font-size: 4.0rem;
-  font-family: 'Teko';
   font-weight: 500;
   color: var(--orange-pure);
   -webkit-animation: none;
@@ -695,7 +699,6 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 }
 
 .works-page .timeline .modal-window .work-window__header--subtitle {
-  font-family: 'Saira Condensed';
   font-size: 3rem;
   font-weight: 600;
   color: var(--orange-pure);
@@ -716,7 +719,6 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 }
 
 .works-page .timeline .modal-window .work-window__header--date {
-  font-family: 'Saira Condensed';
   font-size: 2.0rem;
   position: absolute;
   right: 40px;
@@ -754,7 +756,6 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 }
 
 .works-page .timeline .modal-window .work-window__body .slideshow-container .slide--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide1--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide1--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide2--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide2--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide3--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide3--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide4--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide4--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide5--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide5--text {
-  font-family: "Saira", "Teko";
   font-weight: 600;
   padding: 8px 0px;
   position: absolute;
