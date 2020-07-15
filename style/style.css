@@ -365,7 +365,7 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   text-shadow: 1px 1px var(--shadow-color);
 }
 
-.about-page, .skills-page, .works-page, .contact-page {
+.about-page, .skills-page, .works-page, .contact-page, footer {
   padding: 7.5%;
   margin: auto;
   min-height: 100vh;
@@ -375,7 +375,7 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   overflow: hidden;
 }
 
-.about-page .about-section, .about-page .skills-section, .about-page .works-section, .about-page .contact-section, .skills-page .about-section, .skills-page .skills-section, .skills-page .works-section, .skills-page .contact-section, .works-page .about-section, .works-page .skills-section, .works-page .works-section, .works-page .contact-section, .contact-page .about-section, .contact-page .skills-section, .contact-page .works-section, .contact-page .contact-section {
+.about-page .about-section, .about-page .skills-section, .about-page .works-section, .about-page .contact-section, .about-page .footer-section, .skills-page .about-section, .skills-page .skills-section, .skills-page .works-section, .skills-page .contact-section, .skills-page .footer-section, .works-page .about-section, .works-page .skills-section, .works-page .works-section, .works-page .contact-section, .works-page .footer-section, .contact-page .about-section, .contact-page .skills-section, .contact-page .works-section, .contact-page .contact-section, .contact-page .footer-section, footer .about-section, footer .skills-section, footer .works-section, footer .contact-section, footer .footer-section {
   margin: auto;
   padding: 5%;
   width: 1300px;
@@ -391,17 +391,17 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
           justify-content: center;
 }
 
-.about-page .skills-section, .about-page .works-section, .about-page .contact-section, .skills-page .skills-section, .skills-page .works-section, .skills-page .contact-section, .works-page .skills-section, .works-page .works-section, .works-page .contact-section, .contact-page .skills-section, .contact-page .works-section, .contact-page .contact-section {
+.about-page .skills-section, .about-page .works-section, .about-page .contact-section, .about-page .footer-section, .skills-page .skills-section, .skills-page .works-section, .skills-page .contact-section, .skills-page .footer-section, .works-page .skills-section, .works-page .works-section, .works-page .contact-section, .works-page .footer-section, .contact-page .skills-section, .contact-page .works-section, .contact-page .contact-section, .contact-page .footer-section, footer .skills-section, footer .works-section, footer .contact-section, footer .footer-section {
   padding: 0 5%;
 }
 
-.about-page h1, .skills-page h1, .works-page h1, .contact-page h1 {
+.about-page h1, .skills-page h1, .works-page h1, .contact-page h1, footer h1 {
   font-size: 4.75rem;
   -webkit-animation: slideDownIn 0.5s ease-out 0s forwards;
           animation: slideDownIn 0.5s ease-out 0s forwards;
 }
 
-.about-page h2, .skills-page h2, .works-page h2, .contact-page h2 {
+.about-page h2, .skills-page h2, .works-page h2, .contact-page h2, footer h2 {
   font-size: 2rem;
   font-weight: 400;
   display: block;
@@ -1051,95 +1051,56 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 
 /* ----------- FOOTER ----------- */
 footer {
-  margin-top: 5%;
-  background-color: var(--material-color);
-  padding: 5%;
-  -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-color);
-          box-shadow: 0px 0px 5px 1px var(--shadow-color);
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
+  min-height: 50vh;
   /* ----- footer area ----- */
 }
 
-footer h1 {
-  font-size: 3rem;
-  -webkit-animation: slideDownIn 0.5s ease-out 0s forwards;
-          animation: slideDownIn 0.5s ease-out 0s forwards;
-}
-
-footer .field-footer {
-  margin: auto;
-  max-width: 1500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+footer .footer-section {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   /* ----- contact area ----- */
   /* ----- informations area ----- */
 }
 
-footer .field-footer__contact, footer .field-footer__informations {
+footer .footer-section__contact, footer .footer-section__informations {
   text-align: left;
-  width: 42%;
-  min-width: 300px;
-  max-width: 500px;
-  font-size: 1.8rem;
-  color: var(--font-color);
-  margin: 2%;
-}
-
-footer .field-footer__contact span, footer .field-footer__informations span {
-  display: block;
-}
-
-footer .field-footer__contact i {
-  font-size: 4.0rem;
-  margin: 35px 20px 25px 0;
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-}
-
-footer .field-footer__contact i:hover {
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
-  -webkit-transition: 0.4s all ease;
-  transition: 0.4s all ease;
-}
-
-footer .field-footer__informations i {
-  font-size: 2.5rem;
-  float: left;
-  margin-right: 25px;
-  display: block;
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-}
-
-footer .field-footer__informations i:hover {
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
-  -webkit-transition: 0.4s all ease;
-  transition: 0.4s all ease;
-}
-
-footer em {
+  width: 45%;
   font-size: 1.6rem;
-  font-style: normal;
   color: var(--font-color);
-  text-align: center;
-  margin-top: 5%;
+}
+
+footer .footer-section__contact h1, footer .footer-section__informations h1 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
   display: block;
-  -webkit-animation: slideDownIn 0.5s ease-out 0.15s forwards;
-          animation: slideDownIn 0.5s ease-out 0.15s forwards;
+  margin-bottom: 10px;
+}
+
+footer .footer-section__contact span, footer .footer-section__informations span {
+  display: block;
+  margin-top: 15px;
+}
+
+footer .footer-section__contact i {
+  color: var(--light-grey);
+  font-size: 2.5rem;
+  margin-top: 35px;
+  margin-right: 25px;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+
+footer .footer-section__contact i:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-transition: 0.4s all ease;
+  transition: 0.4s all ease;
 }
 
 /* =============== MEDIA QUERIES =============== */

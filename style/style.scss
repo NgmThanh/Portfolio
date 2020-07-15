@@ -306,14 +306,14 @@ header {
     }
 }
 
-.about-page, .skills-page, .works-page, .contact-page {
+.about-page, .skills-page, .works-page, .contact-page, footer {
     padding: 7.5%;
     margin: auto;
     min-height: 100vh;
     display: flex;
     overflow: hidden;
 
-    .about-section, .skills-section, .works-section, .contact-section {
+    .about-section, .skills-section, .works-section, .contact-section, .footer-section {
         margin: auto;
         padding: 5%;
         width: 1300px;
@@ -322,7 +322,7 @@ header {
         justify-content: center;
     }
 
-    .skills-section, .works-section, .contact-section {
+    .skills-section, .works-section, .contact-section, .footer-section {
         padding: 0 5%;
     }
 
@@ -951,38 +951,31 @@ header {
 
 /* ----------- FOOTER ----------- */
 footer {
-    margin-top: 5%;
-    background-color: var(--material-color);
-    padding: 5%;
-    box-shadow: 0px 0px 5px 1px var(--shadow-color);
-    transition: 0.5s all ease;
-
-    h1 {
-        font-size: 3rem;
-        animation: slideDownIn 0.5s ease-out 0s forwards;
-    }
+    min-height: 50vh;
 
     /* ----- footer area ----- */
-    .field-footer {
-        margin: auto;
-        max-width: 1500px;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: flex-start;
+    .footer-section {
+        flex-direction: row;
+        justify-content: space-between;
 
         &__contact, &__informations {
             text-align: left;
-            width: 42%;
-            min-width: 300px;
-            max-width: 500px;
-            font-size: 1.8rem;
+            width: 45%;
+            font-size: 1.6rem;
             color: var(--font-color);
-            margin: 2%;
+
+            h1 {
+                text-transform: uppercase;
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+                display: block;
+                margin-bottom: 10px;
+            }
 
             span {
                 // animation: slideDownIn 0.5s ease-out 0.05s forwards;
                 display: block;
+                margin-top: 15px;
             }
         }
 
@@ -990,8 +983,10 @@ footer {
         &__contact {
             // icon contact
             i {
-                font-size: 4.0rem;
-                margin: 35px 20px 25px 0;
+                color: var(--light-grey);
+                font-size: 2.5rem;
+                margin-top: 35px;
+                margin-right: 25px;
                 transition: 0.5s all ease;
                 &:hover {
                     @include jumpAnimation(-5px);
@@ -1001,29 +996,8 @@ footer {
 
         /* ----- informations area ----- */
         &__informations {
-            // icon contact
-            i {
-                font-size: 2.5rem;
-                float: left;
-                margin-right: 25px;
-                display: block;
-                transition: 0.5s all ease;
-                &:hover {
-                    @include jumpAnimation(-5px);
-                }
-            }
+            
         }
-    }
-
-    // made by ...
-    em {
-        font-size: 1.6rem;
-        font-style: normal;
-        color: var(--font-color);
-        text-align: center;
-        margin-top: 5%;
-        display: block;
-        animation: slideDownIn 0.5s ease-out 0.15s forwards;
     }
 }
 
