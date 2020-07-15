@@ -969,6 +969,9 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
 }
 
 .contact-page .contact__field--input, .contact-page .contact__field--textarea {
@@ -981,13 +984,30 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   border-radius: 2px;
   -webkit-box-shadow: none;
           box-shadow: none;
-  margin-bottom: 18px;
   outline: none;
+  -webkit-animation: slideDownIn 0.5s ease-out 0.2s forwards;
+          animation: slideDownIn 0.5s ease-out 0.2s forwards;
+}
+
+.contact-page .contact__field--input:focus + .contact__field--line, .contact-page .contact__field--textarea:focus + .contact__field--line {
+  width: 525px;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
 }
 
 .contact-page .contact__field--textarea {
   height: 250px;
   resize: none;
+}
+
+.contact-page .contact__field--line {
+  width: 0;
+  display: block;
+  height: 1px;
+  background-color: var(--background-color);
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  margin-bottom: 18px;
 }
 
 .contact-page .contact__field [type="submit"] {

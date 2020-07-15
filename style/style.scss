@@ -873,7 +873,6 @@ header {
         display: flex;
         flex-direction: column;
 
-
         &--input, &--textarea {
             width: 525px;
             font-size: 1.6rem;
@@ -883,14 +882,33 @@ header {
             border: none;
             border-radius: 2px;
             box-shadow: none;
-            margin-bottom: 18px;
             outline: none;
+            animation: slideDownIn 0.5s ease-out 0.2s forwards;
+
+            &:focus + .contact__field--line {
+                width: 525px; 
+                transition: 0.4s ease;
+            }
         }
 
         &--textarea {
             height: 250px;
             resize: none;
         }
+
+        &--line {
+            width: 0;
+            display: block;
+            height: 1px;
+            background-color: var(--background-color);
+            transition: 0.4s ease;
+            margin-bottom: 18px;
+        }
+
+        display: flex;
+            flex-direction: column;
+            margin-bottom: 18px;
+        
 
         [type="submit"] {
             width: 230px;
