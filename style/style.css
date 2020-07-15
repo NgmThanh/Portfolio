@@ -47,6 +47,9 @@
   --material-color: #272628;
   --material-lighter: #323135;
   --orange-pure: #F84525;
+  --shadow-dark: #000000;
+  --shadow-light: #cecece;
+  --light-grey: #F2F2F2;
 }
 
 /* Fading animation */
@@ -552,8 +555,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   margin-top: 10px;
   position: relative;
   border-radius: 3px;
-  -webkit-box-shadow: 0px 0px 1px 1px var(--shadow-color);
-          box-shadow: 0px 0px 1px 1px var(--shadow-color);
+  -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-light);
+          box-shadow: 0px 0px 5px 1px var(--shadow-light);
 }
 
 .skills-box .skill__progress-bar h3 {
@@ -571,8 +574,8 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   z-index: 2;
   -webkit-animation: progress-bar-load 1.5s ease 0s forwards;
           animation: progress-bar-load 1.5s ease 0s forwards;
-  -webkit-box-shadow: 0px 0px 1px 1px var(--shadow-color);
-          box-shadow: 0px 0px 1px 1px var(--shadow-color);
+  -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-light);
+          box-shadow: 0px 0px 5px 1px var(--shadow-light);
   overflow: hidden;
 }
 
@@ -588,13 +591,9 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 }
 
 /* ----------- WORKS PAGE ----------- */
-.works-page {
-  /* ----- timeline area ----- */
-}
-
-.works-page .timeline {
-  margin-top: 2.5%;
-  padding: 0 7.5%;
+/* ----- timeline area ----- */
+.timeline {
+  margin-top: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -603,27 +602,28 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   /* ----- work box ----- */
 }
 
-.works-page .timeline__box {
-  margin: 2%;
-  width: 300px;
-  height: 300px;
+.timeline__box {
+  margin: 2.5% 0;
+  width: 350px;
+  height: 350px;
   background-color: var(--material-color);
   border: none;
+  border-radius: 5px;
   -webkit-transition: 0.5s all ease-out;
   transition: 0.5s all ease-out;
-  -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-color);
-          box-shadow: 0px 0px 5px 1px var(--shadow-color);
+  -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-dark);
+          box-shadow: 0px 0px 5px 1px var(--shadow-dark);
   -webkit-filter: brightness(95%);
           filter: brightness(95%);
 }
 
-.works-page .timeline__box:hover {
+.timeline__box:hover {
   background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
@@ -632,7 +632,7 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   cursor: pointer;
 }
 
-.works-page .timeline__box img {
+.timeline__box img {
   -webkit-filter: invert(100%);
           filter: invert(100%);
   position: relative;
@@ -641,17 +641,17 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   margin: auto;
 }
 
-.works-page .timeline__box h1 {
+.timeline__box h1 {
   font-size: 2.25rem;
   display: block;
   margin-top: 5px;
   font-weight: 500;
-  color: var(--font-color);
+  color: var(--font-light);
   -webkit-animation: none;
           animation: none;
 }
 
-.works-page .timeline .modal-window {
+.timeline .modal-window {
   display: none;
   position: fixed;
   z-index: 10000;
@@ -670,13 +670,13 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   /* Modal Content */
 }
 
-.works-page .timeline .modal-window .work-window {
+.timeline .modal-window .work-window {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   /* center box */
-  background-color: var(--material-color);
+  background-color: var(--background-color);
   margin: auto auto;
   width: 60%;
   max-height: 85%;
@@ -686,11 +686,11 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   overflow-y: auto;
 }
 
-.works-page .timeline .modal-window .work-window__header {
+.timeline .modal-window .work-window__header {
   padding: 30px 40px 10px;
 }
 
-.works-page .timeline .modal-window .work-window__header--title {
+.timeline .modal-window .work-window__header--title {
   font-size: 4.0rem;
   font-weight: 500;
   color: var(--orange-pure);
@@ -698,7 +698,7 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
           animation: none;
 }
 
-.works-page .timeline .modal-window .work-window__header--subtitle {
+.timeline .modal-window .work-window__header--subtitle {
   font-size: 3rem;
   font-weight: 600;
   color: var(--orange-pure);
@@ -712,33 +712,33 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
           animation: none;
 }
 
-.works-page .timeline .modal-window .work-window__header--language {
+.timeline .modal-window .work-window__header--language {
   font-size: 1.6rem;
   color: var(--pink-pure);
   font-weight: 600;
 }
 
-.works-page .timeline .modal-window .work-window__header--date {
+.timeline .modal-window .work-window__header--date {
   font-size: 2.0rem;
   position: absolute;
   right: 40px;
   top: 50px;
 }
 
-.works-page .timeline .modal-window .work-window__body {
+.timeline .modal-window .work-window__body {
   margin: 0 40px 40px;
   /* Slideshow container */
   /* The dots/bullets/indicators */
 }
 
-.works-page .timeline .modal-window .work-window__body--description {
+.timeline .modal-window .work-window__body--description {
   font-size: 1.5rem;
   text-align: justify;
   display: block;
   margin-top: 25px;
 }
 
-.works-page .timeline .modal-window .work-window__body .slideshow-container {
+.timeline .modal-window .work-window__body .slideshow-container {
   max-width: 100%;
   position: relative;
   margin: 35px auto 20px;
@@ -748,14 +748,14 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   /* Position the "next button" to the right */
 }
 
-.works-page .timeline .modal-window .work-window__body .slideshow-container .slide, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide1, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide2, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide3, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide4, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide5 {
+.timeline .modal-window .work-window__body .slideshow-container .slide, .timeline .modal-window .work-window__body .slideshow-container .slide1, .timeline .modal-window .work-window__body .slideshow-container .slide2, .timeline .modal-window .work-window__body .slideshow-container .slide3, .timeline .modal-window .work-window__body .slideshow-container .slide4, .timeline .modal-window .work-window__body .slideshow-container .slide5 {
   display: none;
   /* Number text (1/3 etc) */
   /* Caption text */
   /* image displayed */
 }
 
-.works-page .timeline .modal-window .work-window__body .slideshow-container .slide--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide1--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide1--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide2--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide2--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide3--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide3--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide4--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide4--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide5--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide5--text {
+.timeline .modal-window .work-window__body .slideshow-container .slide--number, .timeline .modal-window .work-window__body .slideshow-container .slide--text, .timeline .modal-window .work-window__body .slideshow-container .slide1--number, .timeline .modal-window .work-window__body .slideshow-container .slide1--text, .timeline .modal-window .work-window__body .slideshow-container .slide2--number, .timeline .modal-window .work-window__body .slideshow-container .slide2--text, .timeline .modal-window .work-window__body .slideshow-container .slide3--number, .timeline .modal-window .work-window__body .slideshow-container .slide3--text, .timeline .modal-window .work-window__body .slideshow-container .slide4--number, .timeline .modal-window .work-window__body .slideshow-container .slide4--text, .timeline .modal-window .work-window__body .slideshow-container .slide5--number, .timeline .modal-window .work-window__body .slideshow-container .slide5--text {
   font-weight: 600;
   padding: 8px 0px;
   position: absolute;
@@ -766,25 +766,25 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   -webkit-text-fill-color: transparent;
 }
 
-.works-page .timeline .modal-window .work-window__body .slideshow-container .slide--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide1--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide2--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide3--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide4--number, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide5--number {
+.timeline .modal-window .work-window__body .slideshow-container .slide--number, .timeline .modal-window .work-window__body .slideshow-container .slide1--number, .timeline .modal-window .work-window__body .slideshow-container .slide2--number, .timeline .modal-window .work-window__body .slideshow-container .slide3--number, .timeline .modal-window .work-window__body .slideshow-container .slide4--number, .timeline .modal-window .work-window__body .slideshow-container .slide5--number {
   font-size: 1.7rem;
   left: 0;
 }
 
-.works-page .timeline .modal-window .work-window__body .slideshow-container .slide--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide1--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide2--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide3--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide4--text, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide5--text {
+.timeline .modal-window .work-window__body .slideshow-container .slide--text, .timeline .modal-window .work-window__body .slideshow-container .slide1--text, .timeline .modal-window .work-window__body .slideshow-container .slide2--text, .timeline .modal-window .work-window__body .slideshow-container .slide3--text, .timeline .modal-window .work-window__body .slideshow-container .slide4--text, .timeline .modal-window .work-window__body .slideshow-container .slide5--text {
   font-size: 1.8rem;
   right: 0;
   text-align: center;
 }
 
-.works-page .timeline .modal-window .work-window__body .slideshow-container .slide img, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide1 img, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide2 img, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide3 img, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide4 img, .works-page .timeline .modal-window .work-window__body .slideshow-container .slide5 img {
+.timeline .modal-window .work-window__body .slideshow-container .slide img, .timeline .modal-window .work-window__body .slideshow-container .slide1 img, .timeline .modal-window .work-window__body .slideshow-container .slide2 img, .timeline .modal-window .work-window__body .slideshow-container .slide3 img, .timeline .modal-window .work-window__body .slideshow-container .slide4 img, .timeline .modal-window .work-window__body .slideshow-container .slide5 img {
   max-width: 90%;
   margin: auto;
   -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-color);
           box-shadow: 0px 0px 5px 1px var(--shadow-color);
 }
 
-.works-page .timeline .modal-window .work-window__body .slideshow-container .prev, .works-page .timeline .modal-window .work-window__body .slideshow-container .next {
+.timeline .modal-window .work-window__body .slideshow-container .prev, .timeline .modal-window .work-window__body .slideshow-container .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -804,23 +804,23 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   opacity: 0.7;
 }
 
-.works-page .timeline .modal-window .work-window__body .slideshow-container .next {
+.timeline .modal-window .work-window__body .slideshow-container .next {
   right: 0;
 }
 
-.works-page .timeline .modal-window .work-window__body .slideshow-container .next:hover {
+.timeline .modal-window .work-window__body .slideshow-container .next:hover {
   background: var(--orange-pure);
 }
 
-.works-page .timeline .modal-window .work-window__body .slideshow-container .prev {
+.timeline .modal-window .work-window__body .slideshow-container .prev {
   left: 0;
 }
 
-.works-page .timeline .modal-window .work-window__body .slideshow-container .prev:hover {
+.timeline .modal-window .work-window__body .slideshow-container .prev:hover {
   background: var(--pink-pure);
 }
 
-.works-page .timeline .modal-window .work-window__body .dot {
+.timeline .modal-window .work-window__body .dot {
   cursor: pointer;
   height: 12.5px;
   width: 12.5px;
@@ -832,132 +832,124 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   transition: 0.5s ease;
 }
 
-.works-page .timeline .modal-window .work-window__body .active, .works-page .timeline .modal-window .work-window__body .dot:hover {
+.timeline .modal-window .work-window__body .active, .timeline .modal-window .work-window__body .dot:hover {
   background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
 }
 
 @media all and (min-width: 768px) and (max-width: 1280px) {
-  .works-page .timeline .modal-window {
+  .timeline .modal-window {
     /* Modal Content */
   }
-  .works-page .timeline .modal-window .work-window {
+  .timeline .modal-window .work-window {
     width: 80%;
     max-height: 80%;
   }
 }
 
 @media all and (min-width: 480px) and (max-width: 767px) {
-  .works-page .timeline {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .works-page .timeline .modal-window {
+  .timeline .modal-window {
     /* Modal Content */
   }
-  .works-page .timeline .modal-window .work-window {
+  .timeline .modal-window .work-window {
     width: 90%;
   }
-  .works-page .timeline .modal-window .work-window__header {
+  .timeline .modal-window .work-window__header {
     padding: 30px 30px 10px;
   }
-  .works-page .timeline .modal-window .work-window__header--title {
+  .timeline .modal-window .work-window__header--title {
     font-size: 3.2rem;
   }
-  .works-page .timeline .modal-window .work-window__header--subtitle {
+  .timeline .modal-window .work-window__header--subtitle {
     font-size: 2.3rem;
   }
-  .works-page .timeline .modal-window .work-window__header--language {
+  .timeline .modal-window .work-window__header--language {
     font-size: 1.6rem;
   }
-  .works-page .timeline .modal-window .work-window__header--date {
+  .timeline .modal-window .work-window__header--date {
     font-size: 2rem;
     position: absolute;
     top: 45px;
     right: 30px;
   }
-  .works-page .timeline .modal-window .work-window__body {
+  .timeline .modal-window .work-window__body {
     margin: 0 30px 40px;
     /* Slideshow container */
     /* The dots/bullets/indicators */
   }
-  .works-page .timeline .modal-window .work-window__body--description {
+  .timeline .modal-window .work-window__body--description {
     font-size: 1.5rem;
     margin-top: 15px;
   }
-  .works-page .timeline .modal-window .work-window__body .slideshow-container {
+  .timeline .modal-window .work-window__body .slideshow-container {
     margin: 30px auto 20px;
     /* Hide the images by default */
   }
-  .works-page .timeline .modal-window .work-window__body .slideshow-container .slide {
+  .timeline .modal-window .work-window__body .slideshow-container .slide {
     /* Number text (1/3 etc) */
     /* Caption text */
   }
-  .works-page .timeline .modal-window .work-window__body .slideshow-container .slide--number {
+  .timeline .modal-window .work-window__body .slideshow-container .slide--number {
     font-size: 1.6rem;
   }
-  .works-page .timeline .modal-window .work-window__body .slideshow-container .slide--text {
+  .timeline .modal-window .work-window__body .slideshow-container .slide--text {
     font-size: 1.6rem;
   }
-  .works-page .timeline .modal-window .work-window__body .dot {
+  .timeline .modal-window .work-window__body .dot {
     height: 10px;
     width: 10px;
   }
 }
 
 @media all and (max-width: 479px) {
-  .works-page .timeline {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .works-page .timeline .modal-window {
+  .timeline .modal-window {
     /* Modal Content */
   }
-  .works-page .timeline .modal-window .work-window {
+  .timeline .modal-window .work-window {
     width: 98%;
     max-height: 80%;
   }
-  .works-page .timeline .modal-window .work-window__header {
+  .timeline .modal-window .work-window__header {
     padding: 15px 15px 10px;
   }
-  .works-page .timeline .modal-window .work-window__header--title {
+  .timeline .modal-window .work-window__header--title {
     font-size: 2.4rem;
   }
-  .works-page .timeline .modal-window .work-window__header--subtitle {
+  .timeline .modal-window .work-window__header--subtitle {
     font-size: 1.8rem;
   }
-  .works-page .timeline .modal-window .work-window__header--language {
+  .timeline .modal-window .work-window__header--language {
     font-size: 1.5rem;
   }
-  .works-page .timeline .modal-window .work-window__header--date {
+  .timeline .modal-window .work-window__header--date {
     font-size: 1.5rem;
     position: absolute;
     top: 25px;
     right: 15px;
   }
-  .works-page .timeline .modal-window .work-window__body {
+  .timeline .modal-window .work-window__body {
     margin: 0 15px 15px;
     /* Slideshow container */
     /* The dots/bullets/indicators */
   }
-  .works-page .timeline .modal-window .work-window__body--description {
+  .timeline .modal-window .work-window__body--description {
     font-size: 1.3rem;
     margin-top: 0px;
   }
-  .works-page .timeline .modal-window .work-window__body .slideshow-container {
+  .timeline .modal-window .work-window__body .slideshow-container {
     margin: 25px auto 20px;
     /* Hide the images by default */
   }
-  .works-page .timeline .modal-window .work-window__body .slideshow-container .slide {
+  .timeline .modal-window .work-window__body .slideshow-container .slide {
     /* Number text (1/3 etc) */
     /* Caption text */
   }
-  .works-page .timeline .modal-window .work-window__body .slideshow-container .slide--number {
+  .timeline .modal-window .work-window__body .slideshow-container .slide--number {
     font-size: 1.4rem;
   }
-  .works-page .timeline .modal-window .work-window__body .slideshow-container .slide--text {
+  .timeline .modal-window .work-window__body .slideshow-container .slide--text {
     font-size: 1.4rem;
   }
-  .works-page .timeline .modal-window .work-window__body .dot {
+  .timeline .modal-window .work-window__body .dot {
     height: 7.5px;
     width: 7.5px;
   }
@@ -969,73 +961,72 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 }
 
 .contact-page .contact__field {
-  margin: auto;
-  margin-top: 2.5%;
-  padding: 25px;
-  width: 385px;
-  background-color: var(--material-color);
-  color: var(--font-color);
-  -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-color);
-          box-shadow: 0px 0px 5px 1px var(--shadow-color);
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-  -webkit-animation: slideDownIn 0.5s ease-out 0.1s forwards;
-          animation: slideDownIn 0.5s ease-out 0.1s forwards;
+  margin-top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .contact-page .contact__field--input, .contact-page .contact__field--textarea {
-  font-size: 1.8rem;
-  padding: 10px;
-  background-color: var(--input-color);
-  color: var(--font-color);
-  border: 2px solid var(--border-color);
+  width: 525px;
+  font-size: 1.6rem;
+  padding: 22.5px 20px;
+  background-color: var(--light-grey);
+  color: var(--font-dark);
+  border: none;
+  border-radius: 2px;
   -webkit-box-shadow: none;
           box-shadow: none;
-  margin-bottom: 4%;
-  width: 100%;
-}
-
-.contact-page .contact__field--input::-webkit-input-placeholder, .contact-page .contact__field--textarea::-webkit-input-placeholder {
-  color: var(--placeholder-color);
-}
-
-.contact-page .contact__field--input:-ms-input-placeholder, .contact-page .contact__field--textarea:-ms-input-placeholder {
-  color: var(--placeholder-color);
-}
-
-.contact-page .contact__field--input::-ms-input-placeholder, .contact-page .contact__field--textarea::-ms-input-placeholder {
-  color: var(--placeholder-color);
-}
-
-.contact-page .contact__field--input::placeholder, .contact-page .contact__field--textarea::placeholder {
-  color: var(--placeholder-color);
-}
-
-.contact-page .contact__field--input:focus, .contact-page .contact__field--textarea:focus {
-  outline: none !important;
-  border: 2px solid var(--pink-pure);
+  margin-bottom: 18px;
+  outline: none;
 }
 
 .contact-page .contact__field--textarea {
-  height: 200px;
+  height: 250px;
+  resize: none;
 }
 
 .contact-page .contact__field [type="submit"] {
-  font-size: 2.0rem;
-  padding: 10px;
-  width: 200px;
-  font-weight: 600;
-  background-color: var(--font-color);
-  color: var(--background-color);
+  width: 230px;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 3.2rem;
+  color: var(--font-light);
+  background-color: transparent;
   border: none;
-  -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-color);
-          box-shadow: 0px 0px 5px 1px var(--shadow-color);
+  cursor: pointer;
+  margin-top: 45px;
+  margin-left: 15px;
+  padding-left: 4px;
+  text-align: left;
+  -webkit-animation: slideDownIn 0.5s ease-out 0.4s forwards;
+          animation: slideDownIn 0.5s ease-out 0.4s forwards;
 }
 
-.contact-page .contact__field [type="submit"]:hover {
-  cursor: pointer;
-  background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
-  color: var(--font-color);
+.contact-page .contact__field [type="submit"]::before {
+  content: "";
+  position: absolute;
+  top: -37.5%;
+  left: -20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 55px;
+  background-color: var(--material-lighter);
+  z-index: -1;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.contact-page .contact__field [type="submit"]:hover::before {
+  width: 150px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 /* ----------- FOOTER ----------- */
