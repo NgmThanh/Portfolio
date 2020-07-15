@@ -109,10 +109,10 @@ window.onload = () => {
         // Récupération de la position verticale
         let position = window.scrollY
         // Récupération de la largeur de la fenêtre
-        let largeur = document.documentElement.clientWidth
+        let largeur = window.innerHeight
         // Calcul de la largeur de la barre
         let barre = position / hauteur * largeur
         // Modification du CSS de la barre
-        document.getElementById("progress").style.width = barre+"px"
+        document.getElementById("progress").style.height = barre+"px"
     });
 };

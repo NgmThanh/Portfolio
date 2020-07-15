@@ -51,6 +51,7 @@
     --font-light: #fff;
     --material-color: #272628;
     --material-lighter: #323135;
+    --material-grey: #9C9C9C;
     --orange-pure: #F84525;
     --shadow-dark: #000000;
     --shadow-light: #cecece;
@@ -224,13 +225,12 @@ body {
 /* ----------- FIXED HEADER ----------- */
 header {
     width: 100%;
-    // background-color: var(--background-color);
-    text-align: right;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0; right: 0;
     z-index: 100;
-    // box-shadow: 0px 0px 5px 1px var(--shadow-color);
+    display: flex;
+    padding: 3.5%;
+    justify-content: flex-end;
     transition: 0.5s all ease;
 
     /* ----- List menu ----- */
@@ -238,10 +238,6 @@ header {
         list-style-type: none;
         display: flex;
         justify-content: flex-end;
-        padding: 17px;
-        max-width: 1500px;
-        margin: auto;
-        position: relative;
 
         // logo
         img {
@@ -252,24 +248,19 @@ header {
             left: 5%;
             top: 0;
             animation: logo-load 1s ease-out 0s forwards;
-
-            &:hover {
-                cursor: pointer;
-            }
         }
 
         &--text > a, &--text {
-            font-weight: 700;
-            text-decoration: none;
             font-size: 1.5rem;
-            font-weight: medium;
+            font-weight: 700;
             letter-spacing: 2px;
-            color: var(--font-color);
             text-transform: uppercase;
-            margin: 0 20px;
+            color: var(--font-color);
+            margin: 0 50px;
+            cursor: pointer;
+
             &:hover {
                 color: var(--pink-pure);
-                cursor: pointer;
                 transition: 0.3s;
             }
         }
@@ -282,16 +273,17 @@ header {
 }
 
 /* ----------- PROGRESS BAR ----------- */
-// #progress{
-// 	@include gradient-background;
-// 	height: 6px;
-// 	position: fixed;
-// 	top: 61.5px;
-// 	left: 0;
-//     z-index: 50;
-//     animation: progress-bar-load 2s ease 0s forwards;
-//     box-shadow: 0.5px 0.5px 2.5px 1px var(--shadow-color);
-// }
+#progress{
+    width: 4px;
+    height: 0px;
+    max-height: 100vh;
+	position: fixed;
+	top: 0;
+    right: 0;
+    background-color: var(--font-dark);
+    background-color: var(--orange-pure);
+    z-index: 50;
+}
 
 /* ----------- ARROW MOVE TO TOP ----------- */
 #arrow-up {
@@ -413,7 +405,7 @@ header {
             }
             // button redirect web CV
             a {
-                width: 230px;
+                width: 260px;
                 text-transform: uppercase;
                 font-size: 1.4rem;
                 font-weight: 700;
@@ -421,7 +413,7 @@ header {
                 line-height: 3.2rem;
                 display: block;
                 margin-top: 45px;
-                margin-left: 10px;
+                margin-left: 22.5px;
                 animation: slideDownIn 0.5s ease-out 0.4s forwards;
 
                 // circle derocation button animation
@@ -429,7 +421,7 @@ header {
                     content: "";
                     position: absolute;
                     top: -37.5%;
-                    left: -20px;
+                    left: -22.5px;
                     width: 55px;
                     height: 55px;
                     border-radius: 55px;
@@ -439,7 +431,7 @@ header {
                 }
 
                 &:hover::before {
-                    width: 250px;
+                    width: 285px;
                     transition: 0.4s;
                 }
             }
@@ -876,6 +868,7 @@ header {
         &--input, &--textarea {
             width: 525px;
             font-size: 1.6rem;
+            font-weight: 500;
             padding: 22.5px 20px;
             background-color: var(--light-grey);
             color: var(--font-dark);
@@ -962,9 +955,10 @@ footer {
             text-align: left;
             width: 45%;
             font-size: 1.6rem;
-            color: var(--font-color);
-
+            color: var(--material-grey);
+        
             h1 {
+                color: var(--font-light);
                 text-transform: uppercase;
                 font-size: 1.5rem;
                 letter-spacing: 2px;
@@ -975,7 +969,14 @@ footer {
             span {
                 // animation: slideDownIn 0.5s ease-out 0.05s forwards;
                 display: block;
-                margin-top: 15px;
+                margin-top: 20px;
+                color: var(--material-grey);
+                transition: 0.4s all ease;
+
+                &:hover {
+                    color: var(--font-light);
+                    transition: 0.4s all ease;
+                }
             }
         }
 
@@ -983,13 +984,15 @@ footer {
         &__contact {
             // icon contact
             i {
-                color: var(--light-grey);
+                color: var(--material-grey);
                 font-size: 2.5rem;
-                margin-top: 35px;
+                margin-top: 45px;
                 margin-right: 25px;
                 transition: 0.5s all ease;
                 &:hover {
                     @include jumpAnimation(-5px);
+                    color: var(--font-light);
+                    transition: 0.5s all ease;
                 }
             }
         }

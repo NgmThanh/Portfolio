@@ -46,6 +46,7 @@
   --font-light: #fff;
   --material-color: #272628;
   --material-lighter: #323135;
+  --material-grey: #9C9C9C;
   --orange-pure: #F84525;
   --shadow-dark: #000000;
   --shadow-light: #cecece;
@@ -288,11 +289,18 @@ body {
 /* ----------- FIXED HEADER ----------- */
 header {
   width: 100%;
-  text-align: right;
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
   z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 3.5%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
   /* ----- List menu ----- */
@@ -307,10 +315,6 @@ header .menu {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 17px;
-  max-width: 1500px;
-  margin: auto;
-  position: relative;
 }
 
 header .menu img {
@@ -324,24 +328,18 @@ header .menu img {
           animation: logo-load 1s ease-out 0s forwards;
 }
 
-header .menu img:hover {
-  cursor: pointer;
-}
-
 header .menu--text > a, header .menu--text {
-  font-weight: 700;
-  text-decoration: none;
   font-size: 1.5rem;
-  font-weight: medium;
+  font-weight: 700;
   letter-spacing: 2px;
-  color: var(--font-color);
   text-transform: uppercase;
-  margin: 0 20px;
+  color: var(--font-color);
+  margin: 0 50px;
+  cursor: pointer;
 }
 
 header .menu--text > a:hover, header .menu--text:hover {
   color: var(--pink-pure);
-  cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -351,6 +349,18 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 }
 
 /* ----------- PROGRESS BAR ----------- */
+#progress {
+  width: 4px;
+  height: 0px;
+  max-height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var(--font-dark);
+  background-color: var(--orange-pure);
+  z-index: 50;
+}
+
 /* ----------- ARROW MOVE TO TOP ----------- */
 #arrow-up {
   position: fixed;
@@ -484,7 +494,7 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 }
 
 .about-page .about-section .description a {
-  width: 230px;
+  width: 260px;
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 700;
@@ -492,7 +502,7 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   line-height: 3.2rem;
   display: block;
   margin-top: 45px;
-  margin-left: 10px;
+  margin-left: 22.5px;
   -webkit-animation: slideDownIn 0.5s ease-out 0.4s forwards;
           animation: slideDownIn 0.5s ease-out 0.4s forwards;
 }
@@ -501,7 +511,7 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   content: "";
   position: absolute;
   top: -37.5%;
-  left: -20px;
+  left: -22.5px;
   width: 55px;
   height: 55px;
   border-radius: 55px;
@@ -512,7 +522,7 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 }
 
 .about-page .about-section .description a:hover::before {
-  width: 250px;
+  width: 285px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -977,6 +987,7 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 .contact-page .contact__field--input, .contact-page .contact__field--textarea {
   width: 525px;
   font-size: 1.6rem;
+  font-weight: 500;
   padding: 22.5px 20px;
   background-color: var(--light-grey);
   color: var(--font-dark);
@@ -1071,10 +1082,11 @@ footer .footer-section__contact, footer .footer-section__informations {
   text-align: left;
   width: 45%;
   font-size: 1.6rem;
-  color: var(--font-color);
+  color: var(--material-grey);
 }
 
 footer .footer-section__contact h1, footer .footer-section__informations h1 {
+  color: var(--font-light);
   text-transform: uppercase;
   font-size: 1.5rem;
   letter-spacing: 2px;
@@ -1084,13 +1096,22 @@ footer .footer-section__contact h1, footer .footer-section__informations h1 {
 
 footer .footer-section__contact span, footer .footer-section__informations span {
   display: block;
-  margin-top: 15px;
+  margin-top: 20px;
+  color: var(--material-grey);
+  -webkit-transition: 0.4s all ease;
+  transition: 0.4s all ease;
+}
+
+footer .footer-section__contact span:hover, footer .footer-section__informations span:hover {
+  color: var(--font-light);
+  -webkit-transition: 0.4s all ease;
+  transition: 0.4s all ease;
 }
 
 footer .footer-section__contact i {
-  color: var(--light-grey);
+  color: var(--material-grey);
   font-size: 2.5rem;
-  margin-top: 35px;
+  margin-top: 45px;
   margin-right: 25px;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
@@ -1101,6 +1122,9 @@ footer .footer-section__contact i:hover {
           transform: translateY(-5px);
   -webkit-transition: 0.4s all ease;
   transition: 0.4s all ease;
+  color: var(--font-light);
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
 }
 
 /* =============== MEDIA QUERIES =============== */
