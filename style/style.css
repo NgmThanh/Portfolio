@@ -123,17 +123,25 @@
   }
 }
 
-@-webkit-keyframes top-appear {
+@-webkit-keyframes work-appear {
   from {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+    -webkit-transform: scale(0.85) translate(0, -100%);
+            transform: scale(0.85) translate(0, -100%);
+  }
+  to {
+    -webkit-transform: scale(1) translate(0, 0);
+            transform: scale(1) translate(0, 0);
   }
 }
 
-@keyframes top-appear {
+@keyframes work-appear {
   from {
-    -webkit-transform: translateY(-100%);
-            transform: translateY(-100%);
+    -webkit-transform: scale(0.85) translate(0, -100%);
+            transform: scale(0.85) translate(0, -100%);
+  }
+  to {
+    -webkit-transform: scale(1) translate(0, 0);
+            transform: scale(1) translate(0, 0);
   }
 }
 
@@ -399,6 +407,7 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  overflow-x: hidden;
 }
 
 .about-page .skills-section, .about-page .works-section, .about-page .contact-section, .about-page .footer-section, .skills-page .skills-section, .skills-page .works-section, .skills-page .contact-section, .skills-page .footer-section, .works-page .skills-section, .works-page .works-section, .works-page .contact-section, .works-page .footer-section, .contact-page .skills-section, .contact-page .works-section, .contact-page .contact-section, .contact-page .footer-section, footer .skills-section, footer .works-section, footer .contact-section, footer .footer-section {
@@ -610,15 +619,17 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
   /* ----- work box ----- */
 }
 
 .timeline__box {
-  margin: 2.5% 0;
-  width: 325px;
-  height: 325px;
+  margin: 5% 0;
+  width: 45%;
+  padding: 17.5% 0 17.5%;
   background-color: var(--material-color);
   border: none;
   border-radius: 5px;
@@ -678,69 +689,69 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 }
 
 .timeline .modal-window .work-window {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  /* center box */
+  margin: auto;
   background-color: var(--background-color);
   margin: auto auto;
-  width: 60%;
-  max-height: 85%;
+  width: 75%;
+  max-height: 95%;
   text-align: left;
-  -webkit-animation: top-appear 0.4s ease-out 0s alternate;
-          animation: top-appear 0.4s ease-out 0s alternate;
+  -webkit-animation: work-appear 0.4s ease-out 0s;
+          animation: work-appear 0.4s ease-out 0s;
   overflow-y: auto;
 }
 
 .timeline .modal-window .work-window__header {
-  padding: 30px 40px 10px;
+  padding: 50px 50px 0;
 }
 
 .timeline .modal-window .work-window__header--title {
-  font-size: 4.0rem;
-  font-weight: 500;
-  color: var(--orange-pure);
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--font-light);
   -webkit-animation: none;
           animation: none;
 }
 
 .timeline .modal-window .work-window__header--subtitle {
-  font-size: 3rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: var(--orange-pure);
   text-shadow: none;
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
   display: block;
-  margin-top: 0px;
-  margin-bottom: 10px;
+  margin: 10px 0 15px;
   -webkit-animation: none;
           animation: none;
 }
 
 .timeline .modal-window .work-window__header--language {
-  font-size: 1.6rem;
-  color: var(--pink-pure);
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.3rem;
   font-weight: 600;
+  color: var(--font-light);
+  background-color: var(--material-lighter);
+  border-radius: 4px;
+  padding: 5px 8px;
+  margin-top: 3px;
+  margin-right: 5px;
 }
 
 .timeline .modal-window .work-window__header--date {
-  font-size: 2.0rem;
-  position: absolute;
-  right: 40px;
-  top: 50px;
+  font-size: 1.8rem;
+  float: right;
+  margin-top: 25px;
 }
 
 .timeline .modal-window .work-window__body {
-  margin: 0 40px 40px;
+  padding: 0 50px 50px;
   /* Slideshow container */
   /* The dots/bullets/indicators */
 }
 
 .timeline .modal-window .work-window__body--description {
   font-size: 1.5rem;
-  text-align: justify;
+  line-height: 2.25rem;
+  letter-spacing: 0.5px;
   display: block;
   margin-top: 25px;
 }
@@ -748,7 +759,7 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 .timeline .modal-window .work-window__body .slideshow-container {
   max-width: 100%;
   position: relative;
-  margin: 35px auto 20px;
+  margin: 50px auto 20px;
   text-align: center;
   /* Hide the images by default */
   /* Next & previous buttons */
@@ -763,32 +774,26 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 }
 
 .timeline .modal-window .work-window__body .slideshow-container .slide--number, .timeline .modal-window .work-window__body .slideshow-container .slide--text, .timeline .modal-window .work-window__body .slideshow-container .slide1--number, .timeline .modal-window .work-window__body .slideshow-container .slide1--text, .timeline .modal-window .work-window__body .slideshow-container .slide2--number, .timeline .modal-window .work-window__body .slideshow-container .slide2--text, .timeline .modal-window .work-window__body .slideshow-container .slide3--number, .timeline .modal-window .work-window__body .slideshow-container .slide3--text, .timeline .modal-window .work-window__body .slideshow-container .slide4--number, .timeline .modal-window .work-window__body .slideshow-container .slide4--text, .timeline .modal-window .work-window__body .slideshow-container .slide5--number, .timeline .modal-window .work-window__body .slideshow-container .slide5--text {
-  font-weight: 600;
-  padding: 8px 0px;
+  font-size: 1.5rem;
+  letter-spacing: 0.8px;
+  padding: 20px 0px;
   position: absolute;
   top: 101%;
-  background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .timeline .modal-window .work-window__body .slideshow-container .slide--number, .timeline .modal-window .work-window__body .slideshow-container .slide1--number, .timeline .modal-window .work-window__body .slideshow-container .slide2--number, .timeline .modal-window .work-window__body .slideshow-container .slide3--number, .timeline .modal-window .work-window__body .slideshow-container .slide4--number, .timeline .modal-window .work-window__body .slideshow-container .slide5--number {
-  font-size: 1.7rem;
   left: 0;
 }
 
 .timeline .modal-window .work-window__body .slideshow-container .slide--text, .timeline .modal-window .work-window__body .slideshow-container .slide1--text, .timeline .modal-window .work-window__body .slideshow-container .slide2--text, .timeline .modal-window .work-window__body .slideshow-container .slide3--text, .timeline .modal-window .work-window__body .slideshow-container .slide4--text, .timeline .modal-window .work-window__body .slideshow-container .slide5--text {
-  font-size: 1.8rem;
   right: 0;
-  text-align: center;
 }
 
 .timeline .modal-window .work-window__body .slideshow-container .slide img, .timeline .modal-window .work-window__body .slideshow-container .slide1 img, .timeline .modal-window .work-window__body .slideshow-container .slide2 img, .timeline .modal-window .work-window__body .slideshow-container .slide3 img, .timeline .modal-window .work-window__body .slideshow-container .slide4 img, .timeline .modal-window .work-window__body .slideshow-container .slide5 img {
   max-width: 90%;
   margin: auto;
-  -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-color);
-          box-shadow: 0px 0px 5px 1px var(--shadow-color);
+  -webkit-box-shadow: 0px 0px 5px 2px var(--shadow-color);
+          box-shadow: 0px 0px 5px 2px var(--shadow-color);
 }
 
 .timeline .modal-window .work-window__body .slideshow-container .prev, .timeline .modal-window .work-window__body .slideshow-container .next {
@@ -829,9 +834,9 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 
 .timeline .modal-window .work-window__body .dot {
   cursor: pointer;
-  height: 12.5px;
-  width: 12.5px;
-  margin: 0 2.5px;
+  height: 10px;
+  width: 10px;
+  margin: 15px 2.5px 0;
   background: var(--font-color);
   border-radius: 50%;
   display: inline-block;

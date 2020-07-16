@@ -35,7 +35,7 @@ document.querySelectorAll('.timeline__box').forEach(btnWork => {
         var modal = document.getElementById("myModal" + number);
 
         // When the user clicks the button, open the modal 
-        modal.style.display = "block";
+        modal.style.display = "flex";
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
