@@ -2,25 +2,21 @@
 
 /* ----- DESKTOP MENU ----- */
 
-// html collection of class "menu--text"
-var classMenu = document.getElementsByClassName('menu--text');
-var arrayMenu = new Array();
-
-// array menu items (except dark mode button)
-for(var i = 0; i < classMenu.length-1; i++){
-    arrayMenu.push(classMenu[i]);
-}
+// select all elemens of menu
+var menu = document.querySelectorAll('.menu--text');
 
 // set event listener in all menu buttons
-document.querySelectorAll('.menu--text').forEach(itemMenu => {
-    
-    itemMenu.addEventListener('click', () => {
-        arrayMenu.forEach(element => {
-            element.style.color = "";
-        });
-        itemMenu.style.color = "#FF5711";
-    });
+menu.forEach(element => {
+    element.addEventListener('click', () => {
+        // reset colors of menu contents
+        menu.forEach(otherElems => {
+            otherElems.style.color = "";
+        })
+        // repaint the selected menu content
+        element.style.color = "var(--orange-pure)";
+    })
 });
+
 
 /* ----- MOBILE MENU ----- */
 
@@ -43,8 +39,8 @@ function changeMobile(menu) {
 var classMenuMobile = document.getElementsByClassName('menu-display--text');
 var arrayMenuMobile = new Array();
 
-// array menu items (except dark mode button)
-for(var i = 0; i < classMenuMobile.length-1; i++){
+// array menu items
+for(var i = 0; i < classMenuMobile.length; i++){
     arrayMenuMobile.push(classMenuMobile[i]);
 }
 

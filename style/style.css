@@ -233,7 +233,6 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
   display: none;
 }
 
@@ -295,64 +294,48 @@ body {
 }
 
 /* ----------- FIXED HEADER ----------- */
-header {
-  width: 100%;
+/* ----- List menu ----- */
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 7.5%;
+  right: 3.5%;
   z-index: 100;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 3.5%;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-  /* ----- List menu ----- */
-  /* hamburger icon and mobile menu not displayed */
 }
 
-header .menu {
-  list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-header .menu img {
-  display: none;
-  position: absolute;
-  width: 75px;
-  margin-top: 16px;
-  left: 5%;
-  top: 0;
-  -webkit-animation: logo-load 1s ease-out 0s forwards;
-          animation: logo-load 1s ease-out 0s forwards;
-}
-
-header .menu--text > a, header .menu--text {
+.menu .menu--text {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--font-color);
-  margin: 0 50px;
+  margin-right: 50px;
   cursor: pointer;
 }
 
-header .menu--text > a:hover, header .menu--text:hover {
-  color: var(--pink-pure);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+.menu .menu--text::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  margin-top: 4px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  background-color: var(--orange-pure);
+  background-color: var(--font-light);
 }
 
-header .hamburger-icon, header .mobile-menu, header .logo-mobile {
+.menu .menu--text:hover::after {
+  width: 100%;
+  height: 1px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+/* hamburger icon and mobile menu not displayed */
+.hamburger-icon, .mobile-menu, .logo-mobile {
   display: none;
 }
 
@@ -439,6 +422,7 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
   font-weight: 900;
   font-size: 50rem;
   color: var(--material-color);
+  z-index: 0;
 }
 
 .about-page::before {
@@ -454,7 +438,6 @@ header .hamburger-icon, header .mobile-menu, header .logo-mobile {
 }
 
 .about-page .about-section {
-  z-index: 1;
   /* ----- name area ----- */
   /* ----- presentation area ----- */
   /* ----- description area ----- */
