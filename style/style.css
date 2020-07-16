@@ -413,37 +413,14 @@ body {
 }
 
 /* ----------- ABOUT PAGE ----------- */
-.about-page::before, .about-page::after {
-  position: absolute;
-  left: 55%;
-  top: 50%;
-  display: block;
-  font-family: 'Roboto';
-  font-weight: 900;
-  font-size: 50rem;
-  color: var(--material-color);
-  z-index: 0;
-}
-
-.about-page::before {
-  content: "M";
-  -webkit-transform: translate(0, -90%);
-          transform: translate(0, -90%);
-}
-
-.about-page::after {
-  content: "T";
-  -webkit-transform: translate(20%, -10%);
-          transform: translate(20%, -10%);
-}
-
-.about-page .about-section {
+.about-section {
+  overflow: hidden;
   /* ----- name area ----- */
   /* ----- presentation area ----- */
   /* ----- description area ----- */
 }
 
-.about-page .about-section::before {
+.about-section::before {
   content: "";
   position: absolute;
   left: 41%;
@@ -453,10 +430,32 @@ body {
   border-radius: 50%;
   display: block;
   border: 3px solid var(--material-color);
-  z-index: 0;
+  display: none;
 }
 
-.about-page .about-section .title-name {
+.about-section .m-decoration, .about-section .t-decoration {
+  position: absolute;
+  left: 55%;
+  top: 50%;
+  display: block;
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 50rem;
+  color: var(--material-color);
+  display: none;
+}
+
+.about-section .m-decoration {
+  -webkit-transform: translate(0, -90%);
+          transform: translate(0, -90%);
+}
+
+.about-section .t-decoration {
+  -webkit-transform: translate(20%, -10%);
+          transform: translate(20%, -10%);
+}
+
+.about-section .title-name {
   font-size: 1.8rem;
   font-weight: 600;
   letter-spacing: 5px;
@@ -465,27 +464,27 @@ body {
   margin-bottom: 50px;
 }
 
-.about-page .about-section .presentation h1 {
+.about-section .presentation h1 {
   font-size: 7.2rem;
   line-height: 9rem;
   -webkit-animation: slideDownIn 0.5s ease-out 0s forwards;
           animation: slideDownIn 0.5s ease-out 0s forwards;
 }
 
-.about-page .about-section .description {
+.about-section .description {
   margin-top: 50px;
   max-width: 50%;
   position: relative;
 }
 
-.about-page .about-section .description p {
+.about-section .description p {
   font-size: 2rem;
   line-height: 3.2rem;
   -webkit-animation: slideDownIn 0.5s ease-out 0.2s forwards;
           animation: slideDownIn 0.5s ease-out 0.2s forwards;
 }
 
-.about-page .about-section .description a {
+.about-section .description a {
   width: 260px;
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -499,7 +498,7 @@ body {
           animation: slideDownIn 0.5s ease-out 0.4s forwards;
 }
 
-.about-page .about-section .description a::before {
+.about-section .description a::before {
   content: "";
   position: absolute;
   top: -37.5%;
@@ -513,7 +512,7 @@ body {
   transition: 0.4s;
 }
 
-.about-page .about-section .description a:hover::before {
+.about-section .description a:hover::before {
   width: 285px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -535,10 +534,24 @@ body {
           justify-content: space-between;
 }
 
+@media all and (max-width: 650px) {
+  .skills-box {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .skills-box .skill {
   width: 45%;
   margin-bottom: 45px;
   padding: 0px;
+}
+
+@media all and (max-width: 650px) {
+  .skills-box .skill {
+    width: 100%;
+  }
 }
 
 .skills-box .skill h2 {
@@ -1060,7 +1073,6 @@ footer .footer-section {
       -ms-flex-pack: justify;
           justify-content: space-between;
   /* ----- contact area ----- */
-  /* ----- informations area ----- */
 }
 
 footer .footer-section__contact, footer .footer-section__informations {
@@ -1114,222 +1126,76 @@ footer .footer-section__contact i:hover {
 }
 
 /* =============== MEDIA QUERIES =============== */
-@media all and (min-width: 768px) and (max-width: 1280px) {
-  .about-page {
-    padding-top: 100px;
+@media all and (max-width: 1280px) {
+  .about-section .presentation h1 {
+    font-size: 6rem;
+    line-height: 8rem;
   }
-  .about-page .presentation h1 {
-    font-size: 6.8rem;
+  .about-section .description p {
+    font-size: 1.85rem;
   }
-  .about-page .presentation h2 {
-    font-size: 4.8rem;
-  }
-  .about-page .description {
-    margin-top: 25px;
-  }
-  .about-page .description--text {
-    font-size: 2rem;
-    line-height: 3rem;
+  .skills-page, .works-page, .contact-page {
+    padding-top: 150px;
+    padding-bottom: 150px;
   }
 }
 
 @media all and (max-width: 767px) {
-  header {
-    height: 55px;
-    /* ----- List menu ----- */
-    /* animation hamburger icon on click */
-    /* ----- mobile logo ----- */
-    /* ----- mobile menu ----- */
+  .about-section .title-name {
+    margin-bottom: 25px;
   }
-  header .menu {
-    display: none;
+  .about-section .presentation h1 {
+    font-size: 4rem;
+    line-height: 6rem;
   }
-  header .hamburger-icon {
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    left: 5%;
-    display: block;
+  .about-section .description {
+    margin-top: 15px;
+    max-width: 85%;
   }
-  header .hamburger-icon .bar1, header .hamburger-icon .bar2, header .hamburger-icon .bar3 {
-    width: 30px;
-    height: 3px;
-    background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
-    margin-top: 7px;
-    border-radius: 2px;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-color);
-            box-shadow: 0px 0px 5px 1px var(--shadow-color);
+  .about-section .description p {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
-  header .change .bar1 {
-    -webkit-transform: rotate(45deg) translate(7px, 7px);
-    transform: rotate(45deg) translate(7px, 7px);
-  }
-  header .change .bar2 {
-    opacity: 0;
-  }
-  header .change .bar3 {
-    -webkit-transform: rotate(-45deg) translate(7px, -7px);
-    transform: rotate(-45deg) translate(7px, -7px);
-  }
-  header .logo-mobile {
-    position: absolute;
-    top: 15px;
-    right: 5%;
-    width: 70px;
-    display: block;
-    -webkit-animation: logo-mobile-load 1s ease-out 0s forwards;
-            animation: logo-mobile-load 1s ease-out 0s forwards;
-  }
-  header .mobile-menu {
-    display: none;
-    position: fixed;
-    top: 55px;
-    left: 0;
-    right: 0;
-    text-align: left;
-    -webkit-animation: slide-left-in 0.3s linear 0s forwards;
-            animation: slide-left-in 0.3s linear 0s forwards;
-    -webkit-box-shadow: 0px 2.5px 2.5px 0.5px var(--shadow-color);
-            box-shadow: 0px 2.5px 2.5px 0.5px var(--shadow-color);
-  }
-  header .mobile-menu .menu-display {
-    background: var(--material-color);
-    list-style-type: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  header .mobile-menu .menu-display--text {
-    width: 100%;
-    padding: 16px 0;
-    font-size: 2rem;
-    text-decoration: none;
-    color: var(--font-color);
-    margin-left: 25px;
-  }
-  #progress {
-    height: 5.5px;
-    top: 55px;
-  }
-  .about-page, .skills-page, .works-page, .contact-page {
-    padding: 50px 5% 45px;
-  }
-  .about-page {
+  .skills-page, .works-page, .contact-page {
     padding-top: 100px;
+    padding-bottom: 100px;
   }
-  .works-page h2 {
-    margin-bottom: 35px;
+  .skills-page h1, .works-page h1, .contact-page h1 {
+    font-size: 3.5rem;
   }
-  .about-page .presentation h1 {
-    font-size: 6.5rem;
-  }
-  .about-page .presentation h2 {
-    font-size: 4.5rem;
-  }
-  .about-page .description {
-    margin-top: 25px;
-  }
-  .about-page .description--text {
-    font-size: 1.9rem;
-    line-height: 3rem;
-  }
-  .about-page .description img {
-    margin-top: 50px;
-  }
-  .contact-page .contact__field {
-    padding: 20px;
-    margin-top: 25px;
-    width: auto;
-    max-width: 360px;
-  }
-  .contact-page .contact__field--input, .contact-page .contact__field--textarea {
-    width: 100%;
-    font-size: 1.8rem;
-    padding: 7.5px;
-  }
-  .contact-page .contact__field--textarea {
-    height: 175px;
-  }
-  .contact-page .contact__field [type="submit"] {
-    font-size: 1.8rem;
-  }
-  footer {
-    padding: 10% 5% 10%;
-  }
-  footer h1 {
-    font-size: 2.85rem;
-  }
-  footer .field-footer__contact, footer .field-footer__informations {
+  .skills-page h2, .works-page h2, .contact-page h2 {
     font-size: 1.7rem;
-    min-width: 100%;
   }
-  footer .field-footer__contact img {
-    width: 35px;
-    margin: 25px 20px 25px 0;
+  .skills-box .skill__progress-bar {
+    height: 20px;
   }
-  footer .field-footer__informations img {
-    width: 17.5px;
-    margin-top: 5px;
+  .skills-box .skill__progress-bar .skill-bar {
+    height: 20px;
   }
 }
 
 @media all and (max-width: 500px) {
-  .about-page, .skills-page, .works-page, .contact-page {
-    padding: 50px 5% 25px;
+  .about-page, .skills-page, .works-page, .contact-page, footer {
+    padding: 5%;
   }
-  .about-page {
-    padding-top: 75px;
+  .about-section {
+    padding: 0;
   }
-  .works-page h2, .skills-page h2 {
-    margin-bottom: 35px;
+  .about-section .title-name {
+    font-size: 1.4rem;
   }
-  .about-page .presentation h1 {
-    font-size: 5.0rem;
+  .about-section .presentation h1 {
+    font-size: 3rem;
+    line-height: 5rem;
   }
-  .about-page .presentation h2 {
-    font-size: 3.5rem;
+  .skills-page, .works-page, .contact-page {
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
-  .about-page .description {
-    margin-top: 25px;
+  .skills-page h1, .works-page h1, .contact-page h1 {
+    font-size: 3rem;
   }
-  .about-page .description--text {
-    font-size: 1.75rem;
-    line-height: 2.5rem;
-  }
-  .about-page .description img {
-    margin-top: 25px;
-  }
-  .skills-page h2 {
-    display: block;
-    margin-bottom: 0px;
-  }
-  .contact-page .contact__field {
-    width: auto;
-    max-width: 300px;
-  }
-  .contact-page .contact__field--input, .contact-page .contact__field--textarea {
-    font-size: 1.5rem;
-    border: 1px solid var(--border-color);
-  }
-  .contact-page .contact__field--input:focus, .contact-page .contact__field--textarea:focus {
-    outline: none !important;
-    border: 1px solid var(--pink-pure);
-  }
-  .contact-page .contact__field [type="submit"] {
-    font-size: 1.6rem;
-    padding: 10px;
-    width: 180px;
-  }
-  footer h1 {
-    font-size: 2.5rem;
-  }
-  footer .field-footer__contact, footer .field-footer__informations {
+  .skills-page h2, .works-page h2, .contact-page h2 {
     font-size: 1.5rem;
   }
 }

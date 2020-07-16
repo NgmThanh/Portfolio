@@ -232,16 +232,7 @@ body {
     position: fixed;
     top: 7.5%; right: 3.5%;
     z-index: 100;
-    // logo (to add)
-    // img {
-    //     display: none;
-    //     position: absolute;
-    //     width: 75px;
-    //     margin-top: 16px;
-    //     left: 5%;
-    //     top: 0;
-    //     animation: logo-load 1s ease-out 0s forwards;
-    // }
+
     .menu--text {
         font-size: 1.5rem;
         font-weight: 700;
@@ -332,9 +323,25 @@ body {
 }
 
 /* ----------- ABOUT PAGE ----------- */
-.about-page {
 
-    &::before, &::after {
+.about-section {
+    overflow: hidden;
+
+    // big circle decoration in background
+    &::before {
+        content: "";
+        position: absolute;
+        left: 41%;
+        top: -20%;
+        width: 1000px;
+        height: 1000px;
+        border-radius: 50%;
+        display: block;
+        border: 3px solid var(--material-color);
+        display: none;
+    }
+
+    .m-decoration, .t-decoration {
         position: absolute;
         left: 55%;
         top: 50%;
@@ -343,97 +350,78 @@ body {
         font-weight: 900;
         font-size: 50rem;
         color: var(--material-color);
-        z-index: 0;
+        display: none;
     }
 
     // M word background
-    &::before {
-        content: "M";
+    .m-decoration {
         transform: translate(0, -90%);
     }
 
     // T word background
-    &::after {
-        content: "T";
+    .t-decoration {
         transform: translate(20%, -10%);
     }
 
-    .about-section {
+    /* ----- name area ----- */
+    .title-name {
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 5px;
+        color: var(--orange-pure);
+        text-transform: uppercase;
+        margin-bottom: 50px;
+    }
 
-        // big circle decoration in background
-        &::before {
-            content: "";
-            position: absolute;
-            left: 41%;
-            top: -20%;
-            width: 1000px;
-            height: 1000px;
-            border-radius: 50%;
-            display: block;
-            border: 3px solid var(--material-color);
-            z-index: 0;
+    /* ----- presentation area ----- */
+    .presentation {
+        h1 {
+            font-size: 7.2rem;
+            line-height: 9rem;
+            animation: slideDownIn 0.5s ease-out 0s forwards;
         }
+    }
 
-        /* ----- name area ----- */
-        .title-name {
-            font-size: 1.8rem;
-            font-weight: 600;
-            letter-spacing: 5px;
-            color: var(--orange-pure);
+    /* ----- description area ----- */
+    .description {
+        margin-top: 50px;
+        max-width: 50%;
+        position: relative;
+        p {
+            font-size: 2rem;
+            line-height: 3.2rem;
+            animation: slideDownIn 0.5s ease-out 0.2s forwards;
+        }
+        // button redirect web CV
+        a {
+            width: 260px;
             text-transform: uppercase;
-            margin-bottom: 50px;
-        }
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            line-height: 3.2rem;
+            display: block;
+            margin-top: 45px;
+            margin-left: 22.5px;
+            animation: slideDownIn 0.5s ease-out 0.4s forwards;
 
-        /* ----- presentation area ----- */
-        .presentation {
-            h1 {
-                font-size: 7.2rem;
-                line-height: 9rem;
-                animation: slideDownIn 0.5s ease-out 0s forwards;
+            // circle derocation button animation
+            &::before {
+                content: "";
+                position: absolute;
+                top: -37.5%;
+                left: -22.5px;
+                width: 55px;
+                height: 55px;
+                border-radius: 55px;
+                background-color: var(--material-lighter);
+                z-index: -1;
+                transition: 0.4s;
             }
-        }
 
-        /* ----- description area ----- */
-        .description {
-            margin-top: 50px;
-            max-width: 50%;
-            position: relative;
-            p {
-                font-size: 2rem;
-                line-height: 3.2rem;
-                animation: slideDownIn 0.5s ease-out 0.2s forwards;
-            }
-            // button redirect web CV
-            a {
-                width: 260px;
-                text-transform: uppercase;
-                font-size: 1.4rem;
-                font-weight: 700;
-                letter-spacing: 2px;
-                line-height: 3.2rem;
-                display: block;
-                margin-top: 45px;
-                margin-left: 22.5px;
-                animation: slideDownIn 0.5s ease-out 0.4s forwards;
-
-                // circle derocation button animation
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: -37.5%;
-                    left: -22.5px;
-                    width: 55px;
-                    height: 55px;
-                    border-radius: 55px;
-                    background-color: var(--material-lighter);
-                    z-index: -1;
-                    transition: 0.4s;
-                }
-
-                &:hover::before {
-                    width: 285px;
-                    transition: 0.4s;
-                }
+            &:hover::before {
+                width: 285px;
+                transition: 0.4s;
             }
         }
     }
@@ -448,8 +436,15 @@ body {
     align-items: center;
     justify-content: space-between;
 
+    @media all and (max-width: 650px) {
+        justify-content: center;
+    }
+
     // box skill with progress bar
     .skill {
+        @media all and (max-width: 650px) {
+            width: 100%;
+        }
         width: 45%;
         margin-bottom: 45px;
         padding: 0px;
@@ -991,203 +986,140 @@ footer {
                 }
             }
         }
-
-        /* ----- informations area ----- */
-        &__informations {
-            
-        }
     }
 }
 
 /* =============== MEDIA QUERIES =============== */
 
-@media all and (min-width: 768px) and (max-width: 1280px) {
+@media all and (max-width: 1280px) {
 
-    .about-page {
-        padding-top: 100px;
-
+    .about-section {
         .presentation {
             h1 {
-                font-size: 6.8rem;
+                font-size: 6rem;
+                line-height: 8rem;
             }
-            h2 {
-                font-size: 4.8rem;
-            } 
         }
-        // block description
+
         .description {
-            margin-top: 25px;
-            &--text {
-                font-size: 2rem;
-                line-height: 3rem;
+            p {
+                font-size: 1.85rem;
             }
         }
+    }
+
+    .skills-page, .works-page, .contact-page {
+        padding-top: 150px;
+        padding-bottom: 150px;
     }
 }
 
 // tablet
 @media all and (max-width: 767px) {
     
-    header {
-        height: 55px;
-
-        /* ----- List menu ----- */
-        .menu {
-            display: none;
-        }
-
-        // hamburger icon (change on click)
-        .hamburger-icon {
-            cursor: pointer;
-            position: absolute;
-            top: 10px;
-            left: 5%;
-            display: block;
-            
-
-            .bar1, .bar2, .bar3 {
-                width: 30px;
-                height: 3px;
-                @include gradient-background;
-                margin-top: 7px;
-                border-radius: 2px;
-                transition: 0.4s;
-                box-shadow: 0px 0px 5px 1px var(--shadow-color);
-            }
-        }
-        /* animation hamburger icon on click */
-        .change .bar1 {
-            -webkit-transform: rotate(45deg) translate(7px, 7px);
-            transform: rotate(45deg) translate(7px, 7px);
-        }
+    // // hamburger icon (change on click)
+    // .hamburger-icon {
+    //     cursor: pointer;
+    //     position: absolute;
+    //     top: 10px;
+    //     left: 5%;
+    //     display: block;
         
-        .change .bar2 {opacity: 0;}
-        
-        .change .bar3 {
-            -webkit-transform: rotate(-45deg) translate(7px, -7px);
-            transform: rotate(-45deg) translate(7px, -7px);
+
+    //     .bar1, .bar2, .bar3 {
+    //         width: 30px;
+    //         height: 3px;
+    //         @include gradient-background;
+    //         margin-top: 7px;
+    //         border-radius: 2px;
+    //         transition: 0.4s;
+    //         box-shadow: 0px 0px 5px 1px var(--shadow-color);
+    //     }
+    // }
+    // /* animation hamburger icon on click */
+    // .change .bar1 {
+    //     -webkit-transform: rotate(45deg) translate(7px, 7px);
+    //     transform: rotate(45deg) translate(7px, 7px);
+    // }
+    
+    // .change .bar2 {opacity: 0;}
+    
+    // .change .bar3 {
+    //     -webkit-transform: rotate(-45deg) translate(7px, -7px);
+    //     transform: rotate(-45deg) translate(7px, -7px);
+    // }
+
+//     /* ----- mobile menu ----- */
+//     .mobile-menu {
+//         display: none;
+//         position: fixed;
+//         top: 55px;
+//         left: 0;
+//         right: 0;
+//         text-align: left;
+//         animation: slide-left-in 0.3s linear 0s forwards;
+//         box-shadow: 0px 2.5px 2.5px 0.5px var(--shadow-color);            
+
+//         .menu-display {
+//             background: var(--material-color);
+//             list-style-type: none;
+//             display: flex;
+//             flex-direction: column;
+
+//             &--text {
+//                 width: 100%;
+//                 padding: 16px 0;
+//                 font-size: 2rem;
+//                 text-decoration: none;
+//                 color: var(--font-color);
+//                 margin-left: 25px;
+//             }
+//         }
+//     }
+// }
+    .about-section {
+        .title-name {
+            margin-bottom: 25px;
         }
 
-        /* ----- mobile logo ----- */
-        .logo-mobile {
-            position: absolute;
-            top: 15px;
-            right: 5%;
-            width: 70px;
-            display: block;
-            animation: logo-mobile-load 1s ease-out 0s forwards;
-        }
-
-        /* ----- mobile menu ----- */
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 55px;
-            left: 0;
-            right: 0;
-            text-align: left;
-            animation: slide-left-in 0.3s linear 0s forwards;
-            box-shadow: 0px 2.5px 2.5px 0.5px var(--shadow-color);            
-
-            .menu-display {
-                background: var(--material-color);
-                list-style-type: none;
-                display: flex;
-                flex-direction: column;
-
-                &--text {
-                    width: 100%;
-                    padding: 16px 0;
-                    font-size: 2rem;
-                    text-decoration: none;
-                    color: var(--font-color);
-                    margin-left: 25px;
-                }
-            }
-        }
-    }
-
-    #progress {
-        height: 5.5px;
-        top: 55px;
-    }
-
-    .about-page, .skills-page, .works-page, .contact-page {
-        padding: 50px 5% 45px;
-    }
-
-    .about-page {
-        padding-top: 100px;
-    }
-
-    .works-page {
-        h2 {
-            margin-bottom: 35px;
-        }
-    }
-
-    .about-page {
         .presentation {
             h1 {
-                font-size: 6.5rem;
+                font-size: 4rem;
+                line-height: 6rem;
             }
-            h2 {
-                font-size: 4.5rem;
-            } 
         }
-        // block description
+
         .description {
-            margin-top: 25px;
-            &--text {
-                font-size: 1.9rem;
-                line-height: 3rem;
-            }
-            img {
-                margin-top: 50px;
+            margin-top: 15px;
+            max-width: 85%;
+            p {
+                font-size: 1.5rem;
+                line-height: 2rem;
             }
         }
+        
     }
 
-    .contact-page {
-        .contact__field {
-            padding: 20px;
-            margin-top: 25px;
-            width: auto;
-            max-width: 360px;
-            &--input, &--textarea {
-                width: 100%;
-                font-size: 1.8rem;
-                padding: 7.5px;
-            }
-            &--textarea {
-                height: 175px;
-            }
-            [type="submit"] {
-                font-size: 1.8rem;
-            }
-        }
-    }
-
-    footer {
-        padding: 10% 5% 10%;
+    .skills-page, .works-page, .contact-page {
         h1 {
-            font-size: 2.85rem;
+            font-size: 3.5rem;
         }
-        .field-footer {
-            &__contact, &__informations {
-                font-size: 1.7rem;
-                min-width: 100%;
-            }
-            &__contact {
-                img {
-                    width: 35px;
-                    margin: 25px 20px 25px 0;
-                }  
-            }
-            &__informations {
-                img {
-                    width: 17.5px;
-                    margin-top: 5px;
+        h2 {
+            font-size: 1.7rem;
+        }
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .skills-box {
+        // box skill with progress bar
+        .skill {
+    
+            &__progress-bar {
+                height: 20px;
+
+                .skill-bar {
+                    height: 20px;
                 }
             }
         }
@@ -1198,78 +1130,80 @@ footer {
 // mobile
 @media all and (max-width: 500px) {
 
-    .about-page, .skills-page, .works-page, .contact-page {
-        padding: 50px 5% 25px;
+    .about-page, .skills-page, .works-page, .contact-page, footer {
+        padding: 5%;
     }
 
-    .about-page {
-        padding-top: 75px;
-    }
+    .about-section {
+        padding: 0;
 
-    .works-page, .skills-page {
-        h2 {
-            margin-bottom: 35px;
+        .title-name {
+            font-size: 1.4rem;
         }
-    }
 
-    .about-page {
         .presentation {
             h1 {
-                font-size: 5.0rem;
-            }
-            h2 {
-                font-size: 3.5rem;
-            } 
-        }
-        // block description
-        .description {
-            margin-top: 25px;
-            &--text {
-                font-size: 1.75rem;
-                line-height: 2.5rem;
-            }
-            img {
-                margin-top: 25px;
+                font-size: 3rem;
+                line-height: 5rem;
             }
         }
     }
 
-    .skills-page {
-        h2 {
-            display: block;
-            margin-bottom: 0px;
-        }
-    }
-
-    .contact-page {
-        .contact__field {
-            width: auto;
-            max-width: 300px;
-            &--input, &--textarea {
-                font-size: 1.5rem;
-                border: 1px solid var(--border-color);
-
-                &:focus {
-                    outline: none !important;
-                    border: 1px solid var(--pink-pure);
-                }
-            }
-            [type="submit"] {
-                font-size: 1.6rem;
-                padding: 10px;
-                width: 180px;
-            }
-        }
-    }
-
-    footer {
+    .skills-page, .works-page, .contact-page {
         h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
         }
-        .field-footer {
-            &__contact, &__informations {
-                font-size: 1.5rem;
-            }
+        h2 {
+            font-size: 1.5rem;
         }
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
+
+    // .skills-box {
+    //     // box skill with progress bar
+    //     .skill {
+    
+    //         &__progress-bar {
+    //             height: 20px;
+
+    //             .skill-bar {
+    //                 height: 20px;
+    //             }
+    //         }
+    //     }
+    // }
+    
+
+    // .contact-page {
+    //     .contact__field {
+    //         width: auto;
+    //         max-width: 300px;
+    //         &--input, &--textarea {
+    //             font-size: 1.5rem;
+    //             border: 1px solid var(--border-color);
+
+    //             &:focus {
+    //                 outline: none !important;
+    //                 border: 1px solid var(--pink-pure);
+    //             }
+    //         }
+    //         [type="submit"] {
+    //             font-size: 1.6rem;
+    //             padding: 10px;
+    //             width: 180px;
+    //         }
+    //     }
+    // }
+
+    // footer {
+    //     h1 {
+    //         font-size: 2.5rem;
+    //     }
+    //     .field-footer {
+    //         &__contact, &__informations {
+    //             font-size: 1.5rem;
+    //         }
+    //     }
+    // }
 }
