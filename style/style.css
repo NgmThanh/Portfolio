@@ -618,14 +618,20 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: relative;
   /* ----- work box ----- */
+}
+
+@media all and (max-width: 767px) {
+  .timeline {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .timeline__box {
   margin: 5% 0;
   width: 45%;
-  padding: 17.5% 0 17.5%;
   background-color: var(--material-color);
   border: none;
   border-radius: 5px;
@@ -635,6 +641,19 @@ body {
           box-shadow: 0px 0px 5px 2px var(--shadow-dark);
   -webkit-filter: brightness(95%);
           filter: brightness(95%);
+  cursor: pointer;
+}
+
+@media all and (max-width: 767px) {
+  .timeline__box {
+    width: 100%;
+  }
+}
+
+.timeline__box::after {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
 }
 
 .timeline__box:hover {
@@ -643,22 +662,38 @@ body {
           transform: translateY(-5px);
   -webkit-transition: 0.4s all ease;
   transition: 0.4s all ease;
-  cursor: pointer;
 }
 
-.timeline__box img {
+.timeline__box--content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.timeline__box--content img {
   -webkit-filter: invert(100%);
           filter: invert(100%);
-  position: relative;
   max-height: 85px;
   max-width: 150px;
-  margin: auto;
 }
 
-.timeline__box h1 {
+.timeline__box--content h1 {
   font-size: 2.25rem;
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
   font-weight: 500;
   color: var(--font-light);
   -webkit-animation: none;
@@ -842,16 +877,6 @@ body {
 
 .timeline .modal-window .work-window__body .active, .timeline .modal-window .work-window__body .dot:hover {
   background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
-}
-
-@media all and (min-width: 768px) and (max-width: 1280px) {
-  .timeline .modal-window {
-    /* Modal Content */
-  }
-  .timeline .modal-window .work-window {
-    width: 80%;
-    max-height: 80%;
-  }
 }
 
 @media all and (min-width: 480px) and (max-width: 767px) {
@@ -1138,6 +1163,13 @@ footer .footer-section__contact i:hover {
     padding-top: 150px;
     padding-bottom: 150px;
   }
+  .timeline .modal-window {
+    /* Modal Content */
+  }
+  .timeline .modal-window .work-window {
+    width: 80%;
+    max-height: 80%;
+  }
 }
 
 @media all and (max-width: 767px) {
@@ -1154,7 +1186,7 @@ footer .footer-section__contact i:hover {
   }
   .about-section .description p {
     font-size: 1.5rem;
-    line-height: 2rem;
+    line-height: 2.2rem;
   }
   .skills-page, .works-page, .contact-page {
     padding-top: 100px;
