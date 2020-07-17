@@ -1,31 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&family=Prata&family=Roboto:wght@300&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
 @font-face {
     font-family: "Segoe UI";
-    src: url("../font/Segoe UI/segoeuisl.ttf") format("truetype");
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "Segoe UI";
-    src: url("../font/Segoe UI/segoeui.ttf") format("truetype");
     font-weight: 500;
+    src: url("../font/Segoe UI/segoeui.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Segoe UI";
-    src: url("../font/Segoe UI/seguisb.ttf") format("truetype");
     font-weight: 600;
+    src: url("../font/Segoe UI/seguisb.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Segoe UI";
-    src: url("../font/Segoe UI/segoeuib.ttf") format("truetype");
     font-weight: 700;
+    src: url("../font/Segoe UI/segoeuib.ttf") format("truetype");
 }
 
 
@@ -183,6 +173,12 @@
     display: none;
 }
 
+.disable-scroll {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
 
 /* =============== MAIN CODE =============== */
 
@@ -315,7 +311,7 @@ body {
     }
     h2 {
         font-size: 2rem;
-        font-weight: 400;
+        font-weight: 500;
         display: block;
         margin-top: 15px;
         animation: slideDownIn 0.5s ease-out 0.05s forwards;
