@@ -879,115 +879,6 @@ body {
   background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
 }
 
-@media all and (min-width: 480px) and (max-width: 767px) {
-  .timeline .modal-window {
-    /* Modal Content */
-  }
-  .timeline .modal-window .work-window {
-    width: 90%;
-  }
-  .timeline .modal-window .work-window__header {
-    padding: 30px 30px 10px;
-  }
-  .timeline .modal-window .work-window__header--title {
-    font-size: 3.2rem;
-  }
-  .timeline .modal-window .work-window__header--subtitle {
-    font-size: 2.3rem;
-  }
-  .timeline .modal-window .work-window__header--language {
-    font-size: 1.6rem;
-  }
-  .timeline .modal-window .work-window__header--date {
-    font-size: 2rem;
-    position: absolute;
-    top: 45px;
-    right: 30px;
-  }
-  .timeline .modal-window .work-window__body {
-    margin: 0 30px 40px;
-    /* Slideshow container */
-    /* The dots/bullets/indicators */
-  }
-  .timeline .modal-window .work-window__body--description {
-    font-size: 1.5rem;
-    margin-top: 15px;
-  }
-  .timeline .modal-window .work-window__body .slideshow-container {
-    margin: 30px auto 20px;
-    /* Hide the images by default */
-  }
-  .timeline .modal-window .work-window__body .slideshow-container .slide {
-    /* Number text (1/3 etc) */
-    /* Caption text */
-  }
-  .timeline .modal-window .work-window__body .slideshow-container .slide--number {
-    font-size: 1.6rem;
-  }
-  .timeline .modal-window .work-window__body .slideshow-container .slide--text {
-    font-size: 1.6rem;
-  }
-  .timeline .modal-window .work-window__body .dot {
-    height: 10px;
-    width: 10px;
-  }
-}
-
-@media all and (max-width: 479px) {
-  .timeline .modal-window {
-    /* Modal Content */
-  }
-  .timeline .modal-window .work-window {
-    width: 98%;
-    max-height: 80%;
-  }
-  .timeline .modal-window .work-window__header {
-    padding: 15px 15px 10px;
-  }
-  .timeline .modal-window .work-window__header--title {
-    font-size: 2.4rem;
-  }
-  .timeline .modal-window .work-window__header--subtitle {
-    font-size: 1.8rem;
-  }
-  .timeline .modal-window .work-window__header--language {
-    font-size: 1.5rem;
-  }
-  .timeline .modal-window .work-window__header--date {
-    font-size: 1.5rem;
-    position: absolute;
-    top: 25px;
-    right: 15px;
-  }
-  .timeline .modal-window .work-window__body {
-    margin: 0 15px 15px;
-    /* Slideshow container */
-    /* The dots/bullets/indicators */
-  }
-  .timeline .modal-window .work-window__body--description {
-    font-size: 1.3rem;
-    margin-top: 0px;
-  }
-  .timeline .modal-window .work-window__body .slideshow-container {
-    margin: 25px auto 20px;
-    /* Hide the images by default */
-  }
-  .timeline .modal-window .work-window__body .slideshow-container .slide {
-    /* Number text (1/3 etc) */
-    /* Caption text */
-  }
-  .timeline .modal-window .work-window__body .slideshow-container .slide--number {
-    font-size: 1.4rem;
-  }
-  .timeline .modal-window .work-window__body .slideshow-container .slide--text {
-    font-size: 1.4rem;
-  }
-  .timeline .modal-window .work-window__body .dot {
-    height: 7.5px;
-    width: 7.5px;
-  }
-}
-
 /* ----------- CONTACT PAGE ----------- */
 .contact-page {
   /* ----- contact box ----- */
@@ -1097,7 +988,6 @@ footer .footer-section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  /* ----- contact area ----- */
 }
 
 footer .footer-section__contact, footer .footer-section__informations {
@@ -1131,7 +1021,7 @@ footer .footer-section__contact span:hover, footer .footer-section__informations
   transition: 0.4s all ease;
 }
 
-footer .footer-section__contact i {
+footer .footer-section__contact i, footer .footer-section__informations i {
   color: var(--material-grey);
   font-size: 2.5rem;
   margin-top: 45px;
@@ -1140,7 +1030,7 @@ footer .footer-section__contact i {
   transition: 0.5s all ease;
 }
 
-footer .footer-section__contact i:hover {
+footer .footer-section__contact i:hover, footer .footer-section__informations i:hover {
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
   -webkit-transition: 0.4s all ease;
@@ -1151,7 +1041,7 @@ footer .footer-section__contact i:hover {
 }
 
 /* =============== MEDIA QUERIES =============== */
-@media all and (max-width: 1280px) {
+@media all and (max-width: 1100px) {
   .about-section .presentation h1 {
     font-size: 6rem;
     line-height: 8rem;
@@ -1159,33 +1049,58 @@ footer .footer-section__contact i:hover {
   .about-section .description p {
     font-size: 1.85rem;
   }
+  .about-section .description a {
+    margin-top: 55px;
+  }
   .skills-page, .works-page, .contact-page {
     padding-top: 150px;
     padding-bottom: 150px;
   }
-  .timeline .modal-window {
-    /* Modal Content */
-  }
+  /* Modal Content */
   .timeline .modal-window .work-window {
-    width: 80%;
+    width: 90%;
     max-height: 80%;
+  }
+  .timeline .modal-window .work-window__header {
+    padding: 45px 45px 0px;
+  }
+  .timeline .modal-window .work-window__header--title {
+    font-size: 4rem;
+  }
+  .timeline .modal-window .work-window__header--subtitle {
+    font-size: 1.5rem;
+  }
+  .timeline .modal-window .work-window__header--date {
+    font-size: 1.6rem;
+  }
+  .timeline .modal-window .work-window__body {
+    padding: 0 45px 45px;
+    /* Slideshow container */
+  }
+  .timeline .modal-window .work-window__body--description {
+    font-size: 1.5rem;
+  }
+  .timeline .modal-window .work-window__body .slideshow-container {
+    margin: 30px auto 20px;
   }
 }
 
 @media all and (max-width: 767px) {
   .about-section .title-name {
-    margin-bottom: 25px;
+    font-size: 1.5rem;
+    letter-spacing: 3.5px;
+    margin-bottom: 45px;
   }
   .about-section .presentation h1 {
     font-size: 4rem;
-    line-height: 6rem;
+    line-height: 5.5rem;
   }
   .about-section .description {
-    margin-top: 15px;
+    margin-top: 40px;
     max-width: 85%;
   }
   .about-section .description p {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 2.2rem;
   }
   .skills-page, .works-page, .contact-page {
@@ -1198,11 +1113,86 @@ footer .footer-section__contact i:hover {
   .skills-page h2, .works-page h2, .contact-page h2 {
     font-size: 1.7rem;
   }
+  .skills-box .skill h2 {
+    font-size: 1.75rem;
+  }
   .skills-box .skill__progress-bar {
     height: 20px;
   }
   .skills-box .skill__progress-bar .skill-bar {
     height: 20px;
+  }
+  /* Modal Content */
+  .timeline .modal-window .work-window {
+    width: 97.5%;
+    max-height: 80%;
+  }
+  .timeline .modal-window .work-window__header {
+    padding: 35px 35px 0px;
+  }
+  .timeline .modal-window .work-window__header--title {
+    font-size: 3.5rem;
+  }
+  .timeline .modal-window .work-window__header--date {
+    margin-top: 20px;
+  }
+  .timeline .modal-window .work-window__body {
+    padding: 0 35px 35px;
+  }
+  .timeline .modal-window .work-window__body .dot {
+    margin: 10px 2.5px 0;
+  }
+  /* ----- contact box ----- */
+  .contact-page .contact__field {
+    margin-top: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact-page .contact__field--input, .contact-page .contact__field--textarea {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 22.5px 20px;
+  }
+  .contact-page .contact__field--input:focus + .contact__field--line, .contact-page .contact__field--textarea:focus + .contact__field--line {
+    width: 100%;
+  }
+  footer {
+    min-height: 500px;
+    /* ----- footer area ----- */
+  }
+  footer .footer-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer .footer-section__contact, footer .footer-section__informations {
+    width: 100%;
+  }
+  footer .footer-section__contact h1, footer .footer-section__informations h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+  }
+  footer .footer-section__contact span, footer .footer-section__informations span {
+    margin-top: 12.5px;
+  }
+  footer .footer-section__contact i, footer .footer-section__informations i {
+    margin-top: 30px;
+  }
+  footer .footer-section__contact {
+    margin-top: 25px;
+  }
+  footer .footer-section__informations {
+    margin-top: 50px;
   }
 }
 
@@ -1229,6 +1219,41 @@ footer .footer-section__contact i:hover {
   }
   .skills-page h2, .works-page h2, .contact-page h2 {
     font-size: 1.5rem;
+  }
+  /* Modal Content */
+  .timeline .modal-window .work-window {
+    width: 99.5%;
+    max-height: 75%;
+  }
+  .timeline .modal-window .work-window__header {
+    padding: 22.5px 22.5px 0px;
+  }
+  .timeline .modal-window .work-window__header--title {
+    font-size: 3rem;
+  }
+  .timeline .modal-window .work-window__header--date {
+    margin-top: 18.5px;
+  }
+  .timeline .modal-window .work-window__body {
+    padding: 0 22.5px 22.5px;
+  }
+  /* ----- contact box ----- */
+  .contact-page .contact__field--input, .contact-page .contact__field--textarea {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 17.5px 15px;
+  }
+  .contact-page .contact__field--line {
+    margin-bottom: 10px;
+  }
+  footer {
+    /* ----- footer area ----- */
+  }
+  footer .footer-section__contact {
+    margin-top: 15px;
+  }
+  footer .footer-section__informations {
+    margin-top: 40px;
   }
 }
 /*# sourceMappingURL=style.css.map */
