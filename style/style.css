@@ -1122,6 +1122,9 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
   .skills-box .skill__progress-bar .skill-bar {
     height: 20px;
   }
+  .timeline .timeline__box--content h1 {
+    font-size: 2.1rem;
+  }
   /* Modal Content */
   .timeline .modal-window .work-window {
     width: 97.5%;
@@ -1138,6 +1141,9 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
   }
   .timeline .modal-window .work-window__body {
     padding: 0 35px 35px;
+  }
+  .timeline .modal-window .work-window__body--description {
+    letter-spacing: 0.3px;
   }
   .timeline .modal-window .work-window__body .dot {
     margin: 10px 2.5px 0;
@@ -1219,6 +1225,9 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
   }
   .skills-page h2, .works-page h2, .contact-page h2 {
     font-size: 1.5rem;
+  }
+  .timeline .timeline__box--content h1 {
+    font-size: 1.9rem;
   }
   /* Modal Content */
   .timeline .modal-window .work-window {

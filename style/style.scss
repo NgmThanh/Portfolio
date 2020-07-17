@@ -1037,6 +1037,15 @@ footer {
         }
     }
 
+    .timeline .timeline__box {
+        &--content {
+            // title work box
+            h1 {
+                font-size: 2.1rem;
+            }
+        }
+    }
+
     /* Modal Content */
     .timeline .modal-window .work-window {
         width: 97.5%;
@@ -1055,6 +1064,10 @@ footer {
 
         &__body {
             padding: 0 35px 35px;
+
+            &--description {
+                letter-spacing: 0.3px;
+            }
 
             .dot {
                 margin: 10px 2.5px 0;
@@ -1146,6 +1159,15 @@ footer {
         }
         padding-top: 50px;
         padding-bottom: 50px;
+    }
+
+    .timeline .timeline__box {
+        &--content {
+            // title work box
+            h1 {
+                font-size: 1.9rem;
+            }
+        }
     }
 
     /* Modal Content */
