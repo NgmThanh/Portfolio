@@ -1040,7 +1040,7 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
 
 /* =============== MEDIA QUERIES =============== */
 @media all and (max-width: 1100px) {
-  .about-section::after, .about-section .m-decoration, .about-section .t-decoration {
+  .about-section::before, .about-section .m-decoration, .about-section .t-decoration {
     display: none;
   }
   .about-section .presentation h1 {

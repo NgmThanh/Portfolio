@@ -870,7 +870,7 @@ footer {
 
     .about-section {
 
-        &::after, .m-decoration, .t-decoration {
+        &::before, .m-decoration, .t-decoration {
             display: none;
         }
 
@@ -1133,7 +1133,7 @@ footer {
 
 // mobile
 @media all and (max-width: 500px) {
-
+    
     .about-page, .skills-page, .works-page, .contact-page, footer {
         padding: 5%;
     }
