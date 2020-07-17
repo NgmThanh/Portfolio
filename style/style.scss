@@ -338,7 +338,6 @@ body {
         border-radius: 50%;
         display: block;
         border: 3px solid var(--material-color);
-        display: none;
     }
 
     .m-decoration, .t-decoration {
@@ -350,7 +349,6 @@ body {
         font-weight: 900;
         font-size: 50rem;
         color: var(--material-color);
-        display: none;
     }
 
     // M word background
@@ -871,6 +869,11 @@ footer {
 @media all and (max-width: 1100px) {
 
     .about-section {
+
+        &::after, .m-decoration, .t-decoration {
+            display: none;
+        }
+
         .presentation {
             h1 {
                 font-size: 6rem;

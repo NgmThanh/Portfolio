@@ -430,7 +430,6 @@ body {
   border-radius: 50%;
   display: block;
   border: 3px solid var(--material-color);
-  display: none;
 }
 
 .about-section .m-decoration, .about-section .t-decoration {
@@ -442,7 +441,6 @@ body {
   font-weight: 900;
   font-size: 50rem;
   color: var(--material-color);
-  display: none;
 }
 
 .about-section .m-decoration {
@@ -1042,6 +1040,9 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
 
 /* =============== MEDIA QUERIES =============== */
 @media all and (max-width: 1100px) {
+  .about-section::after, .about-section .m-decoration, .about-section .t-decoration {
+    display: none;
+  }
   .about-section .presentation h1 {
     font-size: 6rem;
     line-height: 8rem;
