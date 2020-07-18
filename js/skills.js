@@ -9,8 +9,6 @@ for(var i = 0; i < classSkills.length; i++){
     skills.push(classSkills[i].id);
 }
 
-// console.log(skills);
-
 // set width in skill bars
 skills.forEach(language => {
     var skill = document.getElementById(language);

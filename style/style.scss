@@ -22,19 +22,6 @@
 /* =============== COLORS =============== */
 
 :root {
-    --material-color: #272628;
-    --background-color: #1F1E1D;
-    --selection-color: #DEE1E6;
-    --font-color: #ffffff;
-    --border-color: #312D3C;
-    --input-color: #201C29;
-    --placeholder-color: #909090;
-    --orange-pure: #F84525;
-    --pink-pure: #E52F6F;
-    --shadow-color: #000000;
-}
-
-:root {
     --background-dark: #1F1E1D;
     --background-light: #fff;
     --font-dark: #111111;
@@ -43,6 +30,7 @@
     --material-lighter: #323135;
     --material-grey: #9C9C9C;
     --orange-pure: #F84525;
+    --pink-pure: #E52F6F;
     --shadow-dark: #000000;
     --shadow-light: #cecece;
     --light-grey: #F2F2F2;
@@ -133,20 +121,9 @@
 
 /* =============== MIXINS =============== */
 
-@mixin gradient-background {
-    background: linear-gradient(135deg, var(--orange-pure),var(--pink-pure));
-}
-
 @mixin jumpAnimation($distance) {
     transform: translateY($distance);
     transition: 0.4s all ease;
-}
-
-@mixin text-gradient {
-    background: linear-gradient(135deg, var(--orange-pure),var(--pink-pure));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 /* width */
@@ -280,7 +257,7 @@ body {
     i {
         font-size: 3.5rem;
         color: var(--orange-pure);
-        text-shadow: 1px 1px var(--shadow-color);
+        text-shadow: 1px 1px var(--shadow-dark);
     }
 }
 
@@ -529,8 +506,10 @@ body {
         }
 
         &:hover {
-            @include gradient-background;
             @include jumpAnimation(-5px);
+            background-color: var(--orange-pure);
+            transition: 0.5s ease-out;
+            
         }
 
         // box inside
@@ -576,7 +555,7 @@ body {
         /* Modal Content */
         .work-window {
             margin: auto;
-            background-color: var(--background-color);
+            background-color: var(--background-dark);
             margin: auto auto;
             width: 75%;
             max-height: 95%;
@@ -663,7 +642,7 @@ body {
                         img {
                             max-width: 90%;
                             margin: auto;
-                            box-shadow: 0px 0px 5px 2px var(--shadow-color);
+                            box-shadow: 0px 0px 5px 2px var(--shadow-dark);
                         }
                     }
 
@@ -706,14 +685,15 @@ body {
                     height: 10px;
                     width: 10px;
                     margin: 15px 2.5px 0;
-                    background: var(--font-color);
+                    background: var(--font-light);
                     border-radius: 50%;
                     display: inline-block;
                     transition: 0.5s ease;
                 }
 
                 .active, .dot:hover {
-                    @include gradient-background();
+                    background-color: var(--orange-pure);
+                    transition: 0.5s ease;
                 }
             }
         }
@@ -757,7 +737,7 @@ body {
             width: 0;
             display: block;
             height: 1px;
-            background-color: var(--background-color);
+            background-color: var(--background-dark);
             transition: 0.4s ease;
             margin-bottom: 18px;
         }

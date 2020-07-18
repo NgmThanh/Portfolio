@@ -19,19 +19,6 @@
 
 /* =============== COLORS =============== */
 :root {
-  --material-color: #272628;
-  --background-color: #1F1E1D;
-  --selection-color: #DEE1E6;
-  --font-color: #ffffff;
-  --border-color: #312D3C;
-  --input-color: #201C29;
-  --placeholder-color: #909090;
-  --orange-pure: #F84525;
-  --pink-pure: #E52F6F;
-  --shadow-color: #000000;
-}
-
-:root {
   --background-dark: #1F1E1D;
   --background-light: #fff;
   --font-dark: #111111;
@@ -40,6 +27,7 @@
   --material-lighter: #323135;
   --material-grey: #9C9C9C;
   --orange-pure: #F84525;
+  --pink-pure: #E52F6F;
   --shadow-dark: #000000;
   --shadow-light: #cecece;
   --light-grey: #F2F2F2;
@@ -361,7 +349,7 @@ body {
 #arrow-up i {
   font-size: 3.5rem;
   color: var(--orange-pure);
-  text-shadow: 1px 1px var(--shadow-color);
+  text-shadow: 1px 1px var(--shadow-dark);
 }
 
 .about-page, .skills-page, .works-page, .contact-page, footer {
@@ -653,11 +641,13 @@ body {
 }
 
 .timeline__box:hover {
-  background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
   -webkit-transform: translateY(-5px);
           transform: translateY(-5px);
   -webkit-transition: 0.4s all ease;
   transition: 0.4s all ease;
+  background-color: var(--orange-pure);
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
 }
 
 .timeline__box--content {
@@ -717,7 +707,7 @@ body {
 
 .timeline .modal-window .work-window {
   margin: auto;
-  background-color: var(--background-color);
+  background-color: var(--background-dark);
   margin: auto auto;
   width: 75%;
   max-height: 95%;
@@ -819,8 +809,8 @@ body {
 .timeline .modal-window .work-window__body .slideshow-container .slide img, .timeline .modal-window .work-window__body .slideshow-container .slide1 img, .timeline .modal-window .work-window__body .slideshow-container .slide2 img, .timeline .modal-window .work-window__body .slideshow-container .slide3 img, .timeline .modal-window .work-window__body .slideshow-container .slide4 img, .timeline .modal-window .work-window__body .slideshow-container .slide5 img {
   max-width: 90%;
   margin: auto;
-  -webkit-box-shadow: 0px 0px 5px 2px var(--shadow-color);
-          box-shadow: 0px 0px 5px 2px var(--shadow-color);
+  -webkit-box-shadow: 0px 0px 5px 2px var(--shadow-dark);
+          box-shadow: 0px 0px 5px 2px var(--shadow-dark);
 }
 
 .timeline .modal-window .work-window__body .slideshow-container .prev, .timeline .modal-window .work-window__body .slideshow-container .next {
@@ -864,7 +854,7 @@ body {
   height: 10px;
   width: 10px;
   margin: 15px 2.5px 0;
-  background: var(--font-color);
+  background: var(--font-light);
   border-radius: 50%;
   display: inline-block;
   -webkit-transition: 0.5s ease;
@@ -872,7 +862,9 @@ body {
 }
 
 .timeline .modal-window .work-window__body .active, .timeline .modal-window .work-window__body .dot:hover {
-  background: linear-gradient(135deg, var(--orange-pure), var(--pink-pure));
+  background-color: var(--orange-pure);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 /* ----------- CONTACT PAGE ----------- */
@@ -925,7 +917,7 @@ body {
   width: 0;
   display: block;
   height: 1px;
-  background-color: var(--background-color);
+  background-color: var(--background-dark);
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
   margin-bottom: 18px;

@@ -13,47 +13,47 @@ menu.forEach(element => {
             otherElems.childNodes[0].style.color = "";
         })
         // repaint the selected menu content
-        element.childNodes[0].style.color = "var(--orange-pure)";
+        element.childNodes[0].style.color = "var(--orange-pure)";        
     })
 });
 
 
 /* ----- MOBILE MENU ----- */
 
-// change menu onclick hamburger icon
-function changeMobile(menu) {
-    var opened = document.getElementsByClassName("change");
-    var menuMobile = document.getElementsByClassName("mobile-menu");
-    // if menu closed
-    if (opened.length === 0) {
-        menuMobile[0].style.display = "block";
-    }
-    // if menu opened
-    else {
-        menuMobile[0].style.display = "none";
-    }
-    menu.classList.toggle("change");
-}
+// // change menu onclick hamburger icon
+// function changeMobile(menu) {
+//     var opened = document.getElementsByClassName("change");
+//     var menuMobile = document.getElementsByClassName("mobile-menu");
+//     // if menu closed
+//     if (opened.length === 0) {
+//         menuMobile[0].style.display = "block";
+//     }
+//     // if menu opened
+//     else {
+//         menuMobile[0].style.display = "none";
+//     }
+//     menu.classList.toggle("change");
+// }
 
-// html collection of class "menu-display--text"
-var classMenuMobile = document.getElementsByClassName('menu-display--text');
-var arrayMenuMobile = new Array();
+// // html collection of class "menu-display--text"
+// var classMenuMobile = document.getElementsByClassName('menu-display--text');
+// var arrayMenuMobile = new Array();
 
-// array menu items
-for(var i = 0; i < classMenuMobile.length; i++){
-    arrayMenuMobile.push(classMenuMobile[i]);
-}
+// // array menu items
+// for(var i = 0; i < classMenuMobile.length; i++){
+//     arrayMenuMobile.push(classMenuMobile[i]);
+// }
 
-// set event listener in all menu buttons
-document.querySelectorAll('.menu-display--text').forEach(itemMenu => {
+// // set event listener in all menu buttons
+// document.querySelectorAll('.menu-display--text').forEach(itemMenu => {
     
-    itemMenu.addEventListener('click', () => {
-        arrayMenuMobile.forEach(element => {
-            element.style.color = "";
-        });
-        itemMenu.style.color = "#FF5711";
-    });
-});
+//     itemMenu.addEventListener('click', () => {
+//         arrayMenuMobile.forEach(element => {
+//             element.style.color = "";
+//         });
+//         itemMenu.style.color = "#FF5711";
+//     });
+// });
 
 /* ----- DARK / LIGHT MODE ----- */
 
