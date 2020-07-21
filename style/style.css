@@ -30,6 +30,7 @@
   --shadow-dark: #000000;
   --shadow-light: #cecece;
   --light-grey: #F2F2F2;
+  --selection-color: #DEE1E6;
 }
 
 /* Fading animation */
@@ -278,6 +279,10 @@ body {
 }
 
 /* ----------- FIXED HEADER ----------- */
+.hamburger-icon, .explore {
+  display: none;
+}
+
 /* ----- List menu ----- */
 .menu {
   display: -webkit-box;
@@ -307,20 +312,13 @@ body {
   margin-top: 4px;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
-  background-color: var(--orange-pure);
   background-color: var(--font-light);
 }
 
-.menu .menu--text:hover::after {
+.menu .menu--text:hover::after, .menu .menu--text:active::after {
   width: 100%;
-  height: 1px;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
-}
-
-/* hamburger icon and mobile menu not displayed */
-.hamburger-icon, .mobile-menu, .logo-mobile {
-  display: none;
 }
 
 /* ----------- PROGRESS BAR ----------- */
@@ -929,6 +927,7 @@ body {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  outline: none;
   margin-top: 45px;
   margin-left: 20px;
   padding-left: 5px;
@@ -951,7 +950,7 @@ body {
   transition: 0.4s;
 }
 
-.contact-page .contact__field [type="submit"]:hover::before {
+.contact-page .contact__field [type="submit"]:hover::before, .contact-page .contact__field [type="submit"]:active::before {
   width: 150px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -1073,6 +1072,69 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
 }
 
 @media all and (max-width: 767px) {
+  .explore {
+    display: block;
+    position: absolute;
+    top: 5%;
+    right: 25%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--font-light);
+    text-transform: uppercase;
+  }
+  .explore::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    margin-top: 4px;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+    background-color: var(--font-light);
+  }
+  .hamburger-icon {
+    display: block;
+    position: fixed;
+    top: 3.5%;
+    right: 5%;
+    background-color: var(--background-light);
+    padding: 12.5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    z-index: 100;
+    cursor: pointer;
+  }
+  .hamburger-icon .bar1, .hamburger-icon .bar2, .hamburger-icon .bar3 {
+    width: 25px;
+    height: 2px;
+    margin: 5px 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    background-color: var(--font-dark);
+  }
+  .hamburger-icon .bar2 {
+    width: 15px;
+    margin-left: 10px;
+  }
+  /* animation hamburger icon on click */
+  .change .bar1 {
+    -webkit-transform: translate(2.5px, 7px) rotate(45deg);
+            transform: translate(2.5px, 7px) rotate(45deg);
+    width: 20px;
+  }
+  .change .bar2 {
+    opacity: 0;
+  }
+  .change .bar3 {
+    -webkit-transform: translate(2.5px, -7px) rotate(-45deg);
+            transform: translate(2.5px, -7px) rotate(-45deg);
+    width: 20px;
+  }
+  .menu .menu--text {
+    display: none;
+  }
   .about-section .title-name {
     font-size: 1.5rem;
     letter-spacing: 3.5px;

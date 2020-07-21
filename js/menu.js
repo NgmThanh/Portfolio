@@ -17,6 +17,25 @@ menu.forEach(element => {
     })
 });
 
+/* ----- MOBILE MENU ----- */
+
+function changeMobile(menu) {
+    var menuOpen = document.getElementsByClassName("change");
+    var hamburger = document.getElementById("hamburger");
+    // var menuMobile = document.getElementsByClassName("mobile-menu");
+    // if menu closed
+    if (menuOpen.length === 0) {
+        // menuMobile[0].style.display = "block";
+        console.log("close")
+    }
+    // if menu opened
+    else {
+        console.log("open")
+        // menuMobile[0].style.display = "none";
+    }
+    hamburger.classList.toggle("change");
+}
+
 
 /* ----- MOBILE MENU ----- */
 

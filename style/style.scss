@@ -33,6 +33,7 @@
     --shadow-dark: #000000;
     --shadow-light: #cecece;
     --light-grey: #F2F2F2;
+    --selection-color: #DEE1E6;
 }
 
 /* Fading animation */
@@ -125,6 +126,22 @@
     transition: 0.4s all ease;
 }
 
+// underline menu field
+@mixin underline-menu {
+    &::after {
+        content: "";
+        display: block;
+        width: 0; height: 1px;
+        margin-top: 4px;
+        transition: 0.5s ease;
+        background-color: var(--font-light);
+    }
+    &:hover::after, &:active::after {
+        width: 100%;
+        transition: 0.5s ease;
+    }
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
@@ -197,6 +214,10 @@ body {
 
 /* ----------- FIXED HEADER ----------- */
 
+.hamburger-icon, .explore {
+    display: none;
+}
+
 /* ----- List menu ----- */
 .menu {
     display: flex;
@@ -212,25 +233,8 @@ body {
         color: var(--font-color);
         margin-right: 50px;
         cursor: pointer;
-        &::after {
-            content: "";
-            display: block;
-            width: 0; height: 1px;
-            margin-top: 4px;
-            transition: 0.5s ease;
-            background-color: var(--orange-pure);
-            background-color: var(--font-light);
-        }
-        &:hover::after {
-            width: 100%;
-            height: 1px;
-            transition: 0.5s ease;
-        }
+        @include underline-menu;
     }
-}
-/* hamburger icon and mobile menu not displayed */
-.hamburger-icon, .mobile-menu, .logo-mobile {
-    display: none;
 }
 
 /* ----------- PROGRESS BAR ----------- */
@@ -755,6 +759,7 @@ body {
             background-color: transparent;
             border: none;
             cursor: pointer;
+            outline: none;
             margin-top: 45px;
             margin-left: 20px;
             padding-left: 5px;
@@ -775,7 +780,7 @@ body {
                 transition: 0.4s;
             }
 
-            &:hover::before {
+            &:hover::before, &:active::before {
                 width: 150px;
                 transition: 0.4s;
             }
@@ -904,6 +909,68 @@ footer {
 
 // tablet
 @media all and (max-width: 767px) {
+
+    .explore {
+        display: block;
+        position: absolute;
+        top: 5%; right: 25%;
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: var(--font-light);
+        text-transform: uppercase;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 100%; height: 1px;
+            margin-top: 4px;
+            transition: 0.5s ease;
+            background-color: var(--font-light);
+        }
+    }
+
+    .hamburger-icon {
+        display: block;
+        position: fixed;
+        top: 3.5%; right: 5%;
+        background-color: var(--background-light);
+        padding: 12.5px;
+        width: 50px; height: 50px;
+        border-radius: 100%;
+        z-index: 100;
+        cursor: pointer;
+        
+        .bar1, .bar2, .bar3 {
+            width: 25px;
+            height: 2px;
+            margin: 5px 0;
+            transition: 0.4s;
+            background-color: var(--font-dark);
+        }
+
+        .bar2 {
+            width: 15px;
+            margin-left: 10px;   
+        }
+    }
+    /* animation hamburger icon on click */
+    .change .bar1 {
+        transform: translate(2.5px, 7px) rotate(45deg);
+        width: 20px;
+    }
+    
+    .change .bar2 {opacity: 0;}
+    
+    .change .bar3 {
+        transform: translate(2.5px, -7px) rotate(-45deg);
+        width: 20px;
+    }
+    
+    
+    .menu .menu--text {
+        display: none;
+    }
     
     // // hamburger icon (change on click)
     // .hamburger-icon {
