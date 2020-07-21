@@ -27,7 +27,6 @@
   --material-lighter: #323135;
   --material-grey: #9C9C9C;
   --orange-pure: #F84525;
-  --pink-pure: #E52F6F;
   --shadow-dark: #000000;
   --shadow-light: #cecece;
   --light-grey: #F2F2F2;
@@ -218,7 +217,6 @@
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--pink-pure);
   display: none;
 }
 
@@ -755,8 +753,9 @@ body {
 
 .timeline .modal-window .work-window__header--date {
   font-size: 1.8rem;
+  line-height: 1.8rem;
   float: right;
-  margin-top: 25px;
+  margin-top: 38px;
 }
 
 .timeline .modal-window .work-window__body {
@@ -793,9 +792,9 @@ body {
 .timeline .modal-window .work-window__body .slideshow-container .slide--number, .timeline .modal-window .work-window__body .slideshow-container .slide--text, .timeline .modal-window .work-window__body .slideshow-container .slide1--number, .timeline .modal-window .work-window__body .slideshow-container .slide1--text, .timeline .modal-window .work-window__body .slideshow-container .slide2--number, .timeline .modal-window .work-window__body .slideshow-container .slide2--text, .timeline .modal-window .work-window__body .slideshow-container .slide3--number, .timeline .modal-window .work-window__body .slideshow-container .slide3--text, .timeline .modal-window .work-window__body .slideshow-container .slide4--number, .timeline .modal-window .work-window__body .slideshow-container .slide4--text, .timeline .modal-window .work-window__body .slideshow-container .slide5--number, .timeline .modal-window .work-window__body .slideshow-container .slide5--text {
   font-size: 1.5rem;
   letter-spacing: 0.8px;
-  padding: 20px 0px;
+  margin-top: 25px;
   position: absolute;
-  top: 101%;
+  top: 100%;
 }
 
 .timeline .modal-window .work-window__body .slideshow-container .slide--number, .timeline .modal-window .work-window__body .slideshow-container .slide1--number, .timeline .modal-window .work-window__body .slideshow-container .slide2--number, .timeline .modal-window .work-window__body .slideshow-container .slide3--number, .timeline .modal-window .work-window__body .slideshow-container .slide4--number, .timeline .modal-window .work-window__body .slideshow-container .slide5--number {
@@ -833,27 +832,23 @@ body {
   opacity: 0.7;
 }
 
-.timeline .modal-window .work-window__body .slideshow-container .next {
-  right: 0;
+.timeline .modal-window .work-window__body .slideshow-container .prev:hover, .timeline .modal-window .work-window__body .slideshow-container .next:hover {
+  background: var(--orange-pure);
 }
 
-.timeline .modal-window .work-window__body .slideshow-container .next:hover {
-  background: var(--orange-pure);
+.timeline .modal-window .work-window__body .slideshow-container .next {
+  right: 0;
 }
 
 .timeline .modal-window .work-window__body .slideshow-container .prev {
   left: 0;
 }
 
-.timeline .modal-window .work-window__body .slideshow-container .prev:hover {
-  background: var(--pink-pure);
-}
-
 .timeline .modal-window .work-window__body .dot {
   cursor: pointer;
   height: 10px;
   width: 10px;
-  margin: 15px 2.5px 0;
+  margin: 12.5px 2.5px 0;
   background: var(--font-light);
   border-radius: 50%;
   display: inline-block;
@@ -1063,6 +1058,7 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
   }
   .timeline .modal-window .work-window__header--date {
     font-size: 1.6rem;
+    margin-top: 27px;
   }
   .timeline .modal-window .work-window__body {
     padding: 0 45px 45px;
@@ -1128,16 +1124,32 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
     font-size: 3.5rem;
   }
   .timeline .modal-window .work-window__header--date {
-    margin-top: 20px;
+    margin-top: 23px;
   }
   .timeline .modal-window .work-window__body {
     padding: 0 35px 35px;
   }
   .timeline .modal-window .work-window__body--description {
+    margin-top: 15px;
     letter-spacing: 0.3px;
   }
+  .timeline .modal-window .work-window__body .slideshow-container {
+    margin: 0 auto 0;
+  }
+  .timeline .modal-window .work-window__body .slideshow-container .slide--number, .timeline .modal-window .work-window__body .slideshow-container .slide--text, .timeline .modal-window .work-window__body .slideshow-container .slide1--number, .timeline .modal-window .work-window__body .slideshow-container .slide1--text, .timeline .modal-window .work-window__body .slideshow-container .slide2--number, .timeline .modal-window .work-window__body .slideshow-container .slide2--text, .timeline .modal-window .work-window__body .slideshow-container .slide3--number, .timeline .modal-window .work-window__body .slideshow-container .slide3--text, .timeline .modal-window .work-window__body .slideshow-container .slide4--number, .timeline .modal-window .work-window__body .slideshow-container .slide4--text, .timeline .modal-window .work-window__body .slideshow-container .slide5--number, .timeline .modal-window .work-window__body .slideshow-container .slide5--text {
+    top: 0%;
+  }
+  .timeline .modal-window .work-window__body .slideshow-container .slide img, .timeline .modal-window .work-window__body .slideshow-container .slide1 img, .timeline .modal-window .work-window__body .slideshow-container .slide2 img, .timeline .modal-window .work-window__body .slideshow-container .slide3 img, .timeline .modal-window .work-window__body .slideshow-container .slide4 img, .timeline .modal-window .work-window__body .slideshow-container .slide5 img {
+    max-width: 90%;
+    margin: 65px auto 0;
+    -webkit-box-shadow: 0px 0px 5px 2px var(--shadow-dark);
+            box-shadow: 0px 0px 5px 2px var(--shadow-dark);
+  }
+  .timeline .modal-window .work-window__body .slideshow-container .prev, .timeline .modal-window .work-window__body .slideshow-container .next {
+    margin-top: 0;
+  }
   .timeline .modal-window .work-window__body .dot {
-    margin: 10px 2.5px 0;
+    margin: 15px 2.5px 0;
   }
   /* ----- contact box ----- */
   .contact-page .contact__field {
@@ -1232,7 +1244,7 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
     font-size: 3rem;
   }
   .timeline .modal-window .work-window__header--date {
-    margin-top: 18.5px;
+    margin-top: 17px;
   }
   .timeline .modal-window .work-window__body {
     padding: 0 22.5px 22.5px;
