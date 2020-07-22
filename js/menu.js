@@ -22,21 +22,25 @@ menu.forEach(element => {
 function changeMobile() {
     var menuOpen = document.getElementsByClassName("change");
     var menu = document.getElementById("menu");
-    var explore = document.getElementById("explore");
     var hamburger = document.getElementById("hamburger");
-    var barBurger = document.querySelectorAll("#hamburger div");
     var menuItem = document.querySelectorAll('.menu--text');
 
     // if open
     if (menuOpen.length === 0) {
-        menu.classList.add('fade-in')
-        menu.classList.remove('fade-out')
+        menuItem.forEach(item => {
+            item.classList.remove('slide-left-out')
+        });
+        menu.classList.add("fade-in");
+        menu.classList.remove("fade-out");
         menu.style.display = "flex";
     }
     // if closed
     else {
-        menu.classList.add('fade-out')
-        menu.classList.remove('fade-in')
+        menuItem.forEach(item => {
+            item.classList.add('slide-left-out')
+        });
+        menu.classList.remove("fade-in");
+        menu.classList.add("fade-out");
         setTimeout(() => {menu.style.display = "none";}, 500);
     }
     hamburger.classList.toggle("change");

@@ -36,24 +36,36 @@
     --selection-color: #DEE1E6;
 }
 
-/* Fading animation */
-.fade {
-    -webkit-animation-name: apparition;
-    -webkit-animation-duration: 1.25s;
-    animation-name: apparition;
-    animation-duration: 1.25s;
-}
-
 /* =============== ANIMATIONS =============== */
 
-// animation for page apparition
-@keyframes apparition {
+@keyframes fadeIn {
     from {
         opacity: 0.25;
     }
     to {
         opacity: 1;
     }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: ease 0.5s;
+}
+
+@keyframes slide-left-in {
+    from {
+        transform: translateX(-100%);
+    }
+}
+
+.slide-left-out {
+    transform: translateX(-100%);
+    transition: ease 0.5s;
 }
 
 // animations apparition
@@ -70,29 +82,31 @@
     }
 }
 
-@keyframes slide-left-in {
-    from {
-        transform: translateX(-100%);
-    }
-}
-
 // animations for work windows boxes
-@keyframes work-appear {
+@keyframes boxSlideIn {
     from {
-        transform: scale(0.85) translate(0, -100%);
+        opacity: 0;
+        transform: translate(0, -100%);
     }
     to {
-        transform: scale(1) translate(0, 0);
+        opacity: 1;
+        transform: translate(0, 0);
     }
 }
 
-@keyframes progress-bar-load {
+.box-slide-out {
+    opacity: 0.1;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-out, opacity 0.4s ease;
+}
+
+@keyframes progressBarLoad {
     from {
         width: 0;
     }
 }
 
-@keyframes progress-bar-slide {
+@keyframes progressBarSlide {
     from{
       margin-left: -100%;
     }
@@ -101,21 +115,15 @@
     }
 }
 
-@keyframes logo-load {
-    from {
-        transform: translateX(-500px);
+@keyframes scrollFall {
+    0%, 15% {
+        margin-left: -100%;
     }
-}
-
-@keyframes logo-mobile-load {
-    from {
-        transform: translateX(200px);
+    25%, 50%, 75% {
+        margin-left: 0%;
     }
-}
-
-@keyframes jumpHover {
-    from {
-        transform: translateY(-5px);
+    85%, 100% {
+        margin-left: 100%;
     }
 }
 
@@ -198,7 +206,7 @@ html {
 }
 
 body {
-    animation: apparition 1s linear 0s forwards;
+    animation: fadeIn 1s linear 0s forwards;
     transition: 0.5s all ease;
 }
 
@@ -257,13 +265,22 @@ body {
     bottom: 10%; right: 3.5%;
     z-index: 99;
 
-    &--line {
+    &--container {
+        overflow: hidden;
         width: 65px;
-        height: 1px;
-        background-color: var(--background-light);
+        height: 5px;
+        display: flex;
         transform: rotate(90deg);
         margin-bottom: 100%;
-    }
+
+        .scroll--line {
+            width: 65px;
+            height: 1px;
+            margin: auto;
+            background-color: var(--background-light);
+            animation: scrollFall 10s ease infinite;
+        }
+    }  
     
     &--label {
         font-size: 1.25rem;
@@ -464,7 +481,7 @@ body {
                 background: var(--material-color);
                 border-radius: 3px;
                 z-index: 2;
-                animation: progress-bar-load 1.5s ease 0s forwards;
+                animation: progressBarLoad 1.5s ease 0s forwards;
                 box-shadow: 0px 0px 5px 1px var(--shadow-light);
                 overflow: hidden;
 
@@ -474,7 +491,7 @@ body {
                     height: 100%;
                     width: 100%;
                     background: linear-gradient(to right,  var(--material-color), var(--orange-pure));
-                    animation: progress-bar-slide 3s linear 0s infinite;
+                    animation: progressBarSlide 3s linear 0s infinite;
                 }
             }
         }
@@ -573,7 +590,8 @@ body {
             width: 75%;
             max-height: 95%;
             text-align: left;
-            animation: work-appear 0.4s ease-out 0s;
+            animation: boxSlideIn 0.4s ease-out 0s;
+            
             overflow-y: auto;
 
             &__header {
@@ -924,7 +942,7 @@ footer {
     .explore {
         display: block;
         position: fixed;
-        top: 5%; right: 25%;
+        top: 5%; right: 100px;
         font-size: 1.5rem;
         font-weight: 600;
         letter-spacing: 2px;
@@ -945,7 +963,7 @@ footer {
     .hamburger-icon {
         display: block;
         position: fixed;
-        top: 3.5%; right: 5%;
+        top: 3.5%; right: 25px;
         background-color: var(--background-light);
         padding: 12.5px;
         width: 50px; height: 50px;
@@ -987,9 +1005,7 @@ footer {
         align-items: flex-start;
         justify-content: center;
         text-align: center;
-        opacity: 0;
         display: none;
-        transition: opacity 0.5s ease;
 
         .label-menu {
             font-size: 1rem;
@@ -997,28 +1013,21 @@ footer {
             color: var(--font-light);
             letter-spacing: 2px;
             transform: rotate(-90deg);
-            position: absolute;
-            top: 36.5%; left: 5%;
+            margin-bottom: -42.5px;
             display: block;
         }
         
         &--text {
-            font-size: 5vh;
+            font-size: 3.8rem;
             text-transform: none;
             letter-spacing: 5px;
-            margin: 10px 0 0 65px;
-            animation: slide-left-in 0.5s forwards;
+            margin: 10px 0 0 45px;
+            animation: slide-left-in 0.5s ease 0s;
         }
     }
 
-    .fade-in {
-        opacity: 1;
-        transition: opacity 0.5s ease;
-    }
-
-    .fade-out {
-        opacity: 0;
-        transition: opacity 0.5s ease;
+    .scroll {
+        right: 0px;
     }
     
     .about-section {
@@ -1041,6 +1050,21 @@ footer {
             p {
                 font-size: 1.6rem;
                 line-height: 2.2rem;
+            }
+            a {
+                width: 235px;
+                font-size: 1.2rem;
+                letter-spacing: 1.5px;
+                line-height: 2.85rem;
+
+                &::before {
+                    top: -9px; left: -17.5px;
+                    width: 45px; height: 45px;
+                }
+
+                &:hover::before {
+                    width: 235px;
+                }
             }
         }
         

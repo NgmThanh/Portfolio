@@ -33,14 +33,22 @@ document.querySelectorAll('.timeline__box').forEach(btnWork => {
 
         // get modal page
         var modal = document.getElementById("myModal" + number);
+        var workWindow = document.querySelectorAll(".work-window");
 
         // When the user clicks the button, open the modal 
+        
+        workWindow.forEach(work => {
+            work.classList.remove("box-slide-out");
+        });
         modal.style.display = "flex";
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
             if (event.target == modal) {
-                modal.style.display = "none";
+                workWindow.forEach(work => {
+                    work.classList.add("box-slide-out");
+                });
+                setTimeout(() => {modal.style.display = "none";}, 400);
             }
         }
 
