@@ -279,7 +279,7 @@ body {
 }
 
 /* ----------- FIXED HEADER ----------- */
-.hamburger-icon, .explore {
+.hamburger-icon, .explore, .label-menu {
   display: none;
 }
 
@@ -291,10 +291,10 @@ body {
   position: fixed;
   top: 7.5%;
   right: 3.5%;
-  z-index: 100;
+  z-index: 99;
 }
 
-.menu .menu--text {
+.menu--text {
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -304,7 +304,7 @@ body {
   cursor: pointer;
 }
 
-.menu .menu--text::after {
+.menu--text::after {
   content: "";
   display: block;
   width: 0;
@@ -315,7 +315,7 @@ body {
   background-color: var(--font-light);
 }
 
-.menu .menu--text:hover::after, .menu .menu--text:active::after {
+.menu--text:hover::after, .menu--text:active::after {
   width: 100%;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
@@ -329,23 +329,40 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  background-color: var(--font-dark);
   background-color: var(--orange-pure);
   z-index: 50;
 }
 
-/* ----------- ARROW MOVE TO TOP ----------- */
-#arrow-up {
+/* ----------- LABEL SCROLL ----------- */
+.scroll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: fixed;
-  bottom: 3.5%;
-  right: 5%;
-  z-index: 50;
+  bottom: 10%;
+  right: 3.5%;
+  z-index: 99;
 }
 
-#arrow-up i {
-  font-size: 3.5rem;
-  color: var(--orange-pure);
-  text-shadow: 1px 1px var(--shadow-dark);
+.scroll--line {
+  width: 65px;
+  height: 1px;
+  background-color: var(--background-light);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  margin-bottom: 100%;
+}
+
+.scroll--label {
+  font-size: 1.25rem;
+  color: var(--font-light);
+  letter-spacing: 2px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .about-page, .skills-page, .works-page, .contact-page, footer {
@@ -1074,7 +1091,7 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
 @media all and (max-width: 767px) {
   .explore {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 5%;
     right: 25%;
     font-size: 1.5rem;
@@ -1082,6 +1099,7 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
     letter-spacing: 2px;
     color: var(--font-light);
     text-transform: uppercase;
+    z-index: 100;
   }
   .explore::after {
     content: "";
@@ -1132,8 +1150,58 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
             transform: translate(2.5px, -7px) rotate(-45deg);
     width: 20px;
   }
-  .menu .menu--text {
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--background-dark);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    opacity: 0;
     display: none;
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+  }
+  .menu .label-menu {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--font-light);
+    letter-spacing: 2px;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    position: absolute;
+    top: 36.5%;
+    left: 5%;
+    display: block;
+  }
+  .menu--text {
+    font-size: 5vh;
+    text-transform: none;
+    letter-spacing: 5px;
+    margin: 10px 0 0 65px;
+    -webkit-animation: slide-left-in 0.5s forwards;
+            animation: slide-left-in 0.5s forwards;
+  }
+  .fade-in {
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+  }
+  .fade-out {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
   }
   .about-section .title-name {
     font-size: 1.5rem;

@@ -19,60 +19,29 @@ menu.forEach(element => {
 
 /* ----- MOBILE MENU ----- */
 
-function changeMobile(menu) {
+function changeMobile() {
     var menuOpen = document.getElementsByClassName("change");
+    var menu = document.getElementById("menu");
+    var explore = document.getElementById("explore");
     var hamburger = document.getElementById("hamburger");
-    // var menuMobile = document.getElementsByClassName("mobile-menu");
-    // if menu closed
+    var barBurger = document.querySelectorAll("#hamburger div");
+    var menuItem = document.querySelectorAll('.menu--text');
+
+    // if open
     if (menuOpen.length === 0) {
-        // menuMobile[0].style.display = "block";
-        console.log("close")
+        menu.classList.add('fade-in')
+        menu.classList.remove('fade-out')
+        menu.style.display = "flex";
     }
-    // if menu opened
+    // if closed
     else {
-        console.log("open")
-        // menuMobile[0].style.display = "none";
+        menu.classList.add('fade-out')
+        menu.classList.remove('fade-in')
+        setTimeout(() => {menu.style.display = "none";}, 500);
     }
     hamburger.classList.toggle("change");
-}
-
-
-/* ----- MOBILE MENU ----- */
-
-// // change menu onclick hamburger icon
-// function changeMobile(menu) {
-//     var opened = document.getElementsByClassName("change");
-//     var menuMobile = document.getElementsByClassName("mobile-menu");
-//     // if menu closed
-//     if (opened.length === 0) {
-//         menuMobile[0].style.display = "block";
-//     }
-//     // if menu opened
-//     else {
-//         menuMobile[0].style.display = "none";
-//     }
-//     menu.classList.toggle("change");
-// }
-
-// // html collection of class "menu-display--text"
-// var classMenuMobile = document.getElementsByClassName('menu-display--text');
-// var arrayMenuMobile = new Array();
-
-// // array menu items
-// for(var i = 0; i < classMenuMobile.length; i++){
-//     arrayMenuMobile.push(classMenuMobile[i]);
-// }
-
-// // set event listener in all menu buttons
-// document.querySelectorAll('.menu-display--text').forEach(itemMenu => {
     
-//     itemMenu.addEventListener('click', () => {
-//         arrayMenuMobile.forEach(element => {
-//             element.style.color = "";
-//         });
-//         itemMenu.style.color = "#FF5711";
-//     });
-// });
+}
 
 /* ----- DARK / LIGHT MODE ----- */
 

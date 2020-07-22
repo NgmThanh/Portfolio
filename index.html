@@ -23,30 +23,31 @@
 
         <header>
             <!-- mobile menu -->
-            <div class="explore">Explore</div>
-            <div class="hamburger-icon" id="hamburger" onclick="changeMobile(this)">
+            <div class="explore" id="explore">Explore</div>
+            <div class="hamburger-icon" id="hamburger" onclick="changeMobile()">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
 
-            <div class="menu">
-                <div id="about-menu" class="menu--text"><a href="#about">À propos</a></div>
+            <div class="menu fade-in" id="menu">
+                <div class="label-menu">MENU</div>
+                <div id="about-menu" class="menu--text"><a href="#about">À Propos</a></div>
                 <div id="skills-menu" class="menu--text"><a href="#skills">Compétences</a></div>
                 <div id="works-menu" class="menu--text"><a href="#works">Projets</a></div>
                 <div id="contact-menu" class="menu--text"><a href="#contact">Contact</a></div>
             </div>
-            <!-- <div class="hamburger-icon" onclick="changeMobile(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
-            </div> -->
             <!-- script selected menu and progress bar + mobile version -->
             <script type="text/javascript" src="js/menu.js" defer></script>
         </header>
         
+        <!-- progress bar -->
         <div id="progress"></div>
-        <a href="#" id="arrow-up"><i class="fas fa-chevron-up"></i></a>
+        <!-- label scroll -->
+        <div class="scroll">
+            <div class="scroll--line"></div>
+            <div class="scroll--label">SCROLL</div>
+        </div>
 
         <!-- about page -->
         <div class="about-page dark-page" id="about">
