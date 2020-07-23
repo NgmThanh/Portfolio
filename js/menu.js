@@ -3,27 +3,35 @@
 /* ----- DESKTOP MENU ----- */
 
 // select all elemens of menu
-var menu = document.querySelectorAll('.menu--text');
+var menuOpen = document.getElementsByClassName("change");
+var menu = document.getElementById("menu");
+var hamburger = document.getElementById("hamburger");
+var menuItem = document.querySelectorAll('.menu--text');
 
 // set event listener in all menu buttons
-menu.forEach(element => {
+menuItem.forEach(element => {
     element.addEventListener('click', () => {
         // reset colors of menu contents
-        menu.forEach(otherElems => {
+        menuItem.forEach(otherElems => {
             otherElems.childNodes[0].style.color = "";
         })
         // repaint the selected menu content
-        element.childNodes[0].style.color = "var(--orange-pure)";        
+        element.childNodes[0].style.color = "var(--orange-pure)";
+
+        // close menu
+        menuItem.forEach(item => {
+            item.classList.add('slide-left-out')
+        });
+        menu.classList.remove("fade-in");
+        menu.classList.add("fade-out");
+        setTimeout(() => {menu.style.display = "none";}, 500);
+        hamburger.classList.toggle("change");
     })
 });
 
 /* ----- MOBILE MENU ----- */
 
 function changeMobile() {
-    var menuOpen = document.getElementsByClassName("change");
-    var menu = document.getElementById("menu");
-    var hamburger = document.getElementById("hamburger");
-    var menuItem = document.querySelectorAll('.menu--text');
 
     // if open
     if (menuOpen.length === 0) {
@@ -44,7 +52,6 @@ function changeMobile() {
         setTimeout(() => {menu.style.display = "none";}, 500);
     }
     hamburger.classList.toggle("change");
-    
 }
 
 /* ----- DARK / LIGHT MODE ----- */
