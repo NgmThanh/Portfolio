@@ -18,8 +18,9 @@
     src: url("../font/Segoe UI/segoeuib.ttf") format("truetype");
 }
 
-
-/* =============== COLORS =============== */
+/* ============================ */
+/* ========== COLORS ========== */
+/* ============================ */
 
 :root {
     --background-dark: #1F1E1D;
@@ -36,7 +37,9 @@
     --selection-color: #DEE1E6;
 }
 
-/* =============== ANIMATIONS =============== */
+/* ================================ */
+/* ========== ANIMATIONS ========== */
+/* ================================ */
 
 @keyframes fadeIn {
     from {
@@ -127,65 +130,69 @@
     }
 }
 
-/* =============== MIXINS =============== */
+/* ============================ */
+/* ========== MIXINS ========== */
+/* ============================ */
+
+@mixin font($size, $weight, $color, $letter-spacing, $text-transform) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    letter-spacing: $letter-spacing;
+    text-transform: $text-transform;
+}
+
+@mixin flex($flex-flow, $align_items, $justify-content) {
+    display: flex;
+    flex-flow: $flex-flow;
+    align-items: $align_items;
+    justify-content: $justify-content;
+}
+
+// media queries mixins
+$breakpoints: (
+    mobile: 500px,
+    tablet: 767px,
+    small-screen: 1100px,
+);
+
+@mixin mobile-screen {
+    @media screen and (max-width: map-get($breakpoints, mobile)) {
+        @content;
+    }
+}
+
+@mixin tablet-screen {
+    @media screen and (max-width: map-get($breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin small-screen {
+    @media screen and (max-width: map-get($breakpoints, small-screen)) {
+        @content;
+    }
+}
 
 @mixin jumpAnimation($distance) {
     transform: translateY($distance);
     transition: 0.4s all ease;
 }
 
-// underline menu field
-@mixin underline-menu {
-    &::after {
-        content: "";
-        display: block;
-        width: 0; height: 1px;
-        margin-top: 4px;
-        transition: 0.5s ease;
-        background-color: var(--font-light);
-    }
-    &:hover::after, &:active::after {
-        width: 100%;
-        transition: 0.5s ease;
-    }
-}
+/* ==================================== */
+/* ========== GLOBAL CUSTOM  ========== */
+/* ==================================== */
 
-/* width */
-::-webkit-scrollbar {
-    width: 5px;
-    display: none;
-}
-  
-/* Track */
-::-webkit-scrollbar-track {
-    background: transparent;
-    display: none;
-}
-   
-/* Handle */
-::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    display: none;
-}
-  
-/* Handle on hover */
+::-webkit-scrollbar,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb,
 ::-webkit-scrollbar-thumb:hover {
     display: none;
 }
 
-.disable-scroll {
-    height: 100%;
-    overflow: hidden;
-    margin: 0;
-}
-
-
-/* =============== MAIN CODE =============== */
-
 * {
     font-family: "Segoe UI";
-    padding: 0;
-    margin: 0;
+    padding: 0; margin: 0;
     text-decoration: none;
     box-sizing: border-box;
     &::selection {
@@ -207,8 +214,13 @@ html {
 
 body {
     animation: fadeIn 1s linear 0s forwards;
-    transition: 0.5s all ease;
 }
+
+/* =============================== */
+/* ========== MAIN CODE ========== */
+/* =============================== */
+
+/* ---------- light / dark page ---------- */
 
 .dark-page {
     background-color: var(--background-dark);
@@ -220,43 +232,42 @@ body {
     color: var(--font-dark);
 }
 
-/* ----------- FIXED HEADER ----------- */
+/* ========== MENU ========== */
 
 .explore {
-    display: block;
+    @include font(1.4rem, 700, var(--font-light), 2px, uppercase);
     position: fixed;
     top: calc(5% + 1.4rem); right: 125px;
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: var(--font-light);
-    text-transform: uppercase;
+    display: block;
     z-index: 100;
 
     &::after {
         content: "";
-        display: block;
         width: 100%; height: 1px;
+        display: block;
         margin-top: 5px;
         transition: 0.5s ease;
         background-color: var(--font-light);
     }
+
+    @include mobile-screen {
+        right: 85px;
+    }
 }
 
 .hamburger-icon {
+    width: 50px; height: 50px;
     display: block;
     position: fixed;
     top: 5%; right: 50px;
     background-color: var(--background-light);
     padding: 12.5px;
-    width: 50px; height: 50px;
     border-radius: 100%;
     z-index: 100;
     cursor: pointer;
     
     .bar1, .bar2, .bar3 {
-        width: 25px;
-        height: 2px;
+        width: 25px; height: 2px;
         margin: 5px 0;
         transition: 0.4s;
         background-color: var(--font-dark);
@@ -266,14 +277,19 @@ body {
         width: 15px;
         margin-left: 10px;   
     }
+
+    @include mobile-screen {
+        right: 3.5%;
+    }
 }
+
 /* animation hamburger icon on click */
 .change .bar1 {
     transform: translate(2.5px, 7px) rotate(45deg);
     width: 20px;
 }
 
-.change .bar2 {opacity: 0;}
+.change .bar2 { opacity: 0; }
 
 .change .bar3 {
     transform: translate(2.5px, -7px) rotate(-45deg);
@@ -284,48 +300,62 @@ body {
     position: fixed;
     top: 0; right: 0; bottom: 0; left: 0;
     background-color: var(--background-dark);
-    display: none;
     z-index: 99;
+    display: none;
 
     .container-menu {
-        width: 100%;
+        width: 100%; height: 100%;
         max-width: 1300px;
-        height: 100%;
         margin: auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
+        @include flex(column, flex-start, center);
 
         .label-menu {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--font-light);
-            letter-spacing: 3px;
+            @include font(1.2rem, 700, var(--font-light), 3px, none);
             transform: rotate(-90deg);
             margin: -62.5px 25px;
             display: block;
         }
         
         .menu--text {
-            font-size: 6.5rem;
-            color: var(--font-color);
-            text-transform: none;
-            letter-spacing: 5px;
-            font-weight: 700;
+            @include font(6.5rem, 700, var(--font-light), 5px, none);
             margin: 10px 0 0 100px;
             animation: slide-left-in 0.5s ease 0s;
             cursor: pointer;
-            @include underline-menu;
+
+            &::after {
+                content: "";
+                width: 0; height: 1px;
+                display: block;
+                margin-top: 4px;
+                transition: 0.5s ease;
+                background-color: var(--font-light);
+            }
+
+            &:hover::after, &:active::after {
+                width: 100%;
+                transition: 0.5s ease;
+            }
+        }
+    }
+
+    @include mobile-screen {
+        .container-menu .label-menu {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin: -42.5px 7.5px;
+        }
+
+        .container-menu .menu--text {
+            font-size: 3.8rem;
+            margin-left: 45px;
         }
     }
 }
 
+/* ========== PROGRESS BAR ========== */
 
-/* ----------- PROGRESS BAR ----------- */
 #progress {
-    width: 4px;
-    height: 0px;
+    width: 4px; height: 0px;
     max-height: 100vh;
 	position: fixed;
 	top: 0; right: 0;
@@ -333,7 +363,7 @@ body {
     z-index: 50;
 }
 
-/* ----------- LABEL SCROLL ----------- */
+/* ========== LABEL SCROLL ========== */
 
 .scroll {
     display: flex;
@@ -343,16 +373,14 @@ body {
     z-index: 99;
 
     &--container {
-        overflow: hidden;
-        width: 65px;
-        height: 5px;
+        width: 65px; height: 5px;
         display: flex;
         transform: rotate(90deg);
         margin-bottom: 100%;
+        overflow: hidden;
 
         .scroll--line {
-            width: 65px;
-            height: 1px;
+            width: 65px; height: 1px;
             margin: auto;
             background-color: var(--background-light);
             animation: scrollFall 10s ease infinite;
@@ -360,18 +388,18 @@ body {
     }  
     
     &--label {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: var(--font-light);
-        letter-spacing: 2px;
+        @include font(1.25rem, 600, var(--font-light), 2px, uppercase);
         transform: rotate(90deg);
+    }
+
+    @include mobile-screen {
+        right: 0px;
     }
 }
 
-
 .about-page, .skills-page, .works-page, .contact-page, footer {
-    padding: 7.5%;
     margin: auto;
+    padding: 7.5%;
     min-height: 100vh;
     display: flex;
     overflow: hidden;
@@ -380,10 +408,8 @@ body {
         margin: auto;
         padding: 5%;
         width: 1300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        overflow-x :hidden;
+        @include flex(column, none, center);
+        overflow-x: hidden;
     }
 
     .skills-section, .works-section, .contact-section, .footer-section {
@@ -394,28 +420,57 @@ body {
         font-size: 4.75rem;
         animation: slideDownIn 0.5s ease-out 0s forwards;
     }
+    
     h2 {
-        font-size: 2rem;
-        font-weight: 500;
+        @include font(2rem, 500, none, none, none);
         display: block;
         margin-top: 15px;
         animation: slideDownIn 0.5s ease-out 0.05s forwards;
     }
+
+    @include mobile-screen {
+        padding: 5%;
+    }
 }
 
-/* ----------- ABOUT PAGE ----------- */
+// media queries
+.skills-page, .works-page, .contact-page {
+    @include small-screen {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    @include tablet-screen {
+        h1 {
+            font-size: 3.5rem;
+        }
+        h2 {
+            font-size: 1.7rem;
+        }
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    @include mobile-screen {
+        h1 {
+            font-size: 3rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+        }
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+/* ========== ABOUT PAGE ========== */
 
 .about-section {
-    overflow: hidden;
 
     // big circle decoration in background
     &::before {
         content: "";
         position: absolute;
-        left: 41%;
-        top: -20%;
-        width: 1000px;
-        height: 1000px;
+        left: 41%; top: -20%;
+        width: 1000px; height: 1000px;
         border-radius: 50%;
         display: block;
         border: 3px solid var(--material-color);
@@ -423,13 +478,10 @@ body {
 
     .m-decoration, .t-decoration {
         position: absolute;
-        left: 55%;
-        top: 50%;
+        left: 55%; top: 50%;
         display: block;
         font-family: 'Roboto';
-        font-weight: 900;
-        font-size: 50rem;
-        color: var(--material-color);
+        @include font(50rem, 900, var(--material-color), none, none);
     }
 
     // M word background
@@ -442,14 +494,25 @@ body {
         transform: translate(20%, -10%);
     }
 
+    &::before, .m-decoration, .t-decoration {
+        @include small-screen {
+            display: none;
+        }
+    }
+
     /* ----- name area ----- */
     .title-name {
-        font-size: 1.8rem;
-        font-weight: 600;
-        letter-spacing: 5px;
-        color: var(--orange-pure);
-        text-transform: uppercase;
+        @include font(1.8rem, 600, var(--orange-pure), 5px, uppercase);
         margin-bottom: 50px;
+
+        @include tablet-screen {
+            font-size: 1.5rem;
+            letter-spacing: 3.5px;
+            margin-bottom: 45px;
+        }
+        @include mobile-screen {
+            font-size: 1.4rem;
+        }
     }
 
     /* ----- presentation area ----- */
@@ -458,6 +521,19 @@ body {
             font-size: 7.2rem;
             line-height: 9rem;
             animation: slideDownIn 0.5s ease-out 0s forwards;
+
+            @include small-screen {
+                font-size: 6rem;
+                line-height: 8rem;
+            }
+            @include tablet-screen {
+                font-size: 4rem;
+                line-height: 5.5rem;
+            }
+            @include mobile-screen {
+                font-size: 3rem;
+                line-height: 5rem;
+            }
         }
     }
 
@@ -474,10 +550,7 @@ body {
         // button redirect web CV
         a {
             width: 285px;
-            text-transform: uppercase;
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 2px;
+            @include font(1.4rem, 700, var(--font-light), 2px, uppercase);
             line-height: 3.2rem;
             display: block;
             margin-top: 45px;
@@ -488,10 +561,8 @@ body {
             &::before {
                 content: "";
                 position: absolute;
-                top: -37.5%;
-                left: -22.5px;
-                width: 55px;
-                height: 55px;
+                top: -37.5%; left: -22.5px;
+                width: 55px; height: 55px;
                 border-radius: 55px;
                 background-color: var(--material-lighter);
                 z-index: -1;
@@ -503,17 +574,50 @@ body {
                 transition: 0.4s ease;
             }
         }
+
+        @include small-screen {
+            p {
+                font-size: 1.85rem;
+            }
+            a {
+                margin-top: 55px;
+            }
+        }
+        @include tablet-screen {
+            margin-top: 40px;
+            max-width: 85%;
+            p {
+                font-size: 1.6rem;
+                line-height: 2.2rem;
+            }
+            a {
+                width: 235px;
+                @include font(1.2rem, 700, var(--font-light), 1.5px, none);
+                line-height: 2.85rem;
+
+                &::before {
+                    top: -9px; left: -17.5px;
+                    width: 45px; height: 45px;
+                }
+
+                &:hover::before {
+                    width: 235px;
+                }
+            }
+        }
+    }
+
+    @include mobile-screen {
+        padding: 0;
     }
 }
 
-/* ----------- SKILLS PAGE ----------- */
+
+/* ========== SKILLS PAGE ========== */
 
 .skills-box {
     margin-top: 2.5%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(wrap, center, space-between);
 
     @media all and (max-width: 650px) {
         justify-content: center;
@@ -530,44 +634,49 @@ body {
 
         // language
         h2 {
-            font-weight: normal;
-            font-size: 2.0rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            font-weight: 600;
+            @include font(2rem, 600, var(--font-dark), 0.5px, uppercase);
+
+            @include tablet-screen {
+                font-size: 1.75rem;
+            }
         }
 
         &__progress-bar {
-            width: 100%;
-            height: 25px;
+            width: 100%; height: 25px;
             margin-top: 10px;
             position: relative;
             border-radius: 3px;
             box-shadow: 0px 0px 5px 1px var(--shadow-light);
+
+            @include tablet-screen {
+                height: 20px;
+            }
             // percent
             h3 {
                 position: absolute;
-                bottom: 170%;
-                right: 0%;
+                bottom: 170%; right: 0%;
                 font-size: 1.8rem;
             }
             // progress bar inside
             .skill-bar {
-                position: absolute;
                 // width defined in skill.js
                 height: 25px;
+                position: absolute;
                 background: var(--material-color);
                 border-radius: 3px;
                 z-index: 2;
                 animation: progressBarLoad 1.5s ease 0s forwards;
                 box-shadow: 0px 0px 5px 1px var(--shadow-light);
                 overflow: hidden;
+                
+                @include tablet-screen {
+                    height: 20px;
+                }
 
                 &::after {
                     display: block;
                     content: "";
-                    height: 100%;
-                    width: 100%;
+                    height: 100%; width: 100%;
                     background: linear-gradient(to right,  var(--material-color), var(--orange-pure));
                     animation: progressBarSlide 3s linear 0s infinite;
                 }
@@ -816,19 +925,33 @@ body {
         margin-top: 5%;
         display: flex;
         flex-direction: column;
+        margin-bottom: 18px;
 
         &--input, &--textarea {
             width: 525px;
-            font-size: 1.6rem;
-            font-weight: 500;
+            @include font(1.6rem, 500, var(--font-dark), none, none);
             padding: 22.5px 20px;
             background-color: var(--light-grey);
-            color: var(--font-dark);
             border: none;
             border-radius: 2px;
             box-shadow: none;
             outline: none;
             animation: slideDownIn 0.5s ease-out 0.2s forwards;
+
+            @include tablet-screen {
+                width: 100%;
+                font-size: 1.5rem;
+                font-weight: 500;
+                padding: 22.5px 20px;
+
+                &:focus + .contact__field--line {
+                    width: 100%; 
+                }
+            }
+
+            @include mobile-screen {
+                padding: 17.5px 15px;
+            }
 
             &:focus + .contact__field--line {
                 width: 525px; 
@@ -842,45 +965,36 @@ body {
         }
 
         &--line {
-            width: 0;
+            width: 0; height: 1px;
             display: block;
-            height: 1px;
             background-color: var(--background-dark);
             transition: 0.4s ease;
             margin-bottom: 18px;
+
+            @include mobile-screen {
+                margin-bottom: 10px;
+            }
         }
-
-        display: flex;
-            flex-direction: column;
-            margin-bottom: 18px;
         
-
         [type="submit"] {
             width: 150px;
-            text-transform: uppercase;
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 2px;
+            @include font(1.4rem, 700, var(--font-light), 2px, uppercase);
             line-height: 3.2rem;
-            color: var(--font-light);
             background-color: transparent;
-            border: none;
-            cursor: pointer;
-            outline: none;
+            border: none; outline: none;
             margin-top: 45px;
             margin-left: 20px;
             padding-left: 5px;
             text-align: left;
+            cursor: pointer;
             animation: slideDownIn 0.5s ease-out 0.4s forwards;
 
             // circle derocation button animation
             &::before {
                 content: "";
+                width: 55px; height: 55px;
                 position: absolute;
-                top: -37.5%;
-                left: -20px;
-                width: 55px;
-                height: 55px;
+                top: -37.5%; left: -20px;
                 border-radius: 55px;
                 background-color: var(--material-lighter);
                 z-index: -1;
@@ -924,11 +1038,11 @@ footer {
                 display: block;
                 margin-top: 20px;
                 color: var(--material-grey);
-                transition: 0.4s all ease;
+                transition: 0.5s all ease;
 
                 &:hover {
                     color: var(--font-light);
-                    transition: 0.4s all ease;
+                    transition: 0.5s all ease;
                 }
             }
 
@@ -952,34 +1066,6 @@ footer {
 /* =============== MEDIA QUERIES =============== */
 
 @media all and (max-width: 1100px) {
-
-    .about-section {
-
-        &::before, .m-decoration, .t-decoration {
-            display: none;
-        }
-
-        .presentation {
-            h1 {
-                font-size: 6rem;
-                line-height: 8rem;
-            }
-        }
-
-        .description {
-            p {
-                font-size: 1.85rem;
-            }
-            a {
-                margin-top: 55px;
-            }
-        }
-    }
-
-    .skills-page, .works-page, .contact-page {
-        padding-top: 150px;
-        padding-bottom: 150px;
-    }
 
     /* Modal Content */
     .timeline .modal-window .work-window {
@@ -1017,69 +1103,6 @@ footer {
 // tablet
 @media all and (max-width: 767px) {
 
-    .about-section {
-        .title-name {
-            font-size: 1.5rem;
-            letter-spacing: 3.5px;
-            margin-bottom: 45px;
-        }
-
-        .presentation {
-            h1 {
-                font-size: 4rem;
-                line-height: 5.5rem;
-            }
-        }
-
-        .description {
-            margin-top: 40px;
-            max-width: 85%;
-            p {
-                font-size: 1.6rem;
-                line-height: 2.2rem;
-            }
-            a {
-                width: 235px;
-                font-size: 1.2rem;
-                letter-spacing: 1.5px;
-                line-height: 2.85rem;
-
-                &::before {
-                    top: -9px; left: -17.5px;
-                    width: 45px; height: 45px;
-                }
-
-                &:hover::before {
-                    width: 235px;
-                }
-            }
-        }
-        
-    }
-
-    .skills-page, .works-page, .contact-page {
-        h1 {
-            font-size: 3.5rem;
-        }
-        h2 {
-            font-size: 1.7rem;
-        }
-        padding-top: 100px;
-        padding-bottom: 100px;
-    }
-    
-    .skills-box .skill {
-        h2 {
-            font-size: 1.75rem;
-        }
-        &__progress-bar {
-            height: 20px;
-    
-            .skill-bar {
-                height: 20px;
-            }
-        }
-    }
 
     .timeline .timeline__box {
         &--content {
@@ -1138,24 +1161,6 @@ footer {
         }
     }
 
-    /* ----- contact box ----- */
-    .contact-page .contact__field {
-        margin-top: 5%;
-        display: flex;
-        flex-direction: column;
-
-        &--input, &--textarea {
-            width: 100%;
-            font-size: 1.5rem;
-            font-weight: 500;
-            padding: 22.5px 20px;
-
-            &:focus + .contact__field--line {
-                width: 100%; 
-            }
-        }
-    }
-
     footer {
         min-height: 500px;
         /* ----- footer area ----- */
@@ -1194,61 +1199,6 @@ footer {
 // mobile
 @media all and (max-width: 500px) {
 
-    .explore {
-        right: 85px;
-    }
-
-    .hamburger-icon {
-        right: 3.5%;
-    }
-
-    .menu .container-menu {
-        .label-menu {
-            font-size: 1rem;
-            letter-spacing: 2px;
-            margin: -42.5px 7.5px;
-        }
-
-        .menu--text {
-            font-size: 3.8rem;
-            margin-left: 45px;
-        }
-    }
-
-    .scroll {
-        right: 0px;
-    }
-    
-    .about-page, .skills-page, .works-page, .contact-page, footer {
-        padding: 5%;
-    }
-
-    .about-section {
-        padding: 0;
-
-        .title-name {
-            font-size: 1.4rem;
-        }
-
-        .presentation {
-            h1 {
-                font-size: 3rem;
-                line-height: 5rem;
-            }
-        }
-    }
-
-    .skills-page, .works-page, .contact-page {
-        h1 {
-            font-size: 3rem;
-        }
-        h2 {
-            font-size: 1.5rem;
-        }
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
     .timeline .timeline__box {
         &--content {
             // title work box
@@ -1276,20 +1226,6 @@ footer {
 
         &__body {
             padding: 0 22.5px 22.5px;
-        }
-    }
-
-    /* ----- contact box ----- */
-    .contact-page .contact__field {
-
-        &--input, &--textarea {
-            font-size: 1.5rem;
-            font-weight: 500;
-            padding: 17.5px 15px;
-        }
-
-        &--line {
-            margin-bottom: 10px;
         }
     }
 

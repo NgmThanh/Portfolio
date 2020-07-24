@@ -17,7 +17,9 @@
   src: url("../font/Segoe UI/segoeuib.ttf") format("truetype");
 }
 
-/* =============== COLORS =============== */
+/* ============================ */
+/* ========== COLORS ========== */
+/* ============================ */
 :root {
   --background-dark: #1F1E1D;
   --background-light: #fff;
@@ -33,7 +35,9 @@
   --selection-color: #DEE1E6;
 }
 
-/* =============== ANIMATIONS =============== */
+/* ================================ */
+/* ========== ANIMATIONS ========== */
+/* ================================ */
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0.25;
@@ -204,37 +208,19 @@
   }
 }
 
-/* =============== MIXINS =============== */
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
-  display: none;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent;
-  display: none;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  display: none;
-}
-
-/* Handle on hover */
+/* ============================ */
+/* ========== MIXINS ========== */
+/* ============================ */
+/* ==================================== */
+/* ========== GLOBAL CUSTOM  ========== */
+/* ==================================== */
+::-webkit-scrollbar,
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb,
 ::-webkit-scrollbar-thumb:hover {
   display: none;
 }
 
-.disable-scroll {
-  height: 100%;
-  overflow: hidden;
-  margin: 0;
-}
-
-/* =============== MAIN CODE =============== */
 * {
   font-family: "Segoe UI";
   padding: 0;
@@ -271,10 +257,12 @@ html {
 body {
   -webkit-animation: fadeIn 1s linear 0s forwards;
           animation: fadeIn 1s linear 0s forwards;
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
 }
 
+/* =============================== */
+/* ========== MAIN CODE ========== */
+/* =============================== */
+/* ---------- light / dark page ---------- */
 .dark-page {
   background-color: var(--background-dark);
   color: var(--font-light);
@@ -285,40 +273,46 @@ body {
   color: var(--font-dark);
 }
 
-/* ----------- FIXED HEADER ----------- */
+/* ========== MENU ========== */
 .explore {
-  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--font-light);
+  letter-spacing: 2px;
+  text-transform: uppercase;
   position: fixed;
   top: calc(5% + 1.4rem);
   right: 125px;
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--font-light);
-  text-transform: uppercase;
+  display: block;
   z-index: 100;
 }
 
 .explore::after {
   content: "";
-  display: block;
   width: 100%;
   height: 1px;
+  display: block;
   margin-top: 5px;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   background-color: var(--font-light);
 }
 
+@media screen and (max-width: 500px) {
+  .explore {
+    right: 85px;
+  }
+}
+
 .hamburger-icon {
+  width: 50px;
+  height: 50px;
   display: block;
   position: fixed;
   top: 5%;
   right: 50px;
   background-color: var(--background-light);
   padding: 12.5px;
-  width: 50px;
-  height: 50px;
   border-radius: 100%;
   z-index: 100;
   cursor: pointer;
@@ -336,6 +330,12 @@ body {
 .hamburger-icon .bar2 {
   width: 15px;
   margin-left: 10px;
+}
+
+@media screen and (max-width: 500px) {
+  .hamburger-icon {
+    right: 3.5%;
+  }
 }
 
 /* animation hamburger icon on click */
@@ -362,28 +362,28 @@ body {
   bottom: 0;
   left: 0;
   background-color: var(--background-dark);
-  display: none;
   z-index: 99;
+  display: none;
 }
 
 .menu .container-menu {
   width: 100%;
-  max-width: 1300px;
   height: 100%;
+  max-width: 1300px;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+      -ms-flex-flow: column;
+          flex-flow: column;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .menu .container-menu .label-menu {
@@ -391,6 +391,7 @@ body {
   font-weight: 700;
   color: var(--font-light);
   letter-spacing: 3px;
+  text-transform: none;
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   margin: -62.5px 25px;
@@ -399,10 +400,10 @@ body {
 
 .menu .container-menu .menu--text {
   font-size: 6.5rem;
-  color: var(--font-color);
-  text-transform: none;
-  letter-spacing: 5px;
   font-weight: 700;
+  color: var(--font-light);
+  letter-spacing: 5px;
+  text-transform: none;
   margin: 10px 0 0 100px;
   -webkit-animation: slide-left-in 0.5s ease 0s;
           animation: slide-left-in 0.5s ease 0s;
@@ -411,9 +412,9 @@ body {
 
 .menu .container-menu .menu--text::after {
   content: "";
-  display: block;
   width: 0;
   height: 1px;
+  display: block;
   margin-top: 4px;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
@@ -426,7 +427,19 @@ body {
   transition: 0.5s ease;
 }
 
-/* ----------- PROGRESS BAR ----------- */
+@media screen and (max-width: 500px) {
+  .menu .container-menu .label-menu {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin: -42.5px 7.5px;
+  }
+  .menu .container-menu .menu--text {
+    font-size: 3.8rem;
+    margin-left: 45px;
+  }
+}
+
+/* ========== PROGRESS BAR ========== */
 #progress {
   width: 4px;
   height: 0px;
@@ -438,7 +451,7 @@ body {
   z-index: 50;
 }
 
-/* ----------- LABEL SCROLL ----------- */
+/* ========== LABEL SCROLL ========== */
 .scroll {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -454,7 +467,6 @@ body {
 }
 
 .scroll--container {
-  overflow: hidden;
   width: 65px;
   height: 5px;
   display: -webkit-box;
@@ -463,6 +475,7 @@ body {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   margin-bottom: 100%;
+  overflow: hidden;
 }
 
 .scroll--container .scroll--line {
@@ -479,13 +492,20 @@ body {
   font-weight: 600;
   color: var(--font-light);
   letter-spacing: 2px;
+  text-transform: uppercase;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 
+@media screen and (max-width: 500px) {
+  .scroll {
+    right: 0px;
+  }
+}
+
 .about-page, .skills-page, .works-page, .contact-page, footer {
-  padding: 7.5%;
   margin: auto;
+  padding: 7.5%;
   min-height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -502,8 +522,11 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: none;
+      -ms-flex-align: none;
+          align-items: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -523,15 +546,56 @@ body {
 .about-page h2, .skills-page h2, .works-page h2, .contact-page h2, footer h2 {
   font-size: 2rem;
   font-weight: 500;
+  color: none;
+  letter-spacing: none;
+  text-transform: none;
   display: block;
   margin-top: 15px;
   -webkit-animation: slideDownIn 0.5s ease-out 0.05s forwards;
           animation: slideDownIn 0.5s ease-out 0.05s forwards;
 }
 
-/* ----------- ABOUT PAGE ----------- */
+@media screen and (max-width: 500px) {
+  .about-page, .skills-page, .works-page, .contact-page, footer {
+    padding: 5%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .skills-page, .works-page, .contact-page {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .skills-page, .works-page, .contact-page {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .skills-page h1, .works-page h1, .contact-page h1 {
+    font-size: 3.5rem;
+  }
+  .skills-page h2, .works-page h2, .contact-page h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .skills-page, .works-page, .contact-page {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .skills-page h1, .works-page h1, .contact-page h1 {
+    font-size: 3rem;
+  }
+  .skills-page h2, .works-page h2, .contact-page h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========== ABOUT PAGE ========== */
 .about-section {
-  overflow: hidden;
   /* ----- name area ----- */
   /* ----- presentation area ----- */
   /* ----- description area ----- */
@@ -555,9 +619,11 @@ body {
   top: 50%;
   display: block;
   font-family: 'Roboto';
-  font-weight: 900;
   font-size: 50rem;
+  font-weight: 900;
   color: var(--material-color);
+  letter-spacing: none;
+  text-transform: none;
 }
 
 .about-section .m-decoration {
@@ -570,13 +636,33 @@ body {
           transform: translate(20%, -10%);
 }
 
+@media screen and (max-width: 1100px) {
+  .about-section::before, .about-section .m-decoration, .about-section .t-decoration {
+    display: none;
+  }
+}
+
 .about-section .title-name {
   font-size: 1.8rem;
   font-weight: 600;
-  letter-spacing: 5px;
   color: var(--orange-pure);
+  letter-spacing: 5px;
   text-transform: uppercase;
   margin-bottom: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .about-section .title-name {
+    font-size: 1.5rem;
+    letter-spacing: 3.5px;
+    margin-bottom: 45px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about-section .title-name {
+    font-size: 1.4rem;
+  }
 }
 
 .about-section .presentation h1 {
@@ -584,6 +670,27 @@ body {
   line-height: 9rem;
   -webkit-animation: slideDownIn 0.5s ease-out 0s forwards;
           animation: slideDownIn 0.5s ease-out 0s forwards;
+}
+
+@media screen and (max-width: 1100px) {
+  .about-section .presentation h1 {
+    font-size: 6rem;
+    line-height: 8rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-section .presentation h1 {
+    font-size: 4rem;
+    line-height: 5.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about-section .presentation h1 {
+    font-size: 3rem;
+    line-height: 5rem;
+  }
 }
 
 .about-section .description {
@@ -601,10 +708,11 @@ body {
 
 .about-section .description a {
   width: 285px;
-  text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 700;
+  color: var(--font-light);
   letter-spacing: 2px;
+  text-transform: uppercase;
   line-height: 3.2rem;
   display: block;
   margin-top: 45px;
@@ -633,14 +741,58 @@ body {
   transition: 0.4s ease;
 }
 
-/* ----------- SKILLS PAGE ----------- */
+@media screen and (max-width: 1100px) {
+  .about-section .description p {
+    font-size: 1.85rem;
+  }
+  .about-section .description a {
+    margin-top: 55px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-section .description {
+    margin-top: 40px;
+    max-width: 85%;
+  }
+  .about-section .description p {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+  }
+  .about-section .description a {
+    width: 235px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--font-light);
+    letter-spacing: 1.5px;
+    text-transform: none;
+    line-height: 2.85rem;
+  }
+  .about-section .description a::before {
+    top: -9px;
+    left: -17.5px;
+    width: 45px;
+    height: 45px;
+  }
+  .about-section .description a:hover::before {
+    width: 235px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about-section {
+    padding: 0;
+  }
+}
+
+/* ========== SKILLS PAGE ========== */
 .skills-box {
   margin-top: 2.5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -670,11 +822,17 @@ body {
 }
 
 .skills-box .skill h2 {
-  font-weight: normal;
-  font-size: 2.0rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--font-dark);
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-weight: 600;
+}
+
+@media screen and (max-width: 767px) {
+  .skills-box .skill h2 {
+    font-size: 1.75rem;
+  }
 }
 
 .skills-box .skill__progress-bar {
@@ -687,6 +845,12 @@ body {
           box-shadow: 0px 0px 5px 1px var(--shadow-light);
 }
 
+@media screen and (max-width: 767px) {
+  .skills-box .skill__progress-bar {
+    height: 20px;
+  }
+}
+
 .skills-box .skill__progress-bar h3 {
   position: absolute;
   bottom: 170%;
@@ -695,8 +859,8 @@ body {
 }
 
 .skills-box .skill__progress-bar .skill-bar {
-  position: absolute;
   height: 25px;
+  position: absolute;
   background: var(--material-color);
   border-radius: 3px;
   z-index: 2;
@@ -705,6 +869,12 @@ body {
   -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-light);
           box-shadow: 0px 0px 5px 1px var(--shadow-light);
   overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  .skills-box .skill__progress-bar .skill-bar {
+    height: 20px;
+  }
 }
 
 .skills-box .skill__progress-bar .skill-bar::after {
@@ -1009,8 +1179,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  display: flex;
-  flex-direction: column;
   margin-bottom: 18px;
 }
 
@@ -1018,9 +1186,11 @@ body {
   width: 525px;
   font-size: 1.6rem;
   font-weight: 500;
+  color: var(--font-dark);
+  letter-spacing: none;
+  text-transform: none;
   padding: 22.5px 20px;
   background-color: var(--light-grey);
-  color: var(--font-dark);
   border: none;
   border-radius: 2px;
   -webkit-box-shadow: none;
@@ -1028,6 +1198,24 @@ body {
   outline: none;
   -webkit-animation: slideDownIn 0.5s ease-out 0.2s forwards;
           animation: slideDownIn 0.5s ease-out 0.2s forwards;
+}
+
+@media screen and (max-width: 767px) {
+  .contact-page .contact__field--input, .contact-page .contact__field--textarea {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 22.5px 20px;
+  }
+  .contact-page .contact__field--input:focus + .contact__field--line, .contact-page .contact__field--textarea:focus + .contact__field--line {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-page .contact__field--input, .contact-page .contact__field--textarea {
+    padding: 17.5px 15px;
+  }
 }
 
 .contact-page .contact__field--input:focus + .contact__field--line, .contact-page .contact__field--textarea:focus + .contact__field--line {
@@ -1043,41 +1231,47 @@ body {
 
 .contact-page .contact__field--line {
   width: 0;
-  display: block;
   height: 1px;
+  display: block;
   background-color: var(--background-dark);
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
   margin-bottom: 18px;
 }
 
+@media screen and (max-width: 500px) {
+  .contact-page .contact__field--line {
+    margin-bottom: 10px;
+  }
+}
+
 .contact-page .contact__field [type="submit"] {
   width: 150px;
-  text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 700;
-  letter-spacing: 2px;
-  line-height: 3.2rem;
   color: var(--font-light);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  line-height: 3.2rem;
   background-color: transparent;
   border: none;
-  cursor: pointer;
   outline: none;
   margin-top: 45px;
   margin-left: 20px;
   padding-left: 5px;
   text-align: left;
+  cursor: pointer;
   -webkit-animation: slideDownIn 0.5s ease-out 0.4s forwards;
           animation: slideDownIn 0.5s ease-out 0.4s forwards;
 }
 
 .contact-page .contact__field [type="submit"]::before {
   content: "";
+  width: 55px;
+  height: 55px;
   position: absolute;
   top: -37.5%;
   left: -20px;
-  width: 55px;
-  height: 55px;
   border-radius: 55px;
   background-color: var(--material-lighter);
   z-index: -1;
@@ -1128,14 +1322,14 @@ footer .footer-section__contact span, footer .footer-section__informations span 
   display: block;
   margin-top: 20px;
   color: var(--material-grey);
-  -webkit-transition: 0.4s all ease;
-  transition: 0.4s all ease;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
 }
 
 footer .footer-section__contact span:hover, footer .footer-section__informations span:hover {
   color: var(--font-light);
-  -webkit-transition: 0.4s all ease;
-  transition: 0.4s all ease;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
 }
 
 footer .footer-section__contact i, footer .footer-section__informations i {
@@ -1159,23 +1353,6 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
 
 /* =============== MEDIA QUERIES =============== */
 @media all and (max-width: 1100px) {
-  .about-section::before, .about-section .m-decoration, .about-section .t-decoration {
-    display: none;
-  }
-  .about-section .presentation h1 {
-    font-size: 6rem;
-    line-height: 8rem;
-  }
-  .about-section .description p {
-    font-size: 1.85rem;
-  }
-  .about-section .description a {
-    margin-top: 55px;
-  }
-  .skills-page, .works-page, .contact-page {
-    padding-top: 150px;
-    padding-bottom: 150px;
-  }
   /* Modal Content */
   .timeline .modal-window .work-window {
     width: 90%;
@@ -1207,57 +1384,6 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
 }
 
 @media all and (max-width: 767px) {
-  .about-section .title-name {
-    font-size: 1.5rem;
-    letter-spacing: 3.5px;
-    margin-bottom: 45px;
-  }
-  .about-section .presentation h1 {
-    font-size: 4rem;
-    line-height: 5.5rem;
-  }
-  .about-section .description {
-    margin-top: 40px;
-    max-width: 85%;
-  }
-  .about-section .description p {
-    font-size: 1.6rem;
-    line-height: 2.2rem;
-  }
-  .about-section .description a {
-    width: 235px;
-    font-size: 1.2rem;
-    letter-spacing: 1.5px;
-    line-height: 2.85rem;
-  }
-  .about-section .description a::before {
-    top: -9px;
-    left: -17.5px;
-    width: 45px;
-    height: 45px;
-  }
-  .about-section .description a:hover::before {
-    width: 235px;
-  }
-  .skills-page, .works-page, .contact-page {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-  .skills-page h1, .works-page h1, .contact-page h1 {
-    font-size: 3.5rem;
-  }
-  .skills-page h2, .works-page h2, .contact-page h2 {
-    font-size: 1.7rem;
-  }
-  .skills-box .skill h2 {
-    font-size: 1.75rem;
-  }
-  .skills-box .skill__progress-bar {
-    height: 20px;
-  }
-  .skills-box .skill__progress-bar .skill-bar {
-    height: 20px;
-  }
   .timeline .timeline__box--content h1 {
     font-size: 2.1rem;
   }
@@ -1300,26 +1426,6 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
   .timeline .modal-window .work-window__body .dot {
     margin: 15px 2.5px 0;
   }
-  /* ----- contact box ----- */
-  .contact-page .contact__field {
-    margin-top: 5%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .contact-page .contact__field--input, .contact-page .contact__field--textarea {
-    width: 100%;
-    font-size: 1.5rem;
-    font-weight: 500;
-    padding: 22.5px 20px;
-  }
-  .contact-page .contact__field--input:focus + .contact__field--line, .contact-page .contact__field--textarea:focus + .contact__field--line {
-    width: 100%;
-  }
   footer {
     min-height: 500px;
     /* ----- footer area ----- */
@@ -1355,47 +1461,6 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
 }
 
 @media all and (max-width: 500px) {
-  .explore {
-    right: 85px;
-  }
-  .hamburger-icon {
-    right: 3.5%;
-  }
-  .menu .container-menu .label-menu {
-    font-size: 1rem;
-    letter-spacing: 2px;
-    margin: -42.5px 7.5px;
-  }
-  .menu .container-menu .menu--text {
-    font-size: 3.8rem;
-    margin-left: 45px;
-  }
-  .scroll {
-    right: 0px;
-  }
-  .about-page, .skills-page, .works-page, .contact-page, footer {
-    padding: 5%;
-  }
-  .about-section {
-    padding: 0;
-  }
-  .about-section .title-name {
-    font-size: 1.4rem;
-  }
-  .about-section .presentation h1 {
-    font-size: 3rem;
-    line-height: 5rem;
-  }
-  .skills-page, .works-page, .contact-page {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  .skills-page h1, .works-page h1, .contact-page h1 {
-    font-size: 3rem;
-  }
-  .skills-page h2, .works-page h2, .contact-page h2 {
-    font-size: 1.5rem;
-  }
   .timeline .timeline__box--content h1 {
     font-size: 1.9rem;
   }
@@ -1415,15 +1480,6 @@ footer .footer-section__contact i:hover, footer .footer-section__informations i:
   }
   .timeline .modal-window .work-window__body {
     padding: 0 22.5px 22.5px;
-  }
-  /* ----- contact box ----- */
-  .contact-page .contact__field--input, .contact-page .contact__field--textarea {
-    font-size: 1.5rem;
-    font-weight: 500;
-    padding: 17.5px 15px;
-  }
-  .contact-page .contact__field--line {
-    margin-bottom: 10px;
   }
   footer {
     /* ----- footer area ----- */
