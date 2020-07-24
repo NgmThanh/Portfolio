@@ -685,17 +685,14 @@ body {
     }
 }
 
-/* ----------- WORKS PAGE ----------- */
+/* ========== WORKS PAGE ========== */
 
 /* ----- timeline area ----- */
 .timeline {
     margin-top: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(wrap, center, space-between);
 
-    @media all and (max-width: 767px) {
+    @include tablet-screen {
         justify-content: center;
     }
 
@@ -703,17 +700,16 @@ body {
     &__box {
         margin: 5% 0;
         width: 45%;
-
-        @media all and (max-width: 767px) {
-            width: 100%;
-        }
         background-color: var(--material-color);
-        border: none;
-        border-radius: 5px;
+        border: none; border-radius: 5px;
         transition: 0.5s all ease-out;
         box-shadow: 0px 0px 5px 2px var(--shadow-dark);
         filter: brightness(95%);
         cursor: pointer;
+
+        @include tablet-screen {
+            width: 100%;
+        }
 
         // to make a responsive square
         &::after {
@@ -732,12 +728,8 @@ body {
         // box inside
         &--content {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            width: 100%; height: 100%;
+            @include flex(column, center, center);
 
             // icon work box
             img {
@@ -747,87 +739,145 @@ body {
             }
             // title work box
             h1 {
-                font-size: 2.25rem;
+                @include font(2.25rem, 500, var(--font-light), none, none);
                 display: block;
                 margin-top: 10px;
-                font-weight: 500;
-                color: var(--font-light);
                 animation: none;
+
+                @include tablet-screen {
+                    font-size: 2.1rem;
+                }
+                @include mobile-screen {
+                    font-size: 1.9rem;
+                }
             }
         }
     }
     // modal work window displayed when click button
     .modal-window {
         display: none;
+        width: 100%; height: 100%;
         position: fixed;
+        left: 0; top: 0;
         z-index: 10000;
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
         overflow: hidden; /* Enable scroll if needed */
         background-color: rgb(0,0,0); /* Fallback color */
         background-color: rgba(0,0,0,0.75); /* Black w/ opacity */
 
         /* Modal Content */
         .work-window {
-            margin: auto;
-            background-color: var(--background-dark);
-            margin: auto auto;
             width: 75%;
             max-height: 95%;
+            margin: auto;
+            background-color: var(--background-dark);
             text-align: left;
-            animation: boxSlideIn 0.4s ease-out 0s;
-            
+            animation: boxSlideIn 0.4s ease-out 0s;            
             overflow-y: auto;
+
+            @include small-screen {
+                width: 90%;
+                max-height: 80%;
+            }
+            @include tablet-screen {
+                width: 97.5%;
+                max-height: 80%;
+            }
+            @include mobile-screen {
+                width: 99.5%;
+                max-height: 75%;
+            }
 
             &__header {
                 padding: 50px 50px 0;
+
+                @include small-screen {
+                    padding: 45px 45px 0px;
+                }
+                @include tablet-screen {
+                    padding: 35px 35px 0px;
+                }
+                @include mobile-screen {
+                    padding: 22.5px 22.5px 0px;
+                }
                 
                 &--title {
-                    font-size: 5rem;
-                    font-weight: 700;
-                    color: var(--font-light);
+                    @include font(5rem, 700, var(--font-light), none, none);
                     animation: none;
+
+                    @include small-screen {
+                        font-size: 4rem;
+                    }
+                    @include tablet-screen {
+                        font-size: 3.5rem;
+                    }
+                    @include mobile-screen {
+                        font-size: 3rem;
+                    }
                 }
                 &--subtitle {
-                    font-size: 1.6rem;
-                    font-weight: 600;
-                    color: var(--orange-pure);
-                    text-shadow: none;
+                    @include font(1.6rem, 600, var(--orange-pure), 0, 0);
                     display: block;
                     margin: 10px 0 15px;
                     animation: none;
+
+                    @include small-screen {
+                        font-size: 1.5rem;
+                    }
                 }
                 &--language {
-                    display: inline-block;
-                    text-transform: uppercase;
-                    font-size: 1.3rem;
-                    font-weight: 600;
-                    color: var(--font-light);
+                    @include font(1.3rem, 600, var(--font-light), none, uppercase);
                     background-color: var(--material-lighter);
+                    display: inline-block;
                     border-radius: 4px;
                     padding: 5px 8px;
                     margin-top: 3px;
                     margin-right: 5px;
                 }
                 &--date {
-                    font-size: 1.8rem;
+                    @include font(1.8rem, normal, var(--font-light), none, none);
                     line-height: 1.8rem;
                     float: right;
                     margin-top: 38px;
+
+                    @include small-screen {
+                        font-size: 1.6rem;
+                        margin-top: 27px;
+                    }
+                    @include tablet-screen {
+                        margin-top: 23px;
+                    }
+                    @include mobile-screen {
+                        margin-top: 17px;
+                    }
                 }
             }
 
             &__body {
                 padding: 0 50px 50px;
 
+                @include small-screen {
+                    padding: 0 45px 45px;
+                }
+                @include tablet-screen {
+                    padding: 0 35px 35px;
+                }
+                @include mobile-screen {
+                    padding: 0 22.5px 22.5px;
+                }
+
                 &--description {
-                    font-size: 1.5rem;
+                    @include font(1.5rem, normal, var(--font-light), 0.5px, none);
                     line-height: 2.25rem;
-                    letter-spacing: 0.5px;
                     display: block;
                     margin-top: 25px;
+
+                    @include small-screen {
+                        font-size: 1.5rem;
+                    }
+                    @include tablet-screen {
+                        margin-top: 15px;
+                        letter-spacing: 0.3px;
+                    }
                 }
 
                 /* Slideshow container */
@@ -837,22 +887,31 @@ body {
                     margin: 50px auto 20px;
                     text-align: center;
 
+                    @include small-screen {
+                        margin: 30px auto 20px;
+                    }
+                    @include tablet-screen {
+                        margin: 0 auto 0;
+                    }
+
                     /* Hide the images by default */
                     .slide, .slide1, .slide2, .slide3, .slide4, .slide5  {
                         display: none;
 
                         &--number, &--text {
-                            font-size: 1.5rem;
-                            letter-spacing: 0.8px;
+                            @include font(1.5rem, normal, var(--font-light), 0.8px, none);
                             margin-top: 25px;
                             position: absolute;
                             top: 100%;
+
+                            @include tablet-screen {
+                                top: 0%;
+                            }
                         }
                         /* Number text (1/3 etc) */
                         &--number {
                             left: 0;
                         }
-
                         /* Caption text */
                         &--text {
                             right: 0;
@@ -862,27 +921,35 @@ body {
                             max-width: 90%;
                             margin: auto;
                             box-shadow: 0px 0px 5px 2px var(--shadow-dark);
+
+                            @include tablet-screen {
+                                max-width: 90%;
+                                margin: 65px auto 0;
+                                box-shadow: 0px 0px 5px 2px var(--shadow-dark);
+                            }
                         }
                     }
 
                     /* Next & previous buttons */
                     .prev, .next {
-                        cursor: pointer;
+                        @include font(1.8rem, 700, var(--font-light), none, none);
                         position: absolute;
                         top: 50%;
                         width: auto;
                         margin-top: -22px;
                         padding: 15px;
-                        color: var(--font-color);                         
-                        font-weight: bold;
-                        font-size: 18px;
-                        transition: 0.5s ease;
                         border-radius: 3px;
                         user-select: none;
                         opacity: 0.7;
+                        transition: 0.5s ease;
+                        cursor: pointer;
 
                         &:hover {
                             background: var(--orange-pure);
+                        }
+
+                        @include tablet-screen {
+                            margin-top: 0;
                         }
                     }
 
@@ -898,14 +965,17 @@ body {
 
                 /* The dots/bullets/indicators */
                 .dot {
-                    cursor: pointer;
-                    height: 10px;
-                    width: 10px;
+                    width: 10px; height: 10px;
                     margin: 12.5px 2.5px 0;
                     background: var(--font-light);
                     border-radius: 50%;
                     display: inline-block;
+                    cursor: pointer;
                     transition: 0.5s ease;
+
+                    @include tablet-screen {
+                        margin: 15px 2.5px 0;
+                    }
                 }
 
                 .active, .dot:hover {
@@ -917,7 +987,7 @@ body {
     }
 }
 
-/* ----------- CONTACT PAGE ----------- */
+/* ========== CONTACT PAGE ========== */
 .contact-page {
 
     /* ----- contact box ----- */
@@ -938,6 +1008,11 @@ body {
             outline: none;
             animation: slideDownIn 0.5s ease-out 0.2s forwards;
 
+            &:focus + .contact__field--line {
+                width: 525px; 
+                transition: 0.4s ease;
+            }
+
             @include tablet-screen {
                 width: 100%;
                 font-size: 1.5rem;
@@ -948,14 +1023,8 @@ body {
                     width: 100%; 
                 }
             }
-
             @include mobile-screen {
                 padding: 17.5px 15px;
-            }
-
-            &:focus + .contact__field--line {
-                width: 525px; 
-                transition: 0.4s ease;
             }
         }
 
@@ -1009,14 +1078,23 @@ body {
     }
 }
 
-/* ----------- FOOTER ----------- */
+/* ========== FOOTER ========== */
 footer {
     min-height: 50vh;
+
+    @include tablet-screen {
+        min-height: 500px;
+    }
 
     /* ----- footer area ----- */
     .footer-section {
         flex-direction: row;
         justify-content: space-between;
+
+        @include tablet-screen {
+            flex-direction: column;
+            justify-content: center;
+        }
 
         &__contact, &__informations {
             text-align: left;
@@ -1024,14 +1102,20 @@ footer {
             font-size: 1.6rem;
             font-weight: 600;
             color: var(--material-grey);
+
+            @include tablet-screen {
+                width: 100%;
+            }
         
             h1 {
-                color: var(--font-light);
-                text-transform: uppercase;
-                font-size: 1.5rem;
-                letter-spacing: 2px;
+                @include font(1.5rem, 700, var(--font-light), 2px, uppercase);
                 display: block;
                 margin-bottom: 10px;
+
+                @include tablet-screen {
+                    font-size: 1.5rem;
+                    margin-bottom: 0px;
+                }
             }
 
             span {
@@ -1043,6 +1127,10 @@ footer {
                 &:hover {
                     color: var(--font-light);
                     transition: 0.5s all ease;
+                }
+
+                @include tablet-screen {
+                    margin-top: 12.5px;
                 }
             }
 
@@ -1058,133 +1146,14 @@ footer {
                     color: var(--font-light);
                     transition: 0.5s all ease;
                 }
-            }
-        }
-    }
-}
 
-/* =============== MEDIA QUERIES =============== */
-
-@media all and (max-width: 1100px) {
-
-    /* Modal Content */
-    .timeline .modal-window .work-window {
-        width: 90%;
-        max-height: 80%;
-
-        &__header {
-            padding: 45px 45px 0px;
-            
-            &--title {
-                font-size: 4rem;
-            }
-            &--subtitle {
-                font-size: 1.5rem;  
-            }
-            &--date {
-                font-size: 1.6rem;
-                margin-top: 27px;
-            }
-        }
-
-        &__body {
-            padding: 0 45px 45px;
-            &--description {
-                font-size: 1.5rem;
-            }
-            /* Slideshow container */
-            .slideshow-container {
-                margin: 30px auto 20px;
-            }
-        }
-    }
-}
-
-// tablet
-@media all and (max-width: 767px) {
-
-
-    .timeline .timeline__box {
-        &--content {
-            // title work box
-            h1 {
-                font-size: 2.1rem;
-            }
-        }
-    }
-
-    /* Modal Content */
-    .timeline .modal-window .work-window {
-        width: 97.5%;
-        max-height: 80%;
-
-        &__header {
-            padding: 35px 35px 0px;
-            
-            &--title {
-                font-size: 3.5rem;
-            }
-            &--date {
-                margin-top: 23px;
-            }
-        }
-
-        &__body {
-            padding: 0 35px 35px;
-
-            &--description {
-                margin-top: 15px;
-                letter-spacing: 0.3px;
-            }
-
-            .slideshow-container {
-                margin: 0 auto 0;
-                .slide, .slide1, .slide2, .slide3, .slide4, .slide5 {
-                    &--number, &--text {
-                        top: 0%;
-                    }
-                    img {
-                        max-width: 90%;
-                        margin: 65px auto 0;
-                        box-shadow: 0px 0px 5px 2px var(--shadow-dark);
-                    }
-                }
-                
-                .prev, .next {
-                    margin-top: 0;
-                }
-            }
-
-            .dot {
-                margin: 15px 2.5px 0;
-            }
-        }
-    }
-
-    footer {
-        min-height: 500px;
-        /* ----- footer area ----- */
-        .footer-section {
-            flex-direction: column;
-            justify-content: center;
-    
-            &__contact, &__informations {
-                width: 100%;
-            
-                h1 {
-                    font-size: 1.5rem;
-                    margin-bottom: 0px;
-                }
-
-                span {
-                    margin-top: 12.5px;
-                }
-
-                i {
+                @include tablet-screen {
                     margin-top: 30px;
                 }
             }
+        }
 
+        @include tablet-screen {
             &__contact {
                 margin-top: 25px;
             }
@@ -1192,47 +1161,7 @@ footer {
                 margin-top: 50px;
             }
         }
-    }
-}
-
-
-// mobile
-@media all and (max-width: 500px) {
-
-    .timeline .timeline__box {
-        &--content {
-            // title work box
-            h1 {
-                font-size: 1.9rem;
-            }
-        }
-    }
-
-    /* Modal Content */
-    .timeline .modal-window .work-window {
-        width: 99.5%;
-        max-height: 75%;
-
-        &__header {
-            padding: 22.5px 22.5px 0px;
-            
-            &--title {
-                font-size: 3rem;
-            }
-            &--date {
-                margin-top: 17px;
-            }
-        }
-
-        &__body {
-            padding: 0 22.5px 22.5px;
-        }
-    }
-
-    footer {
-        /* ----- footer area ----- */
-        .footer-section {
-
+        @include mobile-screen {
             &__contact {
                 margin-top: 15px;
             }
@@ -1242,5 +1171,4 @@ footer {
             }
         }
     }
-
 }
