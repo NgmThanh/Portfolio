@@ -1,533 +1,544 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
-        <title>Nguyen Thanh - PortFolio</title>
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="Nguyen Thanh - PortFolio"/>
-        <meta property="og:description" content="Mon PortFolio en ligne, pour en savoir plus sur moi." />
-        <meta property="og:image" content="https://i.imgur.com/R9JDYh5.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:url" content="https://ngmthanh.github.io/Portfolio/" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>Nguyen Thanh - PortFolio</title>
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nguyen Thanh - PortFolio"/>
+    <meta property="og:description" content="Mon PortFolio en ligne, pour en savoir plus sur moi." />
+    <meta property="og:image" content="https://i.imgur.com/R9JDYh5.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://ngmthanh.github.io/Portfolio/" />
 
-        <script src="https://kit.fontawesome.com/161f845565.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="style/style.css" />
-        <link rel="icon" href="images/favicon.png" />
-    </head>
+    <script src="https://kit.fontawesome.com/161f845565.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="icon" href="images/favicon.png" />
+</head>
 
-    <body>
-        <script type="text/javascript" src="js/scroll.js"></script>
+<body>
+<script type="text/javascript" src="js/scroll.js"></script>
 
-        <header>
-            <!-- mobile menu -->
-            <div class="explore" id="explore">Explore</div>
-            <div class="hamburger-icon" id="hamburger" onclick="changeMobile()">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
+<header>
+    <!-- mobile menu -->
+    <div class="explore" id="explore">Explore</div>
+    <div class="hamburger-icon" id="hamburger" onclick="changeMobile()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+    <div class="menu" id="menu">
+        <div class="container-menu">
+            <div class="label-menu">MENU</div>
+            <div id="about-menu" class="menu--text"><a href="#about">À Propos</a></div>
+            <div id="skills-menu" class="menu--text"><a href="#skills">Compétences</a></div>
+            <div id="works-menu" class="menu--text"><a href="#works">Projets</a></div>
+            <div id="contact-menu" class="menu--text"><a href="#contact">Contact</a></div>
+        </div>
+    </div>
+    <!-- script selected menu and progress bar + mobile version -->
+    <script type="text/javascript" src="js/menu.js" defer></script>
+</header>
+
+<!-- decoration circle + MT -->
+<div class="svg-container">
+    <svg class="svg-circle" width="300" height="300">
+        <circle cx="50%" cy="25%" r="45%" stroke="var(--material-color)" fill="transparent" stroke-width="0.25%"/>
+    </svg>
+    <div class="m-decoration">M</div>
+    <div class="t-decoration">T</div>
+</div>
+
+<!-- progress bar -->
+<div id="progress"></div>
+<!-- label scroll -->
+<div class="scroll">
+    <div class="scroll--container"><div class="scroll--line"></div></div>
+    <div class="scroll--label">SCROLL</div>
+</div>
+
+<!-- about page -->
+<div class="about-page dark-page" id="about">
+    <!-- section "about" -->
+    <section class="about-section">
+        <div class="title-name">Je suis Thanh</div>
+        <!-- title -->
+        <div class="presentation">
+            <h1>Bienvenue,<br>
+            Voici mon portfolio.</h1>
+        </div>
+        <!-- description -->
+        <div class="description">
+            <p>
+                Passionné depuis toujours par le design, je me donne à coeur joie pour réaliser des interfaces modernes et innovantes à mes sites web...
+            </p>
+            <a href="https://ngmthanh.github.io/WebCV/" target="_blank" title="Cliquez-ici pour voir mon WebCV">Découvrir mon web CV  &#160; +</a>
+        </div>
+    </section>
+</div>
+
+<!-- skills page -->
+<div class="skills-page light-page" id="skills">
+    <!-- section "skills" -->
+    <section class="skills-section">
+        <h1>Compétences Techniques</h1>
+        <!-- <h2>Always ready to try hands-on new and emerging technologies</h2> -->
+        <h2>Toujours prêt à découvrir de nouvelles technologies</h2>
+        <div class="skills-box">
+            <div class="skill"><h2>C</h2>
+                <div class="skill__progress-bar"><div class="skill-bar" id="c"><h3>80%</h3></div></div>
+            </div>
+            <div class="skill"><h2>HTML/CSS</h2>
+                <div class="skill__progress-bar"><div class="skill-bar" id="html"><h3>90%</h3></div></div>
+            </div>
+            <div class="skill"><h2>Java</h2>
+                <div class="skill__progress-bar"><div class="skill-bar" id="java"><h3>70%</h3></div></div>
+            </div>
+            <div class="skill"><h2>Javascript</h2>
+                <div class="skill__progress-bar"><div class="skill-bar" id="js"><h3>65%</h3></div></div>
+            </div>
+            <div class="skill"><h2>PHP</h2>
+                <div class="skill__progress-bar"><div class="skill-bar" id="php"><h3>80%</h3></div></div>
+            </div>
+            <div class="skill"><h2>SQL</h2>
+                <div class="skill__progress-bar"><div class="skill-bar" id="sql"><h3>70%</h3></div></div>
+            </div>
+            <div class="skill"><h2>Python</h2>
+                <div class="skill__progress-bar"><div class="skill-bar" id="python"><h3>60%</h3></div></div>
+            </div>
+            <div class="skill"><h2>Ocaml</h2>
+                <div class="skill__progress-bar"><div class="skill-bar" id="ocaml"><h3>50%</h3></div></div>
+            </div>
+        </div>
+    </section>
+    <!-- adjust the width of the skill bar in function of percentage -->
+    <script type="text/javascript" src="js/skills.js"></script>
+</div>
+
+
+<!-- section "works" -->
+<div class="works-page dark-page" id="works">
+    <section class="works-section">
+        <h1>Mes Projets</h1>
+        <!-- <h2>All my projects, sorted by decreasing date</h2> -->
+        <h2>Tous mes travaux, triés par date décroissante</h2>
+        <div class="timeline">
+
+            <!-- trigger / open modal window -->
+            <button class="timeline__box" id="btnWork1">
+                <div class="timeline__box--content">
+                    <img src="images/businessman.png" alt="cv" class="icon-works">
+                    <h1>Mon web CV</h1>
+                </div>
+            </button>
+            <!-- modal window -->
+            <div id="myModal1" class="modal-window">
+                <div class="work-window work1">
+                    <!-- header -->
+                    <div class="work-window__header">
+                        <div class="work-window__header--date">
+                            Juin - Jui 2020
+                        </div>
+                        <h1 class="work-window__header--title">
+                            Mon Web CV
+                        </h1>
+                        <h2 class="work-window__header--subtitle">
+                            Site Web correspondant à mon CV.
+                        </h2>
+                        <div class="work-window__header--language">Html</div>
+                        <div class="work-window__header--language">Css</div>
+                        <div class="work-window__header--language">Javascript</div>
+                    </div>
+                    <!-- body -->
+                    <div class="work-window__body">
+                        <p class="work-window__body--description">
+                            Création de mon CV en format web, permettant de faciliter l’accessibilité aux personnes souhaitant voir mes compétences et mes expériences.
+                            <br>Réalisé entièrement avec les langages HTML, CSS et Javascript.
+                        </p>
+
+                        <!-- slideshow -->
+                        <div class="slideshow-container">
+                            <div class="slide1 fade">
+                                <div class="slide--number">1 / 1</div>
+                                <img src="images/Works/WebCV.png" alt="Interface WebCV">
+                                <div class="slide--text">Interface Dark</div>
+                            </div>
+                            <!-- Next and previous buttons -->
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+
+                        <!-- The dots/circles -->
+                        <div style="text-align:center">
+                            <span class="dot dot1" onclick="currentSlide(1)"></span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="menu" id="menu">
-                <div class="container-menu">
-                    <div class="label-menu">MENU</div>
-                    <div id="about-menu" class="menu--text slide-out"><a href="#about">À Propos</a></div>
-                    <div id="skills-menu" class="menu--text"><a href="#skills">Compétences</a></div>
-                    <div id="works-menu" class="menu--text"><a href="#works">Projets</a></div>
-                    <div id="contact-menu" class="menu--text"><a href="#contact">Contact</a></div>
+            <!-- trigger / open modal window -->
+            <button class="timeline__box" id="btnWork2">
+                <div class="timeline__box--content">
+                    <img src="images/logo-works.png" alt="MT" class="icon-works">
+                    <h1>Mon Portfolio</h1>
                 </div>
-            </div>
-            <!-- script selected menu and progress bar + mobile version -->
-            <script type="text/javascript" src="js/menu.js" defer></script>
-        </header>
-        
-        <!-- progress bar -->
-        <div id="progress"></div>
-        <!-- label scroll -->
-        <div class="scroll">
-            <div class="scroll--container"><div class="scroll--line"></div></div>
-            <div class="scroll--label">SCROLL</div>
-        </div>
-
-        <!-- about page -->
-        <div class="about-page dark-page" id="about">
-            <!-- section "about" -->
-            <section class="about-section">
-                <div class="m-decoration">M</div>
-                <div class="t-decoration">T</div>
-                <div class="title-name">Je suis Thanh</div>
-                <!-- title -->
-                <div class="presentation">
-                    <h1>Bienvenue,<br>
-                    Voici mon portfolio.</h1>
-                </div>
-                <!-- description -->
-                <div class="description">
-                    <p>
-                        Passionné depuis toujours par le design, je me donne à coeur joie pour réaliser des interfaces modernes et innovantes à mes sites web...
-                    </p>
-                    <a href="https://ngmthanh.github.io/WebCV/" target="_blank" title="Cliquez-ici pour voir mon WebCV">Découvrir mon web CV  &#160; +</a>
-                </div>
-            </section>
-        </div>
-
-        <!-- skills page -->
-        <div class="skills-page light-page" id="skills">
-            <!-- section "skills" -->
-            <section class="skills-section">
-                <h1>Compétences Techniques</h1>
-                <!-- <h2>Always ready to try hands-on new and emerging technologies</h2> -->
-                <h2>Toujours prêt à découvrir de nouvelles technologies</h2>
-                <div class="skills-box">
-                    <div class="skill"><h2>C</h2>
-                        <div class="skill__progress-bar"><div class="skill-bar" id="c"><h3>80%</h3></div></div>
-                    </div>
-                    <div class="skill"><h2>HTML/CSS</h2>
-                        <div class="skill__progress-bar"><div class="skill-bar" id="html"><h3>90%</h3></div></div>
-                    </div>
-                    <div class="skill"><h2>Java</h2>
-                        <div class="skill__progress-bar"><div class="skill-bar" id="java"><h3>70%</h3></div></div>
-                    </div>
-                    <div class="skill"><h2>Javascript</h2>
-                        <div class="skill__progress-bar"><div class="skill-bar" id="js"><h3>65%</h3></div></div>
-                    </div>
-                    <div class="skill"><h2>PHP</h2>
-                        <div class="skill__progress-bar"><div class="skill-bar" id="php"><h3>80%</h3></div></div>
-                    </div>
-                    <div class="skill"><h2>SQL</h2>
-                        <div class="skill__progress-bar"><div class="skill-bar" id="sql"><h3>70%</h3></div></div>
-                    </div>
-                    <div class="skill"><h2>Python</h2>
-                        <div class="skill__progress-bar"><div class="skill-bar" id="python"><h3>60%</h3></div></div>
-                    </div>
-                    <div class="skill"><h2>Ocaml</h2>
-                        <div class="skill__progress-bar"><div class="skill-bar" id="ocaml"><h3>50%</h3></div></div>
-                    </div>
-                </div>
-            </section>
-            <!-- adjust the width of the skill bar in function of percentage -->
-            <script type="text/javascript" src="js/skills.js"></script>
-        </div>
-
-        
-        <!-- section "works" -->
-        <div class="works-page dark-page" id="works">
-            <section class="works-section">
-                <h1>Mes Projets</h1>
-                <!-- <h2>All my projects, sorted by decreasing date</h2> -->
-                <h2>Tous mes travaux, triés par date décroissante</h2>
-                <div class="timeline">
-
-                    <!-- trigger / open modal window -->
-                    <button class="timeline__box" id="btnWork1">
-                        <div class="timeline__box--content">
-                            <img src="images/businessman.png" alt="cv" class="icon-works">
-                            <h1>Mon web CV</h1>
+            </button>
+            <!-- modal window -->
+            <div id="myModal2" class="modal-window">
+                <div class="work-window work2">
+                    <!-- header -->
+                    <div class="work-window__header">
+                        <div class="work-window__header--date">
+                            Juin 2020
                         </div>
-                    </button>
-                    <!-- modal window -->
-                    <div id="myModal1" class="modal-window">
-                        <div class="work-window work1">
-                            <!-- header -->
-                            <div class="work-window__header">
-                                <div class="work-window__header--date">
-                                    Juin - Jui 2020
-                                </div>
-                                <h1 class="work-window__header--title">
-                                    Mon Web CV
-                                </h1>
-                                <h2 class="work-window__header--subtitle">
-                                    Site Web correspondant à mon CV.
-                                </h2>
-                                <div class="work-window__header--language">Html</div>
-                                <div class="work-window__header--language">Css</div>
-                                <div class="work-window__header--language">Javascript</div>
+                        <h1 class="work-window__header--title">
+                            Mon Portfolio
+                        </h1>
+                        <h2 class="work-window__header--subtitle">
+                            PortFolio responsive et design.
+                        </h2>
+                        <div class="work-window__header--language">Html</div>
+                        <div class="work-window__header--language">Css</div>
+                        <div class="work-window__header--language">Javascript</div>
+                    </div>
+                    <!-- body -->
+                    <div class="work-window__body">
+                        <p class="work-window__body--description">
+                            Création d’un portfolio en ligne, ayant pour but d’approfondir l’apprentissage du webdesign et de montrer mes compétences à toutes personnes consultant celui ci.
+                            <br>Réalisé avec les langages HTML, CSS et Javascript.
+                        </p>
+                        <!-- slideshow -->
+                        <div class="slideshow-container">
+                            <div class="slide2 fade">
+                                <div class="slide--number">1 / 4</div>
+                                <img src="images/Works/PortFolio-about.png" alt="PortFolio About">
+                                <div class="slide--text">PortFolio À propos</div>
                             </div>
-                            <!-- body -->
-                            <div class="work-window__body">
-                                <p class="work-window__body--description">
-                                    Création de mon CV en format web, permettant de faciliter l’accessibilité aux personnes souhaitant voir mes compétences et mes expériences.
-                                    <br>Réalisé entièrement avec les langages HTML, CSS et Javascript.
-                                </p>
-
-                                <!-- slideshow -->
-                                <div class="slideshow-container">
-                                    <div class="slide1 fade">
-                                        <div class="slide--number">1 / 1</div>
-                                        <img src="images/Works/WebCV.png" alt="Interface WebCV">
-                                        <div class="slide--text">Interface Dark</div>
-                                    </div>
-                                    <!-- Next and previous buttons -->
-                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                                </div>
-
-                                <!-- The dots/circles -->
-                                <div style="text-align:center">
-                                    <span class="dot dot1" onclick="currentSlide(1)"></span>
-                                </div>
+                            
+                            <div class="slide2 fade">
+                                <div class="slide--number">2 / 4</div>
+                                <img src="images/Works/PortFolio-skills.png" alt="PortFolio Skills">
+                                <div class="slide--text">PortFolio Compétences</div>
                             </div>
+
+                            <div class="slide2 fade">
+                                <div class="slide--number">3 / 4</div>
+                                <img src="images/Works/PortFolio-works.png" alt="PortFolio Works">
+                                <div class="slide--text">PortFolio Projets</div>
+                            </div>
+
+                            <div class="slide2 fade">
+                                <div class="slide--number">4 / 4</div>
+                                <img src="images/Works/PortFolio-contact.png" alt="PortFolio Contact">
+                                <div class="slide--text">PortFolio Contact</div>
+                            </div>
+                            <!-- Next and previous buttons -->
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+
+                        <!-- The dots/circles -->
+                        <div style="text-align:center">
+                            <span class="dot dot2" onclick="currentSlide(1)"></span>
+                            <span class="dot dot2" onclick="currentSlide(2)"></span>
+                            <span class="dot dot2" onclick="currentSlide(3)"></span>
+                            <span class="dot dot2" onclick="currentSlide(4)"></span>
                         </div>
                     </div>
-
-                    <!-- trigger / open modal window -->
-                    <button class="timeline__box" id="btnWork2">
-                        <div class="timeline__box--content">
-                            <img src="images/logo-works.png" alt="MT" class="icon-works">
-                            <h1>Mon Portfolio</h1>
-                        </div>
-                    </button>
-                    <!-- modal window -->
-                    <div id="myModal2" class="modal-window">
-                        <div class="work-window work2">
-                            <!-- header -->
-                            <div class="work-window__header">
-                                <div class="work-window__header--date">
-                                    Juin 2020
-                                </div>
-                                <h1 class="work-window__header--title">
-                                    Mon Portfolio
-                                </h1>
-                                <h2 class="work-window__header--subtitle">
-                                    PortFolio responsive et design.
-                                </h2>
-                                <div class="work-window__header--language">Html</div>
-                                <div class="work-window__header--language">Css</div>
-                                <div class="work-window__header--language">Javascript</div>
-                            </div>
-                            <!-- body -->
-                            <div class="work-window__body">
-                                <p class="work-window__body--description">
-                                    Création d’un portfolio en ligne, ayant pour but d’approfondir l’apprentissage du webdesign et de montrer mes compétences à toutes personnes consultant celui ci.
-                                    <br>Réalisé avec les langages HTML, CSS et Javascript.
-                                </p>
-                                <!-- slideshow -->
-                                <div class="slideshow-container">
-                                    <div class="slide2 fade">
-                                        <div class="slide--number">1 / 4</div>
-                                        <img src="images/Works/PortFolio-about.png" alt="PortFolio About">
-                                        <div class="slide--text">PortFolio À propos</div>
-                                    </div>
-                                    
-                                    <div class="slide2 fade">
-                                        <div class="slide--number">2 / 4</div>
-                                        <img src="images/Works/PortFolio-skills.png" alt="PortFolio Skills">
-                                        <div class="slide--text">PortFolio Compétences</div>
-                                    </div>
-
-                                    <div class="slide2 fade">
-                                        <div class="slide--number">3 / 4</div>
-                                        <img src="images/Works/PortFolio-works.png" alt="PortFolio Works">
-                                        <div class="slide--text">PortFolio Projets</div>
-                                    </div>
-
-                                    <div class="slide2 fade">
-                                        <div class="slide--number">4 / 4</div>
-                                        <img src="images/Works/PortFolio-contact.png" alt="PortFolio Contact">
-                                        <div class="slide--text">PortFolio Contact</div>
-                                    </div>
-                                    <!-- Next and previous buttons -->
-                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                                </div>
-
-                                <!-- The dots/circles -->
-                                <div style="text-align:center">
-                                    <span class="dot dot2" onclick="currentSlide(1)"></span>
-                                    <span class="dot dot2" onclick="currentSlide(2)"></span>
-                                    <span class="dot dot2" onclick="currentSlide(3)"></span>
-                                    <span class="dot dot2" onclick="currentSlide(4)"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- trigger / open modal window -->
-                    <button class="timeline__box" id="btnWork3">
-                        <div class="timeline__box--content">
-                            <img src="images/police.png" alt="police" class="icon-works">
-                            <h1>Réseau Prévention 31</h1>
-                        </div>
-                    </button>
-                    <!-- modal window -->
-                    <div id="myModal3" class="modal-window">
-                        <div class="work-window work3">
-                            <!-- header -->
-                            <div class="work-window__header">
-                                <div class="work-window__header--date">
-                                    Avr - Juin 2020
-                                </div>
-                                <h1 class="work-window__header--title">
-                                    Réseau Prévention 31
-                                </h1>
-                                <h2 class="work-window__header--subtitle">
-                                    Application mobile en partenariat avec la Gendarmerie Nationale.
-                                </h2>
-                                <div class="work-window__header--language">Html</div>
-                                <div class="work-window__header--language">Css</div>
-                                <div class="work-window__header--language">Php</div>
-                                <div class="work-window__header--language">SQL</div>
-                                <div class="work-window__header--language">Javascript</div>
-                            </div>
-                            <!-- body -->
-                            <div class="work-window__body">
-                                <p class="work-window__body--description">
-                                    Développement du côté serveur et de plusieurs interfaces web d’un projet d’une application permettant de faciliter les communications entre les particuliers et les forces de l’ordre.
-                                    <br>Réalisé en partenariat avec la Gendarmerie Nationale.
-                                </p>
-                                <!-- slideshow -->
-                                <div class="slideshow-container">
-                                    <div class="slide3 fade">
-                                        <div class="slide--number">1 / 5</div>
-                                        <img src="images/Works/prev31-choix-chambre.png" alt="prev31 choix-chambre">
-                                        <div class="slide--text">Choix de connexion</div>
-                                    </div>
-                                    <div class="slide3 fade">
-                                        <div class="slide--number">2 / 5</div>  
-                                        <img src="images/Works/prev31-connexion.png" alt="prev31 identification">
-                                        <div class="slide--text">Identification</div>
-                                    </div>
-                                    <div class="slide3 fade">
-                                        <div class="slide--number">3 / 5</div>
-                                        <img src="images/Works/prev31-new-annonce.png" alt="prev31 new-annonce">
-                                        <div class="slide--text">Nouvelle annonce</div>
-                                    </div>
-                                    <div class="slide3 fade">
-                                        <div class="slide--number">4 / 5</div>
-                                        <img src="images/Works/prev31-msg.png" alt="prev31 message">
-                                        <div class="slide--text">Interface messages</div>
-                                    </div>
-                                    <div class="slide3 fade">
-                                        <div class="slide--number">5 / 5</div>
-                                        <img src="images/Works/prev31-annonce.png" alt="prev31 annonces">
-                                        <div class="slide--text">Interfaces annonces</div>
-                                    </div>
-                                    <!-- Next and previous buttons -->
-                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                                </div>
-
-                                <!-- The dots/circles -->
-                                <div style="text-align:center">
-                                    <span class="dot dot3" onclick="currentSlide(1)"></span>
-                                    <span class="dot dot3" onclick="currentSlide(2)"></span>
-                                    <span class="dot dot3" onclick="currentSlide(3)"></span>
-                                    <span class="dot dot3" onclick="currentSlide(4)"></span>
-                                    <span class="dot dot3" onclick="currentSlide(5)"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- trigger / open modal window -->
-                    <button class="timeline__box" id="btnWork4">
-                        <div class="timeline__box--content">
-                            <img src="images/neocampus.png" alt="NeoCampus" class="icon-works">
-                            <h1>NeoCampus</h1>
-                        </div>
-                    </button>
-                    <!-- modal window -->
-                    <div id="myModal4" class="modal-window">
-                        <div class="work-window work4">
-                            <!-- header -->
-                            <div class="work-window__header">
-                                <div class="work-window__header--date">
-                                    Déc 2019 - Jan 2020
-                                </div>
-                                <h1 class="work-window__header--title">
-                                    NeoCampus
-                                </h1>
-                                <h2 class="work-window__header--subtitle">
-                                    Interface de messagerie pour les étudiants et les professeurs.
-                                </h2>
-                                <div class="work-window__header--language">Java</div>
-                                <div class="work-window__header--language">SQL</div>
-                            </div>
-                            <!-- body -->
-                            <div class="work-window__body">
-                                <p class="work-window__body--description">
-                                    Développement et réalisation d’une interface de messagerie ainsi qu’une interface de gestion (administrateur) 
-                                    permettant à des utilisateurs (étudiants) de communiquer avec des professeurs via une base de données locale.
-                                </p>
-                                <!-- slideshow -->
-                                <div class="slideshow-container">
-                                    <div class="slide4 fade">
-                                        <div class="slide--number">1 / 2</div>
-                                        <img src="images/Works/connexion-neo.png" alt="log in">
-                                        <div class="slide--text">Interface de connexion</div>
-                                    </div>
-                                    <div class="slide4 fade">
-                                        <div class="slide--number">2 / 2</div>
-                                        <img src="images/Works/server.png" alt="server">
-                                        <div class="slide--text">Interface Administrateur</div>
-                                    </div>
-                                    <!-- Next and previous buttons -->
-                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                                </div>
-
-                                <!-- The dots/circles -->
-                                <div style="text-align:center">
-                                    <span class="dot dot4" onclick="currentSlide(1)"></span>
-                                    <span class="dot dot4" onclick="currentSlide(2)"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- trigger / open modal window -->
-                    <button class="timeline__box" id="btnWork5">
-                        <div class="timeline__box--content">
-                            <img src="images/vietfood.png" alt="vietfood" class="icon-works">
-                            <h1>Vietfoodtlse</h1>
-                        </div>
-                    </button>
-                    <!-- modal window -->
-                    <div id="myModal5" class="modal-window">
-                        <div class="work-window work5">
-                            <!-- header -->
-                            <div class="work-window__header">
-                                <div class="work-window__header--date">
-                                    Avril 2019
-                                </div>
-                                <h1 class="work-window__header--title">
-                                    Vietfoodtlse
-                                </h1>
-                                <h2 class="work-window__header--subtitle">
-                                    Site web de vente de produits alimentaires vietnamiens.
-                                </h2>
-                                <div class="work-window__header--language">Site Web wix</div>
-                            </div>
-                            <!-- body -->
-                            <div class="work-window__body">
-                                <p class="work-window__body--description">
-                                    Création d’un site web de vente de produits alimentaires vietnamiens.
-                                    <br>Développé entièrement avec le site web en ligne WIX. 
-                                </p>
-                                <!-- slideshow -->
-                                <div class="slideshow-container">
-                                    <div class="slide5 fade">
-                                        <div class="slide--number">1 / 3</div>
-                                        <img src="images/Works/vietFood1.jpg" alt="vietfood">
-                                        <div class="slide--text">Menu principal</div>
-                                    </div>
-                                    <div class="slide5 fade">
-                                        <div class="slide--number">2 / 3</div>
-                                        <img src="images/Works/vietFood2.jpg" alt="vietfood">
-                                        <div class="slide--text">Page "Catégories"</div>
-                                    </div>
-                                    <div class="slide5 fade">
-                                        <div class="slide--number">3 / 3</div>
-                                        <img src="images/Works/vietFood3.jpg" alt="vietfood">
-                                        <div class="slide--text">Page interne à "Catégorie"</div>
-                                    </div>
-                                    <!-- Next and previous buttons -->
-                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                                </div>
-
-                                <!-- The dots/circles -->
-                                <div style="text-align:center">
-                                    <span class="dot dot5" onclick="currentSlide(1)"></span>
-                                    <span class="dot dot5" onclick="currentSlide(2)"></span>
-                                    <span class="dot dot5" onclick="currentSlide(3)"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- trigger / open modal window -->
-                    <button class="timeline__box" id="btnWork6">
-                        <div class="timeline__box--content">
-                            <img src="images/python.png" alt="python" class="icon-works">
-                            <h1>Jeu de GOBS</h1>
-                        </div>
-                    </button>
-                    <!-- modal window -->
-                    <div id="myModal6" class="modal-window">
-                        <div class="work-window work6">
-                            <!-- header -->
-                            <div class="work-window__header">
-                                <div class="work-window__header--date">
-                                    Mars - Mai 2018
-                                </div>
-                                <h1 class="work-window__header--title">
-                                    Jeu de GOBS
-                                </h1>
-                                <h2 class="work-window__header--subtitle">
-                                    Jeu de GOBS dans un terminal (1 à 2 joueurs).
-                                </h2>
-                                <div class="work-window__header--language">Python</div>
-                            </div>
-                            <!-- body -->
-                            <div class="work-window__body">
-                                <p class="work-window__body--description">
-                                    Jeu sur plateau GOBS dans un terminal, chaque joueur peut déplacer son pion en indiquant où il souhaite aller.
-                                    <br>Le jeu peut se jouer à 2 joueurs, ou seul (contre une IA avancée).
-                                </p>
-                                <!-- slideshow -->
-                                <div class="slideshow-container">
-                                    <div class="slide6 fade">
-                                        <div class="slide--number">1 / 1</div>
-                                        <img src="images/Works/gobs.png" alt="gobs">
-                                        <div class="slide--text">Game interface</div>
-                                    </div>
-                                    <!-- Next and previous buttons -->
-                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                                </div>
-
-                                <!-- The dots/circles -->
-                                <div style="text-align:center">
-                                    <span class="dot dot6" onclick="currentSlide(1)"></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        
-        <!-- section "contact" -->
-        <div class="contact-page light-page" id="contact">
-            <section class="works-section">
-                <h1>Contact</h1>
-                <h2>N'hésitez pas à me contacter en cas de besoin</h2>
-                <form action="mailto:nmthanh99@gmail.com" method="POST" enctype="text/plain">
-                <div class="contact__field">
-                    <input class="contact__field--input" type="text" name="name" id="name" placeholder="Votre Nom" required>
-                    <div class="contact__field--line"></div>
-                    <input class="contact__field--input" type="email" name="email" id="email" placeholder="Votre Email" required>
-                    <div class="contact__field--line"></div>
-                    <input class="contact__field--input" type="text" name="subject" id="subject" placeholder="Objet" required>
-                    <div class="contact__field--line"></div>
-                    <textarea class="contact__field--textarea" placeholder="Message" required></textarea>
-                    <div class="contact__field--line"></div>
-                    <button type="submit">Envoyer &#160; +</button>
-                </div>
-                </form>
-            </section>
-        </div>
-        <script type="text/javascript" src="js/works.js"></script>
-
-        <footer class="dark-page">
-            <div class="footer-section">
-                <div class="footer-section__contact">
-                    <h1>Retrouvez moi</h1><br>
-                    <span>N'hésitez pas à m'appeler pour faire du bénévolat, discuter de vos idées ou pour boire une tasse de café.</span>
-                    <a href="https://github.com/NgmThanh" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/minh-thanh-nguyen" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:nmthanh99@gmail.com?"><i class="fas fa-envelope"></i></a>
-                </div>
-                <div class="footer-section__informations">
-                    <h1>Contactez-moi</h1><br>
-                    <a href="https://goo.gl/maps/KAVPEAvfWAz7bKAw5" target="_blank"><span>Toulouse, Haute-Garonne (31) - FRANCE</span></a>
-                    <a href="tel:+33621617481"><span>+33 6 21 61 74 81</span></a>
-                    <a href="mailto:nmthanh99@gmail.com?"><span>nmthanh99@gmail.com</span></a>
                 </div>
             </div>
-        </footer>
-    </body>
+
+            <!-- trigger / open modal window -->
+            <button class="timeline__box" id="btnWork3">
+                <div class="timeline__box--content">
+                    <img src="images/police.png" alt="police" class="icon-works">
+                    <h1>Réseau Prévention 31</h1>
+                </div>
+            </button>
+            <!-- modal window -->
+            <div id="myModal3" class="modal-window">
+                <div class="work-window work3">
+                    <!-- header -->
+                    <div class="work-window__header">
+                        <div class="work-window__header--date">
+                            Avr - Juin 2020
+                        </div>
+                        <h1 class="work-window__header--title">
+                            Réseau Prévention 31
+                        </h1>
+                        <h2 class="work-window__header--subtitle">
+                            Application mobile en partenariat avec la Gendarmerie Nationale.
+                        </h2>
+                        <div class="work-window__header--language">Html</div>
+                        <div class="work-window__header--language">Css</div>
+                        <div class="work-window__header--language">Php</div>
+                        <div class="work-window__header--language">SQL</div>
+                        <div class="work-window__header--language">Javascript</div>
+                    </div>
+                    <!-- body -->
+                    <div class="work-window__body">
+                        <p class="work-window__body--description">
+                            Développement du côté serveur et de plusieurs interfaces web d’un projet d’une application permettant de faciliter les communications entre les particuliers et les forces de l’ordre.
+                            <br>Réalisé en partenariat avec la Gendarmerie Nationale.
+                        </p>
+                        <!-- slideshow -->
+                        <div class="slideshow-container">
+                            <div class="slide3 fade">
+                                <div class="slide--number">1 / 5</div>
+                                <img src="images/Works/prev31-choix-chambre.png" alt="prev31 choix-chambre">
+                                <div class="slide--text">Choix de connexion</div>
+                            </div>
+                            <div class="slide3 fade">
+                                <div class="slide--number">2 / 5</div>  
+                                <img src="images/Works/prev31-connexion.png" alt="prev31 identification">
+                                <div class="slide--text">Identification</div>
+                            </div>
+                            <div class="slide3 fade">
+                                <div class="slide--number">3 / 5</div>
+                                <img src="images/Works/prev31-new-annonce.png" alt="prev31 new-annonce">
+                                <div class="slide--text">Nouvelle annonce</div>
+                            </div>
+                            <div class="slide3 fade">
+                                <div class="slide--number">4 / 5</div>
+                                <img src="images/Works/prev31-msg.png" alt="prev31 message">
+                                <div class="slide--text">Interface messages</div>
+                            </div>
+                            <div class="slide3 fade">
+                                <div class="slide--number">5 / 5</div>
+                                <img src="images/Works/prev31-annonce.png" alt="prev31 annonces">
+                                <div class="slide--text">Interfaces annonces</div>
+                            </div>
+                            <!-- Next and previous buttons -->
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+
+                        <!-- The dots/circles -->
+                        <div style="text-align:center">
+                            <span class="dot dot3" onclick="currentSlide(1)"></span>
+                            <span class="dot dot3" onclick="currentSlide(2)"></span>
+                            <span class="dot dot3" onclick="currentSlide(3)"></span>
+                            <span class="dot dot3" onclick="currentSlide(4)"></span>
+                            <span class="dot dot3" onclick="currentSlide(5)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- trigger / open modal window -->
+            <button class="timeline__box" id="btnWork4">
+                <div class="timeline__box--content">
+                    <img src="images/neocampus.png" alt="NeoCampus" class="icon-works">
+                    <h1>NeoCampus</h1>
+                </div>
+            </button>
+            <!-- modal window -->
+            <div id="myModal4" class="modal-window">
+                <div class="work-window work4">
+                    <!-- header -->
+                    <div class="work-window__header">
+                        <div class="work-window__header--date">
+                            Déc 2019 - Jan 2020
+                        </div>
+                        <h1 class="work-window__header--title">
+                            NeoCampus
+                        </h1>
+                        <h2 class="work-window__header--subtitle">
+                            Interface de messagerie pour les étudiants et les professeurs.
+                        </h2>
+                        <div class="work-window__header--language">Java</div>
+                        <div class="work-window__header--language">SQL</div>
+                    </div>
+                    <!-- body -->
+                    <div class="work-window__body">
+                        <p class="work-window__body--description">
+                            Développement et réalisation d’une interface de messagerie ainsi qu’une interface de gestion (administrateur) 
+                            permettant à des utilisateurs (étudiants) de communiquer avec des professeurs via une base de données locale.
+                        </p>
+                        <!-- slideshow -->
+                        <div class="slideshow-container">
+                            <div class="slide4 fade">
+                                <div class="slide--number">1 / 2</div>
+                                <img src="images/Works/connexion-neo.png" alt="log in">
+                                <div class="slide--text">Interface de connexion</div>
+                            </div>
+                            <div class="slide4 fade">
+                                <div class="slide--number">2 / 2</div>
+                                <img src="images/Works/server.png" alt="server">
+                                <div class="slide--text">Interface Administrateur</div>
+                            </div>
+                            <!-- Next and previous buttons -->
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+
+                        <!-- The dots/circles -->
+                        <div style="text-align:center">
+                            <span class="dot dot4" onclick="currentSlide(1)"></span>
+                            <span class="dot dot4" onclick="currentSlide(2)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- trigger / open modal window -->
+            <button class="timeline__box" id="btnWork5">
+                <div class="timeline__box--content">
+                    <img src="images/vietfood.png" alt="vietfood" class="icon-works">
+                    <h1>Vietfoodtlse</h1>
+                </div>
+            </button>
+            <!-- modal window -->
+            <div id="myModal5" class="modal-window">
+                <div class="work-window work5">
+                    <!-- header -->
+                    <div class="work-window__header">
+                        <div class="work-window__header--date">
+                            Avril 2019
+                        </div>
+                        <h1 class="work-window__header--title">
+                            Vietfoodtlse
+                        </h1>
+                        <h2 class="work-window__header--subtitle">
+                            Site web de vente de produits alimentaires vietnamiens.
+                        </h2>
+                        <div class="work-window__header--language">Site Web wix</div>
+                    </div>
+                    <!-- body -->
+                    <div class="work-window__body">
+                        <p class="work-window__body--description">
+                            Création d’un site web de vente de produits alimentaires vietnamiens.
+                            <br>Développé entièrement avec le site web en ligne WIX. 
+                        </p>
+                        <!-- slideshow -->
+                        <div class="slideshow-container">
+                            <div class="slide5 fade">
+                                <div class="slide--number">1 / 3</div>
+                                <img src="images/Works/vietFood1.jpg" alt="vietfood">
+                                <div class="slide--text">Menu principal</div>
+                            </div>
+                            <div class="slide5 fade">
+                                <div class="slide--number">2 / 3</div>
+                                <img src="images/Works/vietFood2.jpg" alt="vietfood">
+                                <div class="slide--text">Page "Catégories"</div>
+                            </div>
+                            <div class="slide5 fade">
+                                <div class="slide--number">3 / 3</div>
+                                <img src="images/Works/vietFood3.jpg" alt="vietfood">
+                                <div class="slide--text">Page interne à "Catégorie"</div>
+                            </div>
+                            <!-- Next and previous buttons -->
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+
+                        <!-- The dots/circles -->
+                        <div style="text-align:center">
+                            <span class="dot dot5" onclick="currentSlide(1)"></span>
+                            <span class="dot dot5" onclick="currentSlide(2)"></span>
+                            <span class="dot dot5" onclick="currentSlide(3)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- trigger / open modal window -->
+            <button class="timeline__box" id="btnWork6">
+                <div class="timeline__box--content">
+                    <img src="images/python.png" alt="python" class="icon-works">
+                    <h1>Jeu de GOBS</h1>
+                </div>
+            </button>
+            <!-- modal window -->
+            <div id="myModal6" class="modal-window">
+                <div class="work-window work6">
+                    <!-- header -->
+                    <div class="work-window__header">
+                        <div class="work-window__header--date">
+                            Mars - Mai 2018
+                        </div>
+                        <h1 class="work-window__header--title">
+                            Jeu de GOBS
+                        </h1>
+                        <h2 class="work-window__header--subtitle">
+                            Jeu de GOBS dans un terminal (1 à 2 joueurs).
+                        </h2>
+                        <div class="work-window__header--language">Python</div>
+                    </div>
+                    <!-- body -->
+                    <div class="work-window__body">
+                        <p class="work-window__body--description">
+                            Jeu sur plateau GOBS dans un terminal, chaque joueur peut déplacer son pion en indiquant où il souhaite aller.
+                            <br>Le jeu peut se jouer à 2 joueurs, ou seul (contre une IA avancée).
+                        </p>
+                        <!-- slideshow -->
+                        <div class="slideshow-container">
+                            <div class="slide6 fade">
+                                <div class="slide--number">1 / 1</div>
+                                <img src="images/Works/gobs.png" alt="gobs">
+                                <div class="slide--text">Game interface</div>
+                            </div>
+                            <!-- Next and previous buttons -->
+                            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+
+                        <!-- The dots/circles -->
+                        <div style="text-align:center">
+                            <span class="dot dot6" onclick="currentSlide(1)"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- section "contact" -->
+<div class="contact-page light-page" id="contact">
+    <section class="works-section">
+        <h1>Contact</h1>
+        <h2>N'hésitez pas à me contacter en cas de besoin</h2>
+        <form action="mailto:nmthanh99@gmail.com" method="POST" enctype="text/plain">
+        <div class="contact__field">
+            <input class="contact__field--input" type="text" name="name" id="name" placeholder="Votre Nom" required>
+            <div class="contact__field--line"></div>
+            <input class="contact__field--input" type="email" name="email" id="email" placeholder="Votre Email" required>
+            <div class="contact__field--line"></div>
+            <input class="contact__field--input" type="text" name="subject" id="subject" placeholder="Objet" required>
+            <div class="contact__field--line"></div>
+            <textarea class="contact__field--textarea" placeholder="Message" required></textarea>
+            <div class="contact__field--line"></div>
+            <button type="submit">Envoyer &#160; +</button>
+        </div>
+        </form>
+    </section>
+</div>
+<script type="text/javascript" src="js/works.js"></script>
+
+<!-- footer -->
+<footer class="dark-page">
+    <div class="footer-section">
+        <div class="footer-section__contact">
+            <h1>Retrouvez moi</h1><br>
+            <span class="contact-sentence">N'hésitez pas à m'appeler pour faire du bénévolat, discuter de vos idées ou pour boire une tasse de café.</span>
+            <div class="container-icons">
+                <a href="https://github.com/NgmThanh" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/minh-thanh-nguyen" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:nmthanh99@gmail.com?"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="footer-section__informations">
+            <h1>Contactez-moi</h1><br>
+            <div><a href="https://goo.gl/maps/KAVPEAvfWAz7bKAw5" target="_blank"><span>Toulouse, Haute-Garonne (31) - FRANCE</span></a></div>
+            <div><a href="tel:+33621617481"><span>+33 6 21 61 74 81</span></a></div>
+            <div><a href="mailto:nmthanh99@gmail.com?"><span>nmthanh99@gmail.com</span></a></div>
+        </div>
+    </div>
+</footer>
+
+</body>
 </html>

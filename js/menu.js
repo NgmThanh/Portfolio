@@ -19,12 +19,15 @@ menuItem.forEach(element => {
         element.childNodes[0].style.color = "var(--orange-pure)";
 
         // close menu
-        menuItem.forEach(item => {
-            item.classList.add('slide-left-out')
-        });
-        menu.classList.remove("fade-in");
-        menu.classList.add("fade-out");
-        setTimeout(() => {menu.style.display = "none";}, 500);
+        setTimeout(() => {
+            menuItem.forEach(item => {
+                item.classList.add('slide-left-out');
+            });
+            menu.classList.remove("fade-in");
+            menu.classList.add("fade-out");
+        }, 150);
+        
+        setTimeout(() => {menu.style.display = "none";}, 600);
         hamburger.classList.toggle("change");
     })
 });
