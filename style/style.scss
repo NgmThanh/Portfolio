@@ -80,7 +80,7 @@
     from {
         visibility: hidden;
         opacity: 0.2;
-        transform: translateY(50px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -236,6 +236,25 @@ body {
     color: var(--font-dark);
 }
 
+/* ---------- reveal on scroll animations ---------- */
+
+$timingApparition: cubic-bezier(.5, 0, 0, 1);
+
+.reveal [class*="reveal-"] {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+}
+
+[class*="reveal-"] {
+    transition: 0.8s $timingApparition;
+}
+
+@for $i from 1 through 7 {
+    .reveal-#{$i} {
+        transition-delay: calc(#{$i}s * 0.1);
+    }
+}
+
 /* ========== MENU ========== */
 
 .explore {
@@ -298,16 +317,18 @@ body {
 }
 
 /* animation hamburger icon on click */
-.change .bar1 {
-    transform: translate(2.5px, 7px) rotate(45deg);
-    width: 20px;
-}
-
-.change .bar2 { opacity: 0; }
-
-.change .bar3 {
-    transform: translate(2.5px, -7px) rotate(-45deg);
-    width: 20px;
+.change {
+    .bar1 {
+        transform: translate(2.5px, 7px) rotate(45deg);
+        width: 20px;
+    }
+    .bar2 {
+        opacity: 0;
+    }
+    .bar3 {
+        transform: translate(2.5px, -7px) rotate(-45deg);
+        width: 20px;
+    }
 }
 
 .menu {
@@ -351,8 +372,8 @@ body {
             }
         }
     }
-
-    @include mobile-screen {
+    
+    @include tablet-screen {
         .container-menu .label-menu {
             font-size: 1rem;
             letter-spacing: 2px;
@@ -363,43 +384,6 @@ body {
             font-size: 3.8rem;
             margin-left: 45px;
         }
-    }
-}
-
-/* ========== SVG DECORATIONS ========== */
-
-.svg-container {
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-    overflow: hidden;
-
-    .svg-circle {
-        position: absolute;
-        right: 3.5%;
-        width: 125vh;
-        height: 125vh;
-    }
-    
-    .m-decoration, .t-decoration {
-        position: absolute;
-        left: 55%; top: 50%;
-        display: block;
-        font-family: 'Roboto';
-        @include font(calc(10rem + 40vh), 900, var(--material-color), none, none);
-
-        @include tablet-screen {
-            font-size: calc(5rem + 30vh);
-        }
-    }
-    
-    // M word background
-    .m-decoration {
-        transform: translate(0, -90%);
-    }
-    
-    // T word background
-    .t-decoration {
-        transform: translate(20%, -10%);
     }
 }
 
@@ -449,7 +433,6 @@ body {
 }
 
 .about-page, .skills-page, .works-page, .contact-page, footer {
-    margin: auto;
     padding: 7.5%;
     min-height: 100vh;
     display: flex;
@@ -457,35 +440,30 @@ body {
 
     .about-section, .skills-section, .works-section, .contact-section, .footer-section {
         margin: auto;
-        padding: 5%;
+        padding: 0 5%;
         width: 1300px;
         @include flex(column, none, center);
-        overflow-x: hidden;
-    }
-
-    .skills-section, .works-section, .contact-section, .footer-section {
-        padding: 0 5%;
-    }
-
-    h1 {
-        font-size: 4.75rem;
-        animation: slideDownIn 0.5s ease-out 0s forwards;
-    }
-    
-    h2 {
-        @include font(2rem, 500, none, none, none);
-        display: block;
-        margin-top: 15px;
-        animation: slideDownIn 0.5s ease-out 0.05s forwards;
+        overflow: visible;
     }
 
     @include mobile-screen {
-        padding: 5%;
+        .about-section, .skills-section, .works-section, .contact-section, .footer-section {
+            padding: 2%;
+        }
     }
 }
 
 // media queries
 .skills-page, .works-page, .contact-page {
+    h1 {
+        font-size: 4.75rem;
+    }
+    h2 {
+        @include font(2rem, 500, none, none, none);
+        display: block;
+        margin-top: 15px;
+    }
+
     @include small-screen {
         padding-top: 150px;
         padding-bottom: 150px;
@@ -509,6 +487,44 @@ body {
         }
         padding-top: 50px;
         padding-bottom: 50px;
+    }
+}
+
+/* ========== SVG DECORATIONS ========== */
+
+.svg-container {
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    overflow: hidden;
+    // z-index: 0;
+
+    .svg-circle {
+        position: absolute;
+        right: 3.5%;
+        width: 125vh;
+        height: 125vh;
+    }
+    
+    .m-decoration, .t-decoration {
+        position: absolute;
+        left: 55%; top: 50%;
+        display: block;
+        font-family: 'Roboto';
+        @include font(calc(10rem + 40vh), 900, var(--material-color), none, none);
+
+        @include tablet-screen {
+            font-size: calc(5rem + 30vh);
+        }
+    }
+    
+    // M word background
+    .m-decoration {
+        transform: translate(0, -90%);
+    }
+    
+    // T word background
+    .t-decoration {
+        transform: translate(20%, -10%);
     }
 }
 
@@ -536,7 +552,6 @@ body {
         h1 {
             font-size: 7.2rem;
             line-height: 9rem;
-            animation: slideDownIn 0.5s ease-out 0s forwards;
 
             @include small-screen {
                 font-size: 6rem;
@@ -558,26 +573,28 @@ body {
         margin-top: 50px;
         max-width: 50%;
         position: relative;
+        padding-bottom: 15px;
+
         p {
             font-size: 2rem;
             line-height: 3.2rem;
-            animation: slideDownIn 0.5s ease-out 0.2s forwards;
         }
         // button redirect web CV
         a {
-            width: 285px;
+            width: 250px;
             @include font(1.4rem, 700, var(--font-light), 2px, uppercase);
             line-height: 3.2rem;
             display: block;
-            margin-top: 45px;
+            margin-top: 55px;
             margin-left: 22.5px;
-            animation: slideDownIn 0.5s ease-out 0.4s forwards;
+            visibility: visible;
+            transform: translateY(0);
 
             // circle derocation button animation
             &::before {
                 content: "";
                 position: absolute;
-                top: -37.5%; left: -22.5px;
+                bottom: -10px; left: -22.5px;
                 width: 55px; height: 55px;
                 border-radius: 55px;
                 background-color: var(--material-lighter);
@@ -586,7 +603,7 @@ body {
             }
 
             &:hover::before {
-                width: 100%;
+                width: 285px;
                 transition: 0.4s ease;
             }
         }
@@ -612,12 +629,12 @@ body {
                 line-height: 2.85rem;
 
                 &::before {
-                    top: -9px; left: -17.5px;
+                    bottom: -9px; left: -17.5px;
                     width: 45px; height: 45px;
                 }
 
                 &:hover::before {
-                    width: 235px;
+                    width: 215px;
                 }
             }
         }
@@ -1022,7 +1039,6 @@ body {
             border-radius: 2px;
             box-shadow: none;
             outline: none;
-            animation: slideDownIn 0.5s ease-out 0.2s forwards;
 
             &:focus + .contact__field--line {
                 width: 525px; 
@@ -1062,7 +1078,7 @@ body {
         }
         
         [type="submit"] {
-            width: 150px;
+            width: 125px;
             @include font(1.4rem, 700, var(--font-light), 2px, uppercase);
             line-height: 3.2rem;
             background-color: transparent;
@@ -1072,7 +1088,8 @@ body {
             padding-left: 5px;
             text-align: left;
             cursor: pointer;
-            animation: slideDownIn 0.5s ease-out 0.4s forwards;
+            visibility: visible;
+            transform: translateY(0);
 
             // circle derocation button animation
             &::before {

@@ -19,8 +19,6 @@
 </head>
 
 <body>
-<script type="text/javascript" src="js/scroll.js"></script>
-
 <header>
     <!-- mobile menu -->
     <div class="explore" id="explore">Explore</div>
@@ -43,15 +41,6 @@
     <script type="text/javascript" src="js/menu.js" defer></script>
 </header>
 
-<!-- decoration circle + MT -->
-<div class="svg-container">
-    <svg class="svg-circle" width="300" height="300">
-        <circle cx="50%" cy="25%" r="45%" stroke="var(--material-color)" fill="transparent" stroke-width="0.25%"/>
-    </svg>
-    <div class="m-decoration">M</div>
-    <div class="t-decoration">T</div>
-</div>
-
 <!-- progress bar -->
 <div id="progress"></div>
 <!-- label scroll -->
@@ -63,19 +52,28 @@
 <!-- about page -->
 <div class="about-page dark-page" id="about">
     <!-- section "about" -->
-    <section class="about-section">
-        <div class="title-name">Je suis Thanh</div>
+    <section class="about-section reveal">
+        <!-- decoration circle + MT -->
+        <div class="svg-container">
+            <svg class="svg-circle" width="300" height="300">
+                <circle cx="50%" cy="25%" r="45%" stroke="var(--material-color)" fill="transparent" stroke-width="0.25%"/>
+            </svg>
+            <div class="m-decoration">M</div>
+            <div class="t-decoration">T</div>
+        </div>
+    
+        <div class="title-name reveal-1">Je suis Thanh</div>
         <!-- title -->
-        <div class="presentation">
+        <div class="presentation reveal-2">
             <h1>Bienvenue,<br>
             Voici mon portfolio.</h1>
         </div>
         <!-- description -->
         <div class="description">
-            <p>
+            <p class="reveal-3">
                 Passionné depuis toujours par le design, je me donne à coeur joie pour réaliser des interfaces modernes et innovantes à mes sites web...
             </p>
-            <a href="https://ngmthanh.github.io/WebCV/" target="_blank" title="Cliquez-ici pour voir mon WebCV">Découvrir mon web CV  &#160; +</a>
+            <a class="reveal-4" href="https://ngmthanh.github.io/WebCV/" target="_blank" title="Cliquez-ici pour voir mon WebCV">Découvrir mon web CV  &#160; +</a>
         </div>
     </section>
 </div>
@@ -83,33 +81,33 @@
 <!-- skills page -->
 <div class="skills-page light-page" id="skills">
     <!-- section "skills" -->
-    <section class="skills-section">
-        <h1>Compétences Techniques</h1>
+    <section class="skills-section reveal">
+        <h1 class="reveal-1">Compétences Techniques</h1>
         <!-- <h2>Always ready to try hands-on new and emerging technologies</h2> -->
-        <h2>Toujours prêt à découvrir de nouvelles technologies</h2>
+        <h2 class="reveal-2">Toujours prêt à découvrir de nouvelles technologies</h2>
         <div class="skills-box">
-            <div class="skill"><h2>C</h2>
+            <div class="skill reveal-3"><h2>C</h2>
                 <div class="skill__progress-bar"><div class="skill-bar" id="c"><h3>80%</h3></div></div>
             </div>
-            <div class="skill"><h2>HTML/CSS</h2>
+            <div class="skill reveal-3"><h2>HTML/CSS</h2>
                 <div class="skill__progress-bar"><div class="skill-bar" id="html"><h3>90%</h3></div></div>
             </div>
-            <div class="skill"><h2>Java</h2>
+            <div class="skill reveal-4"><h2>Java</h2>
                 <div class="skill__progress-bar"><div class="skill-bar" id="java"><h3>70%</h3></div></div>
             </div>
-            <div class="skill"><h2>Javascript</h2>
+            <div class="skill reveal-4"><h2>Javascript</h2>
                 <div class="skill__progress-bar"><div class="skill-bar" id="js"><h3>65%</h3></div></div>
             </div>
-            <div class="skill"><h2>PHP</h2>
+            <div class="skill reveal-5"><h2>PHP</h2>
                 <div class="skill__progress-bar"><div class="skill-bar" id="php"><h3>80%</h3></div></div>
             </div>
-            <div class="skill"><h2>SQL</h2>
+            <div class="skill reveal-5"><h2>SQL</h2>
                 <div class="skill__progress-bar"><div class="skill-bar" id="sql"><h3>70%</h3></div></div>
             </div>
-            <div class="skill"><h2>Python</h2>
+            <div class="skill reveal-6"><h2>Python</h2>
                 <div class="skill__progress-bar"><div class="skill-bar" id="python"><h3>60%</h3></div></div>
             </div>
-            <div class="skill"><h2>Ocaml</h2>
+            <div class="skill reveal-6"><h2>Ocaml</h2>
                 <div class="skill__progress-bar"><div class="skill-bar" id="ocaml"><h3>50%</h3></div></div>
             </div>
         </div>
@@ -118,17 +116,16 @@
     <script type="text/javascript" src="js/skills.js"></script>
 </div>
 
-
 <!-- section "works" -->
 <div class="works-page dark-page" id="works">
-    <section class="works-section">
-        <h1>Mes Projets</h1>
+    <section class="works-section reveal">
+        <h1 class="reveal-1">Mes Projets</h1>
         <!-- <h2>All my projects, sorted by decreasing date</h2> -->
-        <h2>Tous mes travaux, triés par date décroissante</h2>
+        <h2 class="reveal-2">Tous mes travaux, triés par date décroissante</h2>
         <div class="timeline">
 
             <!-- trigger / open modal window -->
-            <button class="timeline__box" id="btnWork1">
+            <button class="timeline__box reveal-4" id="btnWork1">
                 <div class="timeline__box--content">
                     <img src="images/businessman.png" alt="cv" class="icon-works">
                     <h1>Mon web CV</h1>
@@ -180,7 +177,7 @@
             </div>
 
             <!-- trigger / open modal window -->
-            <button class="timeline__box" id="btnWork2">
+            <button class="timeline__box reveal-4" id="btnWork2">
                 <div class="timeline__box--content">
                     <img src="images/logo-works.png" alt="MT" class="icon-works">
                     <h1>Mon Portfolio</h1>
@@ -252,7 +249,7 @@
             </div>
 
             <!-- trigger / open modal window -->
-            <button class="timeline__box" id="btnWork3">
+            <button class="timeline__box reveal-4" id="btnWork3">
                 <div class="timeline__box--content">
                     <img src="images/police.png" alt="police" class="icon-works">
                     <h1>Réseau Prévention 31</h1>
@@ -329,7 +326,7 @@
             </div>
 
             <!-- trigger / open modal window -->
-            <button class="timeline__box" id="btnWork4">
+            <button class="timeline__box reveal-4" id="btnWork4">
                 <div class="timeline__box--content">
                     <img src="images/neocampus.png" alt="NeoCampus" class="icon-works">
                     <h1>NeoCampus</h1>
@@ -385,7 +382,7 @@
             </div>
 
             <!-- trigger / open modal window -->
-            <button class="timeline__box" id="btnWork5">
+            <button class="timeline__box reveal-4" id="btnWork5">
                 <div class="timeline__box--content">
                     <img src="images/vietfood.png" alt="vietfood" class="icon-works">
                     <h1>Vietfoodtlse</h1>
@@ -446,7 +443,7 @@
             </div>
 
             <!-- trigger / open modal window -->
-            <button class="timeline__box" id="btnWork6">
+            <button class="timeline__box reveal-4" id="btnWork6">
                 <div class="timeline__box--content">
                     <img src="images/python.png" alt="python" class="icon-works">
                     <h1>Jeu de GOBS</h1>
@@ -499,20 +496,20 @@
 
 <!-- section "contact" -->
 <div class="contact-page light-page" id="contact">
-    <section class="works-section">
-        <h1>Contact</h1>
-        <h2>N'hésitez pas à me contacter en cas de besoin</h2>
+    <section class="contact-section reveal">
+        <h1 class="reveal-1">Contact</h1>
+        <h2 class="reveal-2">N'hésitez pas à me contacter en cas de besoin</h2>
         <form action="mailto:nmthanh99@gmail.com" method="POST" enctype="text/plain">
         <div class="contact__field">
-            <input class="contact__field--input" type="text" name="name" id="name" placeholder="Votre Nom" required>
+            <input class="contact__field--input reveal-3" type="text" name="name" id="name" placeholder="Votre Nom" required>
             <div class="contact__field--line"></div>
-            <input class="contact__field--input" type="email" name="email" id="email" placeholder="Votre Email" required>
+            <input class="contact__field--input reveal-4" type="email" name="email" id="email" placeholder="Votre Email" required>
             <div class="contact__field--line"></div>
-            <input class="contact__field--input" type="text" name="subject" id="subject" placeholder="Objet" required>
+            <input class="contact__field--input reveal-5" type="text" name="subject" id="subject" placeholder="Objet" required>
             <div class="contact__field--line"></div>
-            <textarea class="contact__field--textarea" placeholder="Message" required></textarea>
+            <textarea class="contact__field--textarea reveal-7" placeholder="Message" required></textarea>
             <div class="contact__field--line"></div>
-            <button type="submit">Envoyer &#160; +</button>
+            <button type="submit" class="reveal-6">Envoyer &#160; +</button>
         </div>
         </form>
     </section>
@@ -521,24 +518,25 @@
 
 <!-- footer -->
 <footer class="dark-page">
-    <div class="footer-section">
+    <div class="footer-section reveal">
         <div class="footer-section__contact">
-            <h1>Retrouvez moi</h1><br>
-            <span class="contact-sentence">N'hésitez pas à m'appeler pour faire du bénévolat, discuter de vos idées ou pour boire une tasse de café.</span>
-            <div class="container-icons">
+            <h1 class="reveal-1">Retrouvez moi</h1><br>
+            <span class="contact-sentence reveal-2">N'hésitez pas à m'appeler pour faire du bénévolat, discuter de vos idées ou pour boire une tasse de café.</span>
+            <div class="container-icons reveal-3">
                 <a href="https://github.com/NgmThanh" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/minh-thanh-nguyen" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:nmthanh99@gmail.com?"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
         <div class="footer-section__informations">
-            <h1>Contactez-moi</h1><br>
-            <div><a href="https://goo.gl/maps/KAVPEAvfWAz7bKAw5" target="_blank"><span>Toulouse, Haute-Garonne (31) - FRANCE</span></a></div>
-            <div><a href="tel:+33621617481"><span>+33 6 21 61 74 81</span></a></div>
-            <div><a href="mailto:nmthanh99@gmail.com?"><span>nmthanh99@gmail.com</span></a></div>
+            <h1 class="reveal-1">Contactez-moi</h1><br>
+            <div class="reveal-2"><a href="https://goo.gl/maps/KAVPEAvfWAz7bKAw5" target="_blank"><span>Toulouse, Haute-Garonne (31) - FRANCE</span></a></div>
+            <div class="reveal-3"><a href="tel:+33621617481"><span>+33 6 21 61 74 81</span></a></div>
+            <div class="reveal-4"><a href="mailto:nmthanh99@gmail.com?"><span>nmthanh99@gmail.com</span></a></div>
         </div>
     </div>
 </footer>
 
+<script type="text/javascript" src="js/scroll.js"></script>
 </body>
 </html>
