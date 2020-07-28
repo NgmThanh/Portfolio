@@ -490,57 +490,58 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
     }
 }
 
-/* ========== SVG DECORATIONS ========== */
-
-.svg-container {
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-    overflow: hidden;
-    // z-index: 0;
-
-    .svg-circle {
-        position: absolute;
-        right: 3.5%;
-        width: 125vh;
-        height: 125vh;
-    }
-    
-    .m-decoration, .t-decoration {
-        position: absolute;
-        left: 55%; top: 50%;
-        display: block;
-        font-family: 'Roboto';
-        @include font(calc(10rem + 40vh), 900, var(--material-color), none, none);
-
-        @include tablet-screen {
-            font-size: calc(5rem + 30vh);
-        }
-    }
-    
-    // M word background
-    .m-decoration {
-        transform: translate(0, -90%);
-    }
-    
-    // T word background
-    .t-decoration {
-        transform: translate(20%, -10%);
-    }
-}
-
 /* ========== ABOUT PAGE ========== */
 
 .about-section {
 
+    /* ----- svg decorations ----- */
+    .svg-container {
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        overflow: hidden;
+
+        .svg-circle {
+            position: absolute;
+            right: 3.5%;
+            width: 125vh;
+            height: 125vh;
+        }
+        
+        .m-decoration, .t-decoration {
+            position: absolute;
+            left: 55%; top: 50%;
+            display: block;
+            font-family: 'Roboto';
+            @include font(calc(10rem + 40vh), 900, var(--material-color), none, none);
+
+            @include tablet-screen {
+                font-size: calc(5rem + 30vh);
+            }
+        }
+        
+        // M word background
+        .m-decoration {
+            transform: translate(0, -90%);
+        }
+        
+        // T word background
+        .t-decoration {
+            transform: translate(20%, -10%);
+        }
+    }
+
     /* ----- name area ----- */
     .title-name {
         @include font(1.8rem, 600, var(--orange-pure), 5px, uppercase);
-        margin-bottom: 50px;
+        margin-bottom: 40px;
+        margin-left: -30px;
+        z-index: 1;
 
         @include tablet-screen {
             font-size: 1.5rem;
             letter-spacing: 3.5px;
-            margin-bottom: 45px;
+            margin-bottom: 35px;
+            margin-left: 0px;
         }
         @include mobile-screen {
             font-size: 1.4rem;
@@ -549,31 +550,29 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 
     /* ----- presentation area ----- */
     .presentation {
+        z-index: 1;
         h1 {
             font-size: 7.2rem;
-            line-height: 9rem;
 
             @include small-screen {
                 font-size: 6rem;
-                line-height: 8rem;
             }
             @include tablet-screen {
                 font-size: 4rem;
-                line-height: 5.5rem;
             }
             @include mobile-screen {
                 font-size: 3rem;
-                line-height: 5rem;
             }
         }
     }
 
     /* ----- description area ----- */
     .description {
-        margin-top: 50px;
+        margin-top: 25px;
         max-width: 50%;
         position: relative;
         padding-bottom: 15px;
+        z-index: 1;
 
         p {
             font-size: 2rem;
@@ -585,7 +584,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
             @include font(1.4rem, 700, var(--font-light), 2px, uppercase);
             line-height: 3.2rem;
             display: block;
-            margin-top: 55px;
+            margin-top: 60px;
             margin-left: 22.5px;
             visibility: visible;
             transform: translateY(0);
@@ -610,23 +609,24 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 
         @include small-screen {
             p {
-                font-size: 1.85rem;
+                font-size: 1.8rem;
             }
             a {
                 margin-top: 55px;
             }
         }
         @include tablet-screen {
-            margin-top: 40px;
+            margin-top: 20px;
             max-width: 85%;
             p {
-                font-size: 1.6rem;
+                font-size: 1.55rem;
                 line-height: 2.2rem;
             }
             a {
                 width: 235px;
                 @include font(1.2rem, 700, var(--font-light), 1.5px, none);
                 line-height: 2.85rem;
+                margin-top: 40px;
 
                 &::before {
                     bottom: -9px; left: -17.5px;
@@ -824,10 +824,10 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 padding: 50px 50px 0;
 
                 @include small-screen {
-                    padding: 45px 45px 0px;
+                    padding: 40px 40px 0px;
                 }
                 @include tablet-screen {
-                    padding: 35px 35px 0px;
+                    padding: 30px 30px 0px;
                 }
                 @include mobile-screen {
                     padding: 22.5px 22.5px 0px;
@@ -889,10 +889,10 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 padding: 0 50px 50px;
 
                 @include small-screen {
-                    padding: 0 45px 45px;
+                    padding: 0 40px 40px;
                 }
                 @include tablet-screen {
-                    padding: 0 35px 35px;
+                    padding: 0 30px 30px;
                 }
                 @include mobile-screen {
                     padding: 0 22.5px 22.5px;
@@ -905,7 +905,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                     margin-top: 25px;
 
                     @include small-screen {
-                        font-size: 1.5rem;
+                        margin-top: 20px;
                     }
                     @include tablet-screen {
                         margin-top: 15px;
@@ -917,19 +917,19 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 .slideshow-container {
                     max-width: 100%;
                     position: relative;
-                    margin: 50px auto 20px;
                     text-align: center;
 
-                    @include small-screen {
-                        margin: 30px auto 20px;
-                    }
-                    @include tablet-screen {
-                        margin: 0 auto 0;
-                    }
-
                     /* Hide the images by default */
-                    .slide, .slide1, .slide2, .slide3, .slide4, .slide5  {
+                    .slide, .slide1, .slide2, .slide3, .slide4, .slide5, .slide6  {
                         display: none;
+                        margin: 35px auto 35px;
+
+                        @include small-screen {
+                            margin: 30px auto 30px;
+                        }
+                        @include tablet-screen {
+                            margin: 20px auto 20px;
+                        }
 
                         &--number, &--text {
                             @include font(1.5rem, normal, var(--font-light), 0.8px, none);
@@ -939,6 +939,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 
                             @include tablet-screen {
                                 top: 0%;
+                                margin-top: 0;
                             }
                         }
                         /* Number text (1/3 etc) */
@@ -957,7 +958,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 
                             @include tablet-screen {
                                 max-width: 90%;
-                                margin: 65px auto 0;
+                                margin: 45px auto 0;
                                 box-shadow: 0px 0px 5px 2px var(--shadow-dark);
                             }
                         }
@@ -999,16 +1000,12 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 /* The dots/bullets/indicators */
                 .dot {
                     width: 10px; height: 10px;
-                    margin: 12.5px 2.5px 0;
+                    margin: 0 2.5px 0;
                     background: var(--font-light);
                     border-radius: 50%;
                     display: inline-block;
                     cursor: pointer;
                     transition: 0.5s ease;
-
-                    @include tablet-screen {
-                        margin: 15px 2.5px 0;
-                    }
                 }
 
                 .active, .dot:hover {
