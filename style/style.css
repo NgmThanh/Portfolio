@@ -726,7 +726,6 @@ body {
   .about-section .title-name {
     font-size: 1.5rem;
     letter-spacing: 3.5px;
-    margin-bottom: 35px;
     margin-left: 0px;
   }
 }
@@ -764,16 +763,34 @@ body {
 }
 
 .about-section .description {
-  margin-top: 25px;
+  margin-top: 35px;
   max-width: 50%;
   position: relative;
-  padding-bottom: 15px;
   z-index: 1;
+}
+
+@media screen and (max-width: 767px) {
+  .about-section .description {
+    max-width: 85%;
+  }
 }
 
 .about-section .description p {
   font-size: 2rem;
   line-height: 3.2rem;
+}
+
+@media screen and (max-width: 1100px) {
+  .about-section .description p {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about-section .description p {
+    font-size: 1.55rem;
+    line-height: 2.75rem;
+  }
 }
 
 .about-section .description a {
@@ -812,24 +829,7 @@ body {
   transition: 0.4s ease;
 }
 
-@media screen and (max-width: 1100px) {
-  .about-section .description p {
-    font-size: 1.8rem;
-  }
-  .about-section .description a {
-    margin-top: 55px;
-  }
-}
-
 @media screen and (max-width: 767px) {
-  .about-section .description {
-    margin-top: 20px;
-    max-width: 85%;
-  }
-  .about-section .description p {
-    font-size: 1.55rem;
-    line-height: 2.2rem;
-  }
   .about-section .description a {
     width: 235px;
     font-size: 1.2rem;
@@ -838,7 +838,7 @@ body {
     letter-spacing: 1.5px;
     text-transform: none;
     line-height: 2.85rem;
-    margin-top: 40px;
+    margin-top: 50px;
   }
   .about-section .description a::before {
     bottom: -9px;
