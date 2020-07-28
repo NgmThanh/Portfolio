@@ -447,8 +447,10 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
     }
 
     @include mobile-screen {
+        padding: 5%;
+        
         .about-section, .skills-section, .works-section, .contact-section, .footer-section {
-            padding: 2%;
+            padding: 0;
         }
     }
 }
@@ -540,12 +542,10 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
         @include tablet-screen {
             font-size: 1.5rem;
             letter-spacing: 3.5px;
-            // margin-bottom: 35px;
             margin-left: 0px;
         }
         @include mobile-screen {
             font-size: 1.4rem;
-            // margin-bottom: 5vh;
         }
     }
 
@@ -562,7 +562,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 font-size: 4rem;
             }
             @include mobile-screen {
-                font-size: 3rem;
+                font-size: 3.3rem;
             }
         }
     }
@@ -619,7 +619,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
             }
 
             @include tablet-screen {
-                width: 235px;
+                width: 190px;
                 @include font(1.2rem, 700, var(--font-light), 1.5px, none);
                 line-height: 2.85rem;
                 margin-top: 50px;

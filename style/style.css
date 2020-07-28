@@ -606,8 +606,11 @@ body {
 }
 
 @media screen and (max-width: 500px) {
+  .about-page, .skills-page, .works-page, .contact-page, footer {
+    padding: 5%;
+  }
   .about-page .about-section, .about-page .skills-section, .about-page .works-section, .about-page .contact-section, .about-page .footer-section, .skills-page .about-section, .skills-page .skills-section, .skills-page .works-section, .skills-page .contact-section, .skills-page .footer-section, .works-page .about-section, .works-page .skills-section, .works-page .works-section, .works-page .contact-section, .works-page .footer-section, .contact-page .about-section, .contact-page .skills-section, .contact-page .works-section, .contact-page .contact-section, .contact-page .footer-section, footer .about-section, footer .skills-section, footer .works-section, footer .contact-section, footer .footer-section {
-    padding: 2%;
+    padding: 0;
   }
 }
 
@@ -758,7 +761,7 @@ body {
 
 @media screen and (max-width: 500px) {
   .about-section .presentation h1 {
-    font-size: 3rem;
+    font-size: 3.3rem;
   }
 }
 
@@ -831,7 +834,7 @@ body {
 
 @media screen and (max-width: 767px) {
   .about-section .description a {
-    width: 235px;
+    width: 190px;
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--font-light);
