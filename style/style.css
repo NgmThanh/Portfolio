@@ -391,6 +391,14 @@ body {
   overflow: hidden;
 }
 
+.hamburger-icon:hover ~ .cursor {
+  width: 75px;
+  height: 75px;
+  background-color: var(--material-lighter);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
 .hamburger-icon .bar1, .hamburger-icon .bar2, .hamburger-icon .bar3 {
   width: 25px;
   height: 2px;
@@ -510,6 +518,32 @@ body {
     font-size: 3.8rem;
     margin-left: 45px;
   }
+}
+
+/* ========== CURSOR ========== */
+.cursor {
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  border: 1px solid var(--material-lighter);
+  border-radius: 50%;
+  -webkit-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 9999;
+  pointer-events: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cursor .cursor--inner {
+  margin: auto;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--orange-pure);
 }
 
 /* ========== PROGRESS BAR ========== */
@@ -1658,8 +1692,8 @@ footer .footer-section__contact i, footer .footer-section__informations i {
 }
 
 footer .footer-section__contact i:hover, footer .footer-section__informations i:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   color: var(--font-light);
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
