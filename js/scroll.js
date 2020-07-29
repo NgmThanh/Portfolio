@@ -41,12 +41,11 @@ var backgroundDark = "background-color: var(--background-dark); transition: 0.5s
 var parameters = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.1
+    threshold: 0.25
 }
 
 var callback = function(entries, observer) { 
     entries.forEach(entry => {
-        // console.log(entry.target.className)
 
         if (entry.isIntersecting) {
 
