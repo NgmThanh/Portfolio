@@ -27,17 +27,17 @@
 /* ============================ */
 
 :root {
-    --background-dark: #1F1E1D;
-    --background-light: #fff;
-    --font-dark: #111111;
-    --font-light: #fff;
-    --material-color: #272628;
-    --material-lighter: #323135;
-    --material-grey: #9C9C9C;
-    --orange-pure: #F84525;
-    --shadow-dark: #000000;
-    --shadow-light: #cecece;
-    --light-grey: #F2F2F2;
+    --primary-black-1: #1F1E1D;
+    --primary-black-2: #111;
+    --primary-gray: #f2f2f2;
+    --primary-white: #fff;
+    --primary-orange: #F84525;
+    --second-black-1: #272628;
+    --second-black-2: #323135;
+    --second-black-3: #303030;
+    --second-gray: #9C9C9C;
+    --shadow-black: #000;
+    --shadow-white: #cecece;
     --selection-color: #DEE1E6;
 }
 
@@ -123,14 +123,23 @@
 }
 
 @keyframes scrollFall {
-    0%, 15% {
+    0%, 10% {
         margin-left: -100%;
     }
     25%, 50%, 75% {
         margin-left: 0%;
     }
-    85%, 100% {
+    90%, 100% {
         margin-left: 100%;
+    }
+}
+
+@keyframes cursorAppear {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
     }
 }
 
@@ -206,7 +215,7 @@ $breakpoints: (
         max-width: 100%;
     }
     a {
-        color: var(--font-light);
+        color: var(--primary-white);
     }
 }
 
@@ -227,13 +236,13 @@ body {
 /* ---------- light / dark page ---------- */
 
 .dark-page {
-    background-color: var(--background-dark);
-    color: var(--font-light);
+    background-color: var(--primary-black-1);
+    color: var(--primary-white);
 }
 
 .light-page {
-    background-color: var(--background-light);
-    color: var(--font-dark);
+    background-color: var(--primary-white);
+    color: var(--primary-black-2);
 }
 
 /* ---------- reveal on scroll animations ---------- */
@@ -258,11 +267,11 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 /* ========== MENU ========== */
 
 .explore {
-    @include font(1.4rem, 700, var(--font-light), 2px, uppercase);
+    @include font(1.4rem, 700, var(--primary-white), 2px, uppercase);
     position: fixed;
     top: calc(5% + 1.4rem); right: 125px;
     display: block;
-    z-index: 100;
+    z-index: 10;
 
     &::after {
         content: "";
@@ -270,7 +279,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
         display: block;
         margin-top: 5px;
         transition: 0.5s ease;
-        background-color: var(--font-light);
+        background-color: var(--primary-white);
     }
 
     @include mobile-screen {
@@ -292,24 +301,18 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
     display: block;
     position: fixed;
     top: 5%; right: 50px;
-    background-color: var(--background-light);
+    background-color: var(--primary-white);
     padding: 12.5px;
     border-radius: 100%;
-    z-index: 100;
+    z-index: 10;
     cursor: pointer;
     overflow: hidden;
-
-    &:hover ~ .cursor {
-        width: 75px; height: 75px;
-        background-color: var(--material-lighter);
-        transition: 0.3s ease;
-    }
 
     .bar1, .bar2, .bar3 {
         width: 25px; height: 2px;
         margin: 5px 0;
         transition: 0.4s;
-        background-color: var(--font-dark);
+        background-color: var(--primary-black-2);
     }
 
     .bar2 {
@@ -340,8 +343,8 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 .menu {
     position: fixed;
     top: 0; right: 0; bottom: 0; left: 0;
-    background-color: var(--background-dark);
-    z-index: 99;
+    background-color: var(--primary-black-1);
+    z-index: 5;
     display: none;
 
     .container-menu {
@@ -351,14 +354,14 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
         @include flex(column, flex-start, center);
 
         .label-menu {
-            @include font(1.2rem, 700, var(--font-light), 3px, none);
+            @include font(1.2rem, 700, var(--primary-white), 3px, none);
             transform: rotate(-90deg);
             margin: -62.5px 25px;
             display: block;
         }
         
         .menu--text {
-            @include font(6.5rem, 700, var(--font-light), 5px, none);
+            @include font(6.5rem, 700, var(--primary-white), 5px, none);
             margin: 10px 0 0 100px;
             animation: slide-left-in 0.5s ease 0s;
             cursor: pointer;
@@ -369,7 +372,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 display: block;
                 margin-top: 4px;
                 transition: 0.5s ease;
-                background-color: var(--font-light);
+                background-color: var(--primary-white);
             }
 
             &:hover::after, &:active::after {
@@ -395,24 +398,50 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 
 /* ========== CURSOR ========== */
 
-.cursor {
+.cursor, .cursor--inner {
     position: fixed;
     width: 45px; height: 45px;
-    border: 1px solid var(--material-lighter);
+    border: 1.25px solid var(--second-black-2);
     border-radius: 50%;
     transition: 0.15s ease-out;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
+    margin-top: -22.5px;
+    margin-left: -22.5px;
+    z-index: 10000;
     pointer-events: none;
-    display: flex;
 
-    .cursor--inner {
-        margin: auto;
-        width: 5px; height: 5px;
-        border-radius: 50%;
-        background-color: var(--orange-pure);
+    @include tablet-screen {
+        display: none;
     }
 }
+
+.cursor--inner {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    margin-top: -2.5px;
+    margin-left: -2.5px;
+    border: none;
+    background-color: var(--primary-orange);
+}
+
+.cursor-focus {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    background-color: #606060;
+    opacity: .5;
+    z-index: 9999;
+    margin-top: -35px;
+    margin-left: -35px;
+    border: none;
+}
+
+// .cursor-appear {
+//     animation: cursorAppear 0.5s ease forwards;
+// }
+
+// .cursor-disappear {
+//     animation: cursorAppear 0.5s ease reverse;
+// }
+
 
 /* ========== PROGRESS BAR ========== */
 
@@ -421,8 +450,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
     max-height: 100vh;
 	position: fixed;
 	top: 0; right: 0;
-    background-color: var(--orange-pure);
-    z-index: 50;
+    background-color: var(--primary-orange);
 }
 
 /* ========== LABEL SCROLL ========== */
@@ -432,7 +460,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
     flex-direction: column;
     position: fixed;
     bottom: 10%; right: 45px;
-    z-index: 99;
+    z-index: 10;
 
     &--container {
         width: 65px; height: 5px;
@@ -444,13 +472,13 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
         .scroll--line {
             width: 65px; height: 1px;
             margin: auto;
-            background-color: var(--background-light);
+            background-color: var(--primary-white);
             animation: scrollFall 10s ease infinite;
         }
     }  
     
     &--label {
-        @include font(1.25rem, 600, var(--font-light), 2px, uppercase);
+        @include font(1.25rem, 600, var(--primary-white), 2px, uppercase);
         transform: rotate(90deg);
     }
 
@@ -541,7 +569,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
             left: 55%; top: 50%;
             display: block;
             font-family: 'Roboto';
-            @include font(calc(10rem + 40vh), 900, var(--material-color), none, none);
+            @include font(calc(10rem + 40vh), 900, var(--second-black-1), none, none);
 
             @include tablet-screen {
                 font-size: calc(5rem + 30vh);
@@ -561,7 +589,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 
     /* ----- name area ----- */
     .title-name {
-        @include font(1.8rem, 600, var(--orange-pure), 5px, uppercase);
+        @include font(1.8rem, 600, var(--primary-orange), 5px, uppercase);
         margin-bottom: 40px;
         margin-left: -30px;
         z-index: 1;
@@ -620,7 +648,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
         // button redirect web CV
         a {
             width: 250px;
-            @include font(1.4rem, 700, var(--font-light), 2px, uppercase);
+            @include font(1.4rem, 700, var(--primary-white), 2px, uppercase);
             line-height: 3.2rem;
             display: block;
             margin-top: 60px;
@@ -635,7 +663,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 bottom: -10px; left: -22.5px;
                 width: 55px; height: 55px;
                 border-radius: 55px;
-                background-color: var(--material-lighter);
+                background-color: var(--second-black-2);
                 z-index: -1;
                 transition: 0.4s ease;
             }
@@ -647,7 +675,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 
             @include tablet-screen {
                 width: 190px;
-                @include font(1.2rem, 700, var(--font-light), 1.5px, none);
+                @include font(1.2rem, 700, var(--primary-white), 1.5px, none);
                 line-height: 2.85rem;
                 margin-top: 50px;
 
@@ -690,7 +718,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 
         // language
         h2 {
-            @include font(2rem, 600, var(--font-dark), 0.5px, uppercase);
+            @include font(2rem, 600, var(--primary-black-2), 0.5px, uppercase);
 
             @include tablet-screen {
                 font-size: 1.75rem;
@@ -702,7 +730,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
             margin-top: 10px;
             position: relative;
             border-radius: 3px;
-            box-shadow: 0px 0px 5px 1px var(--shadow-light);
+            box-shadow: 0px 0px 5px 1px var(--shadow-white);
 
             @include tablet-screen {
                 height: 20px;
@@ -718,11 +746,11 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 // width defined in skill.js
                 height: 25px;
                 position: absolute;
-                background: var(--material-color);
+                background: var(--second-black-1);
                 border-radius: 3px;
-                z-index: 2;
+                z-index: 1;
                 animation: progressBarLoad 1.5s ease 0s forwards;
-                box-shadow: 0px 0px 5px 1px var(--shadow-light);
+                box-shadow: 0px 0px 5px 1px var(--shadow-white);
                 overflow: hidden;
                 
                 @include tablet-screen {
@@ -733,7 +761,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                     display: block;
                     content: "";
                     height: 100%; width: 100%;
-                    background: linear-gradient(to right,  var(--material-color), var(--orange-pure));
+                    background: linear-gradient(to right,  var(--second-black-1), var(--primary-orange));
                     animation: progressBarSlide 3s linear 0s infinite;
                 }
             }
@@ -756,10 +784,10 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
     &__box {
         margin: 5% 0;
         width: 45%;
-        background-color: var(--material-color);
+        background-color: var(--second-black-1);
         border: none; border-radius: 5px;
         transition: 0.5s all ease-out;
-        box-shadow: 0px 0px 5px 2px var(--shadow-dark);
+        box-shadow: 0px 0px 5px 2px var(--shadow-black);
         filter: brightness(95%);
         cursor: pointer;
 
@@ -776,7 +804,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 
         &:hover {
             @include jumpAnimation(-5px);
-            background-color: var(--orange-pure);
+            background-color: var(--primary-orange);
             transition: 0.5s ease-out;
             
         }
@@ -795,7 +823,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
             }
             // title work box
             h1 {
-                @include font(2.25rem, 500, var(--font-light), none, none);
+                @include font(2.25rem, 500, var(--primary-white), none, none);
                 display: block;
                 margin-top: 10px;
                 animation: none;
@@ -815,7 +843,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
         width: 100%; height: 100%;
         position: fixed;
         left: 0; top: 0;
-        z-index: 10000;
+        z-index: 100;
         overflow: hidden; /* Enable scroll if needed */
         background-color: rgb(0,0,0); /* Fallback color */
         background-color: rgba(0,0,0,0.75); /* Black w/ opacity */
@@ -825,7 +853,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
             width: 75%;
             max-height: 95%;
             margin: auto;
-            background-color: var(--background-dark);
+            background-color: var(--primary-black-1);
             text-align: left;
             animation: boxSlideIn 0.4s ease-out 0s;            
             overflow-y: auto;
@@ -857,7 +885,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 }
                 
                 &--title {
-                    @include font(5rem, 700, var(--font-light), none, none);
+                    @include font(5rem, 700, var(--primary-white), none, none);
                     animation: none;
 
                     @include small-screen {
@@ -871,7 +899,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                     }
                 }
                 &--subtitle {
-                    @include font(1.6rem, 600, var(--orange-pure), 0, 0);
+                    @include font(1.6rem, 600, var(--primary-orange), 0, 0);
                     display: block;
                     margin: 10px 0 15px;
                     animation: none;
@@ -881,8 +909,8 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                     }
                 }
                 &--language {
-                    @include font(1.3rem, 600, var(--font-light), none, uppercase);
-                    background-color: var(--material-lighter);
+                    @include font(1.3rem, 600, var(--primary-white), none, uppercase);
+                    background-color: var(--second-black-2);
                     display: inline-block;
                     border-radius: 4px;
                     padding: 5px 8px;
@@ -890,7 +918,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                     margin-right: 5px;
                 }
                 &--date {
-                    @include font(1.8rem, normal, var(--font-light), none, none);
+                    @include font(1.8rem, normal, var(--primary-white), none, none);
                     line-height: 1.8rem;
                     float: right;
                     margin-top: 38px;
@@ -922,7 +950,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 }
 
                 &--description {
-                    @include font(1.5rem, normal, var(--font-light), 0.5px, none);
+                    @include font(1.5rem, normal, var(--primary-white), 0.5px, none);
                     line-height: 2.25rem;
                     display: block;
                     margin-top: 25px;
@@ -955,7 +983,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                         }
 
                         &--number, &--text {
-                            @include font(1.5rem, normal, var(--font-light), 0.8px, none);
+                            @include font(1.5rem, normal, var(--primary-white), 0.8px, none);
                             margin-top: 25px;
                             position: absolute;
                             top: 100%;
@@ -977,19 +1005,19 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                         img {
                             max-width: 90%;
                             margin: auto;
-                            box-shadow: 0px 0px 5px 2px var(--shadow-dark);
+                            box-shadow: 0px 0px 5px 2px var(--shadow-black);
 
                             @include tablet-screen {
                                 max-width: 90%;
                                 margin: 45px auto 0;
-                                box-shadow: 0px 0px 5px 2px var(--shadow-dark);
+                                box-shadow: 0px 0px 5px 2px var(--shadow-black);
                             }
                         }
                     }
 
                     /* Next & previous buttons */
                     .prev, .next {
-                        @include font(1.8rem, 700, var(--font-light), none, none);
+                        @include font(1.8rem, 700, var(--primary-white), none, none);
                         position: absolute;
                         top: 50%;
                         width: auto;
@@ -1002,7 +1030,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                         cursor: pointer;
 
                         &:hover {
-                            background: var(--orange-pure);
+                            background: var(--primary-orange);
                         }
 
                         @include tablet-screen {
@@ -1024,7 +1052,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 .dot {
                     width: 10px; height: 10px;
                     margin: 0 2.5px 0;
-                    background: var(--font-light);
+                    background: var(--primary-white);
                     border-radius: 50%;
                     display: inline-block;
                     cursor: pointer;
@@ -1032,7 +1060,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 }
 
                 .active, .dot:hover {
-                    background-color: var(--orange-pure);
+                    background-color: var(--primary-orange);
                     transition: 0.5s ease;
                 }
             }
@@ -1052,16 +1080,16 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 
         &--input, &--textarea {
             width: 525px;
-            @include font(1.6rem, 500, var(--font-dark), none, none);
+            @include font(1.6rem, 500, var(--primary-black-2), none, none);
             padding: 22.5px 20px;
-            background-color: var(--light-grey);
+            background-color: var(--primary-gray);
             border: none;
             border-radius: 2px;
             box-shadow: none;
             outline: none;
 
             &:focus + .contact__field--line {
-                width: 525px; 
+                width: 525px;
                 transition: 0.4s ease;
             }
 
@@ -1088,7 +1116,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
         &--line {
             width: 0; height: 1px;
             display: block;
-            background-color: var(--background-dark);
+            background-color: var(--primary-black-1);
             transition: 0.4s ease;
             margin-bottom: 18px;
 
@@ -1099,7 +1127,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
         
         [type="submit"] {
             width: 125px;
-            @include font(1.4rem, 700, var(--font-light), 2px, uppercase);
+            @include font(1.4rem, 700, var(--primary-white), 2px, uppercase);
             line-height: 3.2rem;
             background-color: transparent;
             border: none; outline: none;
@@ -1118,7 +1146,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 position: absolute;
                 top: -37.5%; left: -20px;
                 border-radius: 55px;
-                background-color: var(--material-lighter);
+                background-color: var(--second-black-2);
                 z-index: -1;
                 transition: 0.4s;
             }
@@ -1154,7 +1182,7 @@ footer {
             width: 45%;
             font-size: 1.6rem;
             font-weight: 600;
-            color: var(--material-grey);
+            color: var(--second-gray);
             @include flex(column, flex-start, flex-start);
 
             @include tablet-screen {
@@ -1162,7 +1190,7 @@ footer {
             }
         
             h1 {
-                @include font(1.5rem, 700, var(--font-light), 2px, uppercase);
+                @include font(1.5rem, 700, var(--primary-white), 2px, uppercase);
                 display: block;
                 margin-bottom: 10px;
 
@@ -1179,7 +1207,7 @@ footer {
                     display: block;
                     margin-top: 4px;
                     transition: 0.5s ease;
-                    background-color: var(--font-light);
+                    background-color: var(--primary-white);
                 }
     
                 &:hover::after, &:active::after {
@@ -1191,11 +1219,11 @@ footer {
             span {
                 display: block;
                 margin-top: 20px;
-                color: var(--material-grey);
+                color: var(--second-gray);
                 transition: 0.5s all ease;
 
                 &:hover:not(.contact-sentence) {
-                    color: var(--font-light);
+                    color: var(--primary-white);
                     transition: 0.5s all ease;
                 }
 
@@ -1206,14 +1234,14 @@ footer {
 
             // icon contact
             i {
-                color: var(--material-grey);
+                color: var(--second-gray);
                 font-size: 2.5rem;
                 margin-top: 45px;
                 margin-right: 25px;
                 transition: 0.5s all ease;
                 &:hover {
                     transform: scale(1.1);
-                    color: var(--font-light);
+                    color: var(--primary-white);
                     transition: 0.5s all ease;
                 }
 

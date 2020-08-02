@@ -16,7 +16,7 @@ menuItem.forEach(element => {
             otherElems.childNodes[0].style.color = "";
         })
         // repaint the selected menu content
-        element.childNodes[0].style.color = "var(--orange-pure)";
+        element.childNodes[0].style.color = "var(--primary-orange)";
 
         // close menu
         setTimeout(() => {

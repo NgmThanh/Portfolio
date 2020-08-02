@@ -33,10 +33,10 @@ var scrollLine = document.querySelector('.scroll--line');
 var scrollLabel = document.querySelector('.scroll--label');
 
 // colors
-var colorLight = "color: var(--background-light); transition: 0.5s ease-out;";
-var colorDark = "color: var(--background-dark); transition: 0.5s ease-out;";
-var backgroundLight = "background-color: var(--background-light); transition: 0.5s ease-out;";
-var backgroundDark = "background-color: var(--background-dark); transition: 0.5s ease-out;"
+var colorLight = "color: var(--primary-white); transition: 0.5s ease-out;";
+var colorDark = "color: var(--primary-black-1); transition: 0.5s ease-out;";
+var backgroundLight = "background-color: var(--primary-white); transition: 0.5s ease-out;";
+var backgroundDark = "background-color: var(--primary-black-1); transition: 0.5s ease-out;"
 
 var parameters = {
     root: null,
