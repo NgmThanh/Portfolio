@@ -34,7 +34,7 @@
     --primary-orange: #F84525;
     --second-black-1: #272628;
     --second-black-2: #323135;
-    --second-black-3: #303030;
+    --second-black-3: #60606080;
     --second-gray: #9C9C9C;
     --shadow-black: #000;
     --shadow-white: #cecece;
@@ -401,7 +401,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 .cursor, .cursor--inner {
     position: fixed;
     width: 45px; height: 45px;
-    border: 1.25px solid var(--second-black-2);
+    border: 1.25px solid var(--second-black-3);
     border-radius: 50%;
     transition: 0.15s ease-out;
     margin-top: -22.5px;
@@ -426,22 +426,13 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 .cursor-focus {
     width: 70px; height: 70px;
     border-radius: 50%;
-    background-color: #606060;
-    opacity: .5;
+    background-color: var(--second-black-3);
+    opacity: .75;
     z-index: 9999;
     margin-top: -35px;
     margin-left: -35px;
     border: none;
 }
-
-// .cursor-appear {
-//     animation: cursorAppear 0.5s ease forwards;
-// }
-
-// .cursor-disappear {
-//     animation: cursorAppear 0.5s ease reverse;
-// }
-
 
 /* ========== PROGRESS BAR ========== */
 
@@ -568,6 +559,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
             position: absolute;
             left: 55%; top: 50%;
             display: block;
+            user-select: none;
             font-family: 'Roboto';
             @include font(calc(10rem + 40vh), 900, var(--second-black-1), none, none);
 

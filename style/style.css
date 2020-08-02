@@ -31,7 +31,7 @@
   --primary-orange: #F84525;
   --second-black-1: #272628;
   --second-black-2: #323135;
-  --second-black-3: #303030;
+  --second-black-3: #60606080;
   --second-gray: #9C9C9C;
   --shadow-black: #000;
   --shadow-white: #cecece;
@@ -539,7 +539,7 @@ body {
   position: fixed;
   width: 45px;
   height: 45px;
-  border: 1.25px solid var(--second-black-2);
+  border: 1.25px solid var(--second-black-3);
   border-radius: 50%;
   -webkit-transition: 0.15s ease-out;
   transition: 0.15s ease-out;
@@ -569,8 +569,8 @@ body {
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: #606060;
-  opacity: .5;
+  background-color: var(--second-black-3);
+  opacity: .75;
   z-index: 9999;
   margin-top: -35px;
   margin-left: -35px;
@@ -754,6 +754,10 @@ body {
   left: 55%;
   top: 50%;
   display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   font-family: 'Roboto';
   font-size: calc(10rem + 40vh);
   font-weight: 900;

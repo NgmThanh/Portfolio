@@ -20,6 +20,7 @@ var hoverLinks = [];
 var href = document.getElementsByTagName("a");
 var hamburger = document.querySelector('.hamburger-icon');
 var workBoxes = document.querySelectorAll('.timeline__box');
+var send = document.querySelector('.submit');
 
 for (var i=0; i < href.length; i++) {
     hoverLinks.push(href[i]);
@@ -31,19 +32,17 @@ workBoxes.forEach(box => {
     hoverLinks.push(box);
 })
 
+hoverLinks.push(send)
+
 console.log(hoverLinks)
 
 for (var i = 0; i < hoverLinks.length; i++) {
 
     hoverLinks[i].addEventListener("mouseover", () => {
         cursor.classList.toggle("cursor-focus")
-        // cursor.classList.add("cursor-appear")
-        // cursor.classList.remove("cursor-disappear")
     });
     hoverLinks[i].addEventListener("mouseout", () => {
         cursor.classList.toggle("cursor-focus")
-        // cursor.classList.add("cursor-disappear")
-        // cursor.classList.remove("cursor-appear")
     });
 
 }
