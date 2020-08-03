@@ -54,16 +54,12 @@
     }
 }
 
-.fade-in {
-    animation: fadeIn 0.5s ease;
+.fade {
+    animation: fadeIn 1s ease-out;
     opacity: 1;
 }
 
-.fade-out {
-    opacity: 0;
-    transition: ease 0.5s;
-}
-
+// animations for menu items
 @keyframes slide-left-in {
     from {
         transform: translateX(-100%);
@@ -131,15 +127,6 @@
     }
     90%, 100% {
         margin-left: 100%;
-    }
-}
-
-@keyframes cursorAppear {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
     }
 }
 
@@ -1187,13 +1174,17 @@ footer {
                 margin-bottom: 10px;
 
                 @include tablet-screen {
-                    font-size: 1.5rem;
                     margin-bottom: 0px;
                 }
             }
 
-            div:not(.container-icons){
-                &::after {
+            .information, .contact-sentence {
+                margin-top: 20px;
+                @include tablet-screen {
+                    margin-top: 12.5px;
+                }
+
+                &:not(.contact-sentence)::after {
                     content: "";
                     width: 0; height: 1px;
                     display: block;
@@ -1209,36 +1200,35 @@ footer {
             }
 
             span {
-                display: block;
-                margin-top: 20px;
                 color: var(--second-gray);
-                transition: 0.5s all ease;
 
                 &:hover:not(.contact-sentence) {
                     color: var(--primary-white);
-                    transition: 0.5s all ease;
-                }
-
-                @include tablet-screen {
-                    margin-top: 12.5px;
-                }
+                    transition: color 0.5s ease;
+                }                
             }
 
-            // icon contact
-            i {
-                color: var(--second-gray);
-                font-size: 2.5rem;
-                margin-top: 45px;
-                margin-right: 25px;
-                transition: 0.5s all ease;
-                &:hover {
-                    transform: scale(1.1);
-                    color: var(--primary-white);
-                    transition: 0.5s all ease;
+            .container-icons {
+                @include flex(row, none, none);
+
+                .icons {
+                    margin-top: 45px;
+                    margin-right: 25px;
+
+                    @include tablet-screen {
+                        margin-top: 30px;
+                    }
                 }
 
-                @include tablet-screen {
-                    margin-top: 30px;
+                // icon contact
+                i {
+                    color: var(--second-gray);
+                    font-size: 2.5rem;
+                    transition: 0.5s all ease;
+                    &:hover {
+                        color: var(--primary-white);
+                        transition: color 0.5s ease;
+                    }
                 }
             }
         }
