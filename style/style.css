@@ -68,6 +68,12 @@
   from {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
+    opacity: .2;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -75,14 +81,21 @@
   from {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
+    opacity: .2;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
   }
 }
 
 .slide-left-out {
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  -webkit-transition: ease 0.5s;
-  transition: ease 0.5s;
+  opacity: 0;
+  -webkit-transition: ease-out 0.5s;
+  transition: ease-out 0.5s;
 }
 
 @-webkit-keyframes slideDownIn {

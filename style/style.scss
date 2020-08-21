@@ -63,12 +63,18 @@
 @keyframes slide-left-in {
     from {
         transform: translateX(-100%);
+        opacity: .2;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
 .slide-left-out {
     transform: translateX(-100%);
-    transition: ease 0.5s;
+    opacity: 0;
+    transition: ease-out 0.5s;
 }
 
 // animations apparition
@@ -142,10 +148,10 @@
     text-transform: $text-transform;
 }
 
-@mixin flex($flex-flow, $align_items, $justify-content) {
+@mixin flex($flex-flow, $align-items, $justify-content) {
     display: flex;
     flex-flow: $flex-flow;
-    align-items: $align_items;
+    align-items: $align-items;
     justify-content: $justify-content;
 }
 
