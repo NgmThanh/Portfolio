@@ -755,8 +755,9 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                     display: block;
                     content: "";
                     height: 100%; width: 100%;
-                    background: linear-gradient(to right,  var(--second-black-1), var(--primary-orange));
-                    animation: progressBarSlide 3s linear 0s infinite;
+                    // background: linear-gradient(to right,  var(--second-black-1), var(--primary-orange));
+                    background: linear-gradient(135deg,  var(--second-black-1), var(--primary-orange));
+                    // animation: progressBarSlide 3s linear 0s infinite;
                 }
             }
         }
