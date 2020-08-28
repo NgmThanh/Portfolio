@@ -440,6 +440,10 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 	position: fixed;
 	top: 0; right: 0;
     background-color: var(--primary-orange);
+
+    @include tablet-screen {
+        display: none;
+    }
 }
 
 /* ========== LABEL SCROLL ========== */
