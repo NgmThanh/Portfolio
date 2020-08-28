@@ -111,33 +111,19 @@
 
 @keyframes progressBarLoad {
     from {
-        width: 0;
-    }
-}
-
-@keyframes progressBarSlide {
-    from{
-        transform: translateX(-100%);
-        // margin-left: -100%;
-    }
-    to{
-        transform: translateX(100%);
-        // margin-left: 100%;
+        transform: scaleX(0);
     }
 }
 
 @keyframes scrollFall {
     0%, 10% {
         transform: translateX(-100%);
-        // margin-left: -100%;
     }
     25%, 50%, 75% {
         transform: translateX(0);
-        // margin-left: 0%;
     }
     90%, 100% {
         transform: translateX(100%);
-        // margin-left: 100%;
     }
 }
 
@@ -744,6 +730,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 background: var(--second-black-1);
                 border-radius: 3px;
                 z-index: 1;
+                transform-origin: 0% 50%;
                 animation: progressBarLoad 1.5s ease 0s forwards;
                 box-shadow: 0px 0px 5px 1px var(--shadow-white);
                 overflow: hidden;

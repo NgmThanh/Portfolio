@@ -166,35 +166,15 @@
 
 @-webkit-keyframes progressBarLoad {
   from {
-    width: 0;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
   }
 }
 
 @keyframes progressBarLoad {
   from {
-    width: 0;
-  }
-}
-
-@-webkit-keyframes progressBarSlide {
-  from {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  to {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-  }
-}
-
-@keyframes progressBarSlide {
-  from {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  to {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
   }
 }
 
@@ -1008,6 +988,8 @@ body {
   background: var(--second-black-1);
   border-radius: 3px;
   z-index: 1;
+  -webkit-transform-origin: 0% 50%;
+          transform-origin: 0% 50%;
   -webkit-animation: progressBarLoad 1.5s ease 0s forwards;
           animation: progressBarLoad 1.5s ease 0s forwards;
   -webkit-box-shadow: 0px 0px 5px 1px var(--shadow-white);
