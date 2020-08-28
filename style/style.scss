@@ -205,6 +205,7 @@ $breakpoints: (
     font-family: "Segoe UI";
     padding: 0; margin: 0;
     text-decoration: none;
+    box-sizing: border-box;
     
     &::selection {
         background-color: var(--selection-color);
@@ -295,7 +296,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 }
 
 .hamburger-icon {
-    width: 25px; height: 25px;
+    width: 50px; height: 50px;
     display: block;
     position: fixed;
     top: 5%; right: 50px;
@@ -755,9 +756,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                     display: block;
                     content: "";
                     height: 100%; width: 100%;
-                    // background: linear-gradient(to right,  var(--second-black-1), var(--primary-orange));
                     background: linear-gradient(135deg,  var(--second-black-1), var(--primary-orange));
-                    // animation: progressBarSlide 3s linear 0s infinite;
                 }
             }
         }
