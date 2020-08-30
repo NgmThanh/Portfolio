@@ -1,12 +1,13 @@
 /* ============ SCRIPT MENU ============ */
 
-/* ----- DESKTOP MENU ----- */
+/* ----- EVENT LISTENERS MENU ----- */
 
 // select all elemens of menu
 var menuOpen = document.getElementsByClassName("change");
 var menu = document.getElementById("menu");
 var hamburger = document.getElementById("hamburger");
 var menuItem = document.querySelectorAll('.menu--text');
+var menuLabel = document.querySelector('.label-menu');
 
 // set event listener in all menu buttons
 menuItem.forEach(element => {
@@ -18,13 +19,14 @@ menuItem.forEach(element => {
         // repaint the selected menu content
         element.childNodes[0].style.color = "var(--primary-orange)";
 
-        // close menu
+        // close menu after clicked in an element
         setTimeout(() => {
             menuItem.forEach(item => {
                 item.classList.add('slide-left-out');
             });
             menu.classList.remove("fade-in");
             menu.classList.add("fade-out");
+            menuLabel.style.animation = "slideOutMenuLabel 0.5s ease 0s forwards";
         }, 150);
         
         setTimeout(() => {menu.style.display = "none";}, 600);
@@ -32,10 +34,9 @@ menuItem.forEach(element => {
     })
 });
 
-/* ----- MOBILE MENU ----- */
+/* ----- OPEN / CLOSE MENU ----- */
 
 function changeMobile() {
-
     // if open
     if (menuOpen.length === 0) {
         menuItem.forEach(item => {
@@ -43,6 +44,7 @@ function changeMobile() {
         });
         menu.classList.add("fade-in");
         menu.classList.remove("fade-out");
+        menuLabel.style.animation = "slideInMenuLabel 0.5s ease 0s forwards";
         menu.style.display = "flex";
     }
     // if closed
@@ -52,6 +54,7 @@ function changeMobile() {
         });
         menu.classList.remove("fade-in");
         menu.classList.add("fade-out");
+        menuLabel.style.animation = "slideOutMenuLabel 0.5s ease 0s forwards";
         setTimeout(() => {menu.style.display = "none";}, 500);
     }
     hamburger.classList.toggle("change");

@@ -47,10 +47,19 @@
 
 @keyframes fadeIn {
     from {
-        opacity: 0.25;
+        opacity: .2;
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }
 
@@ -59,20 +68,60 @@
     opacity: 1;
 }
 
+// menu fade
+.fade-in {
+    animation: fadeIn .6s ease-out;
+    opacity: 1;
+}
+
+.fade-out {
+    animation: fadeOut .6s ease-out;
+    opacity: 0;
+}
+
 // animations for menu items
-@keyframes slide-left-in {
+@keyframes slideLeftIn {
     from {
-        transform: translateX(-100%);
+        transform: translate3d(-100%, 0, 0);
         opacity: .2;
     }
     to {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
         opacity: 1;
     }
 }
 
 .slide-left-out {
-    transform: translateX(-100%);
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+    transition: ease-out 0.5s;
+}
+
+// animations for label "menu" in open menu
+@keyframes slideInMenuLabel {
+    from {
+        transform: rotate(-90deg) translate3d(100px, 0, 0);
+        opacity: .2;
+    }
+    to {
+        transform: rotate(-90deg) translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutMenuLabel {
+    from {
+        transform: rotate(-90deg) translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    to {
+        transform: rotate(-90deg) translate3d(100px, 0, 0);
+        opacity: 0;
+    }
+}
+
+.slide-out-menu-label {
+    transform: translate3d(-100px, 0, 0);
     opacity: 0;
     transition: ease-out 0.5s;
 }
@@ -82,12 +131,12 @@
     from {
         visibility: hidden;
         opacity: 0.2;
-        transform: translateY(30px);
+        transform: translate3d(0, 30px, 0);
     }
     to {
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -95,35 +144,35 @@
 @keyframes boxSlideIn {
     from {
         opacity: 0;
-        transform: translate(0, -100%);
+        transform: translate3d(0, -100%, 0);
     }
     to {
         opacity: 1;
-        transform: translate(0, 0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
 .box-slide-out {
     opacity: 0.1;
-    transform: translateY(100%);
+    transform: translate3d(0, 100%, 0);
     transition: transform 0.4s ease-out, opacity 0.4s ease;
 }
 
 @keyframes progressBarLoad {
     from {
-        transform: scaleX(0);
+        transform: scale3d(0, 0, 0);
     }
 }
 
 @keyframes scrollFall {
     0%, 10% {
-        transform: translateX(-100%);
+        transform: translate3d(-100%, 0, 0);
     }
     25%, 50%, 75% {
-        transform: translateX(0);
+        transform: translate3d(0, 0, 0);
     }
     90%, 100% {
-        transform: translateX(100%);
+        transform: translate3d(100%, 0, 0);
     }
 }
 
@@ -172,7 +221,7 @@ $breakpoints: (
 }
 
 @mixin jumpAnimation($distance) {
-    transform: translateY($distance);
+    transform: translate3d(0, $distance, 0);
     transition: 0.4s all ease;
 }
 
@@ -313,14 +362,14 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 /* animation hamburger icon on click */
 .change {
     .bar1 {
-        transform: translate(2.5px, 7px) rotate(45deg);
+        transform: translate3d(2.5px, 7px, 0) rotate(45deg);
         width: 20px;
     }
     .bar2 {
         opacity: 0;
     }
     .bar3 {
-        transform: translate(2.5px, -7px) rotate(-45deg);
+        transform: translate3d(2.5px, -7px, 0) rotate(-45deg);
         width: 20px;
     }
 }
@@ -340,15 +389,16 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 
         .label-menu {
             @include font(1.2rem, 700, var(--primary-white), 3px, none);
-            transform: rotate(-90deg);
+            // transform: rotate(-90deg);
             margin: -62.5px 25px;
             display: block;
+            animation: slideInMenuLabel 0.5s ease 0s forwards;
         }
         
         .menu--text {
             @include font(6.5rem, 700, var(--primary-white), 5px, none);
             margin: 10px 0 0 100px;
-            animation: slide-left-in 0.5s ease 0s;
+            animation: slideLeftIn 0.5s ease 0s;
             cursor: pointer;
 
             &::after {
@@ -361,6 +411,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
             }
 
             &:hover::after, &:active::after {
+                transform: translate3d(0, 0, 0);
                 width: 100%;
                 transition: 0.5s ease;
             }
@@ -650,6 +701,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
             }
 
             &:hover::before {
+                transform: translate3d(0, 0, 0);
                 width: 285px;
                 transition: 0.4s ease;
             }
@@ -666,6 +718,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
                 }
 
                 &:hover::before {
+                    transform: translate3d(0, 0, 0);
                     width: 215px;
                 }
             }
@@ -1133,6 +1186,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
             }
 
             &:hover::before, &:active::before {
+                transform: translate3d(0, 0, 0);
                 width: 150px;
                 transition: 0.4s;
             }
@@ -1196,6 +1250,7 @@ footer {
                 }
     
                 &:hover::after, &:active::after {
+                    transform: translate3d(0, 0, 0);
                     width: 100%;
                     transition: 0.5s ease;
                 }
