@@ -59,19 +59,19 @@
 }
 
 @-webkit-keyframes fadeOut {
-  from {
+  0%, 25% {
     opacity: 1;
   }
-  to {
+  100% {
     opacity: 0;
   }
 }
 
 @keyframes fadeOut {
-  from {
+  0%, 25% {
     opacity: 1;
   }
-  to {
+  100% {
     opacity: 0;
   }
 }
@@ -120,12 +120,40 @@
   }
 }
 
+@-webkit-keyframes slideLeftOut {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes slideLeftOut {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+}
+
+.slide-left-in {
+  -webkit-animation: slideLeftIn 0.5s ease 0s forwards;
+          animation: slideLeftIn 0.5s ease 0s forwards;
+}
+
 .slide-left-out {
-  -webkit-transform: translate3d(-100%, 0, 0);
-          transform: translate3d(-100%, 0, 0);
-  opacity: 0;
-  -webkit-transition: ease-out 0.5s;
-  transition: ease-out 0.5s;
+  -webkit-animation: slideLeftOut 0.5s ease-out 0s forwards;
+          animation: slideLeftOut 0.5s ease-out 0s forwards;
 }
 
 @-webkit-keyframes slideInMenuLabel {
@@ -180,78 +208,76 @@
   }
 }
 
+.slide-in-menu-label {
+  -webkit-animation: slideInMenuLabel 0.5s ease 0s forwards;
+          animation: slideInMenuLabel 0.5s ease 0s forwards;
+}
+
 .slide-out-menu-label {
-  -webkit-transform: translate3d(-100px, 0, 0);
-          transform: translate3d(-100px, 0, 0);
-  opacity: 0;
-  -webkit-transition: ease-out 0.5s;
-  transition: ease-out 0.5s;
-}
-
-@-webkit-keyframes slideDownIn {
-  from {
-    visibility: hidden;
-    opacity: 0.2;
-    -webkit-transform: translate3d(0, 30px, 0);
-            transform: translate3d(0, 30px, 0);
-  }
-  to {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideDownIn {
-  from {
-    visibility: hidden;
-    opacity: 0.2;
-    -webkit-transform: translate3d(0, 30px, 0);
-            transform: translate3d(0, 30px, 0);
-  }
-  to {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-  }
+  -webkit-animation: slideOutMenuLabel 0.5s ease 0s forwards;
+          animation: slideOutMenuLabel 0.5s ease 0s forwards;
 }
 
 @-webkit-keyframes boxSlideIn {
   from {
-    opacity: 0;
     -webkit-transform: translate3d(0, -100%, 0);
             transform: translate3d(0, -100%, 0);
+    opacity: 0;
   }
   to {
-    opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 
 @keyframes boxSlideIn {
   from {
-    opacity: 0;
     -webkit-transform: translate3d(0, -100%, 0);
             transform: translate3d(0, -100%, 0);
+    opacity: 0;
   }
   to {
-    opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
             transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 
+@-webkit-keyframes boxSlideOut {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    opacity: .1;
+  }
+}
+
+@keyframes boxSlideOut {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+    opacity: .1;
+  }
+}
+
+.box-slide-in {
+  -webkit-animation: boxSlideIn 0.4s ease-out 0s forwards;
+          animation: boxSlideIn 0.4s ease-out 0s forwards;
+}
+
 .box-slide-out {
-  opacity: 0.1;
-  -webkit-transform: translate3d(0, 100%, 0);
-          transform: translate3d(0, 100%, 0);
-  -webkit-transition: opacity 0.4s ease, -webkit-transform 0.4s ease-out;
-  transition: opacity 0.4s ease, -webkit-transform 0.4s ease-out;
-  transition: transform 0.4s ease-out, opacity 0.4s ease;
-  transition: transform 0.4s ease-out, opacity 0.4s ease, -webkit-transform 0.4s ease-out;
+  -webkit-animation: boxSlideOut 0.4s ease-out 0s forwards;
+          animation: boxSlideOut 0.4s ease-out 0s forwards;
 }
 
 @-webkit-keyframes progressBarLoad {
@@ -296,6 +322,53 @@
     -webkit-transform: translate3d(100%, 0, 0);
             transform: translate3d(100%, 0, 0);
   }
+}
+
+/* ---------- reveal on scroll animations ---------- */
+.reveal [class*="reveal-"] {
+  opacity: 0 !important;
+  -webkit-transform: translateY(30px) !important;
+          transform: translateY(30px) !important;
+}
+
+[class*="reveal-"] {
+  -webkit-transition: 0.8s cubic-bezier(0.5, 0, 0, 1);
+  transition: 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-1 {
+  -webkit-transition-delay: calc(1s * 0.1);
+          transition-delay: calc(1s * 0.1);
+}
+
+.reveal-2 {
+  -webkit-transition-delay: calc(2s * 0.1);
+          transition-delay: calc(2s * 0.1);
+}
+
+.reveal-3 {
+  -webkit-transition-delay: calc(3s * 0.1);
+          transition-delay: calc(3s * 0.1);
+}
+
+.reveal-4 {
+  -webkit-transition-delay: calc(4s * 0.1);
+          transition-delay: calc(4s * 0.1);
+}
+
+.reveal-5 {
+  -webkit-transition-delay: calc(5s * 0.1);
+          transition-delay: calc(5s * 0.1);
+}
+
+.reveal-6 {
+  -webkit-transition-delay: calc(6s * 0.1);
+          transition-delay: calc(6s * 0.1);
+}
+
+.reveal-7 {
+  -webkit-transition-delay: calc(7s * 0.1);
+          transition-delay: calc(7s * 0.1);
 }
 
 /* ============================ */
@@ -363,53 +436,6 @@ body {
   color: var(--primary-black-2);
 }
 
-/* ---------- reveal on scroll animations ---------- */
-.reveal [class*="reveal-"] {
-  opacity: 0 !important;
-  -webkit-transform: translateY(30px) !important;
-          transform: translateY(30px) !important;
-}
-
-[class*="reveal-"] {
-  -webkit-transition: 0.8s cubic-bezier(0.5, 0, 0, 1);
-  transition: 0.8s cubic-bezier(0.5, 0, 0, 1);
-}
-
-.reveal-1 {
-  -webkit-transition-delay: calc(1s * 0.1);
-          transition-delay: calc(1s * 0.1);
-}
-
-.reveal-2 {
-  -webkit-transition-delay: calc(2s * 0.1);
-          transition-delay: calc(2s * 0.1);
-}
-
-.reveal-3 {
-  -webkit-transition-delay: calc(3s * 0.1);
-          transition-delay: calc(3s * 0.1);
-}
-
-.reveal-4 {
-  -webkit-transition-delay: calc(4s * 0.1);
-          transition-delay: calc(4s * 0.1);
-}
-
-.reveal-5 {
-  -webkit-transition-delay: calc(5s * 0.1);
-          transition-delay: calc(5s * 0.1);
-}
-
-.reveal-6 {
-  -webkit-transition-delay: calc(6s * 0.1);
-          transition-delay: calc(6s * 0.1);
-}
-
-.reveal-7 {
-  -webkit-transition-delay: calc(7s * 0.1);
-          transition-delay: calc(7s * 0.1);
-}
-
 /* ========== MENU ========== */
 .explore {
   font-size: 1.4rem;
@@ -438,28 +464,6 @@ body {
 @media screen and (max-width: 500px) {
   .explore {
     right: 85px;
-  }
-}
-
-@-webkit-keyframes slideOutAndIn {
-  0% {
-    -webkit-transform: translateX(-50px);
-            transform: translateX(-50px);
-  }
-  50% {
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
-  }
-}
-
-@keyframes slideOutAndIn {
-  0% {
-    -webkit-transform: translateX(-50px);
-            transform: translateX(-50px);
-  }
-  50% {
-    -webkit-transform: translateX(50px);
-            transform: translateX(50px);
   }
 }
 
@@ -554,8 +558,6 @@ body {
   text-transform: none;
   margin: -62.5px 25px;
   display: block;
-  -webkit-animation: slideInMenuLabel 0.5s ease 0s forwards;
-          animation: slideInMenuLabel 0.5s ease 0s forwards;
 }
 
 .menu .container-menu .menu--text {
@@ -565,8 +567,6 @@ body {
   letter-spacing: 5px;
   text-transform: none;
   margin: 10px 0 0 100px;
-  -webkit-animation: slideLeftIn 0.5s ease 0s;
-          animation: slideLeftIn 0.5s ease 0s;
   cursor: pointer;
 }
 
@@ -614,6 +614,8 @@ body {
   margin-left: -22.5px;
   z-index: 10000;
   pointer-events: none;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 
 @media screen and (max-width: 767px) {
@@ -642,6 +644,8 @@ body {
   margin-top: -35px;
   margin-left: -35px;
   border: none;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 
 /* ========== PROGRESS BAR ========== */
@@ -653,12 +657,8 @@ body {
   top: 0;
   right: 0;
   background-color: var(--primary-orange);
-}
-
-@media screen and (max-width: 767px) {
-  #progress {
-    display: none;
-  }
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
 
 /* ========== LABEL SCROLL ========== */
@@ -713,6 +713,43 @@ body {
   }
 }
 
+.component-dark {
+  background-color: var(--primary-black-1) !important;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.component-light {
+  background-color: var(--primary-white) !important;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.font-dark {
+  color: var(--primary-black-1) !important;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.font-dark::after {
+  background-color: var(--primary-black-1) !important;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.font-light {
+  color: var(--primary-white) !important;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.font-light::after {
+  background-color: var(--primary-white) !important;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+/* ========== PAGES ========== */
 .about-page, .skills-page, .works-page, .contact-page, footer {
   padding: 7.5%;
   min-height: 100vh;
@@ -1243,8 +1280,6 @@ body {
   margin: auto;
   background-color: var(--primary-black-1);
   text-align: left;
-  -webkit-animation: boxSlideIn 0.4s ease-out 0s;
-          animation: boxSlideIn 0.4s ease-out 0s;
   overflow-y: auto;
 }
 

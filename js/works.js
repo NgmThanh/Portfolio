@@ -35,8 +35,7 @@ document.querySelectorAll('.timeline__box').forEach(btnWork => {
         var modal = document.getElementById("myModal" + number);
         var workWindow = document.querySelectorAll(".work-window");
 
-        // When the user clicks the button, open the modal 
-        
+        // When the user clicks the button, open the modal window
         workWindow.forEach(work => {
             work.classList.remove("box-slide-out");
         });

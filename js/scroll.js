@@ -26,17 +26,11 @@ document.querySelectorAll('.reveal').forEach(function (r) {
 /* ============ CHANGE COLORS ON SCROLL ============ */
 
 // elements to change
-var explore = document.querySelector('#explore');
+var explore = document.querySelector('.explore');
 var hamburger = document.querySelector('#hamburger');
 var barsHamburger = document.querySelectorAll('#hamburger > div');
 var scrollLine = document.querySelector('.scroll--line');
 var scrollLabel = document.querySelector('.scroll--label');
-
-// colors
-var colorLight = "color: var(--primary-white); transition: 0.5s ease-out;";
-var colorDark = "color: var(--primary-black-1); transition: 0.5s ease-out;";
-var backgroundLight = "background-color: var(--primary-white); transition: 0.5s ease-out;";
-var backgroundDark = "background-color: var(--primary-black-1); transition: 0.5s ease-out;"
 
 var parameters = {
     root: null,
@@ -48,22 +42,24 @@ var callback = function(entries, observer) {
     entries.forEach(entry => {
 
         if (entry.isIntersecting) {
-
+            // dark pages
             if (entry.target.id == "about" || entry.target.id == "works" || entry.target.id == "menu") {
-                explore.setAttribute("style", colorLight);
-                scrollLabel.setAttribute("style", colorLight);
-                scrollLine.setAttribute("style", backgroundLight)
-                hamburger.setAttribute("style", backgroundLight);
+                explore.classList.remove("font-dark");
+                scrollLabel.classList.remove("font-dark");
+                scrollLine.classList.remove("component-dark");
+                hamburger.classList.remove("component-dark");
                 barsHamburger.forEach(bar => {
-                    bar.setAttribute("style", backgroundDark);
+                    bar.classList.remove("component-light");
                 });
-            } else {
-                explore.setAttribute("style", colorDark);
-                scrollLabel.setAttribute("style", colorDark);
-                scrollLine.setAttribute("style", backgroundDark)
-                hamburger.setAttribute("style", backgroundDark);
+            }
+            // light pages
+            else {
+                explore.classList.add("font-dark");
+                scrollLabel.classList.add("font-dark");
+                scrollLine.classList.add("component-dark");
+                hamburger.classList.add("component-dark");
                 barsHamburger.forEach(bar => {
-                    bar.setAttribute("style", backgroundLight);
+                    bar.classList.add("component-light");
                 });
             }
         }

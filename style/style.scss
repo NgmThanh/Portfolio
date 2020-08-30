@@ -55,10 +55,10 @@
 }
 
 @keyframes fadeOut {
-    from {
+    0%, 25% {
         opacity: 1;
     }
-    to {
+    100% {
         opacity: 0;
     }
 }
@@ -91,10 +91,23 @@
     }
 }
 
+@keyframes slideLeftOut {
+    from {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+        opacity: 0;
+    }
+}
+
+.slide-left-in {
+    animation: slideLeftIn 0.5s ease 0s forwards;
+}
+
 .slide-left-out {
-    transform: translate3d(-100%, 0, 0);
-    opacity: 0;
-    transition: ease-out 0.5s;
+    animation: slideLeftOut 0.5s ease-out 0s forwards;
 }
 
 // animations for label "menu" in open menu
@@ -120,42 +133,43 @@
     }
 }
 
+.slide-in-menu-label {
+    animation: slideInMenuLabel 0.5s ease 0s forwards;
+}
+
 .slide-out-menu-label {
-    transform: translate3d(-100px, 0, 0);
-    opacity: 0;
-    transition: ease-out 0.5s;
+    animation: slideOutMenuLabel 0.5s ease 0s forwards;
 }
 
-// animations apparition
-@keyframes slideDownIn {
-    from {
-        visibility: hidden;
-        opacity: 0.2;
-        transform: translate3d(0, 30px, 0);
-    }
-    to {
-        opacity: 1;
-        visibility: visible;
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-// animations for work windows boxes
+// animations open work window
 @keyframes boxSlideIn {
     from {
-        opacity: 0;
         transform: translate3d(0, -100%, 0);
+        opacity: 0;
+    }        
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes boxSlideOut {
+    from {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
     }
     to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 100%, 0);
+        opacity: .1;
     }
+}
+
+.box-slide-in {
+    animation: boxSlideIn 0.4s ease-out 0s forwards;  
 }
 
 .box-slide-out {
-    opacity: 0.1;
-    transform: translate3d(0, 100%, 0);
-    transition: transform 0.4s ease-out, opacity 0.4s ease;
+    animation: boxSlideOut 0.4s ease-out 0s forwards;
 }
 
 @keyframes progressBarLoad {
@@ -173,6 +187,25 @@
     }
     90%, 100% {
         transform: translate3d(100%, 0, 0);
+    }
+}
+
+/* ---------- reveal on scroll animations ---------- */
+
+$timingApparition: cubic-bezier(.5, 0, 0, 1);
+
+.reveal [class*="reveal-"] {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+}
+
+[class*="reveal-"] {
+    transition: 0.8s $timingApparition;
+}
+
+@for $i from 1 through 7 {
+    .reveal-#{$i} {
+        transition-delay: calc(#{$i}s * 0.1);
     }
 }
 
@@ -279,25 +312,6 @@ body {
     color: var(--primary-black-2);
 }
 
-/* ---------- reveal on scroll animations ---------- */
-
-$timingApparition: cubic-bezier(.5, 0, 0, 1);
-
-.reveal [class*="reveal-"] {
-    opacity: 0 !important;
-    transform: translateY(30px) !important;
-}
-
-[class*="reveal-"] {
-    transition: 0.8s $timingApparition;
-}
-
-@for $i from 1 through 7 {
-    .reveal-#{$i} {
-        transition-delay: calc(#{$i}s * 0.1);
-    }
-}
-
 /* ========== MENU ========== */
 
 .explore {
@@ -318,15 +332,6 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 
     @include mobile-screen {
         right: 85px;
-    }
-}
-
-@keyframes slideOutAndIn {
-    0% {
-        transform: translateX(-50px);
-    }
-    50% {
-        transform: translateX(50px);
     }
 }
 
@@ -389,16 +394,13 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 
         .label-menu {
             @include font(1.2rem, 700, var(--primary-white), 3px, none);
-            // transform: rotate(-90deg);
             margin: -62.5px 25px;
             display: block;
-            animation: slideInMenuLabel 0.5s ease 0s forwards;
         }
         
         .menu--text {
             @include font(6.5rem, 700, var(--primary-white), 5px, none);
             margin: 10px 0 0 100px;
-            animation: slideLeftIn 0.5s ease 0s;
             cursor: pointer;
 
             &::after {
@@ -444,6 +446,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
     margin-left: -22.5px;
     z-index: 10000;
     pointer-events: none;
+    transform: translate3d(0, 0, 0);
 
     @include tablet-screen {
         display: none;
@@ -468,6 +471,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
     margin-top: -35px;
     margin-left: -35px;
     border: none;
+    transform: translate3d(0, 0, 0);
 }
 
 /* ========== PROGRESS BAR ========== */
@@ -478,10 +482,7 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
 	position: fixed;
 	top: 0; right: 0;
     background-color: var(--primary-orange);
-
-    @include tablet-screen {
-        display: none;
-    }
+    transform: translate3d(0, 0, 0);
 }
 
 /* ========== LABEL SCROLL ========== */
@@ -517,6 +518,37 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
         right: 0px;
     }
 }
+
+// color elements light / dark ON SCROLL
+.component-dark {
+    background-color: var(--primary-black-1) !important;
+    transition: .5s ease;
+}
+
+.component-light {
+    background-color: var(--primary-white) !important;
+    transition: .5s ease;
+}
+
+.font-dark {
+    color: var(--primary-black-1) !important;
+    transition: .5s ease;
+    &::after {
+        background-color: var(--primary-black-1) !important;
+        transition: .5s ease;
+    }
+}
+
+.font-light {
+    color: var(--primary-white) !important;
+    transition: .5s ease;
+    &::after {
+        background-color: var(--primary-white) !important;
+        transition: .5s ease;
+    }
+}
+
+/* ========== PAGES ========== */
 
 .about-page, .skills-page, .works-page, .contact-page, footer {
     padding: 7.5%;
@@ -889,7 +921,6 @@ $timingApparition: cubic-bezier(.5, 0, 0, 1);
             margin: auto;
             background-color: var(--primary-black-1);
             text-align: left;
-            animation: boxSlideIn 0.4s ease-out 0s;            
             overflow-y: auto;
 
             @include small-screen {

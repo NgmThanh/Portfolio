@@ -21,14 +21,13 @@ menuItem.forEach(element => {
 
         // close menu after clicked in an element
         setTimeout(() => {
+            menu.classList.add("fade-out");
+            menuLabel.classList.add("slide-out-menu-label");
             menuItem.forEach(item => {
                 item.classList.add('slide-left-out');
             });
-            menu.classList.remove("fade-in");
-            menu.classList.add("fade-out");
-            menuLabel.style.animation = "slideOutMenuLabel 0.5s ease 0s forwards";
         }, 150);
-        
+        // close menu after clicked on an element of the menu
         setTimeout(() => {menu.style.display = "none";}, 600);
         hamburger.classList.toggle("change");
     })
@@ -37,28 +36,47 @@ menuItem.forEach(element => {
 /* ----- OPEN / CLOSE MENU ----- */
 
 function changeMobile() {
-    // if open
+    // if opened
     if (menuOpen.length === 0) {
-        menuItem.forEach(item => {
-            item.classList.remove('slide-left-out')
-        });
-        menu.classList.add("fade-in");
         menu.classList.remove("fade-out");
-        menuLabel.style.animation = "slideInMenuLabel 0.5s ease 0s forwards";
+        menuLabel.classList.remove("slide-out-menu-label");
+        menuItem.forEach(item => {
+            item.classList.remove('slide-left-out');
+        });
+        // display menu
         menu.style.display = "flex";
     }
     // if closed
     else {
+        menu.classList.add("fade-out");
+        menuLabel.classList.add("slide-out-menu-label");
         menuItem.forEach(item => {
             item.classList.add('slide-left-out')
         });
-        menu.classList.remove("fade-in");
-        menu.classList.add("fade-out");
-        menuLabel.style.animation = "slideOutMenuLabel 0.5s ease 0s forwards";
+        // close menu after animations
         setTimeout(() => {menu.style.display = "none";}, 500);
     }
     hamburger.classList.toggle("change");
 }
+
+/* ----- PROGRESS BAR ----- */
+
+// progress bar in scrolling
+window.onload = () => {
+    // Ecouteur d'évènement sur scroll
+    window.addEventListener("scroll", () => {
+        // Calcul de la hauteur "utile" du document
+        let hauteur = document.documentElement.scrollHeight - window.innerHeight
+        // Récupération de la position verticale
+        let position = window.scrollY
+        // Récupération de la largeur de la fenêtre
+        let largeur = window.innerHeight
+        // Calcul de la largeur de la barre
+        let barre = position / hauteur * largeur
+        // Modification du CSS de la barre
+        document.getElementById("progress").style.height = barre+"px"
+    });
+};
 
 /* ----- DARK / LIGHT MODE ----- */
 
@@ -98,22 +116,3 @@ function changeMobile() {
 //         iconWorks[i].style.webkitFilter = "none";
 //     }
 // }
-
-/* ----- PROGRESS BAR ----- */
-
-// progress bar in scrolling
-window.onload = () => {
-    // Ecouteur d'évènement sur scroll
-    window.addEventListener("scroll", () => {
-        // Calcul de la hauteur "utile" du document
-        let hauteur = document.documentElement.scrollHeight - window.innerHeight
-        // Récupération de la position verticale
-        let position = window.scrollY
-        // Récupération de la largeur de la fenêtre
-        let largeur = window.innerHeight
-        // Calcul de la largeur de la barre
-        let barre = position / hauteur * largeur
-        // Modification du CSS de la barre
-        document.getElementById("progress").style.height = barre+"px"
-    });
-};

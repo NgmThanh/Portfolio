@@ -27,14 +27,11 @@ for (var i=0; i < href.length; i++) {
 }
 
 hoverLinks.push(hamburger);
+hoverLinks.push(send);
 
 workBoxes.forEach(box => {
     hoverLinks.push(box);
 })
-
-hoverLinks.push(send)
-
-console.log(hoverLinks)
 
 for (var i = 0; i < hoverLinks.length; i++) {
 
