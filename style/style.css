@@ -1440,7 +1440,7 @@ body {
   }
 }
 
-.timeline .modal-window .work-window__body--description {
+.timeline .modal-window .work-window__body--description, .timeline .modal-window .work-window__body ul {
   font-size: 1.5rem;
   font-weight: normal;
   color: var(--primary-white);
@@ -1451,14 +1451,19 @@ body {
   margin-top: 25px;
 }
 
+.timeline .modal-window .work-window__body--description li, .timeline .modal-window .work-window__body ul li {
+  list-style-type: space-counter;
+  margin-left: 30px;
+}
+
 @media screen and (max-width: 1100px) {
-  .timeline .modal-window .work-window__body--description {
+  .timeline .modal-window .work-window__body--description, .timeline .modal-window .work-window__body ul {
     margin-top: 20px;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .timeline .modal-window .work-window__body--description {
+  .timeline .modal-window .work-window__body--description, .timeline .modal-window .work-window__body ul {
     margin-top: 15px;
     letter-spacing: 0.3px;
   }

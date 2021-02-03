@@ -1014,11 +1014,16 @@ body {
                     padding: 0 22.5px 22.5px;
                 }
 
-                &--description {
+                &--description, ul {
                     @include font(1.5rem, normal, var(--primary-white), 0.5px, none);
                     line-height: 2.25rem;
                     display: block;
                     margin-top: 25px;
+
+                    li {
+                        list-style-type: space-counter;
+                        margin-left: 30px;
+                    }
 
                     @include small-screen {
                         margin-top: 20px;
